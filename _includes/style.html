@@ -146,6 +146,25 @@
   }
   footer.site .wrap { display: flex; justify-content: space-between; gap: 1em; flex-wrap: wrap; }
 
+
+  /* ── CV ── */
+  .cv-head {
+    font-size: 1.05em; letter-spacing: 0.16em; font-weight: 600; color: var(--ink);
+    margin: 2.2em 0 0.6em; padding-bottom: 0.25em; border-bottom: 1px solid var(--rule);
+  }
+  .cv-when {
+    font-size: 0.72em; color: var(--muted); white-space: nowrap;
+    font-variant-numeric: tabular-nums; letter-spacing: 0.02em;
+  }
+  .cv-list .entry-mark { width: 8.6em; }
+  .entry-meta { margin-top: 0.35em; display: flex; flex-wrap: wrap; gap: 0.4em; }
+  .entry-meta .tag {
+    font-size: 0.68em; letter-spacing: 0.04em; color: var(--muted);
+    border: 1px solid var(--rule); border-radius: 999px; padding: 0.1em 0.7em;
+  }
+  .badge--media { background: #eef7f1; color: #2f7d4f; }
+  @media (max-width: 640px) { .cv-list .entry-mark { width: auto; } }
+
   @media (max-width: 640px) {
     body { font-size: 16px; }
     .hero { flex-direction: column; align-items: flex-start; text-align: left; }

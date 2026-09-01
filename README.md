@@ -8,16 +8,19 @@ Jekyll 製の研究者個人サイト。デザインは [JST CRONOS 横田グル
 
 | 言語 | URL | ページファイル |
 | --- | --- | --- |
-| 日本語 | `/` | `_pages/ja*.html` |
-| English | `/en/` | `_pages/en*.html` |
-| 中文 | `/zh/` | `_pages/zh*.html` |
+| 日本語 | `/` ・ `/publications/` ・ `/cv/` | `_pages/ja*.html` |
+| English | `/en/` ・ `/en/publications/` ・ `/en/cv/` | `_pages/en*.html` |
+| 中文 | `/zh/` ・ `/zh/publications/` ・ `/zh/cv/` | `_pages/zh*.html` |
 
 - 文言はすべて **[`_data/i18n.yml`](_data/i18n.yml)** に3言語分まとめてある。ページ側は `lang` を渡すだけ。
 - 研究テーマの本文は [`_data/profile.yml`](_data/profile.yml) の `research:` に3言語分ある。
 - 論文タイトルなどの書誌情報は**原語のまま**（翻訳しない）。
 - 各ページには `hreflang` を入れてあるので、検索エンジンには「同じページの言語違い」と伝わる。
 
-言語を1つ増やすときは、`_data/i18n.yml` にブロックを足し、`_pages/` の4ファイルをコピーして `lang` と `permalink` を変え、`_layouts/default.html` の言語切替に1行足す。
+ヘッダーのナビは **Publications と CV の2つ**。論文一覧にはメディア掲載も混ぜてあり、
+`Media` タブで絞り込める。CV は 学歴 / 職歴 / 研究費 / 受賞 / 講演 をまとめたページ。
+
+言語を1つ増やすときは、`_data/i18n.yml` にブロックを足し、`_pages/` の3ファイルをコピーして `lang` と `permalink` を変え、`_layouts/default.html` の言語切替に1行足す。
 
 ## データの更新
 
@@ -26,12 +29,22 @@ Jekyll 製の研究者個人サイト。デザインは [JST CRONOS 横田グル
 | ファイル | 内容 | 件数 |
 | --- | --- | --- |
 | `_data/publications.csv` | 論文（journal / conference / workshop / demo / poster / domestic / article） | 62 |
+| `_data/media.csv` | メディア掲載（論文一覧に混ぜて表示） | 24 |
 | `_data/awards.csv` | 受賞 | 19 |
 | `_data/talks.csv` | 招待講演など | 10 |
+| `_data/grants.csv` | 研究費 | 7 |
+| `_data/education.csv` | 学歴 | 3 |
+| `_data/experience.csv` | 職歴 | 8 |
+
+受賞・研究費・学歴・職歴・メディア掲載は **researchmap から取り込める**:
+
+```bash
+python3 scripts/build_cv.py     # researchmap の公開APIから _data/ を作り直す
+```
 
 ### スプレッドシート同期に切り替える（推奨）
 
-1. `data_local/takahashi_publications_awards.xlsx` を Google スプレッドシートにアップロードする
+1. `data_local/` の xlsx を Google スプレッドシートにアップロードする
    （シート名 `Publications` / `Awards` / `Talks` のまま）。
 2. 共有設定を **「編集: 自分のみ」＋「リンクを知っている全員: 閲覧者」** にする。
    ⚠️ 閲覧まで止めると取り込みが Google のエラーページを CSV として保存してしまう。

@@ -1,0 +1,28 @@
+{%- assign lang = include.lang -%}
+{%- assign t = site.data.i18n[lang] -%}
+<div class="cv-list">
+{%- for g in site.data.grants -%}
+  {%- if lang == "en" -%}
+    {%- assign ti = g.title_en -%}{%- assign fu = g.funder_en -%}
+    {%- assign ro = g.role_en -%}{%- assign am = g.amount_en -%}
+  {%- else -%}
+    {%- assign ti = g.title_ja -%}{%- assign fu = g.funder_ja -%}
+    {%- assign ro = g.role_ja -%}{%- assign am = g.amount_ja -%}
+  {%- endif -%}
+  <div class="entry" data-type="grant">
+    <div class="entry-mark"><span class="cv-when">{{ g.from }}–{{ g.to }}</span></div>
+    <div class="entry-body">
+      <div class="entry-title">
+        {%- if g.url contains "http" -%}
+          <a href="{{ g.url }}" target="_blank" rel="noopener">{{ ti | escape }}</a>
+        {%- else -%}{{ ti | escape }}{%- endif -%}
+      </div>
+      <div class="entry-venue">{{ fu | escape }}{% if g.system != "" %} {{ g.system | escape }}{% endif %}{% if g.number != "" %}（{{ g.number | escape }}）{% endif %}</div>
+      <div class="entry-meta">
+        {%- if ro != "" %}<span class="tag">{{ ro | escape }}</span>{% endif -%}
+        {%- if am != "" %}<span class="tag">{{ am | escape }}</span>{% endif -%}
+      </div>
+    </div>
+  </div>
+{%- endfor -%}
+</div>

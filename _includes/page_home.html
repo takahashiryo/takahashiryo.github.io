@@ -49,13 +49,13 @@
 <section id="awards">
   {% include sechead.html title=t.sec.awards en="Awards" lang=lang %}
   {% include award_list.html lang=lang limit=site.home_award_limit %}
-  <p class="more"><a href="{{ home | append: 'awards/' | relative_url }}">{{ t.more_awards }} →</a></p>
+  <p class="more"><a href="{{ home | append: 'cv/' | relative_url }}">{{ t.more_awards }} →</a></p>
 </section>
 
 <section id="talks">
   {% include sechead.html title=t.sec.talks en="Talks" lang=lang %}
   {% include talk_list.html lang=lang limit=site.home_talk_limit %}
-  <p class="more"><a href="{{ home | append: 'talks/' | relative_url }}">{{ t.more_talks }} →</a></p>
+  <p class="more"><a href="{{ home | append: 'cv/' | relative_url }}">{{ t.more_cv }} →</a></p>
 </section>
 
 <section id="contact" class="contact">

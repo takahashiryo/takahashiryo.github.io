@@ -30,15 +30,23 @@ jobs:
           JEKYLL_ENV: production
 
       # ── ここから出力の検証（ローカルでビルドできないので CI で確かめる） ──
-      - name: Check all 12 pages exist
+      - name: Check all 9 pages exist
         run: |
           set -e
-          for p in index.html publications/index.html awards/index.html talks/index.html \
-                   en/index.html en/publications/index.html en/awards/index.html en/talks/index.html \
-                   zh/index.html zh/publications/index.html zh/awards/index.html zh/talks/index.html \
+          for p in index.html publications/index.html cv/index.html \
+                   en/index.html en/publications/index.html en/cv/index.html \
+                   zh/index.html zh/publications/index.html zh/cv/index.html \
                    sitemap.xml robots.txt 404.html; do
             test -s "_site/$p" || { echo "missing or empty: $p"; exit 1; }
           done
+
+      - name: Check nav has exactly Publications and CV
+        run: |
+          set -e
+          n=$(grep -o 'class="navbar"' -A0 _site/index.html | wc -l)
+          grep -q '>論文</a>' _site/index.html
+          grep -q '>CV</a>'   _site/index.html
+          ! grep -q '>概要</a>' _site/index.html
 
       - name: Check each language renders its own text
         run: |
@@ -63,24 +71,26 @@ jobs:
           grep -q "Meander Coil++" _site/publications/index.html
           grep -q "picoRing"       _site/publications/index.html
           n=$(grep -o 'class="entry"' _site/publications/index.html | wc -l)
-          echo "publication entries: $n"
-          test "$n" -ge 60
+          echo "publication entries (media 込み): $n"
+          test "$n" -ge 86          # 論文62 + メディア24
 
-      - name: Check awards and talks rendered
+      - name: Check CV page rendered
         run: |
           set -e
-          a=$(grep -o 'class="entry"' _site/awards/index.html | wc -l)
-          t=$(grep -o 'class="entry"' _site/talks/index.html | wc -l)
-          echo "awards: $a / talks: $t"
-          test "$a" -ge 19
-          test "$t" -ge 10
-          grep -q "Best Paper Award" _site/en/awards/index.html
+          n=$(grep -o 'class="entry"' _site/cv/index.html | wc -l)
+          echo "cv entries: $n"
+          test "$n" -ge 47          # 学歴3 + 職歴8 + 研究費7 + 受賞19 + 講演10
+          grep -q "Best Paper Award" _site/en/cv/index.html
+          grep -q "18,330,000" _site/cv/index.html        # 研究費の金額
+          grep -q "Meta Inc" _site/cv/index.html          # 職歴
+          grep -q "研究代表者" _site/cv/index.html
 
       - name: Check filter tabs and author highlight
         run: |
           set -e
           grep -q 'data-filter="journal"'    _site/publications/index.html
           grep -q 'data-filter="conference"' _site/publications/index.html
+          grep -q 'data-filter="media"'      _site/publications/index.html
           grep -q "class='me'"               _site/publications/index.html
 
       - name: Check no unrendered Liquid remains

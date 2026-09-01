@@ -16,10 +16,12 @@
       {%- endif -%}
       {%- if p.note != "" %} <span class="badge">{{ p.note | escape }}</span>{% endif -%}
     </div>
-    <div class="entry-authors">{{ au }}</div>
+    {%- if p.authors != "" %}<div class="entry-authors">{{ au }}</div>{% endif -%}
+    {%- if p.venue != "" or p.year != "" %}
     <div class="entry-venue">
       {{ p.venue | escape }}{% if p.detail != "" %}, {{ p.detail | escape }}{% endif %}{% if p.place != "" %}, {{ p.place | escape }}{% endif %}{% if p.year != "" %}, {{ p.year }}{% endif %}.
     </div>
+    {%- endif -%}
     {%- if p.award != "" %}<div class="entry-award">{{ p.award | escape }}</div>{% endif -%}
   </div>
 </div>

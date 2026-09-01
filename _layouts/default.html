@@ -32,11 +32,8 @@
     </a>
     <nav class="navbar">
       {%- assign home = page.home_url | default: '/' -%}
-      <a href="{{ home | append: '#about' | relative_url }}">{{ t.nav.about }}</a>
-      <a href="{{ home | append: '#research' | relative_url }}">{{ t.nav.research }}</a>
       <a href="{{ home | append: 'publications/' | relative_url }}">{{ t.nav.publications }}</a>
-      <a href="{{ home | append: 'awards/' | relative_url }}">{{ t.nav.awards }}</a>
-      <a href="{{ home | append: 'talks/' | relative_url }}">{{ t.nav.talks }}</a>
+      <a href="{{ home | append: 'cv/' | relative_url }}">{{ t.nav.cv }}</a>
       <span class="lang">
         <a href="{{ '/' | append: suffix | relative_url }}" {% if lang == 'ja' %}class="is-active"{% endif %}>日本語</a>
         <a href="{{ '/en/' | append: suffix | relative_url }}" {% if lang == 'en' %}class="is-active"{% endif %}>EN</a>

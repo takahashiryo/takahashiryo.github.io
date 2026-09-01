@@ -17,6 +17,7 @@ ja:
     awards: "受賞"
     talks: "講演"
     contact: "連絡先"
+    cv: "CV"
   sec:
     about: "概要"
     research: "研究"
@@ -24,6 +25,11 @@ ja:
     awards: "受賞"
     talks: "講演"
     contact: "連絡先"
+    cv: "経歴"
+    education: "学歴"
+    experience: "職歴"
+    grants: "研究費"
+    media: "メディア掲載"
   bio: >
     2023年に東京大学大学院工学系研究科にて博士（工学）を取得（指導教員：川原圭博 教授）。
     在学中の2022年には Meta Reality Labs にてリサーチサイエンティストインターン（Hrvoje Benko 教授、Eric Whitmire 博士）を経験し、
@@ -33,6 +39,9 @@ ja:
   research_intro: "衣服・テキスタイルを電磁的なインフラとして捉え直し、身につけるものすべてから電池と配線をなくすことを目指しています。"
   more_publications: "すべての論文"
   more_awards: "すべての受賞"
+  more_cv: "経歴の詳細"
+  label_role: "役割"
+  label_amount: "金額"
   more_talks: "すべての講演"
   back_home: "← トップへ戻る"
   filter_all: "All"
@@ -44,6 +53,7 @@ ja:
     poster: "ポスター"
     domestic: "国内発表"
     article: "解説"
+    media: "メディア"
   award_note: "受賞"
   contact_lead: "共同研究・取材・講演のご依頼はメールにてご連絡ください。"
   updated: "最終更新"
@@ -64,6 +74,7 @@ en:
     awards: "Awards"
     talks: "Talks"
     contact: "Contact"
+    cv: "CV"
   sec:
     about: "About"
     research: "Research"
@@ -71,6 +82,11 @@ en:
     awards: "Awards"
     talks: "Talks"
     contact: "Contact"
+    cv: "CV"
+    education: "Education"
+    experience: "Experience"
+    grants: "Grants"
+    media: "Media"
   bio: >
     I received my PhD in Engineering from the University of Tokyo in 2023, advised by Prof. Yoshihiro Kawahara.
     In 2022 I worked as a research scientist intern at Meta Reality Labs, advised by Prof. Hrvoje Benko and Dr. Eric Whitmire.
@@ -80,6 +96,9 @@ en:
   research_intro: "I treat clothing and textiles as electromagnetic infrastructure, with the goal of removing batteries and wiring from everything we wear."
   more_publications: "All publications"
   more_awards: "All awards"
+  more_cv: "Full CV"
+  label_role: "Role"
+  label_amount: "Amount"
   more_talks: "All talks"
   back_home: "← Back to home"
   filter_all: "All"
@@ -91,6 +110,7 @@ en:
     poster: "Poster"
     domestic: "Domestic"
     article: "Article"
+    media: "Media"
   award_note: "Award"
   contact_lead: "Please reach out by email for collaborations, press enquiries, or invited talks."
   updated: "Last updated"
@@ -111,6 +131,7 @@ zh:
     awards: "获奖"
     talks: "演讲"
     contact: "联系"
+    cv: "CV"
   sec:
     about: "简介"
     research: "研究"
@@ -118,6 +139,11 @@ zh:
     awards: "获奖"
     talks: "演讲"
     contact: "联系"
+    cv: "履历"
+    education: "学历"
+    experience: "职历"
+    grants: "科研经费"
+    media: "媒体报道"
   bio: >
     2023年于东京大学大学院工学系研究科取得工学博士学位（导师：川原圭博 教授）。
     2022年曾在 Meta Reality Labs 担任研究科学家实习生（导师：Hrvoje Benko 教授、Eric Whitmire 博士）。
@@ -127,6 +153,9 @@ zh:
   research_intro: "我将衣服与纺织品重新视为电磁基础设施，目标是让所有穿戴之物摆脱电池与布线。"
   more_publications: "全部论文"
   more_awards: "全部获奖"
+  more_cv: "完整履历"
+  label_role: "角色"
+  label_amount: "金额"
   more_talks: "全部演讲"
   back_home: "← 返回首页"
   filter_all: "All"
@@ -138,6 +167,7 @@ zh:
     poster: "海报"
     domestic: "国内发表"
     article: "综述"
+    media: "媒体"
   award_note: "获奖"
   contact_lead: "如有合作研究、媒体采访或演讲邀请，请通过邮件与我联系。"
   updated: "最后更新"
