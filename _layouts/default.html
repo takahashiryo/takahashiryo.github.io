@@ -1,0 +1,94 @@
+{%- assign lang = page.lang | default: site.default_lang -%}
+{%- assign t = site.data.i18n[lang] -%}
+{%- assign suffix = page.path_suffix | default: '' -%}
+<!doctype html>
+<html lang="{{ t.html_lang }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.title %}{{ page.title }} | {% endif %}{{ t.name }} — {{ t.role }}</title>
+  <meta name="description" content="{{ page.description | default: t.lead | strip_html | truncate: 160 }}">
+  <link rel="canonical" href="{{ page.url | absolute_url }}">
+  {%- comment %} 3言語の相互リンク（検索エンジンに言語違いの同一ページだと伝える） {% endcomment %}
+  <link rel="alternate" hreflang="ja" href="{{ '/' | append: suffix | absolute_url }}">
+  <link rel="alternate" hreflang="en" href="{{ '/en/' | append: suffix | absolute_url }}">
+  <link rel="alternate" hreflang="zh" href="{{ '/zh/' | append: suffix | absolute_url }}">
+  <link rel="alternate" hreflang="x-default" href="{{ '/en/' | append: suffix | absolute_url }}">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{{ t.name }} — {{ t.role }}">
+  <meta property="og:description" content="{{ t.lead }}">
+  <meta property="og:url" content="{{ page.url | absolute_url }}">
+  <meta property="og:image" content="{{ '/images/' | append: site.data.profile.photo | absolute_url }}">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='26'>&#128225;</text></svg>">
+  {% include style.html %}
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap">
+    <a class="brand" href="{{ page.home_url | default: '/' | relative_url }}">
+      {{ t.name }}<small>{{ t.name_sub }}</small>
+    </a>
+    <nav class="navbar">
+      {%- assign home = page.home_url | default: '/' -%}
+      <a href="{{ home | append: '#about' | relative_url }}">{{ t.nav.about }}</a>
+      <a href="{{ home | append: '#research' | relative_url }}">{{ t.nav.research }}</a>
+      <a href="{{ home | append: 'publications/' | relative_url }}">{{ t.nav.publications }}</a>
+      <a href="{{ home | append: 'awards/' | relative_url }}">{{ t.nav.awards }}</a>
+      <a href="{{ home | append: 'talks/' | relative_url }}">{{ t.nav.talks }}</a>
+      <span class="lang">
+        <a href="{{ '/' | append: suffix | relative_url }}" {% if lang == 'ja' %}class="is-active"{% endif %}>日本語</a>
+        <a href="{{ '/en/' | append: suffix | relative_url }}" {% if lang == 'en' %}class="is-active"{% endif %}>EN</a>
+        <a href="{{ '/zh/' | append: suffix | relative_url }}" {% if lang == 'zh' %}class="is-active"{% endif %}>中文</a>
+      </span>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  {{ content }}
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <span>&copy; {{ site.time | date: '%Y' }} {{ t.name }}</span>
+    <span>{{ t.updated }}: {{ site.time | date: '%Y-%m-%d' }}</span>
+  </div>
+</footer>
+
+<script>
+/* 固定ヘッダーの高さぶんアンカーの着地位置を下げる（ヘッダーは幅で高さが変わる） */
+(function () {
+  function fit() {
+    var m = document.querySelector('.masthead');
+    if (m) document.documentElement.style.scrollPaddingTop = (m.offsetHeight + 36) + 'px';
+  }
+  window.addEventListener('resize', fit);
+  document.addEventListener('DOMContentLoaded', fit);
+  window.addEventListener('load', fit);
+
+  /* 一覧ページの種別フィルタ。head で走るわけではないが委譲で統一しておく */
+  document.addEventListener('click', function (e) {
+    var btn = e.target.closest && e.target.closest('.filter-btn');
+    if (!btn) return;
+    var f = btn.getAttribute('data-filter') || 'all';
+    document.querySelectorAll('.filter-btn').forEach(function (b) {
+      var on = b === btn;
+      b.classList.toggle('is-active', on);
+      b.setAttribute('aria-selected', on ? 'true' : 'false');
+    });
+    document.querySelectorAll('.entry').forEach(function (el) {
+      el.hidden = (f !== 'all' && el.getAttribute('data-type') !== f);
+    });
+    /* 中身が全部消えた年見出しは隠す */
+    document.querySelectorAll('.year-head').forEach(function (h) {
+      var any = false, el = h.nextElementSibling;
+      while (el && el.classList.contains('entry')) { if (!el.hidden) any = true; el = el.nextElementSibling; }
+      h.hidden = !any;
+    });
+  });
+})();
+</script>
+</body>
+</html>

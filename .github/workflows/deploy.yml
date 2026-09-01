@@ -1,0 +1,131 @@
+name: Build and deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.2"
+          bundler-cache: true
+
+      - name: Build with Jekyll
+        run: bundle exec jekyll build --trace
+        env:
+          JEKYLL_ENV: production
+
+      # ── ここから出力の検証（ローカルでビルドできないので CI で確かめる） ──
+      - name: Check all 12 pages exist
+        run: |
+          set -e
+          for p in index.html publications/index.html awards/index.html talks/index.html \
+                   en/index.html en/publications/index.html en/awards/index.html en/talks/index.html \
+                   zh/index.html zh/publications/index.html zh/awards/index.html zh/talks/index.html \
+                   sitemap.xml robots.txt 404.html; do
+            test -s "_site/$p" || { echo "missing or empty: $p"; exit 1; }
+          done
+
+      - name: Check each language renders its own text
+        run: |
+          set -e
+          grep -q "電池も配線もいらない"        _site/index.html
+          grep -q "no battery and no wire"      _site/en/index.html
+          grep -q "无需电池与布线"              _site/zh/index.html
+          grep -q "特任助教"                    _site/index.html
+          grep -q "Project Assistant Professor" _site/en/index.html
+
+      - name: Check hreflang and canonical
+        run: |
+          set -e
+          grep -q 'hreflang="ja"' _site/index.html
+          grep -q 'hreflang="en"' _site/index.html
+          grep -q 'hreflang="zh"' _site/index.html
+          grep -q 'rel="canonical"' _site/index.html
+
+      - name: Check publication list rendered
+        run: |
+          set -e
+          grep -q "Meander Coil++" _site/publications/index.html
+          grep -q "picoRing"       _site/publications/index.html
+          n=$(grep -o 'class="entry"' _site/publications/index.html | wc -l)
+          echo "publication entries: $n"
+          test "$n" -ge 60
+
+      - name: Check awards and talks rendered
+        run: |
+          set -e
+          a=$(grep -o 'class="entry"' _site/awards/index.html | wc -l)
+          t=$(grep -o 'class="entry"' _site/talks/index.html | wc -l)
+          echo "awards: $a / talks: $t"
+          test "$a" -ge 19
+          test "$t" -ge 10
+          grep -q "Best Paper Award" _site/en/awards/index.html
+
+      - name: Check filter tabs and author highlight
+        run: |
+          set -e
+          grep -q 'data-filter="journal"'    _site/publications/index.html
+          grep -q 'data-filter="conference"' _site/publications/index.html
+          grep -q "class='me'"               _site/publications/index.html
+
+      - name: Check no unrendered Liquid remains
+        run: |
+          set -e
+          if grep -rlE '\{\{|\{%' _site --include='*.html' | grep -v 404; then
+            echo "Liquid が残っている"; exit 1
+          fi
+
+      - name: Check private source file is absent
+        run: |
+          set -e
+          ! find . -name '*.xlsx' | grep -q . || { echo "xlsx がリポジトリに含まれている"; exit 1; }
+          ! test -d data_local
+
+      # ── ここから配信 ──
+      # Pages が未設定のうちは失敗するが、ビルドと検証の結果は上で確認できる。
+      # 有効化: Settings → Pages → Source を «GitHub Actions» にする。
+      - uses: actions/configure-pages@v5
+        continue-on-error: true
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      # Pages が未設定のうちは配信をスキップして案内だけ出す（ワークフローは緑のまま）
+      - name: Check whether Pages is enabled
+        id: check
+        run: |
+          code=$(curl -s -o /dev/null -w '%{http_code}' \
+                 -H "Authorization: Bearer ${{ github.token }}" \
+                 -H "Accept: application/vnd.github+json" \
+                 "https://api.github.com/repos/${{ github.repository }}/pages")
+          if [ "$code" = "200" ]; then
+            echo "ready=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "ready=false" >> "$GITHUB_OUTPUT"
+            echo "::notice::GitHub Pages が未設定です。Settings → Pages → Build and deployment → Source を «GitHub Actions» にすると、次回の push から自動で公開されます。"
+          fi
+      - id: deployment
+        if: steps.check.outputs.ready == 'true'
+        uses: actions/deploy-pages@v4

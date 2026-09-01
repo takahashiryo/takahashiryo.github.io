@@ -1,0 +1,20 @@
+{%- assign t = site.data.i18n[include.lang] -%}
+{%- assign limit = include.limit | default: 0 -%}
+{%- assign items = site.data.talks -%}
+{%- if limit > 0 -%}{%- assign items = items | slice: 0, limit -%}{%- endif -%}
+<div class="talk-list">
+{%- for k in items -%}
+  <div class="entry" data-type="talk">
+    <div class="entry-mark"><span class="badge">{{ k.year }}</span></div>
+    <div class="entry-body">
+      <div class="entry-title">
+        {%- if k.url contains "http" -%}
+          <a href="{{ k.url }}" target="_blank" rel="noopener">{{ k.title | escape }}</a>
+        {%- else -%}{{ k.title | escape }}{%- endif -%}
+        {%- if k.note != "" %} <span class="badge">{{ k.note | escape }}</span>{% endif -%}
+      </div>
+      <div class="entry-venue">{{ k.venue | escape }}{% if k.place != "" %}, {{ k.place | escape }}{% endif %}{% if k.year != "" %}, {{ k.year }}{% endif %}.</div>
+    </div>
+  </div>
+{%- endfor -%}
+</div>

@@ -1,0 +1,33 @@
+# スプレッドシートから論文・受賞・講演を取り込む。
+# 使う前に、リポジトリの Variables に SHEET_ID（スプレッドシートのID）を登録すること。
+name: Update data from spreadsheet
+
+on:
+  schedule:
+    - cron: "0 21 * * *"    # 06:00 JST
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    if: vars.SHEET_ID != ''
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fetch sheets
+        env:
+          SHEET_ID: ${{ vars.SHEET_ID }}
+        run: python3 scripts/sync_sheet.py
+      - name: Commit if changed
+        run: |
+          if [ -n "$(git status --porcelain _data)" ]; then
+            git config user.name  "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add _data
+            git commit -m "chore: update data from spreadsheet"
+            git push
+          else
+            echo "変更なし"
+          fi

@@ -1,0 +1,25 @@
+{%- comment %} 論文1件ぶん。著者名のうち高橋を太字にする {% endcomment -%}
+{%- assign p = include.p -%}
+{%- assign t = include.t -%}
+{%- assign au = p.authors | escape -%}
+{%- assign au = au | replace: "R. Takahashi", "<span class='me'>R. Takahashi</span>" -%}
+{%- assign au = au | replace: "Ryo Takahashi", "<span class='me'>Ryo Takahashi</span>" -%}
+{%- assign au = au | replace: "高橋亮", "<span class='me'>高橋亮</span>" -%}
+<div class="entry" data-type="{{ p.type }}">
+  <div class="entry-mark"><span class="badge badge--{{ p.type }}">{{ t.types[p.type] | default: p.type }}</span></div>
+  <div class="entry-body">
+    <div class="entry-title">
+      {%- if p.url contains "http" -%}
+        <a href="{{ p.url }}" target="_blank" rel="noopener">{{ p.title | escape }}</a>
+      {%- else -%}
+        {{ p.title | escape }}
+      {%- endif -%}
+      {%- if p.note != "" %} <span class="badge">{{ p.note | escape }}</span>{% endif -%}
+    </div>
+    <div class="entry-authors">{{ au }}</div>
+    <div class="entry-venue">
+      {{ p.venue | escape }}{% if p.detail != "" %}, {{ p.detail | escape }}{% endif %}{% if p.place != "" %}, {{ p.place | escape }}{% endif %}{% if p.year != "" %}, {{ p.year }}{% endif %}.
+    </div>
+    {%- if p.award != "" %}<div class="entry-award">{{ p.award | escape }}</div>{% endif -%}
+  </div>
+</div>

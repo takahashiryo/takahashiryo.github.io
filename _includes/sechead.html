@@ -1,0 +1,5 @@
+{%- comment %} セクション見出し。日本語・中国語のときだけ英語の副題を添える {% endcomment -%}
+<div class="sechead">
+  <h2>{{ include.title }}</h2>
+  {%- if include.lang != "en" and include.en %}<span class="en">（{{ include.en }}）</span>{% endif -%}
+</div>

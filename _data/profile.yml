@@ -1,0 +1,65 @@
+# プロフィールと外部リンク。文言の翻訳は _data/i18n.yml 側にある。
+email: "takahashi@akg.t.u-tokyo.ac.jp"
+photo: "takahashi.jpg"
+links:
+  - key: "scholar"
+    label: "Google Scholar"
+    url: "https://scholar.google.co.jp/citations?hl=ja&user=VVhpnB0AAAAJ&view_op=list_works"
+  - key: "researchmap"
+    label: "researchmap"
+    url: "https://researchmap.jp/takahashi_ryo"
+  - key: "orcid"
+    label: "ORCID"
+    url: "https://orcid.org/0000-0001-5045-341X"
+  - key: "x"
+    label: "X"
+    url: "https://x.com/ryo_w_takahashi"
+  - key: "linkedin"
+    label: "LinkedIn"
+    url: "https://www.linkedin.com/in/ryotakahashi0212"
+  - key: "utokyo"
+    label: "UTokyo"
+    url: "https://www.u-tokyo.ac.jp/focus/ja/people/k0001_05213.html"
+
+# 研究テーマ（トップの Research セクション）
+research:
+  - id: "wpt-textile"
+    ja:
+      title: "無線給電テキスタイル"
+      body: "人体に安全なメアンダコイルを衣服の全面に編み込み、身体のどこにいても W 級の電力を届ける。液体金属配線や機械編みによって、洗える・切れる・伸びる給電服を作る。"
+    en:
+      title: "Wireless power textiles"
+      body: "Meander coils that are safe to the body are knitted across a whole garment, delivering watt-level power anywhere on it. Liquid-metal wiring and machine knitting make the fabric washable, cuttable and stretchable."
+    zh:
+      title: "无线供电纺织品"
+      body: "将对人体安全的蜿蜒线圈编织于整件衣服，可在身体任意位置提供瓦级电力。借助液态金属布线与机器编织，实现可水洗、可裁剪、可拉伸的供电服装。"
+  - id: "batteryfree-input"
+    ja:
+      title: "電池レスなウェアラブル入力"
+      body: "指輪とリストバンドのコイル間の磁気結合を読み取ることで、電池も無線チップも積まない極低電力な指輪型入力デバイスを実現する。"
+    en:
+      title: "Battery-free wearable input"
+      body: "By sensing the magnetic coupling between a ring coil and a wristband coil, ultra-low-power ring input devices work without a battery or a radio on the ring."
+    zh:
+      title: "无电池可穿戴输入"
+      body: "通过读取戒指线圈与腕带线圈之间的磁耦合，实现戒指端无需电池与无线芯片的超低功耗输入设备。"
+  - id: "bodyscale-sensing"
+    ja:
+      title: "全身スケールの無線センシング"
+      body: "メアンダ形状の電子ニットを一枚の服として編み、全身に散らばったバッテリレスセンサをまとめて読み取る近接無線ネットワークを組む。"
+    en:
+      title: "Body-scale wireless sensing"
+      body: "A single machine-knitted meandered e-textile forms a near-field network that reads out battery-free sensors distributed over the entire body."
+    zh:
+      title: "全身尺度无线感知"
+      body: "以机器编织的蜿蜒电子织物构成近场网络，统一读取分布于全身的无电池传感器。"
+  - id: "robot-power"
+    ja:
+      title: "ロボットへの無線給電"
+      body: "関節位置を移動できるヘビ型ロボットや小型移動ロボットに、床面や布から電力を届け続け、電池のいらない長期運用を可能にする。"
+    en:
+      title: "Wireless power for robots"
+      body: "Floors and fabrics keep delivering power to joint-repositionable snake robots and small mobile robots, enabling long-term operation without batteries."
+    zh:
+      title: "机器人无线供电"
+      body: "由地面或织物持续为可移动关节的蛇形机器人与小型移动机器人供电，实现无需电池的长期运行。"

@@ -1,0 +1,65 @@
+{%- assign lang = include.lang -%}
+{%- assign t = site.data.i18n[lang] -%}
+{%- assign pr = site.data.profile -%}
+{%- assign home = include.home -%}
+
+<div class="hero">
+  <div class="hero-photo">
+    <img src="{{ '/images/' | append: pr.photo | relative_url }}" alt="{{ t.name }}">
+  </div>
+  <div class="hero-body">
+    <h1>{{ t.name }}<small>{{ t.name_sub }}</small></h1>
+    <p class="role">{{ t.role }}</p>
+    <p class="tagline">{{ t.tagline }}</p>
+    <p class="lead">{{ t.lead }}</p>
+    <div class="links">
+      {%- for l in pr.links -%}
+      <a href="{{ l.url }}" target="_blank" rel="noopener">{{ l.label }}</a>
+      {%- endfor -%}
+      <a href="mailto:{{ pr.email }}">Email</a>
+    </div>
+  </div>
+</div>
+
+<section id="about">
+  {% include sechead.html title=t.sec.about en="About" lang=lang %}
+  <p>{{ t.bio }}</p>
+</section>
+
+<section id="research">
+  {% include sechead.html title=t.sec.research en="Research" lang=lang %}
+  <p>{{ t.research_intro }}</p>
+  <div class="themes">
+    {%- for r in pr.research -%}
+    {%- assign body = r[lang] -%}
+    <div class="theme">
+      <h3>{{ body.title }}</h3>
+      <p>{{ body.body }}</p>
+    </div>
+    {%- endfor -%}
+  </div>
+</section>
+
+<section id="publications">
+  {% include sechead.html title=t.sec.publications en="Publications" lang=lang %}
+  {% include pub_list.html lang=lang limit=site.home_pub_limit %}
+  <p class="more"><a href="{{ home | append: 'publications/' | relative_url }}">{{ t.more_publications }} →</a></p>
+</section>
+
+<section id="awards">
+  {% include sechead.html title=t.sec.awards en="Awards" lang=lang %}
+  {% include award_list.html lang=lang limit=site.home_award_limit %}
+  <p class="more"><a href="{{ home | append: 'awards/' | relative_url }}">{{ t.more_awards }} →</a></p>
+</section>
+
+<section id="talks">
+  {% include sechead.html title=t.sec.talks en="Talks" lang=lang %}
+  {% include talk_list.html lang=lang limit=site.home_talk_limit %}
+  <p class="more"><a href="{{ home | append: 'talks/' | relative_url }}">{{ t.more_talks }} →</a></p>
+</section>
+
+<section id="contact" class="contact">
+  {% include sechead.html title=t.sec.contact en="Contact" lang=lang %}
+  <p>{{ t.contact_lead }}</p>
+  <p class="mail"><a href="mailto:{{ pr.email }}">{{ pr.email }}</a></p>
+</section>

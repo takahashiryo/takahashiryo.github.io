@@ -1,0 +1,14 @@
+_site/
+.jekyll-cache/
+.jekyll-metadata
+.sass-cache/
+.bundle/
+vendor/
+.DS_Store
+
+# 研究室共有の投稿管理簿から作った作業用ファイルは公開しない（ローカル専用）
+data_local/
+*.xlsx
+
+# 手元の元データから CSV を作るスクリプトは公開しない（data_local/ に置く）
+scripts/build_data.py

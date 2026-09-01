@@ -1,0 +1,24 @@
+{%- assign t = site.data.i18n[include.lang] -%}
+{%- assign limit = include.limit | default: 0 -%}
+{%- assign items = site.data.awards -%}
+{%- if limit > 0 -%}{%- assign items = items | slice: 0, limit -%}{%- endif -%}
+<div class="award-list">
+{%- for a in items -%}
+  {%- if include.lang == "ja" or include.lang == "zh" -%}
+    {%- assign nm = a.title_ja -%}{%- assign org = a.association_ja -%}
+  {%- else -%}
+    {%- assign nm = a.title_en -%}{%- assign org = a.association_en -%}
+  {%- endif -%}
+  <div class="entry" data-type="award">
+    <div class="entry-mark"><span class="badge">{{ a.year }}</span></div>
+    <div class="entry-body">
+      <div class="entry-title">
+        {%- if a.url contains "http" -%}
+          <a href="{{ a.url }}" target="_blank" rel="noopener">{{ nm | escape }}</a>
+        {%- else -%}{{ nm | escape }}{%- endif -%}
+      </div>
+      <div class="entry-venue">{{ org | escape }}</div>
+    </div>
+  </div>
+{%- endfor -%}
+</div>

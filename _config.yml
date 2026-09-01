@@ -1,0 +1,40 @@
+# ── 高橋 亮 個人サイト（日本語 / English / 中文） ────────────────────
+# デザインは JST CRONOS 横田グループのサイト（yokota-cronos.com）に揃えている。
+
+title                : "Ryo Takahashi"
+tagline              : "The University of Tokyo"
+description          : "高橋亮（東京大学 特任助教）の個人サイト。無線給電テキスタイル（メアンダコイル服）、電池レスなウェアラブル入力デバイス（picoRing）、全身スケールの無線センシング・給電の研究。"
+author_name          : "Ryo Takahashi"
+
+# 公開URL。リポジトリ名が <ユーザー名>.github.io なのでユーザーサイト＝ドメイン直下に出る。
+# 独自ドメイン（ryotakahashi.me など）を割り当てるときは url だけ変える（baseurl は "" のまま）。
+url                  : "https://takahashiryo.github.io"
+baseurl              : ""
+repository           : "takahashiryo/takahashiryo.github.io"
+
+# 既定の言語（"/" に置くページ）
+default_lang         : "ja"
+languages            : ["ja", "en", "zh"]
+
+# トップに載せる件数（すべては各一覧ページに表示）
+home_pub_limit       : 8
+home_award_limit     : 6
+home_talk_limit      : 5
+
+include              : ["_pages"]
+exclude              : ["scripts", "Gemfile", "Gemfile.lock", "README.md", "CLAUDE.md",
+                        "*.xlsx", "data_local"]
+
+markdown             : kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+
+sass:
+  style: compressed
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "default"
