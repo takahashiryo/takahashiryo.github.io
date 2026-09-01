@@ -24,6 +24,11 @@
   {% include award_list.html lang=lang limit=0 %}
 </section>
 
+<section id="publications">
+  <h3 class="cv-head">{{ t.sec.publications }}</h3>
+  {% include pub_list.html lang=lang limit=0 with_media=true %}
+</section>
+
 <section id="talks">
   <h3 class="cv-head">{{ t.sec.talks }}</h3>
   {% include talk_list.html lang=lang limit=0 %}

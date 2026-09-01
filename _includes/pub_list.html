@@ -29,10 +29,12 @@
     {%- endfor -%}
   </div>
   {%- assign groups = pubs | group_by: "year" | sort: "name" | reverse -%}
+  <div id="pub-groups">
   {%- for g in groups -%}
     <div class="year-head">{{ g.name }}</div>
     {%- for p in g.items -%}
       {% include pub_entry.html p=p t=t %}
     {%- endfor -%}
   {%- endfor -%}
+  </div>
 {%- endif -%}

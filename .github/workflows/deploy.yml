@@ -79,11 +79,21 @@ jobs:
           set -e
           n=$(grep -o 'class="entry"' _site/cv/index.html | wc -l)
           echo "cv entries: $n"
-          test "$n" -ge 47          # 学歴3 + 職歴8 + 研究費7 + 受賞19 + 講演10
+          test "$n" -ge 133         # 学歴3 + 職歴8 + 研究費7 + 受賞19 + 論文86 + 講演10
+          grep -q 'id="pub-groups"' _site/cv/index.html
+          grep -q 'data-filter="media"' _site/cv/index.html
           grep -q "Best Paper Award" _site/en/cv/index.html
           grep -q "18,330,000" _site/cv/index.html        # 研究費の金額
           grep -q "Meta Inc" _site/cv/index.html          # 職歴
           grep -q "研究代表者" _site/cv/index.html
+
+      - name: Check home shows 20 recent publications and links to CV
+        run: |
+          set -e
+          n=$(grep -o 'class="entry"' _site/index.html | wc -l)
+          echo "home entries: $n"     # 論文20 + 受賞6 + 講演5
+          test "$n" -eq 31
+          grep -q 'href="/cv/"' _site/index.html
 
       - name: Check filter tabs and author highlight
         run: |
