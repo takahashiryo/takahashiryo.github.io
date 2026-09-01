@@ -82,7 +82,7 @@
       el.hidden = (f !== 'all' && el.getAttribute('data-type') !== f);
     });
     /* 中身が全部消えた年見出しは隠す */
-    root.querySelectorAll('.year-head').forEach(function (h) {
+    root.querySelectorAll('.group-head').forEach(function (h) {
       var any = false, el = h.nextElementSibling;
       while (el && el.classList.contains('entry')) { if (!el.hidden) any = true; el = el.nextElementSibling; }
       h.hidden = !any;

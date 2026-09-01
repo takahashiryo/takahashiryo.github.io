@@ -1,6 +1,6 @@
 {%- comment %}
   論文一覧。include.limit を渡すと最新 N 件だけ（年見出しなし）、
-  0 または未指定なら全件を年ごとにまとめて出し、種別フィルタも付ける。
+  0 または未指定なら全件を種別ごとにまとめて出し（各種別の中は新しい順）、絞り込みタブも付ける。
   include.with_media が true のときはメディア掲載も同じ並びに混ぜる。
 {% endcomment -%}
 {%- assign t = site.data.i18n[include.lang] -%}
@@ -28,13 +28,16 @@
       {%- endif -%}
     {%- endfor -%}
   </div>
-  {%- assign groups = pubs | group_by: "year" | sort: "name" | reverse -%}
+  {%- comment %} 種別ごとに並べる（各種別の中は新しい順） {% endcomment -%}
   <div id="pub-groups">
-  {%- for g in groups -%}
-    <div class="year-head">{{ g.name }}</div>
-    {%- for p in g.items -%}
-      {% include pub_entry.html p=p t=t %}
-    {%- endfor -%}
+  {%- for k in kinds -%}
+    {%- assign items = pubs | where: "type", k -%}
+    {%- if items.size > 0 -%}
+      <div class="group-head">{{ t.types[k] }}<span class="group-count">{{ items.size }}</span></div>
+      {%- for p in items -%}
+        {% include pub_entry.html p=p t=t %}
+      {%- endfor -%}
+    {%- endif -%}
   {%- endfor -%}
   </div>
 {%- endif -%}

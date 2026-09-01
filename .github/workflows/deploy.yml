@@ -101,6 +101,10 @@ jobs:
           grep -q 'data-filter="journal"'    _site/publications/index.html
           grep -q 'data-filter="conference"' _site/publications/index.html
           grep -q 'data-filter="media"'      _site/publications/index.html
+          # 種別ごとの見出しが出ていること（年ごとの見出しではない）
+          g=$(grep -o 'class="group-head"' _site/publications/index.html | wc -l)
+          echo "group heads: $g"
+          test "$g" -eq 8
           grep -q "class='me'"               _site/publications/index.html
 
       - name: Check no unrendered Liquid remains

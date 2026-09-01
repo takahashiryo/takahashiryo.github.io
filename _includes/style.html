@@ -102,11 +102,14 @@
   .filter-btn:hover { border-color: var(--blue); color: var(--blue); }
   .filter-btn.is-active { background: var(--blue); border-color: var(--blue); color: #fff; }
 
-  .year-head {
+  .year-head, .group-head {
     font-size: 1.15em; font-weight: 600; color: var(--ink);
     border-bottom: 2px solid var(--ink); padding-bottom: 0.3em;
     margin: 1.8em 0 0.7em; font-variant-numeric: tabular-nums;
+    letter-spacing: 0.1em;
+    display: flex; align-items: baseline; justify-content: space-between; gap: 0.6em;
   }
+  .group-count { font-size: 0.62em; color: var(--faint); font-weight: 400; letter-spacing: 0.04em; }
   .entry { display: flex; gap: 1em; padding: 0.85em 0; border-bottom: 1px solid #f0f3f6; }
   .entry-mark { flex: 0 0 auto; width: 5.4em; padding-top: 0.15em; }
   .badge {
@@ -129,7 +132,7 @@
   .entry-award { font-size: 0.72em; color: #b8860b; margin-top: 0.25em; letter-spacing: 0.04em; }
   .entry-award::before { content: "\1F3C6\FE0E"; margin-right: 0.35em; font-style: normal; }
   .me { font-weight: 600; color: var(--ink); }
-  .entry[hidden], .year-head[hidden] { display: none !important; }
+  .entry[hidden], .year-head[hidden], .group-head[hidden] { display: none !important; }
 
   .more { margin: 1.4em 0 0; font-size: 0.86em; }
   .more a { color: var(--ink); }
