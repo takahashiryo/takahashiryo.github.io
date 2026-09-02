@@ -29,7 +29,7 @@ jobs:
         env:
           JEKYLL_ENV: production
 
-      # ── ここから出力の検証（ローカルでビルドできないので CI で確かめる） ──
+      # ── ここから出力の検証（同じ内容を手元でも scripts/verify_site.sh で走らせられる） ──
       - name: Check all 9 pages exist
         run: |
           set -e

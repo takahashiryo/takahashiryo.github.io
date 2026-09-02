@@ -32,10 +32,18 @@
   <div class="themes">
     {%- for r in pr.research -%}
     {%- assign body = r[lang] -%}
-    <div class="theme">
-      <h3>{{ body.title }}</h3>
-      <p>{{ body.body }}</p>
-    </div>
+    <article class="theme">
+      {%- if r.image %}
+      <div class="theme-fig">
+        <img src="{{ '/images/research/' | append: r.image | relative_url }}" alt="{{ body.title }}" loading="lazy">
+      </div>
+      {%- endif %}
+      <div class="theme-body">
+        <h3>{{ body.title }}</h3>
+        <p>{{ body.body }}</p>
+        {% include theme_pubs.html r=r lang=lang limit=3 %}
+      </div>
+    </article>
     {%- endfor -%}
   </div>
 </section>

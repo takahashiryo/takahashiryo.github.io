@@ -1,0 +1,20 @@
+{%- comment -%}
+  論文 p が研究テーマ r に関連するかを判定して "1" / "" を返す。
+  publications.csv はスプレッドシート同期で丸ごと上書きされるため、
+  ひも付けを CSV の列に持たせられない。_data/profile.yml の match / exclude で引く。
+{%- endcomment -%}
+{%- assign p = include.p -%}
+{%- assign r = include.r -%}
+{%- comment -%} venue は照合しない。"Intelligent Robots and Systems" のような
+     会議名がロボット系に誤爆するため。 {%- endcomment -%}
+{%- assign hay = p.title | downcase -%}
+{%- assign hit = false -%}
+{%- for kw in r.match -%}
+  {%- if hay contains kw -%}{%- assign hit = true -%}{%- break -%}{%- endif -%}
+{%- endfor -%}
+{%- if hit -%}
+  {%- for kw in r.exclude -%}
+    {%- if hay contains kw -%}{%- assign hit = false -%}{%- break -%}{%- endif -%}
+  {%- endfor -%}
+{%- endif -%}
+{%- if hit -%}1{%- endif -%}

@@ -4,6 +4,9 @@ _site/
 .sass-cache/
 .bundle/
 vendor/
+# ローカルビルド用。arm64-darwin / Ruby 2.6 に固定された lock を持ち込むと
+# ubuntu で走る CI（Ruby 3.2）が解決できなくなるのでコミットしない。
+Gemfile.lock
 .DS_Store
 
 # 研究室共有の投稿管理簿から作った作業用ファイルは公開しない（ローカル専用）

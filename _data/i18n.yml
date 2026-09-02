@@ -38,6 +38,7 @@ ja:
     現在は JST CRONOS「生体データ通信インフラの無線フルボディ化」に共同研究代表者として参画している。
   research_intro: "衣服・テキスタイルを電磁的なインフラとして捉え直し、身につけるものすべてから電池と配線をなくすことを目指しています。"
   more_publications: "すべての論文"
+  related_count: "関連論文 %n 件"
   more_awards: "すべての受賞"
   more_cv: "経歴の詳細"
   label_role: "役割"
@@ -95,6 +96,7 @@ en:
     I am currently a co-PI of the JST CRONOS project on full-body wireless data and power networking.
   research_intro: "I treat clothing and textiles as electromagnetic infrastructure, with the goal of removing batteries and wiring from everything we wear."
   more_publications: "All publications"
+  related_count: "%n related publications"
   more_awards: "All awards"
   more_cv: "Full CV"
   label_role: "Role"
@@ -152,6 +154,7 @@ zh:
     目前作为共同研究负责人参与 JST CRONOS「生体数据通信基础设施的无线全身化」项目。
   research_intro: "我将衣服与纺织品重新视为电磁基础设施，目标是让所有穿戴之物摆脱电池与布线。"
   more_publications: "全部论文"
+  related_count: "相关论文 %n 篇"
   more_awards: "全部获奖"
   more_cv: "完整履历"
   label_role: "角色"

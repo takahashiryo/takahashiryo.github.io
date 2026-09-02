@@ -83,7 +83,7 @@ baseurl : ""
 
 ## 独自ドメイン（ryotakahashi.me）へ移す
 
-いまは GitHub Pages で `https://takahashiryo.github.io/` に公開されている。
+**本番は Cloudflare Pages で `https://ryotakahashi.me` に公開されている**（GitHub Pages `https://takahashiryo.github.io/` も同じ内容で並行稼働）。
 `ryotakahashi.me` は現在 **Google Sites** が動いていて、DNS も Google のネームサーバーのまま。
 Cloudflare に移すと、この Google Sites のページは表に出なくなる（差し替えになる）ので注意。
 

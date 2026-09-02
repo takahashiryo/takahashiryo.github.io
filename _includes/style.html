@@ -85,11 +85,34 @@
   }
   .links a:hover { border-color: var(--blue); color: var(--blue); text-decoration: none; }
 
-  /* ── 研究テーマ ── */
-  .themes { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.4em; margin-top: 1.4em; }
-  .theme { border: 1px solid var(--line); border-radius: 8px; padding: 1.2em 1.3em; background: #fff; }
+  /* ── 研究テーマ（図＋本文＋関連論文のカード） ── */
+  .themes {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+    gap: 1.6em; margin-top: 1.6em;
+  }
+  .theme {
+    border: 1px solid var(--line); border-radius: 8px; background: #fff;
+    overflow: hidden; display: flex; flex-direction: column;
+  }
+  .theme-fig { background: #f3f5f7; border-bottom: 1px solid var(--line); }
+  .theme-fig img { display: block; width: 100%; aspect-ratio: 16 / 10; object-fit: cover; }
+  .theme-body { padding: 1.2em 1.3em 1.3em; display: flex; flex-direction: column; flex: 1 1 auto; }
   .theme h3 { margin: 0 0 0.5em; font-size: 1.05em; letter-spacing: 0.08em; color: var(--ink); font-weight: 600; }
   .theme p { margin: 0; font-size: 0.86em; color: var(--muted); line-height: 1.85; }
+
+  /* 関連論文。カードの高さが揃うよう margin-top:auto で下端に寄せる */
+  .theme-pubs { margin-top: auto; padding-top: 1em; }
+  .theme-pubs-head {
+    font-size: 0.68em; letter-spacing: 0.12em; font-weight: 600; color: var(--faint);
+    padding-bottom: 0.4em; border-bottom: 1px solid var(--line); margin-bottom: 0.7em;
+    font-variant-numeric: tabular-nums;
+  }
+  .theme-pubs ul { list-style: none; margin: 0; padding: 0; }
+  .theme-pubs li { font-size: 0.78em; line-height: 1.65; }
+  .theme-pubs li + li { margin-top: 0.6em; }
+  .theme-pubs a { color: var(--ink); }
+  .theme-pubs a:hover { color: var(--blue); }
+  .theme-pub-meta { display: block; color: var(--faint); font-style: italic; font-size: 0.9em; }
 
   /* ── 一覧（論文・受賞・講演） ── */
   .filter { display: flex; flex-wrap: wrap; gap: 0.5em; margin: 0 0 1.4em; }
