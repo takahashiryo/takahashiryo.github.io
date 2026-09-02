@@ -1,0 +1,17 @@
+{%- comment %}
+  CV の用語を言語に合わせて出す。
+  優先順位: _data/terms.yml の訳 → CSV の *_en 列（英語ページのみ）→ 日本語。
+  researchmap 由来の *_en 列は中身が日本語のままのものが多いため、
+  手で入れた terms.yml を最優先にしている。
+{%- endcomment -%}
+{%- assign tr = site.data.terms[include.ja] -%}
+{%- assign v = "" -%}
+{%- if tr -%}{%- assign v = tr[include.lang] -%}{%- endif -%}
+{%- if v == nil or v == "" -%}
+  {%- if include.lang == "en" and include.en and include.en != "" -%}
+    {%- assign v = include.en -%}
+  {%- else -%}
+    {%- assign v = include.ja -%}
+  {%- endif -%}
+{%- endif -%}
+{{- v | escape -}}

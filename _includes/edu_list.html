@@ -1,16 +1,14 @@
 {%- assign lang = include.lang -%}
 <div class="cv-list">
 {%- for e in site.data.education -%}
-  {%- if lang == "en" -%}
-    {%- assign aff = e.affiliation_en -%}{%- assign dep = e.department_en -%}{%- assign crs = e.course_en -%}
-  {%- else -%}
-    {%- assign aff = e.affiliation_ja -%}{%- assign dep = e.department_ja -%}{%- assign crs = e.course_ja -%}
-  {%- endif -%}
+  {%- capture aff %}{% include term.html ja=e.affiliation_ja en=e.affiliation_en lang=lang %}{% endcapture -%}
+  {%- capture dep %}{% include term.html ja=e.department_ja en=e.department_en lang=lang %}{% endcapture -%}
+  {%- capture crs %}{% include term.html ja=e.course_ja en=e.course_en lang=lang %}{% endcapture -%}
   <div class="entry" data-type="education">
     <div class="entry-mark"><span class="cv-when">{{ e.from }}–{{ e.to }}</span></div>
     <div class="entry-body">
-      <div class="entry-title">{{ aff | escape }}</div>
-      <div class="entry-venue">{{ dep | escape }}{% if crs != "" %} {{ crs | escape }}{% endif %}</div>
+      <div class="entry-title">{{ aff }}</div>
+      <div class="entry-venue">{{ dep }}{% if crs != "" %} {{ crs }}{% endif %}</div>
     </div>
   </div>
 {%- endfor -%}

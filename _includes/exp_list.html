@@ -1,18 +1,13 @@
 {%- assign lang = include.lang -%}
 <div class="cv-list">
 {%- for e in site.data.experience -%}
-  {%- if lang == "en" -%}
-    {%- assign aff = e.affiliation_en -%}{%- assign job = e.job_en -%}
-  {%- else -%}
-    {%- assign aff = e.affiliation_ja -%}{%- assign job = e.job_ja -%}
-  {%- endif -%}
-  {%- if aff == "" %}{% assign aff = e.affiliation_en %}{% endif -%}
-  {%- if job == "" %}{% assign job = e.job_en %}{% endif -%}
+  {%- capture aff %}{% include term.html ja=e.affiliation_ja en=e.affiliation_en lang=lang %}{% endcapture -%}
+  {%- capture job %}{% include term.html ja=e.job_ja en=e.job_en lang=lang %}{% endcapture -%}
   <div class="entry" data-type="experience">
     <div class="entry-mark"><span class="cv-when">{{ e.from }}–{{ e.to }}</span></div>
     <div class="entry-body">
-      <div class="entry-title">{{ aff | escape }}</div>
-      {%- if job != "" %}<div class="entry-venue">{{ job | escape }}</div>{% endif -%}
+      <div class="entry-title">{{ aff }}</div>
+      {%- if job != "" %}<div class="entry-venue">{{ job }}</div>{% endif -%}
     </div>
   </div>
 {%- endfor -%}
