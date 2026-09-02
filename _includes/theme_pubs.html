@@ -1,8 +1,10 @@
-{%- comment -%}
-  研究テーマ1つに対する関連論文。件数を数えてから新しい順に include.limit 件だけ出す。
-  Liquid には配列への追加が無いので、判定（pub_match.html）を2周ぶん回している。
-  ここでは class="entry" を使わないこと。トップの entry 数（論文20+受賞6+講演5=31）を
-  CI と scripts/verify_site.sh が数えている。
+{%- comment %}
+  研究テーマ1つに対する関連論文。件数は全部を数え、出すのは include.limit 件だけ。
+  出す分は査読ありを優先し、足りなければ査読なしで埋める（解説記事だけが
+  並ぶのを避けるため）。Liquid には配列への追加が無いので、判定
+  （pub_match.html）を数える用・査読あり用・穴埋め用で3周ぶん回している。
+  ここでは class="entry" を使わないこと。トップの entry 数
+  （論文20+受賞6+講演5=31）を CI と scripts/verify_site.sh が数えている。
 {%- endcomment -%}
 {%- assign r = include.r -%}
 {%- assign t = site.data.i18n[include.lang] -%}
@@ -19,19 +21,23 @@
   <div class="theme-pubs-head">{{ t.related_count | replace: "%n", total }}</div>
   <ul>
   {%- assign shown = 0 -%}
+  {%- comment %} 1周目: 査読あり {% endcomment -%}
   {%- for p in site.data.publications -%}
-    {%- if shown < limit -%}
+    {%- if shown < limit and p.reviewed == "yes" -%}
       {%- capture hit %}{% include pub_match.html p=p r=r %}{% endcapture -%}
       {%- if hit contains "1" -%}
         {%- assign shown = shown | plus: 1 -%}
-        <li>
-          {%- if p.url contains "http" -%}
-            <a href="{{ p.url }}" target="_blank" rel="noopener">{{ p.title | escape }}</a>
-          {%- else -%}
-            {{ p.title | escape }}
-          {%- endif -%}
-          <span class="theme-pub-meta">{{ p.venue | escape | truncate: 48 }}, {{ p.year }}</span>
-        </li>
+        {% include theme_pub_item.html p=p %}
+      {%- endif -%}
+    {%- endif -%}
+  {%- endfor -%}
+  {%- comment %} 2周目: 足りなければ査読なしで埋める {% endcomment -%}
+  {%- for p in site.data.publications -%}
+    {%- if shown < limit and p.reviewed != "yes" -%}
+      {%- capture hit %}{% include pub_match.html p=p r=r %}{% endcapture -%}
+      {%- if hit contains "1" -%}
+        {%- assign shown = shown | plus: 1 -%}
+        {% include theme_pub_item.html p=p %}
       {%- endif -%}
     {%- endif -%}
   {%- endfor -%}

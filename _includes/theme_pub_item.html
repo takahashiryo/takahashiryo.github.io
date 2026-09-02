@@ -1,0 +1,10 @@
+{%- comment %} 研究テーマカードに出す論文1件（theme_pubs.html から2箇所で使う） {%- endcomment -%}
+{%- assign p = include.p -%}
+<li>
+  {%- if p.url contains "http" -%}
+    <a href="{{ p.url }}" target="_blank" rel="noopener">{{ p.title | escape }}</a>
+  {%- else -%}
+    {{ p.title | escape }}
+  {%- endif -%}
+  <span class="theme-pub-meta">{{ p.venue | escape | truncate: 48 }}, {{ p.year }}</span>
+</li>

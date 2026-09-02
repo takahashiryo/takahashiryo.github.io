@@ -30,7 +30,11 @@ research:
     match: ["meander", "メアンダ", "wpt", "wireless power", "無線給電", "無線電力",
             "power transfer", "liquid metal", "液体金属", "給電", "電磁界", "電力伝送",
             "wireless charging", "wireless powering"]
-    exclude: ["ロボット", "robot", "ヘビ型"]
+    # センサ読み取りが主題のものは bodyscale-sensing に寄せる。
+    # 部屋規模の中継器・空洞共振器・プラレールは「テキスタイル」ではないので外す。
+    exclude: ["ロボット", "robot", "ヘビ型",
+              "nfc", "センサ", "readout", "読み取り",
+              "relay resonator", "空洞共振器", "プラレール"]
     ja:
       title: "無線給電テキスタイル"
       body: "人体に安全なメアンダコイルを衣服の全面に編み込み、身体のどこにいても W 級の電力を届ける。液体金属配線や機械編みによって、洗える・切れる・伸びる給電服を作る。"
