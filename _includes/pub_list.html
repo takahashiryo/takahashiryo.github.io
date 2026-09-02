@@ -14,7 +14,7 @@
 {%- if limit > 0 -%}
   <div class="pub-list">
   {%- for p in pubs limit: limit -%}
-    {% include pub_entry.html p=p t=t %}
+    {% include pub_entry.html p=p t=t badge=true %}
   {%- endfor -%}
   </div>
 {%- else -%}
@@ -33,7 +33,7 @@
   {%- for k in kinds -%}
     {%- assign items = pubs | where: "type", k -%}
     {%- if items.size > 0 -%}
-      <div class="group-head">{{ t.types[k] }}<span class="group-count">{{ items.size }}</span></div>
+      <div class="group-head" id="pub-{{ k }}">{{ t.types[k] }}<span class="group-count">{{ items.size }}</span></div>
       {%- for p in items -%}
         {% include pub_entry.html p=p t=t %}
       {%- endfor -%}

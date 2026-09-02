@@ -1,27 +1,60 @@
-{%- comment %} 論文1件ぶん。著者名のうち高橋を太字にする {% endcomment -%}
+{%- comment %}
+  論文1件ぶん。takuyasasatani.com の Publications に倣い、
+  1行目=タイトル / 2行目=著者（高橋に下線） / 3行目=掲載先と年月 / その下にリンクのピル。
+  外側の class="entry" と data-type は変えないこと。
+  CI（deploy.yml）と scripts/verify_site.sh がこの数を数え、data-type で絞り込む。
+  受賞・学歴などの一覧も .entry を使うので、見た目の変更は .entry--pub 側に書く。
+{% endcomment -%}
 {%- assign p = include.p -%}
 {%- assign t = include.t -%}
+
+{%- comment %} 著者名のうち高橋を強調する {% endcomment -%}
 {%- assign au = p.authors | escape -%}
 {%- assign au = au | replace: "R. Takahashi", "<span class='me'>R. Takahashi</span>" -%}
 {%- assign au = au | replace: "Ryo Takahashi", "<span class='me'>Ryo Takahashi</span>" -%}
 {%- assign au = au | replace: "高橋亮", "<span class='me'>高橋亮</span>" -%}
-<div class="entry" data-type="{{ p.type }}">
-  <div class="entry-mark"><span class="badge badge--{{ p.type }}">{{ t.types[p.type] | default: p.type }}</span></div>
+
+{%- comment %} 掲載年月。英語ページだけ月名にする {% endcomment -%}
+{%- assign mi = p.month | plus: 0 -%}
+{%- capture when -%}
+  {%- if t.code == "en" and mi > 0 -%}
+    {%- assign mn = "January,February,March,April,May,June,July,August,September,October,November,December" | split: "," -%}
+    {%- assign idx = mi | minus: 1 -%}{{ mn[idx] }} {{ p.year }}
+  {%- elsif mi > 0 -%}{{ p.year }}年{{ mi }}月
+  {%- else -%}{{ p.year }}{%- endif -%}
+{%- endcapture -%}
+
+{%- comment %} リンクのピル。リンク先のホストでラベルを決める {% endcomment -%}
+{%- assign u = p.url -%}
+{%- if u contains "doi.org" -%}{%- assign ulabel = "DOI" -%}
+{%- elsif u contains "dl.acm.org" -%}{%- assign ulabel = "ACM" -%}
+{%- elsif u contains "ieeexplore" -%}{%- assign ulabel = "IEEE" -%}
+{%- elsif u contains "nature.com" -%}{%- assign ulabel = "Nature" -%}
+{%- elsif u contains "jstage" -%}{%- assign ulabel = "J-STAGE" -%}
+{%- elsif u contains "kaken.nii" -%}{%- assign ulabel = "KAKEN" -%}
+{%- elsif u contains ".pdf" -%}{%- assign ulabel = "PDF" -%}
+{%- else -%}{%- assign ulabel = "Link" -%}{%- endif -%}
+
+<div class="entry entry--pub" data-type="{{ p.type }}">
   <div class="entry-body">
     <div class="entry-title">
-      {%- if p.url contains "http" -%}
-        <a href="{{ p.url }}" target="_blank" rel="noopener">{{ p.title | escape }}</a>
-      {%- else -%}
-        {{ p.title | escape }}
-      {%- endif -%}
+      {{ p.title | escape }}
+      {%- comment %} 種別ごとの見出しが無い一覧（トップの直近20件）でだけ種別を添える {% endcomment -%}
+      {%- if include.badge %} <span class="badge badge--{{ p.type }}">{{ t.types[p.type] | default: p.type }}</span>{% endif -%}
       {%- if p.note != "" %} <span class="badge">{{ p.note | escape }}</span>{% endif -%}
     </div>
     {%- if p.authors != "" %}<div class="entry-authors">{{ au }}</div>{% endif -%}
     {%- if p.venue != "" or p.year != "" %}
     <div class="entry-venue">
-      {{ p.venue | escape }}{% if p.detail != "" %}, {{ p.detail | escape }}{% endif %}{% if p.place != "" %}, {{ p.place | escape }}{% endif %}{% if p.year != "" %}, {{ p.year }}{% endif %}.
+      {{- p.venue | escape }}{% if p.detail != "" %}, {{ p.detail | escape }}{% endif %}{% if p.place != "" %}, {{ p.place | escape }}{% endif %}{% if when != "" %} ({{ when }}){% endif %}.
     </div>
     {%- endif -%}
     {%- if p.award != "" %}<div class="entry-award">{{ p.award | escape }}</div>{% endif -%}
+    {%- if p.url contains "http" or p.doi != "" %}
+    <div class="entry-links">
+      {%- if p.url contains "http" %}<a class="pill" href="{{ p.url }}" target="_blank" rel="noopener">{{ ulabel }}</a>{% endif -%}
+      {%- if p.doi != "" and ulabel != "DOI" %}<a class="pill" href="https://doi.org/{{ p.doi }}" target="_blank" rel="noopener">DOI</a>{% endif -%}
+    </div>
+    {%- endif -%}
   </div>
 </div>

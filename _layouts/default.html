@@ -88,6 +88,48 @@
       h.hidden = !any;
     });
   });
+
+  /* CV の目次。いま読んでいる節のリンクを強調する。
+     目次の並びは本文の並びと同じ前提（page_cv.html でそう作っている）。 */
+  document.addEventListener('DOMContentLoaded', function () {
+    var toc = document.querySelector('.cv-toc');
+    if (!toc) return;
+    var links = [].slice.call(toc.querySelectorAll('a[href^="#"]'));
+    var targets = links.map(function (a) {
+      return document.getElementById(decodeURIComponent(a.getAttribute('href').slice(1)));
+    });
+    var queued = false;
+    function spy() {
+      queued = false;
+      var head = document.querySelector('.masthead');
+      var line = (head ? head.offsetHeight : 66) + 48;
+      var cur = -1;
+      for (var i = 0; i < targets.length; i++) {
+        var el = targets[i];
+        if (el && el.offsetParent !== null && el.getBoundingClientRect().top <= line) cur = i;
+      }
+      if (cur < 0) cur = 0;   /* 先頭にいるときは最初の節を選んでおく */
+      for (var j = 0; j < links.length; j++) links[j].classList.toggle('is-current', j === cur);
+    }
+    function onScroll() {
+      if (queued) return;
+      queued = true;
+      if (window.requestAnimationFrame) window.requestAnimationFrame(spy); else setTimeout(spy, 60);
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+    /* 画像やフォントで高さが変わったあと、#anchor 付きで開いたときにも合わせ直す */
+    window.addEventListener('load', spy);
+    window.addEventListener('hashchange', spy);
+
+    /* body に overflow-x が入っていると window の scroll が拾えない環境がある。
+       節の出入りを IntersectionObserver でも拾って、どちらか一方でも動けば追従する。 */
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(onScroll, { threshold: [0, 1] });
+      for (var k = 0; k < targets.length; k++) if (targets[k]) io.observe(targets[k]);
+    }
+    spy();
+  });
 })();
 </script>
 </body>

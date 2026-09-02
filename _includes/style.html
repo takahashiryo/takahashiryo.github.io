@@ -154,12 +154,74 @@
   .entry-venue { font-size: 0.8em; color: var(--faint); font-style: italic; margin-top: 0.15em; }
   .entry-award { font-size: 0.72em; color: #b8860b; margin-top: 0.25em; letter-spacing: 0.04em; }
   .entry-award::before { content: "\1F3C6\FE0E"; margin-right: 0.35em; font-style: normal; }
-  .me { font-weight: 600; color: var(--ink); }
+  .me { color: var(--ink); text-decoration: underline; text-underline-offset: 0.22em;
+        text-decoration-thickness: 1px; text-decoration-color: var(--rule); }
   .entry[hidden], .year-head[hidden], .group-head[hidden] { display: none !important; }
 
   .more { margin: 1.4em 0 0; font-size: 0.86em; }
   .more a { color: var(--ink); }
   .more a:hover { color: var(--blue); }
+
+  /* ── 論文1件の体裁（takuyasasatani.com の Publications に倣う） ──
+     .entry は受賞・学歴・研究費の一覧とも共有しているので、
+     論文だけの見た目はすべて .entry--pub に閉じ込める。 */
+  .entry--pub .entry-title { font-weight: 600; }
+  .entry--pub .entry-authors { margin-top: 0.3em; }
+
+  /* 論文数が分かるよう、種別をまたいだ通し番号にする（最後の番号＝総数）。
+     counter-reset を #pub-groups 側に置くのがその仕掛け。group-head に置くと
+     種別ごとに振り直しになる。絞り込みで display:none になった行は
+     数えられないので、タブを切り替えると番号は 1 から詰め直される。 */
+  #pub-groups { counter-reset: pub; }
+  #pub-groups .entry--pub { counter-increment: pub; }
+  /* メディア掲載は論文ではないので通し番号に含めず、別勘定で 1 から振る。
+     祖先（#pub-groups）が既に counter-reset している場合、途中の兄弟で
+     同じ名前を counter-reset しても振り直されない（実機で確認済み）。
+     そのためメディアだけカウンタ名を分ける。メディアは kinds の最後なので
+     「#pub-media 以降の兄弟」＝メディアの行、で選べる。 */
+  #pub-groups #pub-media { counter-reset: media; }
+  #pub-groups #pub-media ~ .entry--pub { counter-increment: media; }
+  #pub-groups #pub-media ~ .entry--pub::before { content: counter(media) "."; }
+  #pub-groups .entry--pub::before {
+    content: counter(pub) ".";
+    flex: 0 0 2.1em; text-align: right; padding-top: 0.2em;
+    font-size: 0.86em; color: var(--faint); font-variant-numeric: tabular-nums;
+  }
+
+  /* リンク（DOI / ACM / IEEE …）。ラベルは pub_entry.html がホストから決める */
+  .entry-links { display: flex; flex-wrap: wrap; gap: 0.4em; margin-top: 0.55em; }
+  .pill {
+    font-size: 0.66em; letter-spacing: 0.05em; font-weight: 600;
+    padding: 0.2em 0.85em; border-radius: 999px;
+    background: #eef3fb; color: var(--blue);
+  }
+  .pill:hover { background: var(--blue); color: #fff; text-decoration: none; }
+
+  /* ── CV の2カラム（左に sticky な目次） ── */
+  .cv-layout {
+    display: grid; grid-template-columns: 190px minmax(0, 1fr);
+    gap: clamp(1.4em, 3vw, 2.8em); align-items: start;
+  }
+  .cv-toc {
+    position: sticky; top: 100px;
+    background: #f7f9fb; border: 1px solid var(--line); border-radius: 8px;
+    padding: 1em 1.1em; max-height: calc(100vh - 140px); overflow-y: auto;
+  }
+  .cv-toc-head {
+    font-size: 0.62em; letter-spacing: 0.16em; font-weight: 600;
+    color: var(--faint); margin-bottom: 0.7em;
+  }
+  .cv-toc ul { list-style: none; margin: 0; padding: 0; }
+  .cv-toc a { display: block; font-size: 0.76em; line-height: 1.45; color: var(--muted); padding: 0.22em 0; }
+  .cv-toc a:hover { color: var(--blue); text-decoration: none; }
+  .cv-toc a.is-current { color: var(--blue); font-weight: 600; }
+  .cv-toc ul ul { margin: 0.2em 0 0.4em 0.2em; border-left: 1px solid var(--rule); padding-left: 0.7em; }
+  .cv-toc ul ul a { font-size: 0.71em; color: var(--faint); }
+
+  @media (max-width: 860px) {
+    .cv-layout { grid-template-columns: 1fr; }
+    .cv-toc { position: static; max-height: none; margin-bottom: 1.6em; }
+  }
 
   /* ── 連絡先 ── */
   .contact p { margin: 0.4em 0; }
@@ -177,6 +239,7 @@
   .cv-head {
     font-size: 1.05em; letter-spacing: 0.16em; font-weight: 600; color: var(--ink);
     margin: 2.2em 0 0.6em; padding-bottom: 0.25em; border-bottom: 1px solid var(--rule);
+    display: flex; align-items: baseline; justify-content: space-between; gap: 0.6em;
   }
   .cv-when {
     font-size: 0.72em; color: var(--muted); white-space: nowrap;

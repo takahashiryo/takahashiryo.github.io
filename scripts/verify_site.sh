@@ -42,7 +42,7 @@ chk 'canonical' 'grep -q "rel=\"canonical\"" _site/index.html'
 echo "--- 論文一覧（論文62 + メディア24 = 86件）---"
 chk 'Meander Coil++' 'grep -q "Meander Coil++" _site/cv/index.html'
 chk 'picoRing'       'grep -q "picoRing" _site/cv/index.html'
-n=$(grep -o 'class="entry"' _site/cv/index.html | wc -l | tr -d ' ')
+n=$(grep -oE 'class="entry[" ]' _site/cv/index.html | wc -l | tr -d ' ')
 chk "entry >= 86（実測 $n）" "test $n -ge 86"
 for k in journal conference media; do
   chk "フィルタ $k" "grep -q 'data-filter=\"$k\"' _site/cv/index.html"
@@ -52,7 +52,7 @@ chk "種別見出し 8つ（実測 $g）" "test $g -eq 8"
 chk '著者強調'  "grep -q \"class='me'\" _site/cv/index.html"
 
 echo "--- CV（学歴3+職歴8+研究費7+受賞19+論文86+講演10 = 133）---"
-c=$(grep -o 'class="entry"' _site/cv/index.html | wc -l | tr -d ' ')
+c=$(grep -oE 'class="entry[" ]' _site/cv/index.html | wc -l | tr -d ' ')
 chk "entry >= 133（実測 $c）" "test $c -ge 133"
 chk 'pub-groups'  'grep -q "id=\"pub-groups\"" _site/cv/index.html'
 chk 'media タブ'  'grep -q "data-filter=\"media\"" _site/cv/index.html'
@@ -62,7 +62,7 @@ chk '職歴'        'grep -q "Meta Inc" _site/cv/index.html'
 chk '役割'        'grep -q "研究代表者" _site/cv/index.html'
 
 echo "--- トップは論文20+受賞6+講演5 = 31件 ---"
-h=$(grep -o 'class="entry"' _site/index.html | wc -l | tr -d ' ')
+h=$(grep -oE 'class="entry[" ]' _site/index.html | wc -l | tr -d ' ')
 chk "entry == 31（実測 $h）" "test $h -eq 31"
 chk 'CV への導線' 'grep -q "href=\"/cv/\"" _site/index.html'
 

@@ -70,7 +70,7 @@ jobs:
           set -e
           grep -q "Meander Coil++" _site/cv/index.html
           grep -q "picoRing"       _site/cv/index.html
-          n=$(grep -o 'class="entry"' _site/cv/index.html | wc -l)
+          n=$(grep -oE 'class="entry[" ]' _site/cv/index.html | wc -l)
           echo "cv entries: $n"
           test "$n" -ge 133         # 学歴3+職歴8+研究費7+受賞19+論文86+講演10
 
@@ -90,7 +90,7 @@ jobs:
       - name: Check home shows 20 recent publications and links to CV
         run: |
           set -e
-          n=$(grep -o 'class="entry"' _site/index.html | wc -l)
+          n=$(grep -oE 'class="entry[" ]' _site/index.html | wc -l)
           echo "home entries: $n"     # 論文20 + 受賞6 + 講演5
           test "$n" -eq 31
           grep -q 'href="/cv/"' _site/index.html

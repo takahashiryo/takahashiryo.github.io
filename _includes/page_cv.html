@@ -1,9 +1,36 @@
+{%- comment %}
+  CV ページ。左に sticky な目次、右に本文の2カラム（takuyasasatani.com の Publications に倣う）。
+  目次の現在地ハイライトは _layouts/default.html 末尾の IntersectionObserver がやる。
+{% endcomment -%}
 {%- assign lang = include.lang -%}
 {%- assign t = site.data.i18n[lang] -%}
 {%- assign home = include.home -%}
+{%- assign pubs = site.data.publications | concat: site.data.media -%}
+{%- assign kinds = "journal,conference,workshop,demo,poster,domestic,article,media" | split: "," -%}
 <div style="height: 2.4em"></div>
 {% include sechead.html title=t.sec.cv en="CV" lang=lang %}
 
+<div class="cv-layout">
+<nav class="cv-toc" aria-label="{{ t.contents }}">
+  <div class="cv-toc-head">{{ t.contents }}</div>
+  <ul>
+    <li><a href="#education">{{ t.sec.education }}</a></li>
+    <li><a href="#experience">{{ t.sec.experience }}</a></li>
+    <li><a href="#grants">{{ t.sec.grants }}</a></li>
+    <li><a href="#awards">{{ t.sec.awards }}</a></li>
+    <li><a href="#publications">{{ t.sec.publications }}</a>
+      <ul>
+      {%- for k in kinds -%}
+        {%- assign items = pubs | where: "type", k -%}
+        {%- if items.size > 0 %}<li><a href="#pub-{{ k }}">{{ t.types[k] }}</a></li>{% endif -%}
+      {%- endfor -%}
+      </ul>
+    </li>
+    <li><a href="#talks">{{ t.sec.talks }}</a></li>
+  </ul>
+</nav>
+
+<div class="cv-main">
 <section id="education">
   <h3 class="cv-head">{{ t.sec.education }}</h3>
   {% include edu_list.html lang=lang %}
@@ -25,7 +52,7 @@
 </section>
 
 <section id="publications">
-  <h3 class="cv-head">{{ t.sec.publications }}</h3>
+  <h3 class="cv-head">{{ t.sec.publications }}<span class="group-count">{{ site.data.publications.size }}</span></h3>
   {% include pub_list.html lang=lang limit=0 with_media=true %}
 </section>
 
@@ -35,3 +62,5 @@
 </section>
 
 <p class="more"><a href="{{ home | relative_url }}">{{ t.back_home }}</a></p>
+</div>
+</div>
