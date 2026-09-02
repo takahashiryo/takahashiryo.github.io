@@ -32,7 +32,7 @@
     </a>
     <nav class="navbar">
       {%- assign home = page.home_url | default: '/' -%}
-      <a href="{{ home | append: 'publications/' | relative_url }}">{{ t.nav.publications }}</a>
+      <a href="{{ home | append: 'cv/#publications' | relative_url }}">{{ t.nav.publications }}</a>
       <a href="{{ home | append: 'cv/' | relative_url }}">{{ t.nav.cv }}</a>
       <span class="lang">
         <a href="{{ '/' | append: suffix | relative_url }}" {% if lang == 'ja' %}class="is-active"{% endif %}>日本語</a>

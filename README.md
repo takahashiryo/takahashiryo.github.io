@@ -8,19 +8,20 @@ Jekyll 製の研究者個人サイト。デザインは [JST CRONOS 横田グル
 
 | 言語 | URL | ページファイル |
 | --- | --- | --- |
-| 日本語 | `/` ・ `/publications/` ・ `/cv/` | `_pages/ja*.html` |
-| English | `/en/` ・ `/en/publications/` ・ `/en/cv/` | `_pages/en*.html` |
-| 中文 | `/zh/` ・ `/zh/publications/` ・ `/zh/cv/` | `_pages/zh*.html` |
+| 日本語 | `/` ・ `/cv/` | `_pages/ja*.html` |
+| English | `/en/` ・ `/en/cv/` | `_pages/en*.html` |
+| 中文 | `/zh/` ・ `/zh/cv/` | `_pages/zh*.html` |
 
 - 文言はすべて **[`_data/i18n.yml`](_data/i18n.yml)** に3言語分まとめてある。ページ側は `lang` を渡すだけ。
 - 研究テーマの本文は [`_data/profile.yml`](_data/profile.yml) の `research:` に3言語分ある。
 - 論文タイトルなどの書誌情報は**原語のまま**（翻訳しない）。
 - 各ページには `hreflang` を入れてあるので、検索エンジンには「同じページの言語違い」と伝わる。
 
-ヘッダーのナビは **Publications と CV の2つ**。論文一覧にはメディア掲載も混ぜてあり、
-`Media` タブで絞り込める。CV は 学歴 / 職歴 / 研究費 / 受賞 / 講演 をまとめたページ。
+ヘッダーのナビは **Publications と CV の2つ**。どちらも CV ページ（Publications は
+`/cv/#publications` へジャンプ）。CV は 学歴 / 職歴 / 研究費 / 受賞 / 論文 / 講演 を1枚にまとめてあり、
+論文一覧にはメディア掲載も混ぜて `Media` タブで絞り込める。
 
-言語を1つ増やすときは、`_data/i18n.yml` にブロックを足し、`_pages/` の3ファイルをコピーして `lang` と `permalink` を変え、`_layouts/default.html` の言語切替に1行足す。
+言語を1つ増やすときは、`_data/i18n.yml` にブロックを足し、`_pages/` の2ファイルをコピーして `lang` と `permalink` を変え、`_layouts/default.html` の言語切替に1行足す。
 
 ## データの更新
 

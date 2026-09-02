@@ -1,7 +1,0 @@
-{%- assign lang = include.lang -%}
-{%- assign t = site.data.i18n[lang] -%}
-{%- assign home = include.home -%}
-<div style="height: 2.4em"></div>
-{% include sechead.html title=t.sec.publications en="Publications" lang=lang %}
-{% include pub_list.html lang=lang limit=0 with_media=true %}
-<p class="more"><a href="{{ home | relative_url }}">{{ t.back_home }}</a></p>

@@ -30,12 +30,12 @@ jobs:
           JEKYLL_ENV: production
 
       # ── ここから出力の検証（同じ内容を手元でも scripts/verify_site.sh で走らせられる） ──
-      - name: Check all 9 pages exist
+      - name: Check all 6 pages exist
         run: |
           set -e
-          for p in index.html publications/index.html cv/index.html \
-                   en/index.html en/publications/index.html en/cv/index.html \
-                   zh/index.html zh/publications/index.html zh/cv/index.html \
+          for p in index.html cv/index.html \
+                   en/index.html en/cv/index.html \
+                   zh/index.html zh/cv/index.html \
                    sitemap.xml robots.txt 404.html; do
             test -s "_site/$p" || { echo "missing or empty: $p"; exit 1; }
           done
@@ -68,20 +68,20 @@ jobs:
       - name: Check publication list rendered
         run: |
           set -e
-          grep -q "Meander Coil++" _site/publications/index.html
-          grep -q "picoRing"       _site/publications/index.html
-          n=$(grep -o 'class="entry"' _site/publications/index.html | wc -l)
-          echo "publication entries (media 込み): $n"
-          test "$n" -ge 86          # 論文62 + メディア24
+          grep -q "Meander Coil++" _site/cv/index.html
+          grep -q "picoRing"       _site/cv/index.html
+          n=$(grep -o 'class="entry"' _site/cv/index.html | wc -l)
+          echo "cv entries: $n"
+          test "$n" -ge 133         # 学歴3+職歴8+研究費7+受賞19+論文86+講演10
 
       - name: Check CV page rendered
         run: |
           set -e
-          n=$(grep -o 'class="entry"' _site/cv/index.html | wc -l)
-          echo "cv entries: $n"
-          test "$n" -ge 133         # 学歴3 + 職歴8 + 研究費7 + 受賞19 + 論文86 + 講演10
           grep -q 'id="pub-groups"' _site/cv/index.html
-          grep -q 'data-filter="media"' _site/cv/index.html
+          grep -q "Best Paper Award" _site/en/cv/index.html
+          grep -q "18,330,000" _site/cv/index.html        # 研究費の金額
+          grep -q "Meta Inc" _site/cv/index.html          # 職歴
+          grep -q "研究代表者" _site/cv/index.html
           grep -q "Best Paper Award" _site/en/cv/index.html
           grep -q "18,330,000" _site/cv/index.html        # 研究費の金額
           grep -q "Meta Inc" _site/cv/index.html          # 職歴
@@ -98,14 +98,14 @@ jobs:
       - name: Check filter tabs and author highlight
         run: |
           set -e
-          grep -q 'data-filter="journal"'    _site/publications/index.html
-          grep -q 'data-filter="conference"' _site/publications/index.html
-          grep -q 'data-filter="media"'      _site/publications/index.html
+          grep -q 'data-filter="journal"'    _site/cv/index.html
+          grep -q 'data-filter="conference"' _site/cv/index.html
+          grep -q 'data-filter="media"'      _site/cv/index.html
           # 種別ごとの見出しが出ていること（年ごとの見出しではない）
-          g=$(grep -o 'class="group-head"' _site/publications/index.html | wc -l)
+          g=$(grep -o 'class="group-head"' _site/cv/index.html | wc -l)
           echo "group heads: $g"
           test "$g" -eq 8
-          grep -q "class='me'"               _site/publications/index.html
+          grep -q "class='me'"               _site/cv/index.html
 
       - name: Check no unrendered Liquid remains
         run: |

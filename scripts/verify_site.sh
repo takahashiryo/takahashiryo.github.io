@@ -15,10 +15,10 @@ chk() {  # chk "名前" "コマンド"
 cd "$(dirname "$0")/.."
 test -d _site || { echo "_site が無い。先に bundle exec jekyll build を実行すること"; exit 1; }
 
-echo "--- 9ページ＋補助ファイルが生成されているか ---"
-for p in index.html publications/index.html cv/index.html \
-         en/index.html en/publications/index.html en/cv/index.html \
-         zh/index.html zh/publications/index.html zh/cv/index.html \
+echo "--- 6ページ＋補助ファイルが生成されているか ---"
+for p in index.html cv/index.html \
+         en/index.html en/cv/index.html \
+         zh/index.html zh/cv/index.html \
          sitemap.xml robots.txt 404.html; do
   chk "$p" "test -s '_site/$p'"
 done
@@ -40,16 +40,16 @@ for l in ja en zh; do chk "hreflang=$l" "grep -q 'hreflang=\"$l\"' _site/index.h
 chk 'canonical' 'grep -q "rel=\"canonical\"" _site/index.html'
 
 echo "--- 論文一覧（論文62 + メディア24 = 86件）---"
-chk 'Meander Coil++' 'grep -q "Meander Coil++" _site/publications/index.html'
-chk 'picoRing'       'grep -q "picoRing" _site/publications/index.html'
-n=$(grep -o 'class="entry"' _site/publications/index.html | wc -l | tr -d ' ')
+chk 'Meander Coil++' 'grep -q "Meander Coil++" _site/cv/index.html'
+chk 'picoRing'       'grep -q "picoRing" _site/cv/index.html'
+n=$(grep -o 'class="entry"' _site/cv/index.html | wc -l | tr -d ' ')
 chk "entry >= 86（実測 $n）" "test $n -ge 86"
 for k in journal conference media; do
-  chk "フィルタ $k" "grep -q 'data-filter=\"$k\"' _site/publications/index.html"
+  chk "フィルタ $k" "grep -q 'data-filter=\"$k\"' _site/cv/index.html"
 done
-g=$(grep -o 'class="group-head"' _site/publications/index.html | wc -l | tr -d ' ')
+g=$(grep -o 'class="group-head"' _site/cv/index.html | wc -l | tr -d ' ')
 chk "種別見出し 8つ（実測 $g）" "test $g -eq 8"
-chk '著者強調'  "grep -q \"class='me'\" _site/publications/index.html"
+chk '著者強調'  "grep -q \"class='me'\" _site/cv/index.html"
 
 echo "--- CV（学歴3+職歴8+研究費7+受賞19+論文86+講演10 = 133）---"
 c=$(grep -o 'class="entry"' _site/cv/index.html | wc -l | tr -d ' ')

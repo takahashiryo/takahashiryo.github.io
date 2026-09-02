@@ -4,7 +4,7 @@ permalink: /sitemap.xml
 ---
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-{%- assign paths = "|publications/|cv/" | split: "|" -%}
+{%- assign paths = "|cv/" | split: "|" -%}
 {%- for p in paths -%}
 {%- assign suffix = p -%}
   <url><loc>{{ '/' | append: suffix | absolute_url }}</loc></url>
