@@ -30,7 +30,7 @@ research:
   - id: "e-textile"
     image: "e-textile.jpg"
     match: ["meander", "e-textile", "e-knit", "textile", "knittable", "bodynet", "nfc",
-            "clothing", "electric skin"]
+            "clothing", "electric skin", "soft wearables"]
     # 作り方が主題のものは digital-fabrication へ、指輪・リストバンドは
     # low-power-wearable へ寄せる。
     exclude: ["cuttable", "plug-n-play", "3d-printing", "wristband"]
@@ -58,7 +58,8 @@ research:
       body: "通过读取戒指线圈与腕带线圈之间的磁耦合，实现戒指端不搭载无线芯片的输入设备。一次充电可使用一个月以上。"
   - id: "robot-skin"
     image: "robot-skin.jpg"
-    match: ["robot", "snake", "locomotion"]
+    # 2-D Relay Resonator Array は床面からの給電なのでロボット側に入れる
+    match: ["robot", "snake", "locomotion", "relay resonator"]
     ja:
       title: "ロボットスキン"
       body: "関節位置を移動できるヘビ型ロボットや小型移動ロボットに、床面や布から電力を受け取る皮膚をまとわせ、電池のいらない長期運用を可能にする。"
