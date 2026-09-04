@@ -1,11 +1,25 @@
-# 受賞 → 受賞者一覧などのページ。キーは「年|賞名|団体名」。
+# 受賞 → 賞のページ。キーは「年|賞名|団体名」。
 # awards.csv の url 列は researchmap の API URL（人が読むページではない）なので使わない。
 #
-# 採ったのは、そのページに受賞者として高橋の名前か対象論文が載っていることを
-# 確認できたものだけ。山下記念研究賞は公式ページに受賞者一覧が無かったので入れていない。
+# 「受賞者一覧に掲載あり」= そのページにこちらの名前か対象論文があるのを確認したもの。
+# それ以外は学会・財団の賞の一般ページ。年度別の受賞者ページが無いものが多い。
 
-"2025|優秀論文賞|情報処理学会 第87回ユビキタスコンピューティングシステム研究会": "https://sigubi.ipsj.or.jp/excellent/"
-"2025|優秀論文賞|第86回ユビキタスコンピューティングシステム研究会": "https://sigubi.ipsj.or.jp/excellent/"
-"2021|優秀論文賞|情報処理学会UBI研究会": "https://sigubi.ipsj.or.jp/excellent/"
-"2023|学生奨励賞|情報処理学会 第85回全国大会": "https://www.ipsj.or.jp/award/taikaigakusei.html"
-"2022|最優秀論文賞|第30回インタラクティブシステムとソフトウェアに関するワークショップ(WISS 2022)": "https://www.wiss.org/WISS2022/award.html"
+"2026|Best Paper Award|IEEE Robotics and Automation Letters (RA-L) 2025": "https://www.ieee-ras.org/publications/ra-l/ra-l-paper-awards/"
+"2026|船井研究奨励賞|船井情報科学振興財団": "https://funaifoundation.jp/"
+"2026|優秀論文発表賞A|電気学会センサ・マイクロシステム部門": "https://www.iee.jp/sm/"
+"2025|優秀講演論文|第16回マイクロ・ナノ工学シンポジウム": "https://www.jsme.or.jp/conference/mnm2025/"
+"2025|奨励賞|第42回「センサ・マイクロマシンと応用システム」シンポジウム": "https://sensorsymposium.org/"   # 現在は第43回の案内
+"2025|優秀論文賞|情報処理学会 第87回ユビキタスコンピューティングシステム研究会": "https://sigubi.ipsj.or.jp/excellent/"   # 受賞者一覧に掲載あり
+"2025|優秀論文賞|第86回ユビキタスコンピューティングシステム研究会": "https://sigubi.ipsj.or.jp/excellent/"   # 受賞者一覧に掲載あり
+"2024|優秀講演論文|第15 回マイクロ・ナノ工学シンポジウム マイクロ・ナノ部門": "https://www.jsme.or.jp/conference/mnm2024/"
+"2024|FSE Best Poster Presentation Award|7th Event of Young Researchers Society for Flexible and Stretchable Electronics": "https://fsejp.weebly.com/7th-event-may-23_24-2024.html"
+"2023|学生奨励賞|情報処理学会 第85回全国大会": "https://www.ipsj.or.jp/award/taikaigakusei.html"   # 受賞者一覧に掲載あり
+"2023|テレコムシステム技術学生賞 最優秀賞|電気通信普及財団賞": "https://www.taf.or.jp/award/"
+"2023|山下記念研究賞|情報処理学会": "https://www.ipsj.or.jp/award/yamashita.html"
+"2022|最優秀論文賞|第30回インタラクティブシステムとソフトウェアに関するワークショップ(WISS 2022)": "https://www.wiss.org/WISS2022/award.html"   # 受賞者一覧に掲載あり
+"2022|Gaetano Borriello Outstanding Student Award Runner up|ACM Ubicomp 2022": "https://ubicomp.org/sc/awards.html"
+"2022|Best Paper Award|ACM CHI Conference on Human Factors in Computing Systems": "https://programs.sigchi.org/chi/2022/awards"
+"2021|優秀論文賞|情報処理学会UBI研究会": "https://sigubi.ipsj.or.jp/excellent/"   # 受賞者一覧に掲載あり
+"2021|CHI'20 @ CHI'21 People’s Choice Best Demo Honorable Mention Award|Extended Abstracts of the 2020 CHI Conference on Human Factors in Computing Systems (CHI EA ’20)": "https://programs.sigchi.org/chi/2021/awards"
+"2020|Honorable Mention Award|Proceedings of the 2020 CHI Conference on Human Factors in Computing Systems Proceedings (ACM CHI)": "https://chi2020.acm.org/for-attendees/chi-2020-best-papers-honourable-mentions"
+"2020|インタラクティブ発表賞(PC推薦・一般投票)|情報処理学会インタラクション": "https://www.interaction-ipsj.org/"
