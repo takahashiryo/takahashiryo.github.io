@@ -17,6 +17,10 @@
            人が読むページではないのでリンクにしない {% endcomment -%}
       {%- assign aurl = a.url -%}
       {%- if aurl contains "api.researchmap.jp" -%}{%- assign aurl = "" -%}{%- endif -%}
+      {%- comment %} 受賞者一覧などのページが分かっているものは _data/award_links.yml から差す {% endcomment -%}
+      {%- capture akey %}{{ a.year }}|{{ a.title_ja }}|{{ a.association_ja }}{% endcapture -%}
+      {%- assign alink = site.data.award_links[akey] -%}
+      {%- if alink -%}{%- assign aurl = alink -%}{%- endif -%}
       <div class="entry-title">
         {%- if aurl contains "http" -%}
           <a href="{{ aurl }}" target="_blank" rel="noopener">{{ nm }}</a>

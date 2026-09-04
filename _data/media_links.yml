@@ -1,16 +1,33 @@
 # メディア掲載のタイトル → 記事の URL。
-# media.csv は scripts/build_cv.py が researchmap から作り直すので、URL を CSV に書いても消える。
-# researchmap 側は24件中2件しか URL を持っていないため、ここで補う。
+# media.csv は scripts/build_cv.py が researchmap から作り直すので、URL は CSV に持たせない。
+# researchmap 側は24件中2件しか URL を持っていない。
 #
-# 出所: 記事タイトルと媒体名で検索し、媒体のドメインが一致するものだけを採用した。
-# ★ = 記録されている題名と現在の見出しが一致しない（媒体と内容は一致）。要確認。
+# 出所: 川原研（akg.t.u-tokyo.ac.jp/awardsmedia-2018〜2026）の一覧から、
+#       記事タイトルが一致し、かつ URL のホストが媒体名と合うものだけを採った。
+#       末尾2件は akg に無く、媒体名で検索してホストを確認したもの。
+#
+# 入っていないもの（見つからなかった）:
+#   ITmedia NEWS「トラックパッドに載せて操作する空気圧式コントローラー「PneuModule」」
+#   ITmedia NEWS「東大、切断できるワイヤレス充電用シートを開発」
+#   子供の科学2020年6月号「世の中の課題を解決する電気のチカラ！」（紙の雑誌）
 
+"無線で給電・通信ができる衣服を実現 多彩なウエアラブルデバイス活用に道": "https://www.jst.go.jp/pr/jst-news/backnumber/2026/202608/pdf/2026_08.pdf"
 "服にコイルを編み込んで全身無線通信・給電ネットワーク、AR 操作を見据えた指輪型マウスも開発": "https://ascii.jp/elem/000/004/425/4425263/"
-"東京大学、指輪型マウス「picoRing」を発表 超低消費電力でAR操作も可能": "https://www.moguravr.com/tokyo-university-picoring-mouse-ar-controller/"   # ★
-"マウスを指輪に！ 東大が開発した超低消費電力ウェアラブル「picoRing」": "https://nazology.kusuguru.co.jp/archives/186814"   # ★
-"ごくわずかな電力で動く指輪型無線マウスの開発に成功 ―日常空間でARグラスを目立たず半永久的に扱うコントローラに向けて―": "https://www.t.u-tokyo.ac.jp/press/pr2025-10-01-003"
+"【创新日本走访】第32回：实现可无线供电与通信的服装，为多样化可穿戴器件的应用开辟道路": "https://www.keguanjp.com/kgjp_keji/kgjp_kj_new/pt20260820000014.html"
+"東京大学、指輪型マウス「picoRing」を発表 超低消費電力でAR操作も可能": "https://www.moguravr.com/tokyo-university-picoring-mouse-ar-controller/"
+"東京大学、1回の充電で1カ月動作する指輪型無線マウスを開発": "https://fabscene.com/new/news/tokyo-univ-picoring-mouse-ultra-low-power/"
+"マウスを指輪に！ 東大が開発した超低消費電力ウェアラブル「picoRing」": "https://nazology.kusuguru.co.jp/archives/186814"
+"フル充電で1,000時間稼働！ 東大発・超低電力のウェアラブルマウス「picoRing mouse」": "https://moov.ooo/article/68b6aac3cc9b0f0ad28e67a9"
+"The lord of the ring mouse — a lightweight, ring-based computer mouse lasts over a month on a single charge": "https://techxplore.com/news/2025-10-lord-mouse-lightweight-based-month.html"
 "Smart glasses are forcing wearables to get very weird": "https://gizmodo.com/smart-glasses-are-forcing-wearables-to-get-very-weird-2000674309"
 "One Ring to Rule VR": "https://www.hackster.io/news/one-ring-to-rule-vr-2f0cda552a60"
 "New smart ring is a novel way to control your computer — it has the humble mouse firmly in its sights": "https://www.livescience.com/technology/computing/new-smart-ring-is-a-novel-way-to-control-your-computer-it-has-the-humble-mouse-firmly-in-its-sights"
+"日本発の指輪型コントローラー「ピコリング」は、“マウスの次”を目指して進化する": "https://wired.jp/article/picoring-wearable-controller/"
 "充電できる“服”、東大が開発 身体周りのスマホを自動で無線給電": "https://www.itmedia.co.jp/news/articles/2205/09/news019.html"
 "机や太ももの上でキーボードなしタイピング 指輪型「TelemetRing」、東大とMicrosoftが開発": "https://www.itmedia.co.jp/news/articles/2104/09/news051.html"
+"東大、いろいろな形に切り抜いて使えるワイヤレス充電シートを開発": "https://www.zaikei.co.jp/article/20190108/487777.html?utm_source=news_pics&amp;utm_medium=app"
+"切り取り自在、ワイヤレス充電シート 東大研究チーム開発": "https://www.asahi.com/articles/DA3S13858768.html"
+"ポケットでスマホ充電 切り貼りできるシート状、東大が開発": "https://www.sankei.com/life/news/190111/lif1901110005-n1.html"
+"スマホを置くだけ！切って使えるワイヤレス充電シート": "https://www.tv-tokyo.co.jp/plus/business/entry/2019/018793.html"
+"ごくわずかな電力で動く指輪型無線マウスの開発に成功 ―日常空間でARグラスを目立たず半永久的に扱うコントローラに向けて―": "https://www.t.u-tokyo.ac.jp/press/pr2025-10-01-003"
+"The lord of the ring mouse A lightweight ring-based computer mouse lasts over a month on a single charge": "https://www.u-tokyo.ac.jp/focus/en/press/z0508_00426.html"
