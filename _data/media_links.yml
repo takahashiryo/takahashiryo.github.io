@@ -6,10 +6,8 @@
 #       記事タイトルが一致し、かつ URL のホストが媒体名と合うものだけを採った。
 #       末尾2件は akg に無く、媒体名で検索してホストを確認したもの。
 #
-# 入っていないもの（見つからなかった）:
-#   ITmedia NEWS「トラックパッドに載せて操作する空気圧式コントローラー「PneuModule」」
-#   ITmedia NEWS「東大、切断できるワイヤレス充電用シートを開発」
-#   子供の科学2020年6月号「世の中の課題を解決する電気のチカラ！」（紙の雑誌）
+# 入っていないもの:
+#   子供の科学2020年6月号「世の中の課題を解決する電気のチカラ！」（紙の雑誌なので URL 無し）
 
 "無線で給電・通信ができる衣服を実現 多彩なウエアラブルデバイス活用に道": "https://www.jst.go.jp/pr/jst-news/backnumber/2026/202608/pdf/2026_08.pdf"
 "服にコイルを編み込んで全身無線通信・給電ネットワーク、AR 操作を見据えた指輪型マウスも開発": "https://ascii.jp/elem/000/004/425/4425263/"
@@ -31,3 +29,5 @@
 "スマホを置くだけ！切って使えるワイヤレス充電シート": "https://www.tv-tokyo.co.jp/plus/business/entry/2019/018793.html"
 "ごくわずかな電力で動く指輪型無線マウスの開発に成功 ―日常空間でARグラスを目立たず半永久的に扱うコントローラに向けて―": "https://www.t.u-tokyo.ac.jp/press/pr2025-10-01-003"
 "The lord of the ring mouse A lightweight ring-based computer mouse lasts over a month on a single charge": "https://www.u-tokyo.ac.jp/focus/en/press/z0508_00426.html"
+"東大、切断できるワイヤレス充電用シートを開発 衣服のポケットでスマホ充電など応用に期待": "https://www.itmedia.co.jp/news/articles/1901/07/news109.html"
+"トラックパッドに載せて操作する空気圧式コントローラー「PneuModule」 東大が開発": "https://www.itmedia.co.jp/news/articles/2007/08/news071.html"
