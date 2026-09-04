@@ -8,8 +8,25 @@
 {%- assign p = include.p -%}
 {%- assign t = include.t -%}
 
+{%- comment %}
+  筆頭著者に * を付ける。* が既に入っているもの（共同筆頭・責任著者を
+  手で入れてあるもの）はそのまま。区切りは英語が ", "、日本語が "," の2通り。
+  † は誰が責任著者かをデータから決められないので、authors 列に入っている分だけ出す。
+{% endcomment -%}
+{%- assign au_src = p.authors -%}
+{%- unless au_src contains "*" -%}
+  {%- assign parts = au_src | split: ", " -%}
+  {%- if parts.size == 1 -%}{%- assign parts = au_src | split: "," -%}{%- endif -%}
+  {%- assign head = parts[0] | split: " and " -%}
+  {%- assign first = head[0] -%}
+  {%- if first != "" -%}
+    {%- capture starred -%}{{ first }}*{%- endcapture -%}
+    {%- assign au_src = au_src | replace_first: first, starred -%}
+  {%- endif -%}
+{%- endunless -%}
+
 {%- comment %} 著者名のうち高橋を強調する {% endcomment -%}
-{%- assign au = p.authors | escape -%}
+{%- assign au = au_src | escape -%}
 {%- assign au = au | replace: "R. Takahashi", "<span class='me'>R. Takahashi</span>" -%}
 {%- assign au = au | replace: "Ryo Takahashi", "<span class='me'>Ryo Takahashi</span>" -%}
 {%- assign au = au | replace: "高橋亮", "<span class='me'>高橋亮</span>" -%}

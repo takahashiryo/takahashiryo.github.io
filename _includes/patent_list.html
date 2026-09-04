@@ -1,0 +1,25 @@
+{%- comment %}
+  特許。researchmap の industrial_property_rights から scripts/build_cv.py が作る。
+  タイトルは researchmap に日本語しか無いので原語のまま出す（出願番号が本体なので訳さない）。
+  cv-list を使うと学歴などと同じ体裁になり、番号も同じ仕組みで振られる。
+{%- endcomment -%}
+<div class="cv-list">
+{%- for p in site.data.patents -%}
+  <div class="entry" data-type="patent">
+    <div class="entry-mark"><span class="cv-when">{{ p.year }}.{{ p.month }}</span></div>
+    <div class="entry-body">
+      <div class="entry-title">
+        {%- if p.url contains "http" -%}
+          <a href="{{ p.url }}" target="_blank" rel="noopener">{{ p.title | escape }}</a>
+        {%- else -%}{{ p.title | escape }}{%- endif -%}
+      </div>
+      {%- if p.inventors != "" %}<div class="entry-authors">{{ p.inventors | escape }}</div>{% endif -%}
+      <div class="entry-meta">
+        {%- if p.application_number != "" %}<span class="tag">{{ p.application_number | escape }}</span>{% endif -%}
+        {%- if p.announcement_number != "" %}<span class="tag">{{ p.announcement_number | escape }}</span>{% endif -%}
+        {%- if p.applicant != "" %}<span class="tag">{{ p.applicant | escape }}</span>{% endif -%}
+      </div>
+    </div>
+  </div>
+{%- endfor -%}
+</div>

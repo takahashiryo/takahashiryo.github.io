@@ -31,6 +31,7 @@
       {%- endfor -%}
       </ul>
     </li>
+    <li><a href="#patents">{{ t.sec.patents }}</a></li>
     <li><a href="#talks">{{ t.sec.talks }}</a></li>
   </ul>
 </nav>
@@ -60,6 +61,11 @@
   <h3 class="cv-head">{{ t.sec.publications }}<span class="group-count">{{ site.data.publications.size }}</span></h3>
   <p class="author-note">{{ t.author_note }}</p>
   {% include pub_list.html lang=lang limit=0 with_media=true %}
+</section>
+
+<section id="patents">
+  <h3 class="cv-head">{{ t.sec.patents }}<span class="group-count">{{ site.data.patents.size }}</span></h3>
+  {% include patent_list.html %}
 </section>
 
 <section id="talks">

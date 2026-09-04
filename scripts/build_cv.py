@@ -146,6 +146,41 @@ def build_media():
     write("media.csv", PUB_COLS, rows)
 
 
+PATENT_COLS = ["year", "month", "title", "inventors", "applicant",
+               "application_number", "announcement_number", "url", "sortkey"]
+
+
+def build_patents():
+    """特許（researchmap の industrial_property_rights）。
+    公開番号があればその年月、無ければ出願の年月で並べる。
+    タイトルは researchmap に日本語しか無いので原語のまま出す。"""
+    rows = []
+    for p in load("industrial_property_rights"):
+        y, mo = ym(p.get("patent_announcement_date") or p.get("application_date"))
+        inv = p.get("inventors") or {}
+        names = inv.get("ja") or inv.get("en") or []
+        url = ""
+        for s in p.get("see_also") or []:
+            if s.get("@id", "").startswith("http"):
+                url = s["@id"]
+                break
+        rows.append({
+            "year": y, "month": mo,
+            "title": pick(p.get("industrial_property_right_title"), "ja", "en"),
+            # researchmap は異体字を ▲高▼橋 のように囲って返すので外す
+            "inventors": ", ".join(
+                re.sub(r"[▲▼]", "", str(n.get("name", "")).strip()) for n in names),
+            "applicant": ", ".join(
+                pick((a or {}).get("applicant"), "ja", "en") for a in (p.get("applicants") or [])),
+            "application_number": str(p.get("application_number") or ""),
+            "announcement_number": str(p.get("patent_announcement_number") or ""),
+            "url": url,
+            "sortkey": f"{y}{mo}",
+        })
+    rows.sort(key=lambda r: (r["sortkey"], r["title"]), reverse=True)
+    write("patents.csv", PATENT_COLS, rows)
+
+
 def add_sortkey(name):
     """既存の publications.csv / talks.csv に sortkey 列を足して並べ替える。"""
     path = OUT / name
@@ -161,5 +196,6 @@ if __name__ == "__main__":
     build_experience()
     build_grants()
     build_media()
+    build_patents()
     add_sortkey("publications.csv")
     add_sortkey("talks.csv")
