@@ -1,0 +1,21 @@
+---
+layout: null
+lang: ja
+permalink: /publications/
+sitemap: false
+---
+{%- comment %}
+  /publications/ は CV に一本化したが、公開済みの URL だったのでリダイレクトを残す。
+  Jekyll のプラグインは使えない（GitHub Pages / Cloudflare Pages 共通のため）ので meta refresh。
+{% endcomment -%}
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="refresh" content="0; url={{ '/cv/#publications' | relative_url }}">
+<link rel="canonical" href="{{ '/cv/#publications' | absolute_url }}">
+<meta name="robots" content="noindex">
+<title>論文一覧は CV に移動しました</title>
+</head>
+<body><p><a href="{{ '/cv/#publications' | relative_url }}">論文一覧は CV に移動しました</a></p></body>
+</html>

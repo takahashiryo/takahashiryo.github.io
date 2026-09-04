@@ -1,0 +1,21 @@
+---
+layout: null
+lang: zh
+permalink: /zh/publications/
+sitemap: false
+---
+{%- comment %}
+  /publications/ は CV に一本化したが、公開済みの URL だったのでリダイレクトを残す。
+  Jekyll のプラグインは使えない（GitHub Pages / Cloudflare Pages 共通のため）ので meta refresh。
+{% endcomment -%}
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="refresh" content="0; url={{ '/zh/cv/#publications' | relative_url }}">
+<link rel="canonical" href="{{ '/zh/cv/#publications' | absolute_url }}">
+<meta name="robots" content="noindex">
+<title>论文一览已移至 CV 页面</title>
+</head>
+<body><p><a href="{{ '/zh/cv/#publications' | relative_url }}">论文一览已移至 CV 页面</a></p></body>
+</html>
