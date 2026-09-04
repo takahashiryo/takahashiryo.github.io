@@ -46,6 +46,7 @@ ja:
   more_talks: "すべての講演"
   back_home: "← トップへ戻る"
   contents: "目次"
+  author_note: "* 筆頭著者　† 責任著者"
   filter_all: "All"
   types:
     journal: "論文誌"
@@ -105,6 +106,7 @@ en:
   more_talks: "All talks"
   back_home: "← Back to home"
   contents: "Contents"
+  author_note: "* First author　† Corresponding author"
   filter_all: "All"
   types:
     journal: "Journal"
@@ -164,6 +166,7 @@ zh:
   more_talks: "全部演讲"
   back_home: "← 返回首页"
   contents: "目录"
+  author_note: "* 第一作者　† 通讯作者"
   filter_all: "All"
   types:
     journal: "期刊"

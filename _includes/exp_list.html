@@ -1,8 +1,8 @@
 {%- assign lang = include.lang -%}
 <div class="cv-list">
 {%- for e in site.data.experience -%}
-  {%- capture aff %}{% include term.html ja=e.affiliation_ja en=e.affiliation_en lang=lang %}{% endcapture -%}
-  {%- capture job %}{% include term.html ja=e.job_ja en=e.job_en lang=lang %}{% endcapture -%}
+  {%- capture aff %}{% include term.html ja=e.affiliation_ja en=e.affiliation_en %}{% endcapture -%}
+  {%- capture job %}{% include term.html ja=e.job_ja en=e.job_en %}{% endcapture -%}
   <div class="entry" data-type="experience">
     <div class="entry-mark"><span class="cv-when">{{ e.from }}–{{ e.to }}</span></div>
     <div class="entry-body">

@@ -2,8 +2,13 @@
   CV ページ。左に sticky な目次、右に本文の2カラム（takuyasasatani.com の Publications に倣う）。
   目次の現在地ハイライトは _layouts/default.html 末尾の IntersectionObserver がやる。
 {% endcomment -%}
-{%- assign lang = include.lang -%}
-{%- assign t = site.data.i18n[lang] -%}
+{%- comment %}
+  CV は中身も見出しも英語で固定する（履歴書としてそのまま出せるように）。
+  ページの言語はヘッダー・フッターとトップへ戻るリンクにだけ効く。
+  ラベルを言語ごとに戻すなら、下の en を include.lang にすればよい。
+{% endcomment -%}
+{%- assign lang = "en" -%}
+{%- assign t = site.data.i18n.en -%}
 {%- assign home = include.home -%}
 {%- assign pubs = site.data.publications | concat: site.data.media -%}
 {%- assign kinds = "journal,conference,workshop,demo,poster,domestic,article,media" | split: "," -%}
@@ -53,6 +58,7 @@
 
 <section id="publications">
   <h3 class="cv-head">{{ t.sec.publications }}<span class="group-count">{{ site.data.publications.size }}</span></h3>
+  <p class="author-note">{{ t.author_note }}</p>
   {% include pub_list.html lang=lang limit=0 with_media=true %}
 </section>
 

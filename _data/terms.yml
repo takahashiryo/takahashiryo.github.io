@@ -1,97 +1,76 @@
-# CV の用語の対訳表。キー = _data/*.csv の日本語の値。
+# CV の用語 → 英語の対応表。キー = _data/*.csv の日本語の値。
+#
+# 方針: CV（学歴・職歴・研究費・受賞）の中身は言語を問わず英語で出す。
+#       日本語ページ・中文ページでも英語になる。
+#       論文タイトルと講演タイトルは書誌情報なので原語のまま（ここでは扱わない）。
 #
 # なぜ CSV の列ではなくここに置くか:
-#   education / experience / grants / awards の CSV は scripts/build_cv.py が
-#   researchmap から作り直すので、列を足しても次の生成で消える。
-#   （publications の研究テーマひも付けを profile.yml に置いてあるのと同じ理由）
+#   これらの CSV は scripts/build_cv.py が researchmap から作り直すので、
+#   列を足しても次の生成で消える。また researchmap 由来の *_en 列は
+#   中身が日本語のままのものが多く、あてにできない（受賞は19件すべて同一だった）。
 #
-# 効き方: ここにある訳が最優先。無ければ CSV の *_en 列（英語ページのみ）、
-#         それも無ければ日本語のまま。researchmap の *_en 列は中身が
-#         日本語のままのものが多く、英語ページにも日本語が出ていた。
+# 効き方: ここにある英語が最優先 → 無ければ CSV の *_en 列 → それも無ければ日本語。
 #
-# 未対応: awards.csv の受賞名・団体名（34語）。学会名や大会名の固有名詞が多く、
-#         訳し方を決めてから入れる。いまは日本語のまま出る。
-
-# ── 学歴 ────────────────────────────────
-"東京大学":
-  zh: "东京大学"
-"電気系工学専攻":
-  zh: "电气系工学专业"
-"大学院情報理工学系研究科":
-  zh: "大学院信息理工学系研究科"
-"電子情報学専攻":
-  zh: "电子信息学专业"
-"電子情報工学科":
-  zh: "电子信息工学科"
+# ★ = 公式の英語名が確認できず、こちらで訳したもの。要確認。
 
 # ── 職歴 ────────────────────────────────
-"Visiting Researcher":
-  zh: "访问研究员"
-"Research Scientist Intern":
-  zh: "研究科学家实习生"
-"分担":
-  en: "Co-PI"
-  zh: "共同研究负责人"
-"個人研究者":
-  en: "Principal Investigator"
-  zh: "个人研究者"
-"リサーチアシスタント":
-  en: "Research Assistant"
-  zh: "研究助理"
-"JST さきがけ":
-  en: "JST PRESTO"
-  zh: "JST PRESTO"
-"日本学術振興会":
-  en: "Japan Society for the Promotion of Science (JSPS)"
-  zh: "日本学术振兴会"
-"特別研究員（DC2）":
-  en: "JSPS Research Fellow (DC2)"
-  zh: "特别研究员（DC2）"
-"島精機製作所":
-  en: "Shima Seiki Mfg., Ltd."
-  zh: "岛精机制作所"
-"ニットデザイン講習（初級コース）":
-  en: "Knit design course (beginner)"
-  zh: "针织设计讲习（初级课程）"
-"ERATO 川原万有情報網プロジェクト":
-  en: "JST ERATO Kawahara Universal Information Network Project"
-  zh: "JST ERATO 川原万有信息网项目"
+"分担": "Co-PI"
+"個人研究者": "Principal Investigator"
+"リサーチアシスタント": "Research Assistant"
+"JST さきがけ": "JST PRESTO"
+"日本学術振興会": "Japan Society for the Promotion of Science (JSPS)"
+"特別研究員（DC2）": "JSPS Research Fellow (DC2)"
+"島精機製作所": "Shima Seiki Mfg., Ltd."
+"ニットデザイン講習（初級コース）": "Knit design course (beginner)"          # ★
+"ERATO 川原万有情報網プロジェクト": "JST ERATO Kawahara Universal Information Network Project"
 
 # ── 研究費 ──────────────────────────────
-"科学技術振興機構":
-  en: "Japan Science and Technology Agency (JST)"
-  zh: "科学技术振兴机构"
-"旭硝子財団":
-  en: "The Asahi Glass Foundation"
-  zh: "旭硝子财团"
-"研究代表者":
-  zh: "研究负责人"
-"研究分担者":
-  zh: "研究参与者"
-"科学研究費助成事業 挑戦的研究（萌芽）":
-  en: "KAKENHI Grant-in-Aid for Challenging Research (Exploratory)"
-  zh: "科学研究费资助事业 挑战性研究（萌芽）"
-"科学研究費助成事業 基盤研究（B）":
-  en: "KAKENHI Grant-in-Aid for Scientific Research (B)"
-  zh: "科学研究费资助事业 基础研究（B）"
-"科学研究費助成事業 特別研究員奨励費":
-  en: "KAKENHI Grant-in-Aid for JSPS Fellows"
-  zh: "科学研究费资助事业 特别研究员奖励费"
-"CRONOS（情報通信科学・イノベーション創出基盤事業）":
-  en: "CRONOS (Information and Communication Science Innovation Program)"
-  zh: "CRONOS（信息通信科学・创新创出基础事业）"
-"さきがけ":
-  en: "PRESTO"
-  zh: "PRESTO"
-"研究奨励（物理・情報分野）":
-  en: "Research Encouragement Grant (Physics and Information)"
-  zh: "研究奖励（物理・信息领域）"
-"ACT-X（強靭化ハードウェア）（+加速フェーズ）":
-  en: "ACT-X (Resilient Hardware) (+ acceleration phase)"
-  zh: "ACT-X（强韧化硬件）（+加速阶段）"
-"6,370,000 円":
-  zh: "6,370,000 日元"
-"18,330,000 円":
-  zh: "18,330,000 日元"
-"2,300,000 円":
-  zh: "2,300,000 日元"
+"科学技術振興機構": "Japan Science and Technology Agency (JST)"
+"旭硝子財団": "The Asahi Glass Foundation"
+"研究代表者": "Principal Investigator"
+"研究分担者": "Co-Investigator"
+"科学研究費助成事業 挑戦的研究（萌芽）": "KAKENHI Grant-in-Aid for Challenging Research (Exploratory)"
+"科学研究費助成事業 基盤研究（B）": "KAKENHI Grant-in-Aid for Scientific Research (B)"
+"科学研究費助成事業 特別研究員奨励費": "KAKENHI Grant-in-Aid for JSPS Fellows"
+"CRONOS（情報通信科学・イノベーション創出基盤事業）": "CRONOS (Innovative Science and Technology Initiative for Information and Communication)"   # ★
+"さきがけ": "PRESTO"
+"研究奨励（物理・情報分野）": "Research Encouragement Grant (Physics and Information)"   # ★
+"ACT-X（強靭化ハードウェア）（+加速フェーズ）": "ACT-X (Resilient Hardware) (+ acceleration phase)"   # ★
+
+# ── 受賞: 賞の名前 ───────────────────────
+"船井研究奨励賞": "Funai Research Award"
+"山下記念研究賞": "IPSJ Yamashita SIG Research Award"
+"学生奨励賞": "IPSJ Student Encouragement Award"
+"優秀論文賞": "Outstanding Paper Award"                      # ★
+"最優秀論文賞": "Best Paper Award"
+"優秀論文発表賞A": "Excellent Presentation Award A"            # ★
+"優秀講演論文": "Outstanding Presentation Paper Award"         # ★
+"奨励賞": "Encouragement Award"                             # ★
+"テレコムシステム技術学生賞 最優秀賞": "Telecom System Technology Student Award, Grand Prize"   # ★
+"インタラクティブ発表賞(PC推薦・一般投票)": "Interactive Presentation Award (PC and Audience Choice)"   # ★
+
+# ── 受賞: 授与団体・大会 ─────────────────
+"船井情報科学振興財団": "Funai Foundation for Information Technology"
+"情報処理学会": "Information Processing Society of Japan (IPSJ)"
+"情報処理学会UBI研究会": "IPSJ SIG-UBI"
+"情報処理学会インタラクション": "IPSJ Interaction"
+"情報処理学会 第85回全国大会": "85th National Convention of IPSJ"
+"情報処理学会 第87回ユビキタスコンピューティングシステム研究会": "IPSJ SIG-UBI, 87th Meeting"
+"第86回ユビキタスコンピューティングシステム研究会": "IPSJ SIG-UBI, 86th Meeting"
+"電気学会センサ・マイクロシステム部門": "IEEJ Sensors and Micromachines Society"
+"第16回マイクロ・ナノ工学シンポジウム": "16th Symposium on Micro-Nano Science and Technology"
+"第15 回マイクロ・ナノ工学シンポジウム マイクロ・ナノ部門": "15th Symposium on Micro-Nano Science and Technology"
+"第42回「センサ・マイクロマシンと応用システム」シンポジウム": "42nd Sensor Symposium on Sensors, Micromachines and Applied Systems"
+"電気通信普及財団賞": "The Telecommunications Advancement Foundation Award"
+"第30回インタラクティブシステムとソフトウェアに関するワークショップ(WISS 2022)": "30th Workshop on Interactive Systems and Software (WISS 2022)"
+
+# ── 研究費: 課題名 ─────────────────────
+# KAKENHI の3件は KAKEN の英語ページに載っている公式の英題。
+# JST・財団の4件は英語版が無いので訳した（★）。
+"指輪デバイスへの準近接な無線通信・給電インタフェース": "Quasi-proximity data and power interface for smartring"
+"DailyAR入力インタフェースに向けた超低電力な指輪型無線ARコントローラ": "Ultra-low-power ring-based AR controller for daily AR interface"
+"生体データ通信インフラの無線フルボディ化": "Full-body wireless extension of biological data communication infrastructure"   # ★
+"激しい動きにも耐える全身分散スキン知能ネットワーク": "Motion-robust body-scale distributed skin intelligence network"   # ★
+"極低消費電力の指輪型無線マウスによるユビキタスな指入力インタフェース": "Ubiquitous finger input interface using an ultra-low-power wireless ring mouse"   # ★
+"衣類近傍へ電磁界を閉じ込めるコイル構造による衣服全面での無線給電・センシング": "Body-scale wireless charging and sensing using a safe-to-body coil structure confining electromagnetic field near garment"
+"ユビキタスな面状センサアレイによるIoTシステム構築": "Building IoT systems with ubiquitous planar sensor arrays"   # ★

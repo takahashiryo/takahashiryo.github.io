@@ -223,6 +223,43 @@
     .cv-toc { position: static; max-height: none; margin-bottom: 1.6em; }
   }
 
+  /* ── CV は項目数が多いので行間を詰める（トップ側は変えない） ── */
+  .cv-main .entry { padding: 0.55em 0; }
+  .cv-main .entry-title { line-height: 1.5; }
+  .cv-main .entry-authors { margin-top: 0.2em; line-height: 1.55; }
+  .cv-main .entry-venue { margin-top: 0.1em; }
+  .cv-main .entry-links { margin-top: 0.4em; }
+  .cv-main .entry-meta { margin-top: 0.25em; }
+  .cv-main .cv-head { margin: 1.8em 0 0.5em; }
+  .cv-main .group-head { margin: 1.4em 0 0.5em; }
+  .cv-main section:first-child .cv-head { margin-top: 0.6em; }
+
+  /* ── CV は項目ごとに 1 から番号を振る（論文は種別をまたぐ通し番号） ── */
+  .cv-main .cv-list,
+  .cv-main .award-list,
+  .cv-main .talk-list { counter-reset: item; }
+  .cv-main .cv-list > .entry,
+  .cv-main .award-list > .entry,
+  .cv-main .talk-list > .entry { counter-increment: item; }
+  .cv-main .cv-list > .entry::before,
+  .cv-main .award-list > .entry::before,
+  .cv-main .talk-list > .entry::before {
+    content: counter(item) ".";
+    flex: 0 0 2.1em; text-align: right; padding-top: 0.2em;
+    font-size: 0.86em; color: var(--faint); font-variant-numeric: tabular-nums;
+  }
+  /* 縦積みになる幅では番号が1行を占めてしまうので、日付と同じ行に置く */
+  @media (max-width: 640px) {
+    .cv-main .cv-list > .entry::before,
+    .cv-main .award-list > .entry::before,
+    .cv-main .talk-list > .entry::before { flex-basis: auto; text-align: left; padding-top: 0; }
+  }
+
+  /* 著者マーカーの凡例（* 筆頭 / † 責任著者）。マーカー自体は authors 列に入っている */
+  .cv-main .author-note {
+    margin: 0 0 0.9em; font-size: 0.74em; color: var(--faint); letter-spacing: 0.06em;
+  }
+
   /* ── 連絡先 ── */
   .contact p { margin: 0.4em 0; }
   .contact .mail { font-size: 1.05em; letter-spacing: 0.04em; }

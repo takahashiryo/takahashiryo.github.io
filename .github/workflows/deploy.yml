@@ -81,11 +81,7 @@ jobs:
           grep -q "Best Paper Award" _site/en/cv/index.html
           grep -q "18,330,000" _site/cv/index.html        # 研究費の金額
           grep -q "Meta Inc" _site/cv/index.html          # 職歴
-          grep -q "研究代表者" _site/cv/index.html
-          grep -q "Best Paper Award" _site/en/cv/index.html
-          grep -q "18,330,000" _site/cv/index.html        # 研究費の金額
-          grep -q "Meta Inc" _site/cv/index.html          # 職歴
-          grep -q "研究代表者" _site/cv/index.html
+          grep -q "Principal Investigator" _site/cv/index.html
 
       - name: Check home shows 20 recent publications and links to CV
         run: |

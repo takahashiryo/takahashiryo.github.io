@@ -2,11 +2,15 @@
 {%- assign t = site.data.i18n[lang] -%}
 <div class="cv-list">
 {%- for g in site.data.grants -%}
-  {%- capture ti %}{% include term.html ja=g.title_ja en=g.title_en lang=lang %}{% endcapture -%}
-  {%- capture fu %}{% include term.html ja=g.funder_ja en=g.funder_en lang=lang %}{% endcapture -%}
-  {%- capture ro %}{% include term.html ja=g.role_ja en=g.role_en lang=lang %}{% endcapture -%}
-  {%- capture am %}{% include term.html ja=g.amount_ja en=g.amount_en lang=lang %}{% endcapture -%}
-  {%- capture sys %}{% include term.html ja=g.system en=g.system lang=lang %}{% endcapture -%}
+  {%- capture ti %}{% include term.html ja=g.title_ja en=g.title_en %}{% endcapture -%}
+  {%- capture fu %}{% include term.html ja=g.funder_ja en=g.funder_en %}{% endcapture -%}
+  {%- capture ro %}{% include term.html ja=g.role_ja en=g.role_en %}{% endcapture -%}
+  {%- comment %} researchmap に金額が無いものは _data/grant_amounts.yml で補う {% endcomment -%}
+  {%- assign am = site.data.grant_amounts[g.title_ja] -%}
+  {%- if am == nil or am == "" -%}
+    {%- capture am %}{% include term.html ja=g.amount_ja en=g.amount_en %}{% endcapture -%}
+  {%- endif -%}
+  {%- capture sys %}{% include term.html ja=g.system en=g.system %}{% endcapture -%}
   <div class="entry" data-type="grant">
     <div class="entry-mark"><span class="cv-when">{{ g.from }}–{{ g.to }}</span></div>
     <div class="entry-body">
