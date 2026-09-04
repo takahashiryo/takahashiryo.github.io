@@ -30,12 +30,16 @@ jobs:
           JEKYLL_ENV: production
 
       # ── ここから出力の検証（同じ内容を手元でも scripts/verify_site.sh で走らせられる） ──
-      - name: Check all 6 pages exist
+      - name: Check all pages exist
         run: |
           set -e
           for p in index.html cv/index.html \
                    en/index.html en/cv/index.html \
                    zh/index.html zh/cv/index.html \
+                   publications/index.html en/publications/index.html zh/publications/index.html \
+                   research/e-textile/index.html research/low-power-wearable/index.html \
+                   research/robot-skin/index.html research/digital-fabrication/index.html \
+                   en/research/e-textile/index.html zh/research/e-textile/index.html \
                    sitemap.xml robots.txt 404.html; do
             test -s "_site/$p" || { echo "missing or empty: $p"; exit 1; }
           done

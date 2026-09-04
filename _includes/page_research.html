@@ -1,0 +1,36 @@
+{%- comment %}
+  研究テーマの詳細ページ。_data/profile.yml の research から include.id の1件を引く。
+  文言は profile.yml と i18n.yml に入っているものだけで組んでいる。
+{%- endcomment -%}
+{%- assign lang = include.lang -%}
+{%- assign t = site.data.i18n[lang] -%}
+{%- assign home = include.home -%}
+{%- for x in site.data.profile.research -%}
+  {%- if x.id == include.id -%}{%- assign r = x -%}{%- endif -%}
+{%- endfor -%}
+{%- assign body = r[lang] -%}
+{%- assign en = r.en -%}
+
+<div style="height: 2.4em"></div>
+{% include sechead.html title=body.title en=en.title lang=lang %}
+
+<div class="research-page">
+  {%- if r.image %}
+  <div class="research-fig">
+    <img src="{{ '/images/research/' | append: r.image | relative_url }}" alt="{{ body.title }}">
+  </div>
+  {%- endif %}
+  <p class="research-lead">{{ body.body }}</p>
+
+  {%- assign n = 0 -%}
+  {%- assign pubs = site.data.publications -%}
+  {%- for p in pubs -%}
+    {%- capture hit %}{% include pub_match.html p=p r=r %}{% endcapture -%}
+    {%- if hit contains "1" -%}{%- assign n = n | plus: 1 -%}{%- endif -%}
+  {%- endfor -%}
+  <h3 class="cv-head">{{ t.sec.publications }}<span class="group-count">{{ n }}</span></h3>
+  <p class="author-note">{{ t.author_note }}</p>
+  {% include research_pubs.html r=r lang=lang %}
+
+  <p class="more"><a href="{{ home | append: '#research' | relative_url }}">{{ t.back_home }}</a></p>
+</div>

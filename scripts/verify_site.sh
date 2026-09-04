@@ -23,6 +23,15 @@ for p in index.html cv/index.html \
   chk "$p" "test -s '_site/$p'"
 done
 
+echo "--- 研究テーマの詳細ページ（4テーマ×3言語）---"
+for t in e-textile low-power-wearable robot-skin digital-fabrication; do
+  for pre in "" "en/" "zh/"; do
+    chk "${pre}research/$t/" "test -s '_site/${pre}research/$t/index.html'"
+  done
+done
+chk 'トップのカードが詳細へリンク' 'grep -q "href=\"/research/e-textile/\"" _site/index.html'
+chk '詳細ページの件数がカードと一致' '[ "$(grep -o "class=\"entry entry--pub\"" _site/research/e-textile/index.html | wc -l | tr -d " ")" = "$(grep -o "theme-pubs-head\">関連論文 [0-9]* 件" _site/index.html | head -1 | grep -o "[0-9]*")" ]'
+
 echo "--- ナビは Publications と CV の2つ ---"
 chk '論文 リンクあり'   'grep -q ">論文</a>" _site/index.html'
 chk 'CV リンクあり'     'grep -q ">CV</a>" _site/index.html'

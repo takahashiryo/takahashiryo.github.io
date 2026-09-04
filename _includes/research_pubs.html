@@ -1,0 +1,17 @@
+{%- comment %}
+  研究テーマの詳細ページに出す関連論文。種別ごとには分けず、新しい順に全部出す。
+  日本語題名も出す（トップのカードは例として3件を英語に絞っているが、
+  ここは一覧なので原語のまま並べる）。件数はトップのカードと同じ数になる。
+{%- endcomment -%}
+{%- assign r = include.r -%}
+{%- assign t = site.data.i18n[include.lang] -%}
+{%- comment %} 見出しが「論文」なのでメディア掲載は混ぜない（トップのカードの件数と揃える） {% endcomment -%}
+{%- assign pubs = site.data.publications -%}
+<div class="research-pubs">
+{%- for p in pubs -%}
+  {%- capture hit %}{% include pub_match.html p=p r=r %}{% endcapture -%}
+  {%- if hit contains "1" -%}
+    {% include pub_entry.html p=p t=t badge=true %}
+  {%- endif -%}
+{%- endfor -%}
+</div>

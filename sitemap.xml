@@ -11,4 +11,11 @@ permalink: /sitemap.xml
   <url><loc>{{ '/en/' | append: suffix | absolute_url }}</loc></url>
   <url><loc>{{ '/zh/' | append: suffix | absolute_url }}</loc></url>
 {%- endfor %}
+{%- comment %} 研究テーマの詳細ページ {% endcomment -%}
+{%- for r in site.data.profile.research -%}
+{%- assign suffix = "research/" | append: r.id | append: "/" -%}
+  <url><loc>{{ '/' | append: suffix | absolute_url }}</loc></url>
+  <url><loc>{{ '/en/' | append: suffix | absolute_url }}</loc></url>
+  <url><loc>{{ '/zh/' | append: suffix | absolute_url }}</loc></url>
+{%- endfor %}
 </urlset>

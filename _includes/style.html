@@ -250,17 +250,45 @@
     flex: 0 0 2.1em; text-align: right; padding-top: 0.2em;
     font-size: 0.86em; color: var(--faint); font-variant-numeric: tabular-nums;
   }
-  /* 縦積みになる幅では番号が1行を占めてしまうので、日付と同じ行に置く */
+  /* 縦積みになる幅では番号が1行を占めてしまうので、日付・タイトルと同じ行に置く */
   @media (max-width: 640px) {
     .cv-main .cv-list > .entry::before,
     .cv-main .award-list > .entry::before,
-    .cv-main .talk-list > .entry::before { flex-basis: auto; text-align: left; padding-top: 0; }
+    .cv-main .talk-list > .entry::before,
+    #pub-groups .entry--pub::before { flex-basis: auto; text-align: left; padding-top: 0; }
   }
 
   /* 著者マーカーの凡例（* 筆頭 / † 責任著者）。マーカー自体は authors 列に入っている */
   .cv-main .author-note {
     margin: 0 0 0.9em; font-size: 0.74em; color: var(--faint); letter-spacing: 0.06em;
   }
+
+  /* ── 研究テーマの詳細ページ ── */
+  .research-page { max-width: 820px; }
+  .research-fig { margin: 0 0 1.6em; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; background: #f3f5f7; }
+  .research-fig img { display: block; width: 100%; aspect-ratio: 16 / 8; object-fit: cover; }
+  .research-lead { margin: 0; font-size: 0.98em; line-height: 1.95; }
+  .research-page .cv-head { margin: 2.4em 0 0.5em; }
+  .research-page .entry { padding: 0.55em 0; }
+  .research-page .entry-title { line-height: 1.5; }
+  .research-page .entry-authors { margin-top: 0.2em; line-height: 1.55; }
+  .research-page .author-note {
+    margin: 0 0 0.9em; font-size: 0.74em; color: var(--faint); letter-spacing: 0.06em;
+  }
+  .research-pubs { counter-reset: pub; }
+  .research-pubs .entry--pub { counter-increment: pub; }
+  .research-pubs .entry--pub::before {
+    content: counter(pub) ".";
+    flex: 0 0 2.1em; text-align: right; padding-top: 0.2em;
+    font-size: 0.86em; color: var(--faint); font-variant-numeric: tabular-nums;
+  }
+
+  /* カードのタイトルと画像は詳細ページへのリンク */
+  .theme h3 a { color: var(--ink); }
+  .theme h3 a:hover { color: var(--blue); text-decoration: none; }
+  a.theme-fig { display: block; }
+  a.theme-fig img { transition: opacity .15s; }
+  a.theme-fig:hover img { opacity: 0.86; }
 
   /* ── 連絡先 ── */
   .contact p { margin: 0.4em 0; }
@@ -294,6 +322,8 @@
   @media (max-width: 640px) { .cv-list .entry-mark { width: auto; } }
 
   @media (max-width: 640px) {
+    /* .research-pubs の基本規則はこの上にあるので、ここで上書きする */
+    .research-pubs .entry--pub::before { flex-basis: auto; text-align: left; padding-top: 0; }
     body { font-size: 16px; }
     .hero { flex-direction: column; align-items: flex-start; text-align: left; }
     .entry { flex-direction: column; gap: 0.3em; }
