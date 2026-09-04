@@ -22,67 +22,61 @@ links:
     url: "https://www.u-tokyo.ac.jp/focus/ja/people/k0001_05213.html"
 
 # 研究テーマ（トップの Research セクション）
+# match / exclude は関連論文を拾うキーワード（題名を小文字化して部分一致）。
+# publications.csv はスプレッドシート同期で作り直されるので、ひも付けは CSV の列に持たせない。
+# 日本語題名の論文は関連論文に出さない（_includes/pub_match.html で除外している）。
+# 注意: "ring" のような短い語は powering / networking / jointing に部分一致するので使わない。
 research:
-  - id: "wpt-textile"
-    image: "wpt-textile.jpg"
-    # 関連論文の抽出キーワード（title + venue を小文字化して部分一致）。
-    # ロボット関連は robot-power 側に寄せたいので exclude で外す。
-    match: ["meander", "メアンダ", "wpt", "wireless power", "無線給電", "無線電力",
-            "power transfer", "liquid metal", "液体金属", "給電", "電磁界", "電力伝送",
-            "wireless charging", "wireless powering"]
-    # センサ読み取りが主題のものは bodyscale-sensing に寄せる。
-    # 部屋規模の中継器・空洞共振器・プラレールは「テキスタイル」ではないので外す。
-    exclude: ["ロボット", "robot", "ヘビ型",
-              "nfc", "センサ", "readout", "読み取り",
-              "relay resonator", "空洞共振器", "プラレール"]
+  - id: "e-textile"
+    image: "e-textile.jpg"
+    match: ["meander", "e-textile", "e-knit", "textile", "knittable", "bodynet", "nfc",
+            "clothing", "electric skin"]
+    # 作り方が主題のものは digital-fabrication へ、指輪・リストバンドは
+    # low-power-wearable へ寄せる。
+    exclude: ["cuttable", "plug-n-play", "3d-printing", "wristband"]
     ja:
-      title: "無線給電テキスタイル"
-      body: "人体に安全なメアンダコイルを衣服の全面に編み込み、身体のどこにいても W 級の電力を届ける。液体金属配線や機械編みによって、洗える・切れる・伸びる給電服を作る。"
+      title: "電子テキスタイル"
+      body: "メアンダコイルを衣服の全面に編み込み、人体に安全なまま身体のどこにでも W 級の電力と通信を届ける。液体金属配線や機械編みによって、洗える・伸びる電子テキスタイルを作る。"
     en:
-      title: "Wireless power textiles"
-      body: "Meander coils that are safe to the body are knitted across a whole garment, delivering watt-level power anywhere on it. Liquid-metal wiring and machine knitting make the fabric washable, cuttable and stretchable."
+      title: "E-textiles"
+      body: "Meander coils knitted across a whole garment deliver watt-level power and data anywhere on the body while staying safe to wear. Liquid-metal wiring and machine knitting make the fabric washable and stretchable."
     zh:
-      title: "无线供电纺织品"
-      body: "将对人体安全的蜿蜒线圈编织于整件衣服，可在身体任意位置提供瓦级电力。借助液态金属布线与机器编织，实现可水洗、可裁剪、可拉伸的供电服装。"
-  - id: "batteryfree-input"
-    image: "batteryfree-input.jpg"
-    # "ring" 単体は powering / networking などに部分一致してしまうので使わない。
-    match: ["picoring", "telemetring", "指輪", "wristband", "リストバンド",
-            "mouse", "マウス", "キーボード", "コントローラ", "thumb-to-index"]
+      title: "电子纺织品"
+      body: "将蜿蜒线圈编织于整件衣服，在保证人体安全的前提下，向身体任意位置输送瓦级电力与数据。借助液态金属布线与机器编织，实现可水洗、可拉伸的电子纺织品。"
+  - id: "low-power-wearable"
+    image: "low-power-wearable.jpg"
+    match: ["picoring", "telemetring", "wristband", "ring-based", "ring mouse",
+            "ring controller", "tinymouse", "thumb-to-index", "rings"]
     ja:
-      title: "電池レスなウェアラブル入力"
-      body: "指輪とリストバンドのコイル間の磁気結合を読み取ることで、電池も無線チップも積まない極低電力な指輪型入力デバイスを実現する。"
+      title: "極低電力ウェアラブル"
+      body: "指輪とリストバンドのコイル間の磁気結合を読み取ることで、指輪側に無線チップを積まない入力デバイスを実現する。1回の充電で1か月以上動く。"
     en:
-      title: "Battery-free wearable input"
-      body: "By sensing the magnetic coupling between a ring coil and a wristband coil, ultra-low-power ring input devices work without a battery or a radio on the ring."
+      title: "Ultra-low-power wearables"
+      body: "Sensing the magnetic coupling between a ring coil and a wristband coil lets a ring work as an input device with no radio on the ring — over a month of use on a single charge."
     zh:
-      title: "无电池可穿戴输入"
-      body: "通过读取戒指线圈与腕带线圈之间的磁耦合，实现戒指端无需电池与无线芯片的超低功耗输入设备。"
-  - id: "bodyscale-sensing"
-    image: "bodyscale-sensing.jpg"
-    # 指輪側の NFC 論文と、ロボット系（"センサレス" が "センサ" に一致する）を外す。
-    match: ["nfc", "e-knit", "eknit", "bodynet", "センサ", "センシング",
-            "sensing", "sensor", "読み取り", "readout", "knittable",
-            "電子ニット", "機械編み"]
-    exclude: ["picoring", "wristband", "指輪", "mouse", "ロボット", "robot"]
+      title: "超低功耗可穿戴设备"
+      body: "通过读取戒指线圈与腕带线圈之间的磁耦合，实现戒指端不搭载无线芯片的输入设备。一次充电可使用一个月以上。"
+  - id: "robot-skin"
+    image: "robot-skin.jpg"
+    match: ["robot", "snake", "locomotion"]
     ja:
-      title: "全身スケールの無線センシング"
-      body: "メアンダ形状の電子ニットを一枚の服として編み、全身に散らばったバッテリレスセンサをまとめて読み取る近接無線ネットワークを組む。"
+      title: "ロボットスキン"
+      body: "関節位置を移動できるヘビ型ロボットや小型移動ロボットに、床面や布から電力を受け取る皮膚をまとわせ、電池のいらない長期運用を可能にする。"
     en:
-      title: "Body-scale wireless sensing"
-      body: "A single machine-knitted meandered e-textile forms a near-field network that reads out battery-free sensors distributed over the entire body."
+      title: "Robot skin"
+      body: "A power-receiving skin lets joint-repositionable snake robots and small mobile robots draw energy from floors and fabrics, enabling long-term operation without batteries."
     zh:
-      title: "全身尺度无线感知"
-      body: "以机器编织的蜿蜒电子织物构成近场网络，统一读取分布于全身的无电池传感器。"
-  - id: "robot-power"
-    image: "robot-power.jpg"
-    match: ["ロボット", "robot", "ヘビ型", "snake", "索状", "関節"]
+      title: "机器人皮肤"
+      body: "为可移动关节的蛇形机器人与小型移动机器人披上可受电的“皮肤”，使其从地面或织物获取电能，实现无需电池的长期运行。"
+  - id: "digital-fabrication"
+    image: "digital-fabrication.jpg"
+    match: ["cuttable", "3d-printing", "plug-n-play", "prototyping"]
     ja:
-      title: "ロボットへの無線給電"
-      body: "関節位置を移動できるヘビ型ロボットや小型移動ロボットに、床面や布から電力を届け続け、電池のいらない長期運用を可能にする。"
+      title: "デジタルファブリケーション"
+      body: "ハサミで切れるワイヤレス充電シートや、水溶性の流路に液体金属を流し込む 3D 印刷など、電子デバイスを誰でも作り変えられる製造手法を設計する。"
     en:
-      title: "Wireless power for robots"
-      body: "Floors and fabrics keep delivering power to joint-repositionable snake robots and small mobile robots, enabling long-term operation without batteries."
+      title: "Digital fabrication"
+      body: "Wireless charging sheets that can be cut with scissors, and 3D-printed water-soluble channels filled with liquid metal — fabrication methods that let anyone reshape an electronic device."
     zh:
-      title: "机器人无线供电"
-      body: "由地面或织物持续为可移动关节的蛇形机器人与小型移动机器人供电，实现无需电池的长期运行。"
+      title: "数字化制造"
+      body: "可用剪刀裁剪的无线充电薄片，以及向水溶性流道注入液态金属的 3D 打印——设计让任何人都能重新塑造电子器件的制造方法。"
