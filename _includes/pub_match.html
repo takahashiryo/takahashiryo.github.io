@@ -7,7 +7,17 @@
 {%- assign r = include.r -%}
 {%- comment -%} venue は照合しない。"Intelligent Robots and Systems" のような
      会議名がロボット系に誤爆するため。 {%- endcomment -%}
-{%- assign hay = p.title | downcase -%}
+{%- comment %}
+  日本語の題名は関連論文に出さない。Liquid には正規表現が無いので、
+  英語題名には決して現れない かな・カナ・長音 を含むかどうかで判定する。
+  手元の62件で検証済み（日本語31件すべてが該当し、英語31件は1件も該当しない）。
+{% endcomment -%}
+{%- assign kana = "の,に,な,ス,イ,ー,た,ル,ン,ッ,る,ト,レ,け,を,ア,コ,リ,ダ,よ,バ,ウ,ボ,ロ,は,が,で,と,し,い,ん,か,ら,も,て,・" | split: "," -%}
+{%- assign is_ja = false -%}
+{%- for c in kana -%}
+  {%- if p.title contains c -%}{%- assign is_ja = true -%}{%- break -%}{%- endif -%}
+{%- endfor -%}
+{%- if is_ja -%}{%- assign hay = "" -%}{%- else -%}{%- assign hay = p.title | downcase -%}{%- endif -%}
 {%- assign hit = false -%}
 {%- for kw in r.match -%}
   {%- if hay contains kw -%}{%- assign hit = true -%}{%- break -%}{%- endif -%}
