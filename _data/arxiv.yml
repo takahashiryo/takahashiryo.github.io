@@ -1,0 +1,14 @@
+# 論文タイトル → arXiv の URL。
+# publications.csv はスプレッドシート同期で作り直されるので、リンクは CSV の列に持たせない。
+#
+# 出所: arXiv API に題名で問い合わせ、arXiv 側の題名と完全一致したものだけ採用した。
+#       Near-field power … の1件は arXiv 側の題名が違う（Wireless charging and readout
+#       via textile coil …）ので検索では拾えず、cronos_web の arxiv 列から取った。
+
+"Machine-knittable, Magnetically-Plug-n-Play E-Textile Prototyping": "https://arxiv.org/abs/2606.22800"
+"Body-scale NFC for wearables: human-centric body-scale NFC networking for ultra-low-power wearable devices (Demo of UTokyo Kawahara Lab 2025)": "https://arxiv.org/abs/2603.04777"
+"3D-printing water-soluble channels filled with liquid metal for recyclable and cuttable wireless power sheet": "https://arxiv.org/abs/2604.09299"
+"Ultra-low-power ring-based wireless tinymouse": "https://arxiv.org/abs/2504.03253"
+"Full-body WPT: wireless powering with meandered e-textiles": "https://arxiv.org/abs/2506.17606"
+"Joint-repositionable Inner-wireless Planar Snake Robot": "https://arxiv.org/abs/2411.13916"
+"Near-field power and data networking via meandered e-textiles for continuous, large-scale BodyNet": "https://arxiv.org/abs/2502.11015"

@@ -13,9 +13,13 @@
   <div class="entry" data-type="award">
     <div class="entry-mark"><span class="badge">{{ a.year }}</span></div>
     <div class="entry-body">
+      {%- comment %} researchmap の API URL（api.researchmap.jp/.../research_projects/…）は
+           人が読むページではないのでリンクにしない {% endcomment -%}
+      {%- assign aurl = a.url -%}
+      {%- if aurl contains "api.researchmap.jp" -%}{%- assign aurl = "" -%}{%- endif -%}
       <div class="entry-title">
-        {%- if a.url contains "http" -%}
-          <a href="{{ a.url }}" target="_blank" rel="noopener">{{ nm }}</a>
+        {%- if aurl contains "http" -%}
+          <a href="{{ aurl }}" target="_blank" rel="noopener">{{ nm }}</a>
         {%- else -%}{{ nm }}{%- endif -%}
       </div>
       <div class="entry-venue">{{ org }}</div>

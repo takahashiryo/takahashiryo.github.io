@@ -41,16 +41,19 @@
   {%- else -%}{{ p.year }}{%- endif -%}
 {%- endcapture -%}
 
-{%- comment %} リンクのピル。リンク先のホストでラベルを決める {% endcomment -%}
-{%- assign u = p.url -%}
-{%- if u contains "doi.org" -%}{%- assign ulabel = "DOI" -%}
-{%- elsif u contains "dl.acm.org" -%}{%- assign ulabel = "ACM" -%}
-{%- elsif u contains "ieeexplore" -%}{%- assign ulabel = "IEEE" -%}
-{%- elsif u contains "nature.com" -%}{%- assign ulabel = "Nature" -%}
-{%- elsif u contains "jstage" -%}{%- assign ulabel = "J-STAGE" -%}
-{%- elsif u contains "kaken.nii" -%}{%- assign ulabel = "KAKEN" -%}
-{%- elsif u contains ".pdf" -%}{%- assign ulabel = "PDF" -%}
-{%- else -%}{%- assign ulabel = "Link" -%}{%- endif -%}
+{%- comment %}
+  リンクは DOI と arXiv だけ出す。ACM / IEEE / 出版社ページのラベルは出さない。
+  doi 列が空でも、url が doi.org や dl.acm.org/doi/ なら DOI を取り出せる。
+{% endcomment -%}
+{%- assign doi = p.doi | strip -%}
+{%- if doi == "" -%}
+  {%- if p.url contains "doi.org/" -%}
+    {%- assign doi = p.url | split: "doi.org/" | last -%}
+  {%- elsif p.url contains "dl.acm.org/doi/" -%}
+    {%- assign doi = p.url | split: "dl.acm.org/doi/" | last | remove_first: "abs/" -%}
+  {%- endif -%}
+{%- endif -%}
+{%- assign arx = site.data.arxiv[p.title] -%}
 
 <div class="entry entry--pub" data-type="{{ p.type }}">
   <div class="entry-body">
@@ -67,10 +70,10 @@
     </div>
     {%- endif -%}
     {%- if p.award != "" %}<div class="entry-award">{{ p.award | escape }}</div>{% endif -%}
-    {%- if p.url contains "http" or p.doi != "" %}
+    {%- if doi != "" or arx -%}
     <div class="entry-links">
-      {%- if p.url contains "http" %}<a class="pill" href="{{ p.url }}" target="_blank" rel="noopener">{{ ulabel }}</a>{% endif -%}
-      {%- if p.doi != "" and ulabel != "DOI" %}<a class="pill" href="https://doi.org/{{ p.doi }}" target="_blank" rel="noopener">DOI</a>{% endif -%}
+      {%- if doi != "" %}<a class="pill" href="https://doi.org/{{ doi }}" target="_blank" rel="noopener">DOI</a>{% endif -%}
+      {%- if arx %}<a class="pill" href="{{ arx }}" target="_blank" rel="noopener">arXiv</a>{% endif -%}
     </div>
     {%- endif -%}
   </div>
