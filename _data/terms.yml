@@ -69,7 +69,7 @@
 # JST・財団の4件は英語版が無いので訳した（★）。
 "指輪デバイスへの準近接な無線通信・給電インタフェース": "Quasi-proximity data and power interface for smartring"
 "DailyAR入力インタフェースに向けた超低電力な指輪型無線ARコントローラ": "Ultra-low-power ring-based AR controller for daily AR interface"
-"生体データ通信インフラの無線フルボディ化": "Full-body wireless extension of biological data communication infrastructure"   # ★
+"生体データ通信インフラの無線フルボディ化": "Full-body wireless power and data networking"
 "激しい動きにも耐える全身分散スキン知能ネットワーク": "Motion-robust body-scale distributed skin intelligence network"   # ★
 "極低消費電力の指輪型無線マウスによるユビキタスな指入力インタフェース": "Ubiquitous finger input interface using an ultra-low-power wireless ring mouse"   # ★
 "衣類近傍へ電磁界を閉じ込めるコイル構造による衣服全面での無線給電・センシング": "Body-scale wireless charging and sensing using a safe-to-body coil structure confining electromagnetic field near garment"
