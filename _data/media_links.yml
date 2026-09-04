@@ -1,0 +1,16 @@
+# メディア掲載のタイトル → 記事の URL。
+# media.csv は scripts/build_cv.py が researchmap から作り直すので、URL を CSV に書いても消える。
+# researchmap 側は24件中2件しか URL を持っていないため、ここで補う。
+#
+# 出所: 記事タイトルと媒体名で検索し、媒体のドメインが一致するものだけを採用した。
+# ★ = 記録されている題名と現在の見出しが一致しない（媒体と内容は一致）。要確認。
+
+"服にコイルを編み込んで全身無線通信・給電ネットワーク、AR 操作を見据えた指輪型マウスも開発": "https://ascii.jp/elem/000/004/425/4425263/"
+"東京大学、指輪型マウス「picoRing」を発表 超低消費電力でAR操作も可能": "https://www.moguravr.com/tokyo-university-picoring-mouse-ar-controller/"   # ★
+"マウスを指輪に！ 東大が開発した超低消費電力ウェアラブル「picoRing」": "https://nazology.kusuguru.co.jp/archives/186814"   # ★
+"ごくわずかな電力で動く指輪型無線マウスの開発に成功 ―日常空間でARグラスを目立たず半永久的に扱うコントローラに向けて―": "https://www.t.u-tokyo.ac.jp/press/pr2025-10-01-003"
+"Smart glasses are forcing wearables to get very weird": "https://gizmodo.com/smart-glasses-are-forcing-wearables-to-get-very-weird-2000674309"
+"One Ring to Rule VR": "https://www.hackster.io/news/one-ring-to-rule-vr-2f0cda552a60"
+"New smart ring is a novel way to control your computer — it has the humble mouse firmly in its sights": "https://www.livescience.com/technology/computing/new-smart-ring-is-a-novel-way-to-control-your-computer-it-has-the-humble-mouse-firmly-in-its-sights"
+"充電できる“服”、東大が開発 身体周りのスマホを自動で無線給電": "https://www.itmedia.co.jp/news/articles/2205/09/news019.html"
+"机や太ももの上でキーボードなしタイピング 指輪型「TelemetRing」、東大とMicrosoftが開発": "https://www.itmedia.co.jp/news/articles/2104/09/news051.html"

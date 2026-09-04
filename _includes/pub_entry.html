@@ -57,8 +57,18 @@
 
 <div class="entry entry--pub" data-type="{{ p.type }}">
   <div class="entry-body">
+    {%- comment %}
+      メディア掲載は DOI が無いので、タイトル自体を記事へのリンクにする。
+      media.csv は build_cv.py が作り直すので、URL は _data/media_links.yml で持つ。
+    {% endcomment -%}
+    {%- assign murl = "" -%}
+    {%- if p.type == "media" -%}
+      {%- assign murl = site.data.media_links[p.title] | default: p.url -%}
+    {%- endif -%}
     <div class="entry-title">
-      {{ p.title | escape }}
+      {%- if murl contains "http" -%}
+        <a href="{{ murl }}" target="_blank" rel="noopener">{{ p.title | escape }}</a>
+      {%- else -%}{{ p.title | escape }}{%- endif -%}
       {%- comment %} 種別ごとの見出しが無い一覧（トップの直近20件）でだけ種別を添える {% endcomment -%}
       {%- if include.badge %} <span class="badge badge--{{ p.type }}">{{ t.types[p.type] | default: p.type }}</span>{% endif -%}
       {%- if p.note != "" %} <span class="badge">{{ p.note | escape }}</span>{% endif -%}
