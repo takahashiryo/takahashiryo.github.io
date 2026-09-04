@@ -24,7 +24,7 @@
   {%- comment %} 1周目: 査読あり {% endcomment -%}
   {%- for p in site.data.publications -%}
     {%- if shown < limit and p.reviewed == "yes" -%}
-      {%- capture hit %}{% include pub_match.html p=p r=r %}{% endcapture -%}
+      {%- capture hit %}{% include pub_match.html p=p r=r skip_ja=true %}{% endcapture -%}
       {%- if hit contains "1" -%}
         {%- assign shown = shown | plus: 1 -%}
         {% include theme_pub_item.html p=p %}
@@ -34,7 +34,7 @@
   {%- comment %} 2周目: 足りなければ査読なしで埋める {% endcomment -%}
   {%- for p in site.data.publications -%}
     {%- if shown < limit and p.reviewed != "yes" -%}
-      {%- capture hit %}{% include pub_match.html p=p r=r %}{% endcapture -%}
+      {%- capture hit %}{% include pub_match.html p=p r=r skip_ja=true %}{% endcapture -%}
       {%- if hit contains "1" -%}
         {%- assign shown = shown | plus: 1 -%}
         {% include theme_pub_item.html p=p %}

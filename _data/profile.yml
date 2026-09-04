@@ -30,10 +30,13 @@ research:
   - id: "e-textile"
     image: "e-textile.jpg"
     match: ["meander", "e-textile", "e-knit", "textile", "knittable", "bodynet", "nfc",
-            "clothing", "electric skin", "soft wearables"]
+            "clothing", "electric skin", "soft wearables",
+            "メアンダ", "衣服", "衣類", "給電服", "服型", "テキスタイル", "電子ニット",
+            "センサ", "センシング"]
     # 作り方が主題のものは digital-fabrication へ、指輪・リストバンドは
     # low-power-wearable へ寄せる。
-    exclude: ["cuttable", "plug-n-play", "3d-printing", "wristband"]
+    exclude: ["cuttable", "plug-n-play", "3d-printing", "wristband",
+              "ロボット", "picoring", "指輪"]
     ja:
       title: "電子テキスタイル"
       body: "メアンダコイルを衣服の全面に編み込み、人体に安全なまま身体のどこにでも W 級の電力と通信を届ける。液体金属配線や機械編みによって、洗える・伸びる電子テキスタイルを作る。"
@@ -46,7 +49,8 @@ research:
   - id: "low-power-wearable"
     image: "low-power-wearable.jpg"
     match: ["picoring", "telemetring", "wristband", "ring-based", "ring mouse",
-            "ring controller", "tinymouse", "thumb-to-index", "rings"]
+            "ring controller", "tinymouse", "thumb-to-index", "rings",
+            "指輪", "リストバンド", "マウス", "キーボード"]
     ja:
       title: "極低電力ウェアラブル"
       body: "指輪とリストバンドのコイル間の磁気結合を読み取ることで、指輪側に無線チップを積まない入力デバイスを実現する。1回の充電で1か月以上動く。"
@@ -59,7 +63,8 @@ research:
   - id: "robot-skin"
     image: "robot-skin.jpg"
     # 2-D Relay Resonator Array は床面からの給電なのでロボット側に入れる
-    match: ["robot", "snake", "locomotion", "relay resonator"]
+    match: ["robot", "snake", "locomotion", "relay resonator",
+            "ロボット", "プラレール", "中継器", "共振器"]
     ja:
       title: "ロボットスキン"
       body: "関節位置を移動できるヘビ型ロボットや小型移動ロボットに、床面や布から電力を受け取る皮膚をまとわせ、電池のいらない長期運用を可能にする。"
@@ -71,7 +76,8 @@ research:
       body: "为可移动关节的蛇形机器人与小型移动机器人披上可受电的“皮肤”，使其从地面或织物获取电能，实现无需电池的长期运行。"
   - id: "digital-fabrication"
     image: "digital-fabrication.jpg"
-    match: ["cuttable", "3d-printing", "plug-n-play", "prototyping"]
+    match: ["cuttable", "3d-printing", "plug-n-play", "prototyping",
+            "3d印刷", "水溶性", "切断"]
     ja:
       title: "デジタルファブリケーション"
       body: "ハサミで切れるワイヤレス充電シートや、水溶性の流路に液体金属を流し込む 3D 印刷など、電子デバイスを誰でも作り変えられる製造手法を設計する。"
