@@ -53,6 +53,10 @@
     {%- assign doi = p.url | split: "dl.acm.org/doi/" | last | remove_first: "abs/" -%}
   {%- endif -%}
 {%- endif -%}
+{%- comment %} url からも取れないものは _data/doi.yml で補う {% endcomment -%}
+{%- if doi == "" -%}
+  {%- assign doi = site.data.doi[p.title] | default: "" -%}
+{%- endif -%}
 {%- assign arx = site.data.arxiv[p.title] -%}
 
 <div class="entry entry--pub" data-type="{{ p.type }}">
