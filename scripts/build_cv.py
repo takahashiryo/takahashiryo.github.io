@@ -38,6 +38,13 @@ def ym(s):
     return (m.group(1), m.group(2)) if m else ((s[:4] if s[:4].isdigit() else ""), "")
 
 
+def ymd(s):
+    """年・月・日。researchmap は 2026-08 のように日が無いこともある。"""
+    y, mo = ym(s)
+    m = re.match(r"\d{4}-\d{2}-(\d{2})", (s or ""))
+    return y, mo, (m.group(1) if m else "")
+
+
 def write(name, cols, rows):
     with (OUT / name).open("w", newline="", encoding="utf-8") as f:
         w = csv.DictWriter(f, fieldnames=cols, quoting=csv.QUOTE_ALL)
@@ -121,14 +128,14 @@ def build_grants():
     write("grants.csv", list(rows[0].keys()), rows)
 
 
-PUB_COLS = ["year", "month", "type", "authors", "title", "venue", "detail",
+PUB_COLS = ["year", "month", "day", "type", "authors", "title", "venue", "detail",
             "place", "award", "url", "doi", "note", "reviewed", "sortkey"]
 
 
 def build_media():
     rows = []
     for m in load("media_coverage"):
-        y, mo = ym(m.get("publication_date"))
+        y, mo, d = ymd(m.get("publication_date"))
         outlet = (pick(m.get("publisher"), "ja", "en") or pick(m.get("event"), "ja", "en")
                   or pick(m.get("location"), "ja", "en"))
         loc = pick(m.get("location"), "ja", "en")
@@ -136,11 +143,11 @@ def build_media():
         if outlet.startswith("http"):
             outlet = ""
         rows.append({
-            "year": y, "month": mo, "type": "media", "authors": "",
+            "year": y, "month": mo, "day": d, "type": "media", "authors": "",
             "title": pick(m.get("media_coverage_title"), "ja", "en"),
             "venue": outlet, "detail": "", "place": "", "award": "",
             "url": url, "doi": "", "note": "", "reviewed": "no",
-            "sortkey": f"{y}{mo}",
+            "sortkey": f"{y}{mo}{(d or '').zfill(2) or '00'}",
         })
     rows.sort(key=pub_sort_key)
     write("media.csv", PUB_COLS, rows)
@@ -188,9 +195,11 @@ TYPE_ORDER = {"journal": 0, "conference": 1, "workshop": 2, "demo": 3,
 
 
 def pub_sort_key(r):
-    """新しい年月が先。同じ年月の中は 種別 → 掲載先 → タイトル の昇順。"""
-    ym = int(r["sortkey"] or 0)
-    return (-ym, TYPE_ORDER.get(r.get("type", ""), 9), r.get("venue", ""), r.get("title", ""))
+    """新しい日付が先。sortkey は YYYYMMDD。日が空のものは 00 になるので
+    同じ月の中では日付の分かっているものより後ろに来る。
+    同じ日（または日が両方とも不明）のときは 種別 → 掲載先 → タイトル の昇順。"""
+    ymd = int(r["sortkey"] or 0)
+    return (-ymd, TYPE_ORDER.get(r.get("type", ""), 9), r.get("venue", ""), r.get("title", ""))
 
 
 def add_sortkey(name):
@@ -198,7 +207,7 @@ def add_sortkey(name):
     path = OUT / name
     rows = list(csv.DictReader(path.open(encoding="utf-8")))
     for r in rows:
-        r["sortkey"] = f"{r['year']}{r['month']}"
+        r["sortkey"] = f"{r['year']}{r['month']}{(r.get('day') or '').zfill(2) or '00'}"
     rows.sort(key=pub_sort_key)
     write(name, PUB_COLS, rows)
 

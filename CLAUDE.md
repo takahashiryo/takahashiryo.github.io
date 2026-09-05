@@ -45,6 +45,12 @@
 | `_data/profile.yml` | リンク・研究テーマ | 手書き＋researchmap |
 
 `type` の値: `journal` / `conference` / `workshop` / `demo` / `poster` / `domestic` / `article`。
+
+**並び順**は `sortkey`（`YYYYMMDD`）の降順。`day` が空のものは `00` になるので、
+同じ月の中では日の分かっているものより後ろに来る。同じ日（または両方とも日が不明）の
+ときは 種別 → 掲載先 → タイトル の昇順（`scripts/build_cv.py` の `pub_sort_key`）。
+スプレッドシート同期に切り替えるときは、Publications シートに **`day` 列**を
+足すこと（無いと日が全部空になり、月単位の並びに戻る）。
 一覧ページのフィルタタブはこの値から自動生成される。
 
 将来スプレッドシート同期に切り替える場合は、リポジトリ Variables に `SHEET_ID` を入れるだけで
