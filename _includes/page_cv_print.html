@@ -31,7 +31,8 @@
   {%- capture ti %}{% include term.html ja=g.title_ja en=g.title_en lang=lang %}{% endcapture -%}
   {%- capture fu %}{% include term.html ja=g.funder_ja en=g.funder_en lang=lang %}{% endcapture -%}
   {%- capture ro %}{% include term.html ja=g.role_ja en=g.role_en lang=lang %}{% endcapture -%}
-  {%- assign am = site.data.grant_amounts[g.title_ja] -%}
+  {%- assign amo = site.data.grant_amounts[g.title_ja] -%}
+  {%- if amo -%}{%- assign am = amo[lang] | default: amo.en -%}{%- else -%}{%- assign am = "" -%}{%- endif -%}
   {%- if am == nil or am == "" -%}
     {%- capture am %}{% include term.html ja=g.amount_ja en=g.amount_en lang=lang %}{% endcapture -%}
   {%- endif -%}
