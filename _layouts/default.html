@@ -16,7 +16,8 @@
     {%- assign head_title = t.name | append: "｜" | append: t.name_sub | append: " — " | append: t.org_short -%}
   {%- endif -%}
   <title>{{ head_title }}</title>
-  <meta name="description" content="{{ page.description | default: t.lead | strip_html | truncate: 160 }}">
+  {%- comment %} 検索結果に出る説明文。名前・所属・研究内容がこの順で読めるようにしている {% endcomment -%}
+  <meta name="description" content="{{ page.description | default: t.meta_desc | default: t.lead | strip_html | truncate: 200 }}">
   <link rel="canonical" href="{{ page.url | absolute_url }}">
   {%- comment %} 3言語の相互リンク（検索エンジンに言語違いの同一ページだと伝える） {% endcomment %}
   <link rel="alternate" hreflang="ja" href="{{ '/' | append: suffix | absolute_url }}">
@@ -61,11 +62,18 @@
     "worksFor": {
       "@type": "CollegeOrUniversity",
       "name": "The University of Tokyo",
+      "alternateName": ["東京大学", "東大", "UTokyo", "东京大学"],
+      "department": {
+        "@type": "Organization",
+        "name": "Graduate School of Engineering, Department of Electrical Engineering and Information Systems",
+        "alternateName": "東京大学 大学院工学系研究科 電気系工学専攻"
+      },
       "url": "https://www.u-tokyo.ac.jp/"
     },
     "alumniOf": {
       "@type": "CollegeOrUniversity",
       "name": "The University of Tokyo",
+      "alternateName": ["東京大学", "東大", "UTokyo"],
       "url": "https://www.u-tokyo.ac.jp/"
     },
     "knowsAbout": [

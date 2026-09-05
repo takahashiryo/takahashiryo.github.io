@@ -11,6 +11,7 @@ ja:
   org_short: "東京大学"
   tagline: "電池も配線もいらない、全身のウェアラブルへ"
   lead: "極限環境でも、安心・快適な衣（異）生活を目指して、衣服そのものを無線の電力線・通信線に変えることで、電池交換も配線もいらない全身スケールのウェアラブルコンピューティングを研究しています。"
+  meta_desc: "高橋亮（たかはし りょう）。東京大学（東大）大学院工学系研究科 電気系工学専攻 特任助教。衣服そのものを無線の電力線・通信線に変え、電池も配線もいらない全身スケールのウェアラブルコンピューティングを研究しています。"
   nav:
     about: "概要"
     research: "研究"
@@ -81,6 +82,7 @@ en:
   org_short: "The University of Tokyo"
   tagline: "Toward whole-body wearables that need no battery and no wire"
   lead: "Toward a safe and comfortable life in what we wear, even in extreme environments. I turn clothing itself into a wireless power and data line, so that wearable computing can cover the whole body without batteries to replace or wires to route."
+  meta_desc: "Ryo Takahashi, Project Assistant Professor at the University of Tokyo (UTokyo). Turning clothing itself into wireless power and data lines, for battery-free full-body wearable computing."
   nav:
     about: "About"
     research: "Research"
@@ -151,6 +153,7 @@ zh:
   org_short: "东京大学"
   tagline: "迈向无需电池与布线的全身可穿戴设备"
   lead: "以即使在极端环境中也能安心舒适的「衣」生活为目标，我把衣服本身变成无线的电力线与通信线，让可穿戴计算覆盖全身，既不必更换电池，也不必布线。"
+  meta_desc: "高桥亮（Ryo Takahashi）。东京大学（东大）大学院工学系研究科 电气系工学专业 特任助教。把衣服本身变成无线的电力线与通信线，研究无需电池、无需布线的全身可穿戴计算。"
   nav:
     about: "简介"
     research: "研究"
