@@ -1,0 +1,17 @@
+# 論文タイトル → トップページで左に出す写真。値はサイト内のパス。
+# publications.csv はスプレッドシート同期で作り直されるので、CSV の列には持たせない。
+# （cronos_web が pub_left_images.yml を別に持っているのと同じ理由）
+#
+# 出所は cronos_web/images/publications と、このサイトの images/news・images/research。
+# ★ = その論文そのものの図ではなく、同じ装置・同じ企画の図を流用したもの。
+
+"picoRing dual: ultralow-power bimanual ring controllers for everyday AR": "/images/publications/picoring_dual.jpg"
+"Machine-knittable, Magnetically-Plug-n-Play E-Textile Prototyping": "/images/publications/machine_knittable_eknit.jpg"
+"Intelligent Soft Wearables: Bridging Disciplines Towards Soft Wearables for Everyone, Everywhere": "/images/publications/intelligent_soft_wearables.jpg"   # ★
+"Flexible NFC wristband for ultralow-power ring-to-wristband interaction": "/images/publications/nfc_wristband_800.jpg"
+"Dense-Joint-Based Obstacle-Aided Locomotion with a Joint-Repositionable Snake Robot": "/images/research/robot-skin.jpg"   # ★ 同じロボットの写真
+"Collisionless Multi-Tag NFC Sensing for Indoor Activity Recognition Using Meander E-Textiles": "/images/publications/multitag_nfc_800.jpg"
+"Friction-Based Interconnection of Stretchable Liquid Metal-Based Coil with Rigid Capacitors for Mechanically Durable Wireless Powering Textile": "/images/publications/acs_lm_textile_800.jpg"
+"無線で給電・通信ができる衣服を実現 多彩なウエアラブルデバイス活用に道": "/images/news/jstnews_202608.jpg"
+"Ultra-Low-Power Wireless Ring Mouse": "/images/publications/picoring_mouse_ieej.jpg"
+"ヒトの周りでの安全・大面積・W級の服型無線給電ネットワーク": "/images/news/emc2026_07_pages_800.jpg"

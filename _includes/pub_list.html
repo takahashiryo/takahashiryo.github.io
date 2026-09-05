@@ -14,7 +14,7 @@
 {%- if limit > 0 -%}
   <div class="pub-list">
   {%- for p in pubs limit: limit -%}
-    {% include pub_entry.html p=p t=t badge=true %}
+    {% include pub_entry.html p=p t=t badge=true thumb=true %}
   {%- endfor -%}
   </div>
 {%- else -%}

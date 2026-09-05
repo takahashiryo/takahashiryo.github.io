@@ -251,6 +251,16 @@
   }
   .pill:hover { background: var(--blue); color: #fff; text-decoration: none; }
 
+  /* トップの論文一覧に出す写真。cronos_web の見せ方に合わせている。
+     論文の図は切り取ると読めなくなるので cover ではなく contain で全体を出す。 */
+  .entry-fig { flex: 0 0 clamp(150px, 16vw, 190px); }
+  .entry-fig img {
+    display: block; width: 100%; aspect-ratio: 16 / 10; object-fit: contain;
+    border: 1px solid var(--line); border-radius: 6px; background: #fff;
+  }
+  .entry--thumb { gap: 1.4em; align-items: flex-start; }
+  @media (max-width: 640px) { .entry-fig { flex-basis: auto; width: 100%; max-width: 320px; } }
+
   /* ── CV の2カラム（左に sticky な目次） ── */
   .cv-layout {
     display: grid; grid-template-columns: 190px minmax(0, 1fr);

@@ -59,7 +59,14 @@
 {%- endif -%}
 {%- assign arx = site.data.arxiv[p.title] -%}
 
-<div class="entry entry--pub" data-type="{{ p.type }}">
+{%- comment %} 写真はトップの一覧だけ（thumb=true のとき）。バッジとは別のフラグにしている {% endcomment -%}
+{%- comment %} Liquid では空文字も真になるので、初期値は false にする {% endcomment -%}
+{%- assign thumb = false -%}
+{%- if include.thumb -%}{%- assign thumb = site.data.pub_images[p.title] -%}{%- endif -%}
+<div class="entry entry--pub{% if thumb %} entry--thumb{% endif %}" data-type="{{ p.type }}">
+  {%- if thumb %}
+  <div class="entry-fig"><img src="{{ thumb | relative_url }}" alt="" loading="lazy"></div>
+  {%- endif %}
   <div class="entry-body">
     {%- comment %}
       メディア掲載は DOI が無いので、タイトル自体を記事へのリンクにする。
