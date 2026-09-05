@@ -89,12 +89,10 @@ jobs:
           grep -q "研究代表者" _site/cv/index.html            # 日本語CV
           grep -q "Principal Investigator" _site/en/cv/index.html  # 英語CV
 
-      - name: Check home shows 20 recent publications and links to CV
+      - name: Check home shows the publication tabs and links to CV
         run: |
           set -e
-          n=$(grep -oE 'class="entry[" ]' _site/index.html | wc -l)
-          echo "home entries: $n"     # 論文10 + 受賞6
-          test "$n" -eq 16
+          python3 scripts/check_home.py
           grep -q 'href="/cv/"' _site/index.html
 
       - name: Check filter tabs and author highlight
