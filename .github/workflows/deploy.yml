@@ -49,7 +49,8 @@ jobs:
           set -e
           n=$(grep -o 'class="navbar"' -A0 _site/index.html | wc -l)
           grep -q '>論文</a>' _site/index.html
-          grep -q '>CV</a>'   _site/index.html
+          grep -q ">履歴書</a>" _site/index.html
+          grep -q ">CV</a>" _site/en/index.html
           ! grep -q '>概要</a>' _site/index.html
 
       - name: Check each language renders its own text
@@ -92,8 +93,8 @@ jobs:
         run: |
           set -e
           n=$(grep -oE 'class="entry[" ]' _site/index.html | wc -l)
-          echo "home entries: $n"     # 論文10 + 受賞6 + 講演5
-          test "$n" -eq 21
+          echo "home entries: $n"     # 論文10 + 受賞6
+          test "$n" -eq 16
           grep -q 'href="/cv/"' _site/index.html
 
       - name: Check filter tabs and author highlight

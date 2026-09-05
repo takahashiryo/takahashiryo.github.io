@@ -1,0 +1,20 @@
+---
+layout: null
+permalink: /home/cuttable-wpt/
+sitemap: false
+---
+{%- comment %}
+  旧サイト（Google Sites）の URL。picoRing のサイトなど外部から張られたままなので、
+  404 にせず新しい場所へ送る。プラグインは使えないので meta refresh。
+{% endcomment -%}
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="refresh" content="0; url={{ '/research/digital-fabrication/' | relative_url }}">
+<link rel="canonical" href="{{ '/research/digital-fabrication/' | absolute_url }}">
+<meta name="robots" content="noindex">
+<title>デジタルファブリケーションのページへ移動しました</title>
+</head>
+<body><p><a href="{{ '/research/digital-fabrication/' | relative_url }}">デジタルファブリケーションのページへ移動しました</a></p></body>
+</html>

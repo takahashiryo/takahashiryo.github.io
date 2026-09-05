@@ -1,0 +1,20 @@
+---
+layout: null
+permalink: /media/
+sitemap: false
+---
+{%- comment %}
+  旧サイト（Google Sites）の URL。picoRing のサイトなど外部から張られたままなので、
+  404 にせず新しい場所へ送る。プラグインは使えないので meta refresh。
+{% endcomment -%}
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="refresh" content="0; url={{ '/cv/#pub-media' | relative_url }}">
+<link rel="canonical" href="{{ '/cv/#pub-media' | absolute_url }}">
+<meta name="robots" content="noindex">
+<title>メディア掲載は CV に移動しました</title>
+</head>
+<body><p><a href="{{ '/cv/#pub-media' | relative_url }}">メディア掲載は CV に移動しました</a></p></body>
+</html>

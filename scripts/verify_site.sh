@@ -34,7 +34,8 @@ chk '詳細ページの件数がカードと一致' '[ "$(grep -o "class=\"entry
 
 echo "--- ナビは Publications と CV の2つ ---"
 chk '論文 リンクあり'   'grep -q ">論文</a>" _site/index.html'
-chk 'CV リンクあり'     'grep -q ">CV</a>" _site/index.html'
+chk 'CV リンク(ja)'   'grep -q ">履歴書</a>" _site/index.html'
+chk 'CV リンク(en)'   'grep -q ">CV</a>" _site/en/index.html'
 chk '概要 リンクなし'   'test -z "$(grep -o ">概要</a>" _site/index.html)"'
 
 echo "--- 言語ごとに自分の文言が出ているか ---"
@@ -71,9 +72,9 @@ chk '職歴'        'grep -q "Meta Inc" _site/cv/index.html'
 chk '役割(ja)'     'grep -q "研究代表者" _site/cv/index.html'
 chk '役割(en)'     'grep -q "Principal Investigator" _site/en/cv/index.html'
 
-echo "--- トップは論文10+受賞6+講演5 = 21件 ---"
+echo "--- トップは論文10+受賞6 = 16件 ---"
 h=$(grep -oE 'class="entry[" ]' _site/index.html | wc -l | tr -d ' ')
-chk "entry == 21（実測 $h）" "test $h -eq 21"
+chk "entry == 16（実測 $h）" "test $h -eq 16"
 chk 'CV への導線' 'grep -q "href=\"/cv/\"" _site/index.html'
 
 echo "--- 未展開の Liquid が残っていないか ---"

@@ -1,5 +1,13 @@
-{%- comment %} セクション見出し。日本語・中国語のときだけ英語の副題を添える {% endcomment -%}
+{%- comment %}
+  セクション見出し。英語ページは英語だけ、それ以外は「英語｜日本語」で並べる。
+  どちらも同じ大きさ・同じ色。include.en が無いときは title だけ出す。
+{% endcomment -%}
 <div class="sechead">
-  <h2>{{ include.title }}</h2>
-  {%- if include.lang != "en" and include.en %}<span class="en">（{{ include.en }}）</span>{% endif -%}
+  <h2>
+    {%- if include.lang != "en" and include.en -%}
+      {{ include.en }}<span class="sechead-alt">｜{{ include.title }}</span>
+    {%- else -%}
+      {{ include.title }}
+    {%- endif -%}
+  </h2>
 </div>
