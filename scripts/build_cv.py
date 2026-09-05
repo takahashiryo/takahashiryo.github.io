@@ -142,7 +142,7 @@ def build_media():
             "url": url, "doi": "", "note": "", "reviewed": "no",
             "sortkey": f"{y}{mo}",
         })
-    rows.sort(key=lambda r: (r["sortkey"], r["title"]), reverse=True)
+    rows.sort(key=pub_sort_key)
     write("media.csv", PUB_COLS, rows)
 
 
@@ -181,13 +181,25 @@ def build_patents():
     write("patents.csv", PATENT_COLS, rows)
 
 
+# 同じ年月の中の並び順。データに「日」が無いので、種別 → 掲載先 → タイトルで並べる。
+# これをしないと同じ会議の論文が離れて表示される（タイトル順になるため）。
+TYPE_ORDER = {"journal": 0, "conference": 1, "workshop": 2, "demo": 3,
+              "poster": 4, "domestic": 5, "article": 6, "media": 7}
+
+
+def pub_sort_key(r):
+    """新しい年月が先。同じ年月の中は 種別 → 掲載先 → タイトル の昇順。"""
+    ym = int(r["sortkey"] or 0)
+    return (-ym, TYPE_ORDER.get(r.get("type", ""), 9), r.get("venue", ""), r.get("title", ""))
+
+
 def add_sortkey(name):
     """既存の publications.csv / talks.csv に sortkey 列を足して並べ替える。"""
     path = OUT / name
     rows = list(csv.DictReader(path.open(encoding="utf-8")))
     for r in rows:
         r["sortkey"] = f"{r['year']}{r['month']}"
-    rows.sort(key=lambda r: (r["sortkey"], r["title"]), reverse=True)
+    rows.sort(key=pub_sort_key)
     write(name, PUB_COLS, rows)
 
 
