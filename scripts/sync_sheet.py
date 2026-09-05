@@ -13,6 +13,8 @@
 import os, sys, urllib.request, urllib.parse
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))  # build_cv を読むため
+
 SHEET_ID = os.environ.get("SHEET_ID", "").strip()
 OUT = Path(__file__).resolve().parent.parent / "_data"
 SHEETS = {"Publications": "publications.csv",
@@ -45,6 +47,14 @@ def main() -> int:
             return 1
         (OUT / fname).write_text(text, encoding="utf-8")
         print(f"{fname}: {len(text.splitlines()) - 1} 件")
+
+    # シートは sortkey 列を持たない（持たせると手で保守することになる）。
+    # 取り込んだあとに YYYYMMDD で計算し直し、並べ替えまでやる。
+    # これをしないと publications.csv から sortkey が消え、
+    # サイト側の sort: "sortkey" が効かなくなる。
+    from build_cv import add_sortkey
+    for fname in ("publications.csv", "talks.csv"):
+        add_sortkey(fname)
     return 0
 
 
