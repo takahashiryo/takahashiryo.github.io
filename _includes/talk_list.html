@@ -4,12 +4,16 @@
 {%- if limit > 0 -%}{%- assign items = items | slice: 0, limit -%}{%- endif -%}
 <div class="talk-list">
 {%- for k in items -%}
+  {%- comment %} CSV に url が無いものは talk_links.yml から補う {% endcomment -%}
+  {%- assign turl = k.url -%}
+  {%- assign tkey = k.venue | append: "｜" | append: k.title -%}
+  {%- unless turl contains "http" -%}{%- assign turl = site.data.talk_links[tkey] -%}{%- endunless -%}
   <div class="entry" data-type="talk">
     <div class="entry-mark"><span class="badge">{{ k.year }}</span></div>
     <div class="entry-body">
       <div class="entry-title">
-        {%- if k.url contains "http" -%}
-          <a href="{{ k.url }}" target="_blank" rel="noopener">{{ k.title | escape }}</a>
+        {%- if turl contains "http" -%}
+          <a href="{{ turl }}" target="_blank" rel="noopener">{{ k.title | escape }}</a>
         {%- else -%}{{ k.title | escape }}{%- endif -%}
         {%- if k.note != "" %} <span class="badge">{{ k.note | escape }}</span>{% endif -%}
       </div>

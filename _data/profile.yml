@@ -40,12 +40,21 @@ research:
     ja:
       title: "電子テキスタイル"
       body: "メアンダコイルを衣服の全面に編み込み、人体に安全なまま身体のどこにでも W 級の電力と通信を届ける。液体金属配線や機械編みによって、洗える・伸びる電子テキスタイルを作る。"
+      detail:
+        - "衣服をそのまま大きなコイルにすると、電磁界が体の奥まで入り込んでしまう。メアンダ（つづら折り）形状のコイルはこれを避け、強い磁界を体の表面付近だけに閉じ込める。全身サイズに広げても安全性を保ったまま、W 級の給電と µW 級のセンサ読み取りを両立できる。"
+        - "つづら折りという形が単純なので、工業用の編み機でそのまま量産できる。液体金属の配線や、摩擦で留める分散コンデンサと組み合わせることで、洗える・伸びる・機械的に丈夫な服になる。電池のいらないウェアラブルを全身に散らし、日常の衣服から電力とデータを届け続けることを目指している。"
     en:
       title: "E-textiles"
       body: "Meander coils knitted across a whole garment deliver watt-level power and data anywhere on the body while staying safe to wear. Liquid-metal wiring and machine knitting make the fabric washable and stretchable."
+      detail:
+        - "Turning a whole garment into one large coil normally pushes the electromagnetic field deep into the body. A meandered (zigzag) coil avoids this by confining a strong inductive field to the skin surface, so the system stays safe at body scale while delivering watt-class power and reading out microwatt-class sensors."
+        - "The zigzag geometry is simple enough to be mass-produced on industrial knitting machines. Combined with liquid-metal wiring and friction-jointed distributed capacitors, the fabric stays washable, stretchable and mechanically durable. The aim is to run battery-free wearables anywhere on the body, powered and read out by ordinary clothing."
     zh:
       title: "电子纺织品"
       body: "将蜿蜒线圈编织于整件衣服，在保证人体安全的前提下，向身体任意位置输送瓦级电力与数据。借助液态金属布线与机器编织，实现可水洗、可拉伸的电子纺织品。"
+      detail:
+        - "若把整件衣服变成一个大线圈，电磁场会深入人体内部。蜿蜒（之字形）线圈避免了这一点，将强磁场约束在皮肤表面附近；即使扩展到全身尺度也能保持安全，同时实现瓦级供电与微瓦级传感器读取。"
+        - "之字形结构足够简单，可直接用工业编织机量产。配合液态金属布线与摩擦固定的分布式电容，织物可水洗、可拉伸、机械上也足够耐用。目标是让无电池的可穿戴设备分布于全身，由日常衣物持续供电与读取数据。"
   - id: "low-power-wearable"
     image: "low-power-wearable.jpg"
     match: ["picoring", "telemetring", "wristband", "ring-based", "ring mouse",
@@ -54,12 +63,21 @@ research:
     ja:
       title: "極低電力ウェアラブル"
       body: "指輪とリストバンドのコイル間の磁気結合を読み取ることで、指輪側に無線チップを積まない入力デバイスを実現する。1回の充電で1か月以上動く。"
+      detail:
+        - "指輪に積める電池は 27 mAh に満たない。BLE のような無線は消費が大きく、連続使用は 1〜10 時間で尽きてしまう。頻繁な充電が操作を途切れさせる。"
+        - "picoRing は指輪側に無線チップを積まない。リストバンドのコイルが、近くにある指輪コイルの周波数応答を読み取る「半受動誘導テレメトリ」で入力を伝える。指輪側の変調は最大 449 µW で、1回の充電で 600〜1000 時間動く。AR グラスのコントローラのように、日常のなかで長く身につけ続けられる入力装置を目指している。"
     en:
       title: "Ultra-low-power wearables"
       body: "Sensing the magnetic coupling between a ring coil and a wristband coil lets a ring work as an input device with no radio on the ring — over a month of use on a single charge."
+      detail:
+        - "A ring can hold less than 27 mAh of battery. Conventional radios such as BLE are too power-hungry for that budget, so a wireless ring lasts only 1-10 hours of continuous use, and frequent recharging keeps interrupting the interaction."
+        - "picoRing puts no radio on the ring at all. A wristband coil reads the frequency response of the nearby ring coil through semi-passive inductive telemetry, and the ring modulates that response with at most 449 microwatts. One charge lasts roughly 600-1000 hours. The goal is an input device you can keep wearing all day, for instance as a controller for AR glasses."
     zh:
       title: "超低功耗可穿戴设备"
       body: "通过读取戒指线圈与腕带线圈之间的磁耦合，实现戒指端不搭载无线芯片的输入设备。一次充电可使用一个月以上。"
+      detail:
+        - "戒指内可容纳的电池不足 27 mAh。BLE 等常规无线功耗过高，连续使用仅能维持 1〜10 小时，频繁充电会不断打断操作。"
+        - "picoRing 在戒指端完全不搭载无线芯片。腕带线圈通过「半被动电感遥测」读取邻近戒指线圈的频率响应，戒指端的调制功耗最高仅 449 微瓦，一次充电可运行约 600〜1000 小时。目标是做出可以整天佩戴的输入设备，例如作为 AR 眼镜的控制器。"
   - id: "robot-skin"
     image: "robot-skin.jpg"
     # 2-D Relay Resonator Array は床面からの給電なのでロボット側に入れる
@@ -68,12 +86,21 @@ research:
     ja:
       title: "ロボットスキン"
       body: "関節位置を移動できるヘビ型ロボットや小型移動ロボットに、床面や布から電力を受け取る皮膚をまとわせ、電池のいらない長期運用を可能にする。"
+      detail:
+        - "多関節のヘビ型ロボットは、関節の数だけモータが要るため重くなり、消費電力も数百 W に達する。"
+        - "このロボットは柔らかい受動リンクの連なりで、内部のラックギアに沿ってモータ関節を移動させることで、少ない関節数でも多関節のように曲がる。関節が動くと配線が絡む問題は、柔らかいロボットスキンから無線で給電することで避けている。1.3 kg・7.6 W の構成で、床面や布からの給電と組み合わせれば電池のいらない長期運用ができる。"
     en:
       title: "Robot skin"
       body: "A power-receiving skin lets joint-repositionable snake robots and small mobile robots draw energy from floors and fabrics, enabling long-term operation without batteries."
+      detail:
+        - "A multi-joint snake robot needs one motor per joint, which makes the body heavy and pushes power consumption into the hundreds of watts."
+        - "This robot is instead a chain of soft passive links. Motor-driven joint units travel along rack gears inside the body, so a small number of joints can reproduce multi-joint bending. Because the joints move, wiring would tangle - so a soft robot skin powers them wirelessly. The result weighs 1.3 kg and runs on 7.6 W; combined with power delivered from floors or fabrics, it can operate for long periods without a battery."
     zh:
       title: "机器人皮肤"
       body: "为可移动关节的蛇形机器人与小型移动机器人披上可受电的“皮肤”，使其从地面或织物获取电能，实现无需电池的长期运行。"
+      detail:
+        - "多关节蛇形机器人每个关节都需要一台电机，因而机体沉重，功耗高达数百瓦。"
+        - "这台机器人由一串柔软的被动连杆构成，电机关节沿机体内部的齿条移动，使较少的关节也能实现多关节式弯曲。关节移动会导致布线缠绕，因此改由柔软的机器人皮肤无线供电。整机 1.3 kg、功耗 7.6 W；若结合来自地面或织物的供电，即可长期无电池运行。"
   - id: "digital-fabrication"
     image: "digital-fabrication.jpg"
     match: ["cuttable", "3d-printing", "plug-n-play", "prototyping",
@@ -81,9 +108,18 @@ research:
     ja:
       title: "デジタルファブリケーション"
       body: "ハサミで切れるワイヤレス充電シートや、水溶性の流路に液体金属を流し込む 3D 印刷など、電子デバイスを誰でも作り変えられる製造手法を設計する。"
+      detail:
+        - "電子デバイスは一度作ると形を変えられない。センサの最適な位置は人によっても用途によっても違うのに、導電糸で縫い付けてしまうと後から動かせない。"
+        - "そこで、作り変えられる作り方そのものを設計している。H 木配線のワイヤレス充電シートは、ハサミで切っても残った部分が動き続ける。水溶性樹脂で 3D 印刷した流路に液体金属を流し込めば、水に溶かして液体金属を回収でき、4回の作り直しでも 98% が戻る。機械編みで電力と通信のバスを布に織り込み、センサを磁石で付け替えられるようにすれば、位置合わせを何度でもやり直せる。"
     en:
       title: "Digital fabrication"
       body: "Wireless charging sheets that can be cut with scissors, and 3D-printed water-soluble channels filled with liquid metal — fabrication methods that let anyone reshape an electronic device."
+      detail:
+        - "Once an electronic device is built, its shape is fixed. The best sensor position differs from person to person and from task to task, yet conductive stitching bonds a sensor permanently in place."
+        - "So the fabrication method itself is the research. A wireless charging sheet with H-tree wiring keeps working in whatever part remains after you cut it with scissors. Liquid metal poured into 3D-printed water-soluble channels can be recovered by dissolving the mould in water, with 98% recovered after four rebuild cycles. Machine knitting embeds power and communication buses into the fabric, and magnetically repositionable sensors let the layout be adjusted again and again."
     zh:
       title: "数字化制造"
       body: "可用剪刀裁剪的无线充电薄片，以及向水溶性流道注入液态金属的 3D 打印——设计让任何人都能重新塑造电子器件的制造方法。"
+      detail:
+        - "电子器件一旦制成，形状便固定下来。传感器的最佳位置因人、因用途而异，但用导电线缝合后就无法再移动。"
+        - "因此，研究对象正是「可改造的制造方法」本身。采用 H 树布线的无线充电薄片，即使用剪刀裁剪，剩余部分仍能继续工作。将液态金属注入 3D 打印的水溶性流道，可通过溶解模具回收金属，四次重制后仍能回收 98%。机器编织把供电与通信总线织入布料，配合可磁性移位的传感器，布局便能反复调整。"

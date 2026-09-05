@@ -15,14 +15,66 @@
   {%- assign pubs = site.data.publications -%}
 {%- endif -%}
 
+{%- assign groups = "journal|conference|workshop|demo,poster|domestic|article|media" | split: "|" -%}
+
 {%- if limit > 0 -%}
-  <div class="pub-list">
-  {%- for p in pubs limit: limit -%}
-    {% include pub_entry.html p=p t=t badge=true thumb=true %}
-  {%- endfor -%}
+  {%- comment %}
+    トップページ。種別ごとに「その種別の新しい順 limit 件」をひと組ずつ出して、
+    タブで組を切り替える。並べ替えの同着がばらけないよう、CSV の並びのまま抜く。
+  {% endcomment -%}
+  <div class="filter" role="tablist">
+    <button class="filter-btn is-active" data-set="all" role="tab" aria-selected="true">{{ t.filter_all }}</button>
+    {%- for g in groups -%}
+      {%- assign gt = g | split: "," -%}
+      {%- assign k0 = gt[0] -%}{%- assign k1 = gt[1] -%}
+      {%- assign items = pubs | where: "type", k0 -%}
+      {%- assign label = t.types[k0] -%}
+      {%- if k1 -%}
+        {%- assign more = pubs | where: "type", k1 -%}
+        {%- if more.size > 0 -%}
+          {%- if items.size > 0 -%}
+            {%- assign items = items | concat: more -%}
+            {%- assign label = label | append: t.type_sep | append: t.types[k1] -%}
+          {%- else -%}
+            {%- assign items = more -%}
+            {%- assign label = t.types[k1] -%}
+          {%- endif -%}
+        {%- endif -%}
+      {%- endif -%}
+      {%- if items.size > 0 -%}
+      <button class="filter-btn" data-set="{{ k0 }}" role="tab" aria-selected="false">{{ label }}</button>
+      {%- endif -%}
+    {%- endfor -%}
+  </div>
+  <div id="home-pubs">
+    <div class="pub-list is-on" data-set="all">
+    {%- for p in pubs limit: limit -%}
+      {% include pub_entry.html p=p t=t badge=true thumb=true %}
+    {%- endfor -%}
+    </div>
+    {%- for g in groups -%}
+      {%- assign gt = g | split: "," -%}
+      {%- assign k0 = gt[0] -%}{%- assign k1 = gt[1] -%}
+      {%- assign n = 0 -%}
+      {%- for p in pubs -%}
+        {%- if p.type == k0 or p.type == k1 -%}{%- assign n = n | plus: 1 -%}{%- endif -%}
+      {%- endfor -%}
+      {%- if n > 0 %}
+    <div class="pub-list" data-set="{{ k0 }}" hidden>
+      {%- assign shown = 0 -%}
+      {%- for p in pubs -%}
+        {%- if p.type == k0 or p.type == k1 -%}
+          {%- if shown < limit %}
+      {% include pub_entry.html p=p t=t badge=true thumb=true %}
+            {%- assign shown = shown | plus: 1 -%}
+          {%- endif -%}
+        {%- endif -%}
+      {%- endfor %}
+    </div>
+      {%- endif -%}
+    {%- endfor %}
   </div>
 {%- else -%}
-  {%- assign groups = "journal|conference|workshop|demo,poster|domestic|article|media" | split: "|" -%}
   <div class="filter" role="tablist">
     <button class="filter-btn is-active" data-filter="all" role="tab" aria-selected="true">{{ t.filter_all }}</button>
     {%- for g in groups -%}

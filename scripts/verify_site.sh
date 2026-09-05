@@ -72,9 +72,22 @@ chk '職歴'        'grep -q "Meta Inc" _site/cv/index.html'
 chk '役割(ja)'     'grep -q "研究代表者" _site/cv/index.html'
 chk '役割(en)'     'grep -q "Principal Investigator" _site/en/cv/index.html'
 
-echo "--- トップは論文10+受賞6 = 16件 ---"
-h=$(grep -oE 'class="entry[" ]' _site/index.html | wc -l | tr -d ' ')
-chk "entry == 16（実測 $h）" "test $h -eq 16"
+echo "--- トップは各タブ10件 + 受賞6件 ---"
+# 種別タブごとに別の組を出しているので、組の数と「All」の10件を見る。
+a=$(python3 - <<'EOF'
+import re, pathlib
+h = pathlib.Path('_site/index.html').read_text()
+sets = re.split(r'<div class="pub-list[^"]*" data-set="([^"]+)"', h)[1:]
+out = []
+for name, body in zip(sets[0::2], sets[1::2]):
+    out.append((name, len(re.findall(r'class="entry[ "]', body.split('<section', 1)[0]))))
+print(" ".join(f"{n}:{c}" for n, c in out))
+EOF
+)
+chk "タブ組 7つ（実測 $(echo $a | wc -w | tr -d ' ')）" "test $(echo $a | wc -w | tr -d ' ') -eq 7"
+chk "All が10件（実測 $a）" "echo '$a' | grep -q '^all:10 '"
+w=$(python3 -c "import re,pathlib;h=pathlib.Path('_site/index.html').read_text();print(len(re.findall(r'class=\"entry[ \"]', h.split('id=\"awards\"',1)[1].split('</section>',1)[0])))")
+chk "受賞6件（実測 $w）" "test $w -eq 6"
 chk 'CV への導線' 'grep -q "href=\"/cv/\"" _site/index.html'
 
 echo "--- 未展開の Liquid が残っていないか ---"

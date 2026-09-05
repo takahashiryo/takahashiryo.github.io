@@ -6,7 +6,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{% if page.title %}{{ page.title }} | {% endif %}{{ t.name }} — {{ t.role }}</title>
+  {%- comment %}
+    検索結果でタイトルが途中で切られないよう短くする。所属は「東京大学」だけにして、
+    下位ページは「経歴｜高橋 亮 東京大学」の形にそろえる。
+  {% endcomment -%}
+  {%- if page.title -%}
+    {%- assign head_title = page.title | append: "｜" | append: t.name | append: " " | append: t.org_short -%}
+  {%- else -%}
+    {%- assign head_title = t.name | append: "｜" | append: t.name_sub | append: " — " | append: t.org_short -%}
+  {%- endif -%}
+  <title>{{ head_title }}</title>
   <meta name="description" content="{{ page.description | default: t.lead | strip_html | truncate: 160 }}">
   <link rel="canonical" href="{{ page.url | absolute_url }}">
   {%- comment %} 3言語の相互リンク（検索エンジンに言語違いの同一ページだと伝える） {% endcomment %}
@@ -15,7 +24,7 @@
   <link rel="alternate" hreflang="zh" href="{{ '/zh/' | append: suffix | absolute_url }}">
   <link rel="alternate" hreflang="x-default" href="{{ '/en/' | append: suffix | absolute_url }}">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="{{ t.name }} — {{ t.role }}">
+  <meta property="og:title" content="{{ head_title }}">
   <meta property="og:description" content="{{ t.lead }}">
   <meta property="og:url" content="{{ page.url | absolute_url }}">
   {%- assign photo = '/images/' | append: site.data.profile.photo | absolute_url -%}
@@ -141,6 +150,64 @@
       var any = false, el = h.nextElementSibling;
       while (el && el.classList.contains('entry')) { if (!el.hidden) any = true; el = el.nextElementSibling; }
       h.hidden = !any;
+    });
+  });
+
+  /* トップページの Publications。タブで種別ごとの組を切り替える。
+     組ごとに別の div を出しているので、表示を入れ替えるだけでよい。 */
+  document.addEventListener('DOMContentLoaded', function () {
+    var root = document.getElementById('home-pubs');
+    if (!root) return;
+    var tabs = root.previousElementSibling;
+    if (!tabs || !tabs.classList.contains('filter')) return;
+    tabs.addEventListener('click', function (e) {
+      var btn = e.target.closest('.filter-btn');
+      if (!btn) return;
+      var set = btn.getAttribute('data-set');
+      tabs.querySelectorAll('.filter-btn').forEach(function (b) {
+        var on = b === btn;
+        b.classList.toggle('is-active', on);
+        b.setAttribute('aria-selected', on ? 'true' : 'false');
+      });
+      root.querySelectorAll('.pub-list').forEach(function (d) {
+        d.hidden = d.getAttribute('data-set') !== set;
+      });
+    });
+  });
+
+  /* 研究テーマの詳細ページ、上の図。論文の一枚絵を数秒ごとに切り替える。
+     丸印を押せば手で送れる。1枚しかないときは何もしない。 */
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.research-slides').forEach(function (box) {
+      var slides = [].slice.call(box.querySelectorAll('.slide'));
+      if (slides.length < 2) return;
+      var dots = document.createElement('div');
+      dots.className = 'slide-dots';
+      var cur = 0, timer = null;
+      function show(i) {
+        cur = (i + slides.length) % slides.length;
+        slides.forEach(function (s, j) { s.classList.toggle('is-on', j === cur); });
+        [].forEach.call(dots.children, function (d, j) { d.classList.toggle('is-on', j === cur); });
+      }
+      function start() { stop(); timer = setInterval(function () { show(cur + 1); }, 5000); }
+      function stop() { if (timer) { clearInterval(timer); timer = null; } }
+      slides.forEach(function (s, j) {
+        var b = document.createElement('button');
+        b.type = 'button';
+        b.setAttribute('aria-label', (j + 1) + ' / ' + slides.length);
+        b.addEventListener('click', function () { show(j); start(); });
+        dots.appendChild(b);
+      });
+      box.appendChild(dots);
+      show(0);
+      /* 読んでいる間に切り替わると邪魔なので、乗せている間は止める */
+      box.addEventListener('mouseenter', stop);
+      box.addEventListener('mouseleave', start);
+      /* 見えていないタブでは回さない */
+      document.addEventListener('visibilitychange', function () {
+        if (document.hidden) stop(); else start();
+      });
+      start();
     });
   });
 

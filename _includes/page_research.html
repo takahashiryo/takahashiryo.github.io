@@ -15,12 +15,70 @@
 {% include sechead.html title=body.title en=en.title lang=lang %}
 
 <div class="research-page">
-  {%- if r.image %}
+  {%- comment %}
+    上の図は、このテーマに当たるジャーナル・国際会議論文の一枚絵を順に切り替えて出す。
+    Liquid では配列に足せないので、数える回と描く回で2周する。同じ写真を使い回している
+    論文があるので、seen / shown に印を貯めて二度出さないようにしている。
+    図のある論文が1本もなければテーマ写真に戻す。
+  {%- endcomment -%}
+  {%- assign nfig = 0 -%}
+  {%- assign seen = "|" -%}
+  {%- for p in site.data.publications -%}
+    {%- if p.type == "journal" or p.type == "conference" -%}
+      {%- assign fig = site.data.pub_images[p.title] -%}
+      {%- if fig -%}
+        {%- assign mark = fig | append: "|" -%}
+        {%- unless seen contains mark -%}
+          {%- capture hit %}{% include pub_match.html p=p r=r %}{% endcapture -%}
+          {%- if hit contains "1" -%}
+            {%- assign seen = seen | append: mark -%}
+            {%- assign nfig = nfig | plus: 1 -%}
+          {%- endif -%}
+        {%- endunless -%}
+      {%- endif -%}
+    {%- endif -%}
+  {%- endfor -%}
+
+  {%- if nfig > 0 %}
+  <div class="research-fig research-slides" data-slides="{{ nfig }}">
+    {%- assign i = 0 -%}
+    {%- assign shown = "|" -%}
+    {%- for p in site.data.publications -%}
+      {%- if p.type == "journal" or p.type == "conference" -%}
+        {%- assign fig = site.data.pub_images[p.title] -%}
+        {%- if fig -%}
+          {%- assign mark = fig | append: "|" -%}
+          {%- unless shown contains mark -%}
+            {%- capture hit %}{% include pub_match.html p=p r=r %}{% endcapture -%}
+            {%- if hit contains "1" -%}
+              {%- assign shown = shown | append: mark %}
+    <figure class="slide{% if i == 0 %} is-on{% endif %}">
+      <img src="{{ fig | relative_url }}" alt="{{ p.title }}"{% if i > 0 %} loading="lazy"{% endif %}>
+      <figcaption>
+        {%- if p.url and p.url != "" -%}
+          <a href="{{ p.url }}">{{ p.title }}</a>
+        {%- else -%}
+          {{ p.title }}
+        {%- endif -%}
+        {%- if p.venue and p.venue != "" %}<span class="slide-venue">{{ p.venue }}{% if p.year and p.year != "" %}, {{ p.year }}{% endif %}</span>{% endif -%}
+      </figcaption>
+    </figure>
+              {%- assign i = i | plus: 1 -%}
+            {%- endif -%}
+          {%- endunless -%}
+        {%- endif -%}
+      {%- endif -%}
+    {%- endfor %}
+  </div>
+  {%- elsif r.image %}
   <div class="research-fig">
     <img src="{{ '/images/research/' | append: r.image | relative_url }}" alt="{{ body.title }}">
   </div>
   {%- endif %}
   <p class="research-lead">{{ body.body }}</p>
+  {%- for para in body.detail %}
+  <p class="research-detail">{{ para }}</p>
+  {%- endfor %}
 
   {%- assign n = 0 -%}
   {%- assign pubs = site.data.publications -%}
