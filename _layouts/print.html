@@ -1,0 +1,43 @@
+{%- comment %}
+  PDF 化のための素のページ。ヘッダー・フッター・目次・絞り込みタブを持たない。
+  scripts/make_cv_pdf.py が weasyprint でこれを PDF にする。
+  weasyprint は flex や subgrid の対応が弱いので、ここでは block だけで組む。
+{% endcomment -%}
+{%- assign lang = page.lang -%}
+{%- assign t = site.data.i18n[lang] -%}
+<!doctype html>
+<html lang="{{ t.html_lang }}">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<title>{{ t.name_sub | default: t.name }} — CV</title>
+<style>
+  @page { size: A4; margin: 16mm 15mm 18mm; }
+  body {
+    margin: 0; color: #1b232c; background: #fff;
+    font-family: "Noto Serif CJK JP", "Noto Serif JP", "Hiragino Mincho ProN", serif;
+    font-size: 9.6pt; line-height: 1.6;
+  }
+  a { color: #1b232c; text-decoration: none; }
+  h1 { margin: 0 0 0.2em; font-size: 17pt; letter-spacing: 0.06em; }
+  .role { margin: 0; font-size: 9.2pt; color: #3f4c5a; }
+  .contact { margin: 0.3em 0 1.4em; font-size: 8.6pt; color: #3f4c5a; }
+  h2 {
+    margin: 1.5em 0 0.5em; font-size: 11pt; letter-spacing: 0.1em;
+    border-bottom: 1px solid #4385f5; padding-bottom: 0.2em; color: #1b232c;
+  }
+  .row { margin: 0 0 0.55em; padding-left: 2.4em; text-indent: -2.4em; }
+  .row .no { display: inline-block; width: 2.0em; text-indent: 0; color: #67717d; }
+  .when { color: #3f4c5a; font-variant-numeric: tabular-nums; }
+  .ttl { font-weight: 600; }
+  .sub { color: #3f4c5a; }
+  .meta { color: #67717d; font-style: italic; }
+  .me { text-decoration: underline; }
+  .note { font-size: 8.4pt; color: #67717d; margin: 0 0 0.8em; }
+  h2, .row { break-inside: avoid; }
+</style>
+</head>
+<body>
+{{ content }}
+</body>
+</html>

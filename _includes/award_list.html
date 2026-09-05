@@ -1,15 +1,16 @@
 {%- comment %}
-  受賞一覧。賞名・団体名は言語を問わず英語で出す（CV の中身は英語にする方針）。
+  受賞一覧。日本語ページは日本語、英語・中文ページは英語で出す。
   awards.csv の *_en 列は19件すべて日本語のままだったので、
   英語名は _data/terms.yml で持つ。
 {%- endcomment -%}
+{%- assign lang = include.lang -%}
 {%- assign limit = include.limit | default: 0 -%}
 {%- assign items = site.data.awards -%}
 {%- if limit > 0 -%}{%- assign items = items | slice: 0, limit -%}{%- endif -%}
 <div class="award-list">
 {%- for a in items -%}
-  {%- capture nm %}{% include term.html ja=a.title_ja en=a.title_en %}{% endcapture -%}
-  {%- capture org %}{% include term.html ja=a.association_ja en=a.association_en %}{% endcapture -%}
+  {%- capture nm %}{% include term.html ja=a.title_ja en=a.title_en lang=lang %}{% endcapture -%}
+  {%- capture org %}{% include term.html ja=a.association_ja en=a.association_en lang=lang %}{% endcapture -%}
   <div class="entry" data-type="award">
     <div class="entry-mark"><span class="badge">{{ a.year }}</span></div>
     <div class="entry-body">

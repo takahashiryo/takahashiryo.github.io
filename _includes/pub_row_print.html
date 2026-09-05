@@ -1,0 +1,18 @@
+{%- comment %} PDF 用の論文1件。表示用の pub_entry.html と同じ規則で * を付ける {% endcomment -%}
+{%- assign p = include.p -%}
+{%- assign au_src = p.authors -%}
+{%- unless au_src contains "*" -%}
+  {%- assign parts = au_src | split: ", " -%}
+  {%- if parts.size == 1 -%}{%- assign parts = au_src | split: "," -%}{%- endif -%}
+  {%- assign head = parts[0] | split: " and " -%}
+  {%- assign first = head[0] -%}
+  {%- if first != "" -%}
+    {%- capture starred -%}{{ first }}*{%- endcapture -%}
+    {%- assign au_src = au_src | replace_first: first, starred -%}
+  {%- endif -%}
+{%- endunless -%}
+{%- assign au = au_src | escape -%}
+{%- assign au = au | replace: "R. Takahashi", "<span class='me'>R. Takahashi</span>" -%}
+{%- assign au = au | replace: "Ryo Takahashi", "<span class='me'>Ryo Takahashi</span>" -%}
+{%- assign au = au | replace: "高橋亮", "<span class='me'>高橋亮</span>" -%}
+<p class="row"><span class="no">{{ include.i }}.</span><span class="ttl">{{ p.title | escape }}</span><br><span class="sub">{{ au }}</span><br><span class="meta">{{ p.venue | escape }}{% if p.detail != "" %}, {{ p.detail | escape }}{% endif %}{% if p.year != "" %}, {{ p.year }}{% endif %}.</span></p>

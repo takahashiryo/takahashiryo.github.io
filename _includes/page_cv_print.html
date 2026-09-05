@@ -1,0 +1,70 @@
+{%- comment %}
+  PDF 用の CV 本文。表示用の include（entry の flex 構成）は使わず、
+  weasyprint が確実に扱える block だけで組み直している。
+  中身は表示用と同じデータ・同じ言語規則（日本語ページは日本語、他は英語）。
+{% endcomment -%}
+{%- assign lang = include.lang -%}
+{%- assign t = site.data.i18n[lang] -%}
+{%- assign pr = site.data.profile -%}
+
+<h1>{{ t.name_sub | default: t.name }}{% if lang != "en" %}（{{ t.name }}）{% endif %}</h1>
+<p class="role">{{ t.role }}</p>
+<p class="contact">{{ pr.email }} ・ {{ site.url }}</p>
+
+<h2>{{ t.sec.education }}</h2>
+{%- for e in site.data.education -%}
+  {%- capture aff %}{% include term.html ja=e.affiliation_ja en=e.affiliation_en lang=lang %}{% endcapture -%}
+  {%- capture dep %}{% include term.html ja=e.department_ja en=e.department_en lang=lang %}{% endcapture -%}
+  {%- capture crs %}{% include term.html ja=e.course_ja en=e.course_en lang=lang %}{% endcapture -%}
+  <p class="row"><span class="no">{{ forloop.index }}.</span><span class="when">{{ e.from }}–{{ e.to }}</span>　<span class="ttl">{{ aff }}</span>　<span class="sub">{{ dep }}{% if crs != "" %} {{ crs }}{% endif %}</span></p>
+{%- endfor -%}
+
+<h2>{{ t.sec.experience }}</h2>
+{%- for e in site.data.experience -%}
+  {%- capture aff %}{% include term.html ja=e.affiliation_ja en=e.affiliation_en lang=lang %}{% endcapture -%}
+  {%- capture job %}{% include term.html ja=e.job_ja en=e.job_en lang=lang %}{% endcapture -%}
+  <p class="row"><span class="no">{{ forloop.index }}.</span><span class="when">{{ e.from }}–{{ e.to }}</span>　<span class="ttl">{{ aff }}</span>{% if job != "" %}　<span class="sub">{{ job }}</span>{% endif %}</p>
+{%- endfor -%}
+
+<h2>{{ t.sec.grants }}</h2>
+{%- for g in site.data.grants -%}
+  {%- capture ti %}{% include term.html ja=g.title_ja en=g.title_en lang=lang %}{% endcapture -%}
+  {%- capture fu %}{% include term.html ja=g.funder_ja en=g.funder_en lang=lang %}{% endcapture -%}
+  {%- capture ro %}{% include term.html ja=g.role_ja en=g.role_en lang=lang %}{% endcapture -%}
+  {%- assign am = site.data.grant_amounts[g.title_ja] -%}
+  {%- if am == nil or am == "" -%}
+    {%- capture am %}{% include term.html ja=g.amount_ja en=g.amount_en lang=lang %}{% endcapture -%}
+  {%- endif -%}
+  {%- capture sys %}{% include term.html ja=g.system en=g.system lang=lang %}{% endcapture -%}
+  <p class="row"><span class="no">{{ forloop.index }}.</span><span class="when">{{ g.from }}–{{ g.to }}</span>　<span class="ttl">{{ ti }}</span><br><span class="sub">{{ fu }}{% if sys != "" %} {{ sys }}{% endif %}{% if g.number != "" %}（{{ g.number | escape }}）{% endif %}{% if ro != "" %} ・ {{ ro }}{% endif %}{% if am != "" %} ・ {{ am }}{% endif %}</span></p>
+{%- endfor -%}
+
+<h2>{{ t.sec.awards }}</h2>
+{%- for a in site.data.awards -%}
+  {%- capture nm %}{% include term.html ja=a.title_ja en=a.title_en lang=lang %}{% endcapture -%}
+  {%- capture org %}{% include term.html ja=a.association_ja en=a.association_en lang=lang %}{% endcapture -%}
+  <p class="row"><span class="no">{{ forloop.index }}.</span><span class="when">{{ a.year }}</span>　<span class="ttl">{{ nm }}</span>　<span class="sub">{{ org }}</span></p>
+{%- endfor -%}
+
+<h2>{{ t.sec.publications }}</h2>
+<p class="note">{{ t.author_note }}</p>
+{%- assign kinds = "journal,conference,workshop,demo,poster,domestic,article" | split: "," -%}
+{%- for k in kinds -%}
+  {%- assign items = site.data.publications | where: "type", k -%}
+  {%- if items.size > 0 -%}
+    <h2 style="font-size:9.6pt;border-bottom:0;margin:1.1em 0 0.35em">{{ t.types[k] }}（{{ items.size }}）</h2>
+    {%- for p in items -%}
+      {% include pub_row_print.html p=p i=forloop.index %}
+    {%- endfor -%}
+  {%- endif -%}
+{%- endfor -%}
+
+<h2>{{ t.sec.patents }}</h2>
+{%- for p in site.data.patents -%}
+  <p class="row"><span class="no">{{ forloop.index }}.</span><span class="when">{{ p.year }}.{{ p.month }}</span>　<span class="ttl">{{ p.title | escape }}</span><br><span class="sub">{{ p.inventors | escape }}{% if p.application_number != "" %} ・ {{ p.application_number | escape }}{% endif %}{% if p.announcement_number != "" %} ・ {{ p.announcement_number | escape }}{% endif %}</span></p>
+{%- endfor -%}
+
+<h2>{{ t.sec.talks }}</h2>
+{%- for k in site.data.talks -%}
+  <p class="row"><span class="no">{{ forloop.index }}.</span><span class="when">{{ k.year }}</span>　<span class="ttl">{{ k.title | escape }}</span>　<span class="meta">{{ k.venue | escape }}{% if k.place != "" %}, {{ k.place | escape }}{% endif %}</span></p>
+{%- endfor -%}

@@ -29,6 +29,16 @@ jobs:
         env:
           JEKYLL_ENV: production
 
+      - name: Build CV PDF
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends \
+            fonts-noto-cjk libpango-1.0-0 libpangoft2-1.0-0 libharfbuzz0b libffi-dev
+          pip install --quiet weasyprint
+          python3 scripts/make_cv_pdf.py
+          test -s _site/cv.pdf
+          test -s _site/cv-ja.pdf
+
       # ── ここから出力の検証（同じ内容を手元でも scripts/verify_site.sh で走らせられる） ──
       - name: Check all pages exist
         run: |
@@ -85,7 +95,8 @@ jobs:
           grep -q "Best Paper Award" _site/en/cv/index.html
           grep -q "18,330,000" _site/cv/index.html        # 研究費の金額
           grep -q "Meta Inc" _site/cv/index.html          # 職歴
-          grep -q "Principal Investigator" _site/cv/index.html
+          grep -q "研究代表者" _site/cv/index.html            # 日本語CV
+          grep -q "Principal Investigator" _site/en/cv/index.html  # 英語CV
 
       - name: Check home shows 20 recent publications and links to CV
         run: |

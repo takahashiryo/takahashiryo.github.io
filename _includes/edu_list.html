@@ -1,9 +1,9 @@
 {%- assign lang = include.lang -%}
 <div class="cv-list">
 {%- for e in site.data.education -%}
-  {%- capture aff %}{% include term.html ja=e.affiliation_ja en=e.affiliation_en %}{% endcapture -%}
-  {%- capture dep %}{% include term.html ja=e.department_ja en=e.department_en %}{% endcapture -%}
-  {%- capture crs %}{% include term.html ja=e.course_ja en=e.course_en %}{% endcapture -%}
+  {%- capture aff %}{% include term.html ja=e.affiliation_ja en=e.affiliation_en lang=lang %}{% endcapture -%}
+  {%- capture dep %}{% include term.html ja=e.department_ja en=e.department_en lang=lang %}{% endcapture -%}
+  {%- capture crs %}{% include term.html ja=e.course_ja en=e.course_en lang=lang %}{% endcapture -%}
   <div class="entry" data-type="education">
     <div class="entry-mark"><span class="cv-when">{{ e.from }}–{{ e.to }}</span></div>
     <div class="entry-body">

@@ -3,17 +3,22 @@
   目次の現在地ハイライトは _layouts/default.html 末尾の IntersectionObserver がやる。
 {% endcomment -%}
 {%- comment %}
-  CV は中身も見出しも英語で固定する（履歴書としてそのまま出せるように）。
-  ページの言語はヘッダー・フッターとトップへ戻るリンクにだけ効く。
-  ラベルを言語ごとに戻すなら、下の en を include.lang にすればよい。
+  CV は日本語ページだけ日本語、英語・中文ページは英語で出す。
+  中文は英語にしている（awards.csv などに中国語のデータが無いため）。
 {% endcomment -%}
-{%- assign lang = "en" -%}
-{%- assign t = site.data.i18n.en -%}
+{%- if include.lang == "ja" -%}
+  {%- assign lang = "ja" -%}
+{%- else -%}
+  {%- assign lang = "en" -%}
+{%- endif -%}
+{%- assign t = site.data.i18n[lang] -%}
 {%- assign home = include.home -%}
 {%- assign pubs = site.data.publications | concat: site.data.media -%}
 {%- assign kinds = "journal,conference,workshop,demo,poster,domestic,article,media" | split: "," -%}
 <div style="height: 2.4em"></div>
 {% include sechead.html title=t.sec.cv en="CV" lang=lang %}
+{%- if lang == "ja" %}{% assign pdf = "/cv-ja.pdf" %}{% else %}{% assign pdf = "/cv.pdf" %}{% endif -%}
+<p class="cv-pdf"><a href="{{ pdf | relative_url }}">PDF</a></p>
 
 <div class="cv-layout">
 <nav class="cv-toc" aria-label="{{ t.contents }}">
