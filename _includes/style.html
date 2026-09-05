@@ -75,8 +75,10 @@
   main > section + section { margin-top: 4.4em; }
 
   /* ── ヒーロー ── */
-  .hero { display: flex; gap: clamp(1.5em, 4vw, 3em); align-items: center; padding: clamp(2.4em, 6vw, 4em) 0 1.5em; }
-  .hero-photo { flex: 0 0 auto; width: clamp(120px, 20vw, 190px); }
+  .hero { display: flex; gap: clamp(1.5em, 4vw, 3em); align-items: flex-start; padding: clamp(2.4em, 6vw, 4em) 0 1.5em; }
+  /* 左は写真とお知らせ、右は本文と概要。概要が写真の隣に並ぶようにしてある */
+  .hero-side { flex: 0 0 clamp(150px, 24vw, 250px); }
+  .hero-photo { width: 100%; }
   .hero-photo img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 50%; border: 1px solid var(--line); }
   .hero-body { flex: 1 1 auto; min-width: 0; }
   .hero h1 { margin: 0; font-size: clamp(1.9rem, 5vw, 2.9rem); letter-spacing: 0.12em; font-weight: 600; line-height: 1.3; }
@@ -93,6 +95,35 @@
     border: 1px solid var(--rule); border-radius: 999px; padding: 0.2em 1em;
   }
   .links a:hover { border-color: var(--blue); color: var(--blue); text-decoration: none; }
+
+  /* ── お知らせ（左カラム） ── */
+  .hero-news { margin-top: 1.6em; }
+  .side-head {
+    margin: 0 0 0.7em; font-size: 0.72em; letter-spacing: 0.18em; font-weight: 600;
+    color: var(--blue); border-bottom: 1px solid var(--blue); padding-bottom: 0.35em;
+  }
+  .hero-news ul { list-style: none; margin: 0; padding: 0; }
+  .hero-news li { font-size: 0.74em; line-height: 1.6; padding: 0.5em 0; border-bottom: 1px solid var(--line); }
+  .hero-news li:last-child { border-bottom: 0; }
+  .news-meta {
+    display: block; color: var(--faint); font-variant-numeric: tabular-nums;
+    letter-spacing: 0.04em; margin-bottom: 0.15em;
+  }
+  .news-cat {
+    margin-left: 0.6em; padding: 0.05em 0.55em; border-radius: 999px;
+    background: #eef3fb; color: var(--blue); font-weight: 600; letter-spacing: 0.06em;
+  }
+  .hero-news a { color: var(--ink); }
+  .hero-news a:hover { color: var(--blue); }
+
+  /* 概要はヒーローの右カラムに入るので、上の余白を詰める */
+  .hero-body #about { margin-top: 2.2em; }
+  .hero-body #about .sechead { margin-top: 0; }
+
+  @media (max-width: 640px) {
+    .hero-side { flex: 1 1 auto; width: 100%; }
+    .hero-photo { width: clamp(120px, 40vw, 190px); }
+  }
 
   /* ── 研究テーマ（図＋本文＋関連論文のカード） ── */
   .themes {

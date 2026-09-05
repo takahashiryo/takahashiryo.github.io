@@ -48,6 +48,12 @@ ja:
   back_home: "← トップへ戻る"
   contents: "目次"
   author_note: "* 筆頭著者　† 責任著者"
+  sec_news: "News"
+  news_cat:
+    award: "受賞"
+    talk: "講演"
+    paper: "発表"
+    media: "掲載"
   filter_all: "All"
   types:
     journal: "論文誌"
@@ -109,6 +115,12 @@ en:
   back_home: "← Back to home"
   contents: "Contents"
   author_note: "* First author　† Corresponding author"
+  sec_news: "News"
+  news_cat:
+    award: "Award"
+    talk: "Talk"
+    paper: "Paper"
+    media: "Media"
   filter_all: "All"
   types:
     journal: "Journal"
@@ -170,6 +182,12 @@ zh:
   back_home: "← 返回首页"
   contents: "目录"
   author_note: "* 第一作者　† 通讯作者"
+  sec_news: "News"
+  news_cat:
+    award: "获奖"
+    talk: "演讲"
+    paper: "发表"
+    media: "媒体"
   filter_all: "All"
   types:
     journal: "期刊"

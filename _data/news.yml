@@ -1,0 +1,58 @@
+# トップの左カラム（顔写真の下）に出すお知らせ。
+# 出所は cronos_web/_data/news.yml のうち高橋に関係するもの。
+# あちらは研究室全体のお知らせなので、こちらへは手で選んで写している
+# （自動同期はしていない。増えたらここに足す）。
+#
+# category: award 受賞 / talk 講演 / paper 発表 / media 掲載
+# 中文ページは en を使う（CV と同じ方針）。
+
+- date: "2026-09-27"
+  category: paper
+  ja: "李、高橋らが IEEE IROS 2026 にて Plug-n-play E-knit を発表"
+  en: "Presented Plug-n-play E-knit at IEEE IROS 2026 (Pittsburgh, USA)"
+  url: "https://2026.ieee-iros.org/"
+- date: "2026-08-28"
+  category: talk
+  ja: "JST 大学見本市 2026（Innovation Japan）の事業セミナーにて講演"
+  en: "Invited talk at the JST Innovation Japan 2026 seminar"
+  url: "https://innovationjapan.jst.go.jp/seminar/#seminar05"
+- date: "2026-08-01"
+  category: media
+  ja: "JST News 8月号にインタビュー記事が掲載"
+  en: "Interview featured in JST News, August 2026"
+  url: "https://www.jst.go.jp/pr/jst-news/backnumber/2026/202608/index.html"
+- date: "2026-07-05"
+  category: media
+  ja: "月刊EMC 2026年7月号に解説記事「服型無線給電ネットワークと人体安全」を掲載"
+  en: "Review article on garment-scale wireless power networks in EMC Monthly"
+  url: "https://techs-labo.jp/service/it-book/EMC/backnumber/459.html"
+- date: "2026-06-30"
+  category: award
+  ja: "韓、高橋が ROBOMECH2026 でベストデモンストレーション賞を受賞"
+  en: "Best Demonstration Award at ROBOMECH 2026"
+  url: "https://www.jsme.or.jp/rmd/awards/"
+- date: "2026-06-04"
+  category: award
+  ja: "高橋、横田らが IEEE RA-L 2025 Best Paper Award を受賞"
+  en: "IEEE RA-L 2025 Best Paper Award"
+  url: "https://www.uec.ac.jp/news/newsrelease/2026/20260605_7740.html"
+- date: "2026-02-27"
+  category: award
+  ja: "2025年度 船井研究奨励賞を受賞"
+  en: "Funai Research Award 2025"
+  url: "https://funaifoundation.jp/news-580.htm"
+- date: "2025-11-12"
+  category: award
+  ja: "第42回センサ・マイクロマシンと応用システムシンポジウムにて奨励賞を受賞"
+  en: "Encouragement Award at the 42nd Sensor Symposium"
+  url: "https://sensorsymposium.org/2025/wp-content/uploads/sites/5/SS42_Award_Winners.pdf"
+- date: "2025-10-17"
+  category: talk
+  ja: "高橋、野田が清華大学 Xi Tian 研究室で講演"
+  en: "Talk at Prof. Xi Tian's lab, Tsinghua University"
+  url: "https://tian-xi.com/"
+- date: "2025-10-01"
+  category: paper
+  ja: "picoRing mouse を ACM UIST 2025 にて発表"
+  en: "Presented picoRing mouse at ACM UIST 2025"
+  url: "https://dl.acm.org/doi/10.1145/3746059.3747615"

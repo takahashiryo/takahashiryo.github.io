@@ -4,8 +4,26 @@
 {%- assign home = include.home -%}
 
 <div class="hero">
-  <div class="hero-photo">
-    <img src="{{ '/images/' | append: pr.photo | relative_url }}" alt="{{ t.name }}">
+  <div class="hero-side">
+    <div class="hero-photo">
+      <img src="{{ '/images/' | append: pr.photo | relative_url }}" alt="{{ t.name }}">
+    </div>
+    {%- if site.data.news and site.data.news.size > 0 %}
+    <section class="hero-news" id="news">
+      <h2 class="side-head">{{ t.sec_news }}</h2>
+      <ul>
+        {%- for n in site.data.news -%}
+        {%- if lang == "ja" %}{% assign nt = n.ja %}{% else %}{% assign nt = n.en %}{% endif -%}
+        <li>
+          <span class="news-meta">{{ n.date }}<span class="news-cat">{{ t.news_cat[n.category] }}</span></span>
+          {%- if n.url contains "http" -%}
+            <a href="{{ n.url }}" target="_blank" rel="noopener">{{ nt }}</a>
+          {%- else -%}{{ nt }}{%- endif -%}
+        </li>
+        {%- endfor -%}
+      </ul>
+    </section>
+    {%- endif %}
   </div>
   <div class="hero-body">
     {%- comment %} 左上と同じく、英語表記から始める {% endcomment -%}
@@ -23,13 +41,13 @@
       {%- endfor -%}
       <a href="mailto:{{ pr.email }}">Email</a>
     </div>
+
+    <section id="about">
+      {% include sechead.html title=t.sec.about en="About" lang=lang %}
+      <p>{{ t.bio }}</p>
+    </section>
   </div>
 </div>
-
-<section id="about">
-  {% include sechead.html title=t.sec.about en="About" lang=lang %}
-  <p>{{ t.bio }}</p>
-</section>
 
 <section id="research">
   {% include sechead.html title=t.sec.research en="Research" lang=lang %}
