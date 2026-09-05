@@ -36,6 +36,22 @@
    （`_layouts/default.html` 末尾）。ヘッダーの高さを変えたらここも確認する。
 
 ## データ
+
+**いまの元データは `data_local/takahashi_publications_awards.xlsx`**（gitignore 済み）。
+シートは Publications / Awards / Talks。編集したら次を実行すると `_data/*.csv` が作り直される。
+
+```bash
+pip3 install --user openpyxl      # 初回のみ
+python3 scripts/from_xlsx.py      # xlsx → _data/*.csv（sortkey は自動計算・並べ替えも）
+```
+
+xlsx に `sortkey` 列は持たせない（手で保守することになるため）。`YYYYMMDD` で
+計算し直して並べ替えるのはスクリプト側の仕事。Google スプレッドシート同期に
+切り替えた場合は `scripts/sync_sheet.py` が同じことをする。
+
+`data_local/build_data.py` は研究室共有の別の投稿管理簿（`Paper Submission
+Information.xlsx`）から作る古い経路で、いまは使っていない。
+
 | ファイル | 内容 | 由来 |
 | --- | --- | --- |
 | `_data/publications.csv` | 論文62件 | 手元データから生成 |
