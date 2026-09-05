@@ -1,7 +1,11 @@
 {%- comment %}
-  論文一覧。include.limit を渡すと最新 N 件だけ（年見出しなし）、
-  0 または未指定なら全件を種別ごとにまとめて出し（各種別の中は新しい順）、絞り込みタブも付ける。
+  論文一覧。include.limit を渡すと最新 N 件だけ（見出しなし）、
+  0 または未指定なら種別ごとにまとめて出し、絞り込みタブも付ける。
   include.with_media が true のときはメディア掲載も同じ並びに混ぜる。
+
+  種別の並びは groups。"demo,poster" のようにカンマで束ねると1つの見出しになる。
+  絞り込みボタンの data-filter は空白区切りで複数の type を持ち、
+  _layouts/default.html の JS がそれを見て絞り込む。
 {% endcomment -%}
 {%- assign t = site.data.i18n[include.lang] -%}
 {%- assign limit = include.limit | default: 0 -%}
@@ -18,22 +22,53 @@
   {%- endfor -%}
   </div>
 {%- else -%}
-  {%- assign kinds = "journal,conference,workshop,demo,poster,domestic,article,media" | split: "," -%}
+  {%- assign groups = "journal|conference|workshop|demo,poster|domestic|article|media" | split: "|" -%}
   <div class="filter" role="tablist">
     <button class="filter-btn is-active" data-filter="all" role="tab" aria-selected="true">{{ t.filter_all }}</button>
-    {%- for k in kinds -%}
-      {%- assign hit = pubs | where: "type", k -%}
-      {%- if hit.size > 0 -%}
-      <button class="filter-btn" data-filter="{{ k }}" role="tab" aria-selected="false">{{ t.types[k] }}</button>
+    {%- for g in groups -%}
+      {%- assign gt = g | split: "," -%}
+      {%- comment %} Liquid は t.types[gt[0]] のような入れ子の添字を引けないので変数に取る {% endcomment -%}
+      {%- assign k0 = gt[0] -%}{%- assign k1 = gt[1] -%}
+      {%- assign items = pubs | where: "type", k0 -%}
+      {%- assign label = t.types[k0] -%}
+      {%- if k1 -%}
+        {%- assign more = pubs | where: "type", k1 -%}
+        {%- if more.size > 0 -%}
+          {%- if items.size > 0 -%}
+            {%- assign items = items | concat: more -%}
+            {%- assign label = label | append: t.type_sep | append: t.types[k1] -%}
+          {%- else -%}
+            {%- assign items = more -%}
+            {%- assign label = t.types[k1] -%}
+          {%- endif -%}
+        {%- endif -%}
+      {%- endif -%}
+      {%- if items.size > 0 -%}
+      <button class="filter-btn" data-filter="{{ gt | join: ' ' }}" role="tab" aria-selected="false">{{ label }}</button>
       {%- endif -%}
     {%- endfor -%}
   </div>
-  {%- comment %} 種別ごとに並べる（各種別の中は新しい順） {% endcomment -%}
   <div id="pub-groups">
-  {%- for k in kinds -%}
-    {%- assign items = pubs | where: "type", k -%}
+  {%- for g in groups -%}
+    {%- assign gt = g | split: "," -%}
+    {%- assign k0 = gt[0] -%}{%- assign k1 = gt[1] -%}
+    {%- assign items = pubs | where: "type", k0 -%}
+    {%- assign label = t.types[k0] -%}
+    {%- if k1 -%}
+      {%- assign more = pubs | where: "type", k1 -%}
+      {%- if more.size > 0 -%}
+        {%- if items.size > 0 -%}
+          {%- assign items = items | concat: more -%}
+          {%- assign label = label | append: t.type_sep | append: t.types[k1] -%}
+        {%- else -%}
+          {%- assign items = more -%}
+          {%- assign label = t.types[k1] -%}
+        {%- endif -%}
+      {%- endif -%}
+    {%- endif -%}
     {%- if items.size > 0 -%}
-      <div class="group-head" id="pub-{{ k }}">{{ t.types[k] }}<span class="group-count">{{ items.size }}</span></div>
+      {%- assign items = items | sort: "sortkey" | reverse -%}
+      <div class="group-head" id="pub-{{ gt | first }}">{{ label }}<span class="group-count">{{ items.size }}</span></div>
       {%- for p in items -%}
         {% include pub_entry.html p=p t=t %}
       {%- endfor -%}

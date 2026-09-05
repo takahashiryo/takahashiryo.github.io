@@ -55,6 +55,7 @@ ja:
     talk: "講演"
     paper: "発表"
     media: "掲載"
+  type_sep: "・"
   filter_all: "All"
   types:
     journal: "論文誌"
@@ -123,6 +124,7 @@ en:
     talk: "Talk"
     paper: "Paper"
     media: "Media"
+  type_sep: " & "
   filter_all: "All"
   types:
     journal: "Journal"
@@ -191,6 +193,7 @@ zh:
     talk: "演讲"
     paper: "发表"
     media: "媒体"
+  type_sep: "・"
   filter_all: "All"
   types:
     journal: "期刊"

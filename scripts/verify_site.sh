@@ -58,7 +58,7 @@ for k in journal conference media; do
   chk "フィルタ $k" "grep -q 'data-filter=\"$k\"' _site/cv/index.html"
 done
 g=$(grep -o 'class="group-head"' _site/cv/index.html | wc -l | tr -d ' ')
-chk "種別見出し 8つ（実測 $g）" "test $g -eq 8"
+chk "種別見出し 7つ（実測 $g）" "test $g -eq 7"
 chk '著者強調'  "grep -q \"class='me'\" _site/cv/index.html"
 
 echo "--- CV（学歴3+職歴8+研究費7+受賞19+論文86+講演10 = 133）---"

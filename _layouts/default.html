@@ -131,8 +131,10 @@
     /* CV ページでは学歴などの .entry も同居するので、論文リスト内だけを操作する */
     var root = document.getElementById('pub-groups');
     if (!root) return;
+    /* data-filter は空白区切りで複数の type を持つ（デモ・ポスターのように束ねる） */
+    var want = f.split(' ');
     root.querySelectorAll('.entry').forEach(function (el) {
-      el.hidden = (f !== 'all' && el.getAttribute('data-type') !== f);
+      el.hidden = (f !== 'all' && want.indexOf(el.getAttribute('data-type')) === -1);
     });
     /* 中身が全部消えた年見出しは隠す */
     root.querySelectorAll('.group-head').forEach(function (h) {

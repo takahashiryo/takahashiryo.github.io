@@ -13,7 +13,8 @@
         {%- else -%}{{ k.title | escape }}{%- endif -%}
         {%- if k.note != "" %} <span class="badge">{{ k.note | escape }}</span>{% endif -%}
       </div>
-      <div class="entry-venue">{{ k.venue | escape }}{% if k.place != "" %}, {{ k.place | escape }}{% endif %}{% if k.year != "" %}, {{ k.year }}{% endif %}.</div>
+      {%- comment %} 会議名に年が入っていることが多いので、重複するときは足さない {% endcomment -%}
+      <div class="entry-venue">{{ k.venue | escape }}{% if k.place != "" %}, {{ k.place | escape }}{% endif %}{% unless k.venue contains k.year %}{% if k.year != "" %}, {{ k.year }}{% endif %}{% endunless %}.</div>
     </div>
   </div>
 {%- endfor -%}

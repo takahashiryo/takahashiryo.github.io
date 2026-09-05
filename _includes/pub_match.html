@@ -14,7 +14,12 @@
   かな・カナ・長音・中点を含むかどうかで判定する。
   手元の62件で検証済み（日本語31件すべてが該当し、英語31件は1件も該当しない）。
 {% endcomment -%}
+{%- comment %} 関連論文にはワークショップ・デモ・ポスターを入れない {% endcomment -%}
+{%- assign skip_types = "workshop,demo,poster" | split: "," -%}
+{%- assign type_ok = true -%}
+{%- for s in skip_types -%}{%- if p.type == s -%}{%- assign type_ok = false -%}{%- endif -%}{%- endfor -%}
 {%- assign hay = p.title | downcase -%}
+{%- unless type_ok -%}{%- assign hay = "" -%}{%- endunless -%}
 {%- if include.skip_ja -%}
   {%- assign kana = "の,に,な,ス,イ,ー,た,ル,ン,ッ,る,ト,レ,け,を,ア,コ,リ,ダ,よ,バ,ウ,ボ,ロ,は,が,で,と,し,い,ん,か,ら,も,て,・" | split: "," -%}
   {%- for c in kana -%}

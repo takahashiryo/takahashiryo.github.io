@@ -106,7 +106,7 @@ jobs:
           # 種別ごとの見出しが出ていること（年ごとの見出しではない）
           g=$(grep -o 'class="group-head"' _site/cv/index.html | wc -l)
           echo "group heads: $g"
-          test "$g" -eq 8
+          test "$g" -eq 7
           grep -q "class='me'"               _site/cv/index.html
 
       - name: Check no unrendered Liquid remains
