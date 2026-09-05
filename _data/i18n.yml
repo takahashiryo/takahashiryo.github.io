@@ -21,7 +21,7 @@ ja:
   sec:
     about: "概要"
     research: "研究"
-    publications: "論文"
+    publications: "Publications"
     awards: "受賞"
     talks: "講演"
     contact: "連絡先"
@@ -143,7 +143,7 @@ zh:
   sec:
     about: "简介"
     research: "研究"
-    publications: "论文"
+    publications: "Publications"
     awards: "获奖"
     talks: "演讲"
     contact: "联系"

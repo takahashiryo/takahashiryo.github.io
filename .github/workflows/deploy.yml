@@ -91,8 +91,8 @@ jobs:
         run: |
           set -e
           n=$(grep -oE 'class="entry[" ]' _site/index.html | wc -l)
-          echo "home entries: $n"     # 論文20 + 受賞6 + 講演5
-          test "$n" -eq 31
+          echo "home entries: $n"     # 論文10 + 受賞6 + 講演5
+          test "$n" -eq 21
           grep -q 'href="/cv/"' _site/index.html
 
       - name: Check filter tabs and author highlight

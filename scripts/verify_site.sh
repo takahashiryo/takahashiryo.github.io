@@ -70,9 +70,9 @@ chk '研究費 金額' 'grep -q "18,330,000" _site/cv/index.html'
 chk '職歴'        'grep -q "Meta Inc" _site/cv/index.html'
 chk '役割'        'grep -q "Principal Investigator" _site/cv/index.html'
 
-echo "--- トップは論文20+受賞6+講演5 = 31件 ---"
+echo "--- トップは論文10+受賞6+講演5 = 21件 ---"
 h=$(grep -oE 'class="entry[" ]' _site/index.html | wc -l | tr -d ' ')
-chk "entry == 31（実測 $h）" "test $h -eq 31"
+chk "entry == 21（実測 $h）" "test $h -eq 21"
 chk 'CV への導線' 'grep -q "href=\"/cv/\"" _site/index.html'
 
 echo "--- 未展開の Liquid が残っていないか ---"

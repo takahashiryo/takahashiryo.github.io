@@ -17,7 +17,7 @@ default_lang         : "ja"
 languages            : ["ja", "en", "zh"]
 
 # トップに載せる件数（すべては各一覧ページに表示）
-home_pub_limit       : 20
+home_pub_limit       : 10
 home_award_limit     : 6
 home_talk_limit      : 5
 

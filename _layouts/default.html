@@ -18,8 +18,56 @@
   <meta property="og:title" content="{{ t.name }} — {{ t.role }}">
   <meta property="og:description" content="{{ t.lead }}">
   <meta property="og:url" content="{{ page.url | absolute_url }}">
-  <meta property="og:image" content="{{ '/images/' | append: site.data.profile.photo | absolute_url }}">
+  {%- assign photo = '/images/' | append: site.data.profile.photo | absolute_url -%}
+  <meta property="og:image" content="{{ photo }}">
+  <meta property="og:image:width" content="400">
+  <meta property="og:image:height" content="400">
+  <meta property="og:image:alt" content="{{ t.name }}">
+  <meta property="og:site_name" content="{{ site.title }}">
+  <meta property="og:locale" content="{% if lang == 'ja' %}ja_JP{% elsif lang == 'zh' %}zh_CN{% else %}en_US{% endif %}">
   <meta name="twitter:card" content="summary">
+  <meta name="twitter:image" content="{{ photo }}">
+  <meta name="author" content="Ryo Takahashi">
+
+  {%- comment %}
+    検索エンジンに「人物」として伝えるための構造化データ。トップページにだけ出す。
+    name は言語を問わず "Ryo Takahashi" で統一する（同姓同名が多く、
+    表記が割れると別人として扱われやすいため）。sameAs で各サービスの
+    プロフィールと結びつける。
+    ※ 検索結果に顔写真が出るかどうかは Google の判断で、これは材料を渡すだけ。
+  {% endcomment -%}
+  {%- if suffix == '' %}
+  {%- assign pr = site.data.profile -%}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Ryo Takahashi",
+    "alternateName": ["高橋 亮", "高橋亮", "高桥 亮"],
+    "url": {{ '/' | absolute_url | jsonify }},
+    "image": {{ photo | jsonify }},
+    "email": {{ pr.email | prepend: 'mailto:' | jsonify }},
+    "jobTitle": "Project Assistant Professor",
+    "description": {{ site.data.i18n.en.lead | jsonify }},
+    "worksFor": {
+      "@type": "CollegeOrUniversity",
+      "name": "The University of Tokyo",
+      "url": "https://www.u-tokyo.ac.jp/"
+    },
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
+      "name": "The University of Tokyo",
+      "url": "https://www.u-tokyo.ac.jp/"
+    },
+    "knowsAbout": [
+      {%- for r in pr.research -%}{{ r.en.title | jsonify }}{% unless forloop.last %}, {% endunless %}{%- endfor -%}
+    ],
+    "sameAs": [
+      {%- for l in pr.links -%}{{ l.url | jsonify }}{% unless forloop.last %}, {% endunless %}{%- endfor -%}
+    ]
+  }
+  </script>
+  {%- endif %}
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='26'>&#128225;</text></svg>">
   {% include style.html %}
 </head>
@@ -27,8 +75,13 @@
 
 <header class="masthead">
   <div class="wrap">
+    {%- comment %} 同姓同名が多いので、左上は必ず英語表記から始める {% endcomment -%}
     <a class="brand" href="{{ page.home_url | default: '/' | relative_url }}">
-      {{ t.name }}<small>{{ t.name_sub }}</small>
+      {%- if lang == 'en' -%}
+        {{ t.name }}<span class="brand-alt">｜{{ t.name_sub }}</span>
+      {%- else -%}
+        {{ t.name_sub }}<span class="brand-alt">｜{{ t.name }}</span>
+      {%- endif -%}
     </a>
     <nav class="navbar">
       {%- assign home = page.home_url | default: '/' -%}

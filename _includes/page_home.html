@@ -8,7 +8,12 @@
     <img src="{{ '/images/' | append: pr.photo | relative_url }}" alt="{{ t.name }}">
   </div>
   <div class="hero-body">
+    {%- comment %} 左上と同じく、英語表記から始める {% endcomment -%}
+    {%- if lang == 'en' -%}
     <h1>{{ t.name }}<span class="name-alt">｜{{ t.name_sub }}</span></h1>
+    {%- else -%}
+    <h1>{{ t.name_sub }}<span class="name-alt">｜{{ t.name }}</span></h1>
+    {%- endif -%}
     <p class="role">{{ t.role }}</p>
     <p class="tagline">{{ t.tagline }}</p>
     <p class="lead">{{ t.lead }}</p>
@@ -28,7 +33,6 @@
 
 <section id="research">
   {% include sechead.html title=t.sec.research en="Research" lang=lang %}
-  <p>{{ t.research_intro }}</p>
   <div class="themes">
     {%- for r in pr.research -%}
     {%- assign body = r[lang] -%}
@@ -39,18 +43,17 @@
         <img src="{{ '/images/research/' | append: r.image | relative_url }}" alt="{{ body.title }}" loading="lazy">
       </a>
       {%- endif %}
-      <div class="theme-body">
-        <h3><a href="{{ detail }}">{{ body.title }}</a></h3>
-        <p>{{ body.body }}</p>
-        {% include theme_pubs.html r=r lang=lang limit=3 %}
-      </div>
+      <h3><a href="{{ detail }}">{{ body.title }}</a></h3>
+      <p>{{ body.body }}</p>
+      {% include theme_pubs.html r=r lang=lang limit=3 %}
     </article>
     {%- endfor -%}
   </div>
 </section>
 
 <section id="publications">
-  {% include sechead.html title=t.sec.publications en="Publications" lang=lang %}
+  {% include sechead.html title=t.sec.publications lang=lang %}
+  <p class="author-note">{{ t.author_note }}</p>
   {% include pub_list.html lang=lang limit=site.home_pub_limit %}
   <p class="more"><a href="{{ home | append: 'cv/' | relative_url }}">{{ t.more_publications }} →</a></p>
 </section>

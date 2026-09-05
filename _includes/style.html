@@ -5,8 +5,8 @@
              "Songti SC", "Noto Serif JP", "Noto Serif SC", serif;
     --ink: #222b36;
     --blue: #4385f5;
-    --muted: #5b6b7b;
-    --faint: #9aa3ad;
+    --muted: #3f4c5a;
+    --faint: #67717d;
     --line: #e1e6ea;
     --rule: #d5dde6;
   }
@@ -15,7 +15,7 @@
   body {
     margin: 0; background: #fff; color: var(--ink);
     font-family: var(--serif);
-    font-size: 17px; line-height: 1.9;
+    font-size: 16px; line-height: 1.9;
     letter-spacing: 0.02em;
     overflow-x: hidden; overflow-x: clip;
     -webkit-font-smoothing: antialiased;
@@ -42,7 +42,8 @@
     letter-spacing: 0.1em; color: var(--ink); white-space: nowrap;
   }
   .brand:hover { text-decoration: none; opacity: 0.7; }
-  .brand small { display: block; font-size: 0.62em; letter-spacing: 0.06em; color: var(--faint); font-weight: 400; }
+  /* 左上・ヒーローとも、和名と英名はどちらも本文色（薄くしない） */
+  .brand-alt { font-size: 0.82em; letter-spacing: 0.06em; color: var(--ink); font-weight: 400; }
   .navbar { display: flex; align-items: center; gap: clamp(0.9em, 2.2vw, 1.8em); flex-wrap: wrap; }
   .navbar a { color: var(--muted); font-size: 0.9em; letter-spacing: 0.08em; white-space: nowrap; }
   .navbar a:hover, .navbar a.is-active { color: var(--blue); text-decoration: none; }
@@ -81,7 +82,7 @@
   .hero h1 { margin: 0; font-size: clamp(1.9rem, 5vw, 2.9rem); letter-spacing: 0.12em; font-weight: 600; line-height: 1.3; }
   /* 「高橋 亮｜Ryo Takahashi」と1行で出す。狭い幅では折り返す */
   .hero h1 .name-alt {
-    font-size: 0.46em; letter-spacing: 0.08em; color: var(--faint); font-weight: 400;
+    font-size: 0.46em; letter-spacing: 0.08em; color: var(--ink); font-weight: 400;
   }
   .hero .role { color: var(--muted); font-size: 0.92em; margin: 0.9em 0 0; }
   .hero .tagline { font-size: clamp(1.05rem, 2.2vw, 1.3rem); color: var(--blue); margin: 1.1em 0 0; letter-spacing: 0.06em; }
@@ -104,12 +105,24 @@
   }
   .theme-fig { background: #f3f5f7; border-bottom: 1px solid var(--line); }
   .theme-fig img { display: block; width: 100%; aspect-ratio: 16 / 10; object-fit: cover; }
-  .theme-body { padding: 1.2em 1.3em 1.3em; display: flex; flex-direction: column; flex: 1 1 auto; }
-  .theme h3 { margin: 0 0 0.5em; font-size: 1.05em; letter-spacing: 0.08em; color: var(--ink); font-weight: 600; }
-  .theme p { margin: 0; font-size: 0.86em; color: var(--muted); line-height: 1.85; }
+  .theme h3 {
+    margin: 1.2em 1.3em 0.5em; font-size: 1.05em; letter-spacing: 0.08em;
+    color: var(--ink); font-weight: 600;
+  }
+  .theme p { margin: 0 1.3em; font-size: 0.86em; color: var(--ink); line-height: 1.85; }
 
-  /* 関連論文。カードの高さが揃うよう margin-top:auto で下端に寄せる */
-  .theme-pubs { margin-top: auto; padding-top: 1em; }
+  /* 関連論文。まずは下端に寄せる（subgrid が使えない環境向けの土台） */
+  .theme-pubs { margin: auto 1.3em 1.3em; padding-top: 1em; }
+
+  /* 行を隣のカードと揃える。カードを4行ぶんの subgrid にすると、
+     図・見出し・本文・関連論文がそれぞれ同じ高さの行に入る。
+     本文の長さが違っても「関連論文」の開始位置が揃う。 */
+  @supports (grid-template-rows: subgrid) {
+    .theme {
+      display: grid; grid-row: span 4; grid-template-rows: subgrid;
+    }
+    .theme-pubs { margin-top: 0; }
+  }
   .theme-pubs-head {
     font-size: 0.68em; letter-spacing: 0.12em; font-weight: 600; color: var(--faint);
     padding-bottom: 0.4em; border-bottom: 1px solid var(--line); margin-bottom: 0.7em;
@@ -259,7 +272,7 @@
   }
 
   /* 著者マーカーの凡例（* 筆頭 / † 責任著者）。マーカー自体は authors 列に入っている */
-  .cv-main .author-note {
+  .author-note {
     margin: 0 0 0.9em; font-size: 0.74em; color: var(--faint); letter-spacing: 0.06em;
   }
 
@@ -324,7 +337,7 @@
   @media (max-width: 640px) {
     /* .research-pubs の基本規則はこの上にあるので、ここで上書きする */
     .research-pubs .entry--pub::before { flex-basis: auto; text-align: left; padding-top: 0; }
-    body { font-size: 16px; }
+    body { font-size: 15px; }
     .hero { flex-direction: column; align-items: flex-start; text-align: left; }
     .entry { flex-direction: column; gap: 0.3em; }
     .entry-mark { width: auto; }
