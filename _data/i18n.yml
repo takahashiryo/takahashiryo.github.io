@@ -9,7 +9,7 @@ ja:
   name_sub: "Ryo Takahashi"
   role: "東京大学 大学院工学系研究科 電気系工学専攻 特任助教"
   tagline: "電池も配線もいらない、全身のウェアラブルへ"
-  lead: "衣服そのものを無線の電力線・通信線に変えることで、電池交換も配線もいらない全身スケールのウェアラブルコンピューティングを研究しています。"
+  lead: "極限環境でも、安心・快適な衣（異）生活を目指して、衣服そのものを無線の電力線・通信線に変えることで、電池交換も配線もいらない全身スケールのウェアラブルコンピューティングを研究しています。"
   nav:
     about: "概要"
     research: "研究"
@@ -36,7 +36,8 @@ ja:
     在学中の2022年には Meta Reality Labs にてリサーチサイエンティストインターン（Hrvoje Benko 教授、Eric Whitmire 博士）を経験し、
     2023年より現職。ACM CHI と IEEE RA-L の双方で筆頭著者として最優秀論文賞を受賞しているほか、
     ACM UbiComp Gaetano Borriello Outstanding Student Award なども受賞。
-    現在は JST CRONOS「生体データ通信インフラの無線フルボディ化」に共同研究代表者として参画している。
+    現在は JST さきがけ「激しい動きにも耐える全身分散スキン知能ネットワーク」の研究代表者、
+    JST CRONOS「生体データ通信インフラの無線フルボディ化」の共同研究代表者を務めている。
   research_intro: "衣服・テキスタイルを電磁的なインフラとして捉え直し、身につけるものすべてから電池と配線をなくすことを目指しています。"
   more_publications: "すべての論文"
   related_count: "関連論文 %n 件"
@@ -76,7 +77,7 @@ en:
   name_sub: "高橋 亮"
   role: "Project Assistant Professor, Graduate School of Engineering, The University of Tokyo"
   tagline: "Toward whole-body wearables that need no battery and no wire"
-  lead: "I turn clothing itself into a wireless power and data line, so that wearable computing can cover the whole body without batteries to replace or wires to route."
+  lead: "Toward a safe and comfortable life in what we wear, even in extreme environments. I turn clothing itself into a wireless power and data line, so that wearable computing can cover the whole body without batteries to replace or wires to route."
   nav:
     about: "About"
     research: "Research"
@@ -103,7 +104,8 @@ en:
     In 2022 I worked as a research scientist intern at Meta Reality Labs, advised by Prof. Hrvoje Benko and Dr. Eric Whitmire.
     I have received best paper awards as a first author at both ACM CHI and IEEE RA-L, as well as the
     ACM UbiComp Gaetano Borriello Outstanding Student Award.
-    I am currently a co-PI of the JST CRONOS project on full-body wireless data and power networking.
+    I currently lead a JST PRESTO project on motion-robust body-scale distributed skin intelligence networks,
+    and serve as a co-PI of the JST CRONOS project on full-body wireless power and data networking.
   research_intro: "I treat clothing and textiles as electromagnetic infrastructure, with the goal of removing batteries and wiring from everything we wear."
   more_publications: "All publications"
   related_count: "%n related publications"
@@ -143,7 +145,7 @@ zh:
   name_sub: "Ryo Takahashi"
   role: "东京大学 大学院工学系研究科 电气系工学专业 特任助教"
   tagline: "迈向无需电池与布线的全身可穿戴设备"
-  lead: "我把衣服本身变成无线的电力线与通信线，让可穿戴计算覆盖全身，既不必更换电池，也不必布线。"
+  lead: "以即使在极端环境中也能安心舒适的「衣」生活为目标，我把衣服本身变成无线的电力线与通信线，让可穿戴计算覆盖全身，既不必更换电池，也不必布线。"
   nav:
     about: "简介"
     research: "研究"
@@ -170,7 +172,8 @@ zh:
     2022年曾在 Meta Reality Labs 担任研究科学家实习生（导师：Hrvoje Benko 教授、Eric Whitmire 博士）。
     作为第一作者同时获得 ACM CHI 与 IEEE RA-L 的最佳论文奖，并获得
     ACM UbiComp Gaetano Borriello Outstanding Student Award 等奖项。
-    目前作为共同研究负责人参与 JST CRONOS「生体数据通信基础设施的无线全身化」项目。
+    目前担任 JST PRESTO 项目「面向剧烈运动的全身分布式皮肤智能网络」的研究负责人，
+    并作为共同研究负责人参与 JST CRONOS「生体数据通信基础设施的无线全身化」项目。
   research_intro: "我将衣服与纺织品重新视为电磁基础设施，目标是让所有穿戴之物摆脱电池与布线。"
   more_publications: "全部论文"
   related_count: "相关论文 %n 篇"
