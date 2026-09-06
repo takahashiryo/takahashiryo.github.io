@@ -181,8 +181,14 @@
     padding-bottom: 0.4em; border-bottom: 1px solid var(--line); margin-bottom: 0.7em;
     font-variant-numeric: tabular-nums;
   }
-  .theme-pubs ul { list-style: none; margin: 0; padding: 0; }
-  .theme-pubs li { font-size: 0.78em; line-height: 1.65; }
+  /* 番号は CSS カウンタで振る。文字が折り返しても番号の右に揃うよう flex にしている */
+  .theme-pubs ul { list-style: none; margin: 0; padding: 0; counter-reset: tpub; }
+  .theme-pubs li { display: flex; gap: 0.45em; font-size: 0.78em; line-height: 1.65; }
+  .theme-pubs li::before {
+    counter-increment: tpub; content: counter(tpub) ".";
+    flex: 0 0 1.1em; color: var(--faint); font-variant-numeric: tabular-nums;
+  }
+  .theme-pubs li > span.theme-pub-body { min-width: 0; }
   .theme-pubs li + li { margin-top: 0.6em; }
   .theme-pubs a { color: var(--ink); }
   .theme-pubs a:hover { color: var(--blue); }
