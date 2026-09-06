@@ -190,6 +190,12 @@
       root.querySelectorAll('.pub-list').forEach(function (d) {
         d.hidden = d.getAttribute('data-set') !== set;
       });
+      /* 「すべての論文」の行き先を、いま選んでいる種別の見出しに合わせる */
+      var more = document.getElementById('more-pubs');
+      if (more) {
+        var base = more.getAttribute('href').split('#')[0];
+        more.setAttribute('href', base + '#' + (set === 'all' ? 'publications' : 'pub-' + set));
+      }
     });
   });
 

@@ -1,0 +1,26 @@
+{%- comment %}
+  お知らせのカード列。include.limit を渡すとその件数まで。
+  画像は "/" 始まりなら任意の場所、そうでなければ images/news/ の下。
+{%- endcomment -%}
+{%- assign t = site.data.i18n[include.lang] -%}
+{%- assign items = site.data.news -%}
+{%- if include.limit -%}{%- assign items = items | slice: 0, include.limit -%}{%- endif -%}
+<div class="news-rail{% if include.grid %} news-grid{% endif %}"{% unless include.grid %} tabindex="0" role="region" aria-label="{{ t.sec_news }}"{% endunless %}>
+  {%- for n in items -%}
+  {%- if include.lang == "ja" %}{% assign nt = n.ja %}{% else %}{% assign nt = n.en %}{% endif -%}
+  <article class="news-card">
+    {%- if n.image %}
+    <div class="news-fig">
+      {%- if n.image contains "/" %}{% assign nimg = n.image %}{% else %}{% assign nimg = '/images/news/' | append: n.image %}{% endif -%}
+      <img src="{{ nimg | relative_url }}" alt="" loading="lazy" decoding="async">
+    </div>
+    {%- endif %}
+    <div class="news-body">
+      <span class="news-meta">{{ n.date }}<span class="news-cat">{{ t.news_cat[n.category] }}</span></span>
+      {%- if n.url contains "http" -%}
+        <a href="{{ n.url }}" target="_blank" rel="noopener">{{ nt }}</a>
+      {%- else -%}<span>{{ nt }}</span>{%- endif -%}
+    </div>
+  </article>
+  {%- endfor -%}
+</div>

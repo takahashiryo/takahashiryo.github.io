@@ -41,27 +41,10 @@
 {%- if site.data.news and site.data.news.size > 0 %}
 <section id="news">
   {% include sechead.html title=t.sec_news lang=lang %}
-  {%- comment %} 横スクロールのカード。scroll-snap で1枚ずつ止まる {% endcomment -%}
-  <div class="news-rail" tabindex="0" role="region" aria-label="{{ t.sec_news }}">
-    {%- for n in site.data.news -%}
-    {%- if lang == "ja" %}{% assign nt = n.ja %}{% else %}{% assign nt = n.en %}{% endif -%}
-    <article class="news-card">
-      {%- if n.image %}
-      <div class="news-fig">
-        {%- comment %} "/" 始まりならそのまま、そうでなければ images/news/ の下 {% endcomment -%}
-        {%- if n.image contains "/" %}{% assign nimg = n.image %}{% else %}{% assign nimg = '/images/news/' | append: n.image %}{% endif -%}
-        <img src="{{ nimg | relative_url }}" alt="" loading="lazy">
-      </div>
-      {%- endif %}
-      <div class="news-body">
-        <span class="news-meta">{{ n.date }}<span class="news-cat">{{ t.news_cat[n.category] }}</span></span>
-        {%- if n.url contains "http" -%}
-          <a href="{{ n.url }}" target="_blank" rel="noopener">{{ nt }}</a>
-        {%- else -%}<span>{{ nt }}</span>{%- endif -%}
-      </div>
-    </article>
-    {%- endfor -%}
-  </div>
+  {% include news_list.html lang=lang limit=site.home_news_limit %}
+  {%- if site.data.news.size > site.home_news_limit %}
+  <p class="more"><a href="{{ home | append: 'news/' | relative_url }}">{{ t.more_news }} →</a></p>
+  {%- endif %}
 </section>
 {%- endif %}
 
@@ -89,7 +72,8 @@
   {% include sechead.html title=t.sec.publications en="Publications" lang=lang %}
   <p class="author-note">{{ t.author_note }}</p>
   {% include pub_list.html lang=lang limit=site.home_pub_limit %}
-  <p class="more"><a href="{{ home | append: 'cv/' | relative_url }}">{{ t.more_publications }} →</a></p>
+  {%- comment %} タブを選ぶと、リンク先が CV のその種別の見出しに変わる（JS） {% endcomment -%}
+  <p class="more"><a id="more-pubs" href="{{ home | append: 'cv/#publications' | relative_url }}">{{ t.more_publications }} →</a></p>
 </section>
 
 <section id="awards">

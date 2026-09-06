@@ -29,3 +29,5 @@
 "Meander Coil++: A Body-scale Wireless Power Transmission using Safe-to-body and Energy-efficient Transmitter Coil": "/images/research/e-textile.jpg"   # ★ 同じメアンダコイル服
 "メアンダコイル++:継続的なウェアラブルコンピューティングのための衣類全面での安全で高効率な無線給電": "/images/research/e-textile.jpg"   # ★
 "Full-body WPT: wireless powering with meandered e-textiles": "/images/research/e-textile.jpg"   # ★
+# IEEE Access はオープンアクセスなので、論文の Figure 1 を切り出して使っている。
+"Surface Routing for Wireless Power Transfer using 2-D Relay Resonator Arrays": "/images/publications/surface_routing_800.jpg"

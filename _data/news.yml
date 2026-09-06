@@ -6,6 +6,12 @@
 # category: award 受賞 / talk 講演 / paper 発表 / media 掲載
 # 中文ページは en を使う（CV と同じ方針）。
 
+- date: "2026-10-12"
+  category: paper
+  image: "/images/publications/picoring_dual.jpg"
+  ja: "ACM UbiComp/ISWC 2026 にて picoRing dual を発表。ワークショップ論文3件も採録"
+  en: "picoRing dual to be presented at ACM UbiComp/ISWC 2026, with three workshop papers"
+  url: "https://doi.org/10.1145/3830727.3834815"
 - date: "2026-09-27"
   category: paper
   image: "iros2026_800.jpg"
@@ -62,6 +68,7 @@
   url: "https://www.uec.ac.jp/news/newsrelease/2026/20260605_7740.html"
 - date: "2026-03-12"
   category: talk
+  image: "/images/research/e-textile.jpg"
   ja: "電子情報通信学会 総合大会の JST CRONOS スポンサードセッションにて講演"
   en: "Talk at the JST CRONOS sponsored session, IEICE General Conference 2026"
   url: "https://www.ieice.org/jpn_r/activities/taikai/general/2026/sponsored_session.html"
@@ -73,23 +80,28 @@
   url: "https://funaifoundation.jp/news-580.htm"
 - date: "2026-02-01"
   category: award
+  image: "/images/publications/acs_lm_textile_800.jpg"
   ja: "電気学会センサ・マイクロシステム部門にて優秀論文発表賞A を受賞"
   en: "Received the Outstanding Presentation Award A from the IEEJ Sensors and Micromachines Society"
 - date: "2026-01-25"
   category: paper
+  image: "/images/publications/acs_lm_textile_800.jpg"
   ja: "水溶性流路と液体金属によるリサイクル可能な無線デバイスを IEEE MEMS 2026 にて発表"
   en: "Presented recyclable wireless devices using 3D-printed water-soluble channels at IEEE MEMS 2026"
   url: "https://doi.org/10.1109/mems64181.2026.11419301"
 - date: "2025-12-03"
   category: talk
+  image: "uist.jpg"
   ja: "WISS 2025 にて招待講演「picoRing mouse: 極低電力な指輪型無線マウス」"
   en: "Invited talk on picoRing mouse at WISS 2025"
 - date: "2025-12-01"
   category: award
+  image: "micronano2025_award.jpg"
   ja: "第16回マイクロ・ナノ工学シンポジウムにて優秀講演論文を受賞"
   en: "Received the Outstanding Presentation Award at the 16th Micro-Nano Science and Technology Symposium"
 - date: "2025-12-01"
   category: talk
+  image: "/images/research/e-textile.jpg"
   ja: "公立はこだて未来大学にて招待講演"
   en: "Invited talk at Future University Hakodate"
 - date: "2025-11-12"
@@ -104,6 +116,12 @@
   ja: "高橋、野田が清華大学 Xi Tian 研究室で講演"
   en: "Talk at Prof. Xi Tian's lab, Tsinghua University"
   url: "https://tian-xi.com/"
+- date: "2025-10-13"
+  category: talk
+  image: "isww2025.jpg"
+  ja: "ACM UbiComp/ISWC 2025 にてワークショップ「Intelligent Soft Wearables」を主催"
+  en: "Organized the Intelligent Soft Wearables workshop at ACM UbiComp/ISWC 2025"
+  url: "https://www.akg.t.u-tokyo.ac.jp/archives/6000"
 - date: "2025-10-01"
   category: paper
   image: "uist.jpg"
@@ -115,5 +133,6 @@
 #     日が分からないものはその月の 1 日にしてある。
 - date: "2025-10-01"
   category: award
+  image: "ubi87_talk.jpg"
   ja: "情報処理学会 第87回ユビキタスコンピューティングシステム研究会にて優秀論文賞を受賞"
   en: "Received the Outstanding Paper Award at IPSJ UBI 87"
