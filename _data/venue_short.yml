@@ -1,7 +1,9 @@
-# 掲載先の長い正式名 → 一覧で出す短い名前。
-# publications.csv は手元データから作り直されるので、CSV 側は正式名のままにして
-# ここで表示だけ短くする（media_links.yml と同じ考え方）。キーは完全一致。
-# 年号は venue から落とすので、後ろに ", 2025" が自動で付く。
+# 掲載先の長い正式名 → 短い名前。
+# 使うのはトップの研究テーマカード（theme_pub_item.html）だけ。幅が狭く、
+# 正式名だと 48 字で切られて読めなくなるため。論文一覧・CV・研究詳細ページ・
+# 印刷用CV は正式名のまま出す。
+# publications.csv は手元データから作り直されるので CSV 側はさわらない
+# （media_links.yml と同じ考え方）。キーは完全一致。
 
 # 国際会議
 "Proceedings of the 33rd Annual ACM Symposium on User Interface Software and Technology (UIST’20)": "ACM UIST"

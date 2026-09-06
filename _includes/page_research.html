@@ -60,8 +60,7 @@
         {%- else -%}
           {{ p.title }}
         {%- endif -%}
-        {%- assign venue = site.data.venue_short[p.venue] | default: p.venue -%}
-        {%- if venue and venue != "" %}<span class="slide-venue">{{ venue }}{% if p.year and p.year != "" %}, {{ p.year }}{% endif %}</span>{% endif -%}
+        {%- if p.venue and p.venue != "" %}<span class="slide-venue">{{ p.venue }}{% if p.year and p.year != "" %}, {{ p.year }}{% endif %}</span>{% endif -%}
       </figcaption>
     </figure>
               {%- assign i = i | plus: 1 -%}
