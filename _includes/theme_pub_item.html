@@ -6,5 +6,7 @@
   {%- else -%}
     {{ p.title | escape }}
   {%- endif -%}
-  <span class="theme-pub-meta">{{ p.venue | escape | truncate: 48 }}, {{ p.year }}</span>
+  {%- comment %} 長い正式名は venue_short.yml で短くする（一覧と同じ） {% endcomment -%}
+  {%- assign venue = site.data.venue_short[p.venue] | default: p.venue -%}
+  <span class="theme-pub-meta">{{ venue | escape | truncate: 48 }}, {{ p.year }}</span>
 </li>
