@@ -5,10 +5,23 @@
 {%- assign t = site.data.i18n[include.lang] -%}
 {%- assign items = site.data.news -%}
 {%- if include.limit -%}{%- assign items = items | slice: 0, include.limit -%}{%- endif -%}
+{%- comment %} カテゴリのタブ。中身のある区分だけ出す {% endcomment -%}
+{%- if include.filter -%}
+{%- assign cats = "award,paper,talk,media" | split: "," -%}
+<div class="filter" role="tablist" id="news-filter">
+  <button class="filter-btn is-active" data-cat="all" role="tab" aria-selected="true">{{ t.filter_all }}</button>
+  {%- for c in cats -%}
+    {%- assign hits = items | where: "category", c -%}
+    {%- if hits.size > 0 %}
+  <button class="filter-btn" data-cat="{{ c }}" role="tab" aria-selected="false">{{ t.news_cat[c] }}</button>
+    {%- endif -%}
+  {%- endfor -%}
+</div>
+{%- endif -%}
 <div class="news-rail{% if include.grid %} news-grid{% endif %}"{% unless include.grid %} tabindex="0" role="region" aria-label="{{ t.sec_news }}"{% endunless %}>
   {%- for n in items -%}
   {%- if include.lang == "ja" %}{% assign nt = n.ja %}{% else %}{% assign nt = n.en %}{% endif -%}
-  <article class="news-card">
+  <article class="news-card" data-cat="{{ n.category }}">
     {%- if n.image %}
     <div class="news-fig">
       {%- if n.image contains "/" %}{% assign nimg = n.image %}{% else %}{% assign nimg = '/images/news/' | append: n.image %}{% endif -%}

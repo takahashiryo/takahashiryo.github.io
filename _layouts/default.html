@@ -171,6 +171,26 @@
     });
   });
 
+  /* お知らせのカテゴリ切り替え。カードの data-cat を見て出し入れするだけ */
+  document.addEventListener('DOMContentLoaded', function () {
+    var tabs = document.getElementById('news-filter');
+    if (!tabs) return;
+    var cards = tabs.parentElement.querySelectorAll('.news-card');
+    tabs.addEventListener('click', function (e) {
+      var btn = e.target.closest('.filter-btn');
+      if (!btn) return;
+      var cat = btn.getAttribute('data-cat');
+      tabs.querySelectorAll('.filter-btn').forEach(function (b) {
+        var on = b === btn;
+        b.classList.toggle('is-active', on);
+        b.setAttribute('aria-selected', on ? 'true' : 'false');
+      });
+      cards.forEach(function (c) {
+        c.hidden = cat !== 'all' && c.getAttribute('data-cat') !== cat;
+      });
+    });
+  });
+
   /* トップページの Publications。タブで種別ごとの組を切り替える。
      組ごとに別の div を出しているので、表示を入れ替えるだけでよい。 */
   document.addEventListener('DOMContentLoaded', function () {

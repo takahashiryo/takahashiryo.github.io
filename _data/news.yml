@@ -136,3 +136,35 @@
   image: "ubi87_talk.jpg"
   ja: "情報処理学会 第87回ユビキタスコンピューティングシステム研究会にて優秀論文賞を受賞"
   en: "Received the Outstanding Paper Award at IPSJ UBI 87"
+- date: "2024-11-28"
+  category: award
+  ja: "第15回マイクロ・ナノ工学シンポジウムにて優秀講演論文を受賞"
+  en: "Received the Outstanding Presentation Award at the 15th Micro-Nano Science and Technology Symposium"
+  url: "https://www.akg.t.u-tokyo.ac.jp/archives/5248"
+- date: "2024-05-24"
+  category: award
+  ja: "第7回フレキシブル・ストレッチャブルエレクトロニクス若手研究者の会にて最優秀ポスター発表賞を受賞"
+  en: "Received the Best Poster Presentation Award at the 7th FSE Young Researchers Meeting"
+  url: "https://www.akg.t.u-tokyo.ac.jp/archives/5105"
+- date: "2022-12-16"
+  category: award
+  image: "/images/research/e-textile.jpg"
+  ja: "WISS 2022 にて「メアンダコイル++」が最優秀論文賞を受賞"
+  en: "Meander Coil++ received the Best Paper Award at WISS 2022"
+  url: "https://www.akg.t.u-tokyo.ac.jp/archives/4463"
+- date: "2022-09-16"
+  category: award
+  ja: "ACM UbiComp 2022 にて Gaetano Borriello Outstanding Student Award Runner-up を受賞"
+  en: "Runner-up for the Gaetano Borriello Outstanding Student Award at ACM UbiComp 2022"
+  url: "https://www.akg.t.u-tokyo.ac.jp/archives/4272"
+- date: "2022-07-27"
+  category: award
+  ja: "情報処理学会 2022年度 山下記念研究賞を受賞"
+  en: "Received the IPSJ Yamashita SIG Research Award 2022"
+  url: "https://www.akg.t.u-tokyo.ac.jp/archives/4232"
+- date: "2022-05-02"
+  category: award
+  image: "/images/research/e-textile.jpg"
+  ja: "ACM CHI 2022 にて「Meander Coil++」が Best Paper Award を受賞"
+  en: "Meander Coil++ received the Best Paper Award at ACM CHI 2022"
+  url: "https://www.akg.t.u-tokyo.ac.jp/archives/4215"
