@@ -41,20 +41,17 @@ research:
       title: "電子テキスタイル"
       body: "メアンダコイルを衣服の全面に編み込み、人体に安全なまま身体のどこにでも W 級の電力と通信を届ける。液体金属配線や機械編みによって、洗える・伸びる電子テキスタイルを作る。"
       detail:
-        - "衣服をそのまま大きなコイルにすると、電磁界が体の奥まで入り込んでしまう。メアンダ（つづら折り）形状のコイルはこれを避け、強い磁界を体の表面付近だけに閉じ込める。全身サイズに広げても安全性を保ったまま、W 級の給電と µW 級のセンサ読み取りを両立できる。"
-        - "つづら折りという形が単純なので、工業用の編み機でそのまま量産できる。液体金属の配線や、摩擦で留める分散コンデンサと組み合わせることで、洗える・伸びる・機械的に丈夫な服になる。電池のいらないウェアラブルを全身に散らし、日常の衣服から電力とデータを届け続けることを目指している。"
+        - "皮膚に貼るスキンデバイスを薄く柔らかいまま、皮膚に密着させるために、皮膚の近傍に強い電磁界を閉じ込めるメアンダコイル服により、人の周りにサーフェス型無線通信・給電ネットワークを作り、有線で繋げたときと同レベルの高い信頼性のある無線給電・通信をスキンデバイスへ行う。"
     en:
       title: "E-textiles"
       body: "Meander coils knitted across a whole garment deliver watt-level power and data anywhere on the body while staying safe to wear. Liquid-metal wiring and machine knitting make the fabric washable and stretchable."
       detail:
-        - "Turning a whole garment into one large coil normally pushes the electromagnetic field deep into the body. A meandered (zigzag) coil avoids this by confining a strong inductive field to the skin surface, so the system stays safe at body scale while delivering watt-class power and reading out microwatt-class sensors."
-        - "The zigzag geometry is simple enough to be mass-produced on industrial knitting machines. Combined with liquid-metal wiring and friction-jointed distributed capacitors, the fabric stays washable, stretchable and mechanically durable. The aim is to run battery-free wearables anywhere on the body, powered and read out by ordinary clothing."
+        - "To keep skin-attached devices thin, soft and in close contact with the skin, a meander-coil garment confines a strong electromagnetic field near the skin surface, forming a surface-type wireless power and communication network around the body. Skin devices are then powered and read out wirelessly with the same level of reliability as a wired connection."
     zh:
       title: "电子纺织品"
       body: "将蜿蜒线圈编织于整件衣服，在保证人体安全的前提下，向身体任意位置输送瓦级电力与数据。借助液态金属布线与机器编织，实现可水洗、可拉伸的电子纺织品。"
       detail:
-        - "若把整件衣服变成一个大线圈，电磁场会深入人体内部。蜿蜒（之字形）线圈避免了这一点，将强磁场约束在皮肤表面附近；即使扩展到全身尺度也能保持安全，同时实现瓦级供电与微瓦级传感器读取。"
-        - "之字形结构足够简单，可直接用工业编织机量产。配合液态金属布线与摩擦固定的分布式电容，织物可水洗、可拉伸、机械上也足够耐用。目标是让无电池的可穿戴设备分布于全身，由日常衣物持续供电与读取数据。"
+        - "为了让贴附于皮肤的皮肤器件保持轻薄柔软并紧贴皮肤，用把强电磁场约束在皮肤近旁的蜿蜒线圈衣服，在人体周围构建表面型的无线通信与供电网络，以与有线连接同等的高可靠性，对皮肤器件进行无线供电与通信。"
   - id: "low-power-wearable"
     image: "low-power-wearable.jpg"
     match: ["picoring", "telemetring", "wristband", "ring-based", "ring mouse",
