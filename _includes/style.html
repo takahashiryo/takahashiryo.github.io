@@ -123,6 +123,9 @@
   .news-grid .news-card { flex: none; }
   .news-fig { background: #f3f5f7; border-bottom: 1px solid var(--line); }
   .news-fig img { display: block; width: 100%; aspect-ratio: 16 / 10; object-fit: cover; }
+  /* 学会のロゴは切り取らずに枠へ収める（写真と違って端が意味を持つため） */
+  .news-fig--logo { background: #fff; }
+  .news-fig--logo img { object-fit: contain; padding: 0.9em 1.2em; }
   .news-body { padding: 0.8em 0.9em 1em; font-size: 0.78em; line-height: 1.6; }
   .news-meta {
     display: block; color: var(--faint); font-variant-numeric: tabular-nums;

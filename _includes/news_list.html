@@ -23,7 +23,7 @@
   {%- if include.lang == "ja" %}{% assign nt = n.ja %}{% else %}{% assign nt = n.en %}{% endif -%}
   <article class="news-card" data-cat="{{ n.category }}">
     {%- if n.image %}
-    <div class="news-fig">
+    <div class="news-fig{% if n.logo %} news-fig--logo{% endif %}">
       {%- if n.image contains "/" %}{% assign nimg = n.image %}{% else %}{% assign nimg = '/images/news/' | append: n.image %}{% endif -%}
       <img src="{{ nimg | relative_url }}" alt="" loading="lazy" decoding="async">
     </div>

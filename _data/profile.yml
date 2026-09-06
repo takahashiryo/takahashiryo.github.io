@@ -84,19 +84,19 @@ research:
     match: ["robot", "snake", "locomotion", "relay resonator",
             "ロボット", "プラレール", "中継器", "共振器"]
     ja:
-      title: "ロボットスキン"
+      title: "ロボットスキン・電子皮膚"
       body: "関節位置を移動できるヘビ型ロボットや小型移動ロボットに、床面や布から電力を受け取る皮膚をまとわせ、電池のいらない長期運用を可能にする。"
       detail:
         - "多関節のヘビ型ロボットは、関節の数だけモータが要るため重くなり、消費電力も数百 W に達する。"
         - "このロボットは柔らかい受動リンクの連なりで、内部のラックギアに沿ってモータ関節を移動させることで、少ない関節数でも多関節のように曲がる。関節が動くと配線が絡む問題は、柔らかいロボットスキンから無線で給電することで避けている。1.3 kg・7.6 W の構成で、床面や布からの給電と組み合わせれば電池のいらない長期運用ができる。"
     en:
-      title: "Robot skin"
+      title: "Robot skin and e-skin"
       body: "A power-receiving skin lets joint-repositionable snake robots and small mobile robots draw energy from floors and fabrics, enabling long-term operation without batteries."
       detail:
         - "A multi-joint snake robot needs one motor per joint, which makes the body heavy and pushes power consumption into the hundreds of watts."
         - "This robot is instead a chain of soft passive links. Motor-driven joint units travel along rack gears inside the body, so a small number of joints can reproduce multi-joint bending. Because the joints move, wiring would tangle - so a soft robot skin powers them wirelessly. The result weighs 1.3 kg and runs on 7.6 W; combined with power delivered from floors or fabrics, it can operate for long periods without a battery."
     zh:
-      title: "机器人皮肤"
+      title: "机器人皮肤・电子皮肤"
       body: "为可移动关节的蛇形机器人与小型移动机器人披上可受电的“皮肤”，使其从地面或织物获取电能，实现无需电池的长期运行。"
       detail:
         - "多关节蛇形机器人每个关节都需要一台电机，因而机体沉重，功耗高达数百瓦。"

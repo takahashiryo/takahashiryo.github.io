@@ -8,7 +8,8 @@
 
 - date: "2026-10-12"
   category: paper
-  image: "/images/publications/picoring_dual.jpg"
+  image: "logo-ubicomp-iswc-2026.png"
+  logo: true
   ja: "ACM UbiComp/ISWC 2026 にて picoRing dual を発表。ワークショップ論文3件も採録"
   en: "picoRing dual to be presented at ACM UbiComp/ISWC 2026, with three workshop papers"
   url: "https://doi.org/10.1145/3830727.3834815"
@@ -50,7 +51,7 @@
   url: "https://techs-labo.jp/service/it-book/EMC/backnumber/459.html"
 - date: "2026-07-01"
   category: paper
-  image: "/images/research/e-textile.jpg"
+  image: "/images/publications/bodynet_p1.jpg"
   ja: "メアンダ電子テキスタイルによる全身 BodyNet の論文が IEEE Pervasive Computing に掲載"
   en: "Near-field power and data networking via meandered e-textiles published in IEEE Pervasive Computing"
   url: "https://doi.org/10.1109/MPRV.2026.3712563"
@@ -91,7 +92,8 @@
   url: "https://doi.org/10.1109/mems64181.2026.11419301"
 - date: "2025-12-03"
   category: talk
-  image: "uist.jpg"
+  image: "logo-wiss-2025.svg"
+  logo: true
   ja: "WISS 2025 にて招待講演「picoRing mouse: 極低電力な指輪型無線マウス」"
   en: "Invited talk on picoRing mouse at WISS 2025"
 - date: "2025-12-01"
@@ -124,7 +126,8 @@
   url: "https://www.akg.t.u-tokyo.ac.jp/archives/6000"
 - date: "2025-10-01"
   category: paper
-  image: "uist.jpg"
+  image: "logo-uist-2025.svg"
+  logo: true
   ja: "picoRing mouse を ACM UIST 2025 にて発表"
   en: "Presented picoRing mouse at ACM UIST 2025"
   url: "https://dl.acm.org/doi/10.1145/3746059.3747615"
@@ -138,33 +141,40 @@
   en: "Received the Outstanding Paper Award at IPSJ UBI 87"
 - date: "2024-11-28"
   category: award
+  image: "/images/publications/acs_lm_textile_800.jpg"
   ja: "第15回マイクロ・ナノ工学シンポジウムにて優秀講演論文を受賞"
   en: "Received the Outstanding Presentation Award at the 15th Micro-Nano Science and Technology Symposium"
   url: "https://www.akg.t.u-tokyo.ac.jp/archives/5248"
 - date: "2024-05-24"
   category: award
+  image: "/images/research/e-textile.jpg"
   ja: "第7回フレキシブル・ストレッチャブルエレクトロニクス若手研究者の会にて最優秀ポスター発表賞を受賞"
   en: "Received the Best Poster Presentation Award at the 7th FSE Young Researchers Meeting"
   url: "https://www.akg.t.u-tokyo.ac.jp/archives/5105"
 - date: "2022-12-16"
   category: award
-  image: "/images/research/e-textile.jpg"
+  image: "logo-wiss-2022.png"
+  logo: true
   ja: "WISS 2022 にて「メアンダコイル++」が最優秀論文賞を受賞"
   en: "Meander Coil++ received the Best Paper Award at WISS 2022"
   url: "https://www.akg.t.u-tokyo.ac.jp/archives/4463"
 - date: "2022-09-16"
   category: award
+  image: "logo-ubicomp-2022.svg"
+  logo: true
   ja: "ACM UbiComp 2022 にて Gaetano Borriello Outstanding Student Award Runner-up を受賞"
   en: "Runner-up for the Gaetano Borriello Outstanding Student Award at ACM UbiComp 2022"
   url: "https://www.akg.t.u-tokyo.ac.jp/archives/4272"
 - date: "2022-07-27"
   category: award
+  image: "/images/research/e-textile.jpg"
   ja: "情報処理学会 2022年度 山下記念研究賞を受賞"
   en: "Received the IPSJ Yamashita SIG Research Award 2022"
   url: "https://www.akg.t.u-tokyo.ac.jp/archives/4232"
 - date: "2022-05-02"
   category: award
-  image: "/images/research/e-textile.jpg"
+  image: "logo-chi-2022.png"
+  logo: true
   ja: "ACM CHI 2022 にて「Meander Coil++」が Best Paper Award を受賞"
   en: "Meander Coil++ received the Best Paper Award at ACM CHI 2022"
   url: "https://www.akg.t.u-tokyo.ac.jp/archives/4215"
