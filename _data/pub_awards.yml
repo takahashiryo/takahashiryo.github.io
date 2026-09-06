@@ -1,0 +1,17 @@
+# 論文タイトル → 受賞。一覧でタイトルの前に記号を出す。
+# publications.csv は手元データから作り直されるので、CSV には持たせない。
+# icon は 🏆（最優秀・ベストペーパー/ベストポスター）と 🏅（Honorable Mention）の2種類。
+# label はマウスを乗せたときに出る説明。キーはタイトルの完全一致。
+
+"Joint-repositionable Inner-wireless Planar Snake Robot":
+  icon: "🏆"
+  label: "IEEE Robotics and Automation Letters (RA-L) 2025 Best Paper Award"
+"Meander Coil++: A Body-scale Wireless Power Transmission using Safe-to-body and Energy-efficient Transmitter Coil":
+  icon: "🏆"
+  label: "ACM CHI 2022 Best Paper Award"
+"メアンダコイル++:継続的なウェアラブルコンピューティングのための衣類全面での安全で高効率な無線給電":
+  icon: "🏆"
+  label: "WISS 2022 最優秀論文賞"
+"Body-scale wireless charging via meandered textile coil for continuous full-body electric skin":
+  icon: "🏆"
+  label: "FSE 2024 Best Poster Presentation Award"

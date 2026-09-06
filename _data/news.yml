@@ -12,6 +12,12 @@
   ja: "李、高橋らが IEEE IROS 2026 にて Plug-n-play E-knit を発表"
   en: "Presented Plug-n-play E-knit at IEEE IROS 2026 (Pittsburgh, USA)"
   url: "https://2026.ieee-iros.org/"
+- date: "2026-09-01"
+  category: paper
+  image: "/images/publications/acs_lm_textile_800.jpg"
+  ja: "佐藤、高橋らの摩擦接合による全身無線給電服が ACS Applied Materials & Interfaces に採録"
+  en: "Friction-jointed wireless powering textile accepted to ACS Applied Materials & Interfaces"
+  url: "https://doi.org/10.1021/acsami.6c06181"
 - date: "2026-08-28"
   category: talk
   image: "innovation_japan2026_800.jpg"
@@ -24,12 +30,24 @@
   ja: "JST News 8月号にインタビュー記事が掲載"
   en: "Interview featured in JST News, August 2026"
   url: "https://www.jst.go.jp/pr/jst-news/backnumber/2026/202608/index.html"
+- date: "2026-07-09"
+  category: paper
+  image: "/images/publications/npj_knittable.jpg"
+  ja: "「Knittable electronic textiles for intelligent soft wearables」が npj Flexible Electronics に掲載"
+  en: "Knittable electronic textiles for intelligent soft wearables published in npj Flexible Electronics"
+  url: "https://www.nature.com/articles/s41528-026-00611-y"
 - date: "2026-07-05"
   category: media
   image: "emc2026_07_pages_800.jpg"
   ja: "月刊EMC 2026年7月号に解説記事「服型無線給電ネットワークと人体安全」を掲載"
   en: "Review article on garment-scale wireless power networks in EMC Monthly"
   url: "https://techs-labo.jp/service/it-book/EMC/backnumber/459.html"
+- date: "2026-07-01"
+  category: paper
+  image: "/images/research/e-textile.jpg"
+  ja: "メアンダ電子テキスタイルによる全身 BodyNet の論文が IEEE Pervasive Computing に掲載"
+  en: "Near-field power and data networking via meandered e-textiles published in IEEE Pervasive Computing"
+  url: "https://doi.org/10.1109/MPRV.2026.3712563"
 - date: "2026-06-30"
   category: award
   image: "robomech2026_award_800.jpg"
@@ -42,12 +60,38 @@
   ja: "高橋、横田らが IEEE RA-L 2025 Best Paper Award を受賞"
   en: "IEEE RA-L 2025 Best Paper Award"
   url: "https://www.uec.ac.jp/news/newsrelease/2026/20260605_7740.html"
+- date: "2026-03-12"
+  category: talk
+  ja: "電子情報通信学会 総合大会の JST CRONOS スポンサードセッションにて講演"
+  en: "Talk at the JST CRONOS sponsored session, IEICE General Conference 2026"
+  url: "https://www.ieice.org/jpn_r/activities/taikai/general/2026/sponsored_session.html"
 - date: "2026-02-27"
   category: award
   image: "funai_award.jpg"
   ja: "2025年度 船井研究奨励賞を受賞"
   en: "Funai Research Award 2025"
   url: "https://funaifoundation.jp/news-580.htm"
+- date: "2026-02-01"
+  category: award
+  ja: "電気学会センサ・マイクロシステム部門にて優秀論文発表賞A を受賞"
+  en: "Received the Outstanding Presentation Award A from the IEEJ Sensors and Micromachines Society"
+- date: "2026-01-25"
+  category: paper
+  ja: "水溶性流路と液体金属によるリサイクル可能な無線デバイスを IEEE MEMS 2026 にて発表"
+  en: "Presented recyclable wireless devices using 3D-printed water-soluble channels at IEEE MEMS 2026"
+  url: "https://doi.org/10.1109/mems64181.2026.11419301"
+- date: "2025-12-03"
+  category: talk
+  ja: "WISS 2025 にて招待講演「picoRing mouse: 極低電力な指輪型無線マウス」"
+  en: "Invited talk on picoRing mouse at WISS 2025"
+- date: "2025-12-01"
+  category: award
+  ja: "第16回マイクロ・ナノ工学シンポジウムにて優秀講演論文を受賞"
+  en: "Received the Outstanding Presentation Award at the 16th Micro-Nano Science and Technology Symposium"
+- date: "2025-12-01"
+  category: talk
+  ja: "公立はこだて未来大学にて招待講演"
+  en: "Invited talk at Future University Hakodate"
 - date: "2025-11-12"
   category: award
   image: "smm_award.jpg"
@@ -66,3 +110,10 @@
   ja: "picoRing mouse を ACM UIST 2025 にて発表"
   en: "Presented picoRing mouse at ACM UIST 2025"
   url: "https://dl.acm.org/doi/10.1145/3746059.3747615"
+
+# --- ここから下は経歴（受賞・講演・論文）から起こしたもの。
+#     日が分からないものはその月の 1 日にしてある。
+- date: "2025-10-01"
+  category: award
+  ja: "情報処理学会 第87回ユビキタスコンピューティングシステム研究会にて優秀論文賞を受賞"
+  en: "Received the Outstanding Paper Award at IPSJ UBI 87"

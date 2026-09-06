@@ -62,7 +62,14 @@
 {%- comment %} 写真はトップの一覧だけ（thumb=true のとき）。バッジとは別のフラグにしている {% endcomment -%}
 {%- comment %} Liquid では空文字も真になるので、初期値は false にする {% endcomment -%}
 {%- assign thumb = false -%}
-{%- if include.thumb -%}{%- assign thumb = site.data.pub_images[p.title] -%}{%- endif -%}
+{%- comment %} 写真を出すのは論文誌・国際会議・解説・メディアだけ。
+     国内発表・ワークショップ・デモ・ポスターには要らない {% endcomment -%}
+{%- assign thumb_types = "journal,conference,article,media" | split: "," -%}
+{%- if include.thumb -%}
+  {%- for ty in thumb_types -%}
+    {%- if p.type == ty -%}{%- assign thumb = site.data.pub_images[p.title] -%}{%- endif -%}
+  {%- endfor -%}
+{%- endif -%}
 <div class="entry entry--pub{% if thumb %} entry--thumb{% endif %}" data-type="{{ p.type }}">
   {%- if thumb %}
   <div class="entry-fig"><img src="{{ thumb | relative_url }}" alt="" loading="lazy"></div>
@@ -76,7 +83,10 @@
     {%- if p.type == "media" -%}
       {%- assign murl = site.data.media_links[p.title] | default: p.url -%}
     {%- endif -%}
+    {%- comment %} 受賞論文はタイトルの前に記号を出す（pub_awards.yml） {% endcomment -%}
+    {%- assign aw = site.data.pub_awards[p.title] -%}
     <div class="entry-title">
+      {%- if aw %}<span class="pub-award" title="{{ aw.label | escape }}" aria-label="{{ aw.label | escape }}">{{ aw.icon }}</span>{% endif -%}
       {%- if murl contains "http" -%}
         <a href="{{ murl }}" target="_blank" rel="noopener">{{ p.title | escape }}</a>
       {%- else -%}{{ p.title | escape }}{%- endif -%}
@@ -87,7 +97,9 @@
     {%- if p.authors != "" %}<div class="entry-authors">{{ au }}</div>{% endif -%}
     {%- if p.venue != "" or p.year != "" %}
     <div class="entry-venue">
-      {{- p.venue | escape }}{% if p.detail != "" %}, {{ p.detail | escape }}{% endif %}{% if p.place != "" %}, {{ p.place | escape }}{% endif %}{% if when != "" %} ({{ when }}){% endif %}.
+      {%- comment %} 長い正式名は venue_short.yml で短くする {% endcomment -%}
+      {%- assign venue = site.data.venue_short[p.venue] | default: p.venue -%}
+      {{- venue | escape }}{% if p.detail != "" %}, {{ p.detail | escape }}{% endif %}{% if p.place != "" %}, {{ p.place | escape }}{% endif %}{% if when != "" %} ({{ when }}){% endif %}.
     </div>
     {%- endif -%}
     {%- if p.award != "" %}<div class="entry-award">{{ p.award | escape }}</div>{% endif -%}

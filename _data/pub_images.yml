@@ -19,3 +19,13 @@
 "A Cuttable Wireless Power Transfer Sheet": "/images/research/digital-fabrication.jpg"
 "Near-field power and data networking via meandered e-textiles for continuous, large-scale BodyNet": "/images/research/e-textile.jpg"
 "Ultra-low-power ring-based wireless tinymouse": "/images/news/uist.jpg"
+
+# --- 論文誌・国際会議で図が無かったものを埋めた分
+# ★ が付いているものは、その論文そのものの図ではなく、同じ装置・同じ系列の図の流用。
+"picoRing mouse:極低電力な指輪型無線マウス": "/images/publications/picoring_mouse_ieej.jpg"
+"Joint-repositionable Inner-wireless Planar Snake Robot": "/images/research/robot-skin.jpg"
+"Friction Jointing of Distributed Rigid Capacitors to Stretchable Liquid Metal Coil for Full-Body Wireless Charging Clothing": "/images/publications/acs_lm_textile_800.jpg"   # ★ 同じ摩擦接合の図
+"Plug-n-play e-knit: prototyping large-area e-textiles using machine-knitted magnetically-repositionable sensor networks": "/images/publications/machine_knittable_eknit.jpg"   # ★ 同じ系列
+"Meander Coil++: A Body-scale Wireless Power Transmission using Safe-to-body and Energy-efficient Transmitter Coil": "/images/research/e-textile.jpg"   # ★ 同じメアンダコイル服
+"メアンダコイル++:継続的なウェアラブルコンピューティングのための衣類全面での安全で高効率な無線給電": "/images/research/e-textile.jpg"   # ★
+"Full-body WPT: wireless powering with meandered e-textiles": "/images/research/e-textile.jpg"   # ★

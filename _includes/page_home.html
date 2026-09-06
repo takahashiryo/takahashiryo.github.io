@@ -8,6 +8,13 @@
     <div class="hero-photo">
       <img src="{{ '/images/' | append: pr.photo | relative_url }}" alt="{{ t.name }}">
     </div>
+    {%- comment %} 外部プロフィールへのリンク。写真の下に記号だけで並べる {% endcomment -%}
+    <div class="links">
+      {%- for l in pr.links -%}
+      <a href="{{ l.url }}" target="_blank" rel="noopener" title="{{ l.label }}" aria-label="{{ l.label }}">{% include icon.html name=l.key %}</a>
+      {%- endfor -%}
+      <a href="mailto:{{ pr.email }}" title="Email" aria-label="Email">{% include icon.html name="email" %}</a>
+    </div>
   </div>
   <div class="hero-body">
     {%- comment %} 左上と同じく、英語表記から始める {% endcomment -%}
@@ -18,18 +25,12 @@
     {%- endif -%}
     <p class="role">{{ t.role }}</p>
     <p class="tagline">{{ t.tagline }}</p>
-    <div class="links">
-      {%- for l in pr.links -%}
-      <a href="{{ l.url }}" target="_blank" rel="noopener">{{ l.label }}</a>
-      {%- endfor -%}
-      <a href="mailto:{{ pr.email }}">Email</a>
-    </div>
 
     <section id="about">
       {%- comment %} 研究の一言（lead）と経歴（bio）を1つの段落にまとめている。
            lead は meta description と og:description でも使うので、
            i18n.yml では別のままにしてある。 {% endcomment -%}
-      <p>{{ t.lead | strip }}{{ t.bio | strip }}</p>
+      <p><strong class="lead-open">{{ t.lead_open | strip }}</strong>{{ t.lead_rest | strip }}{{ t.bio | strip }}</p>
       {%- comment %} 連絡先は独立した節にせず、概要の文章の下に置く {% endcomment -%}
       <p class="contact-line">{{ t.contact_lead }}<br>
         <a href="mailto:{{ pr.email }}">{{ pr.email }}</a></p>
@@ -47,7 +48,9 @@
     <article class="news-card">
       {%- if n.image %}
       <div class="news-fig">
-        <img src="{{ '/images/news/' | append: n.image | relative_url }}" alt="" loading="lazy">
+        {%- comment %} "/" 始まりならそのまま、そうでなければ images/news/ の下 {% endcomment -%}
+        {%- if n.image contains "/" %}{% assign nimg = n.image %}{% else %}{% assign nimg = '/images/news/' | append: n.image %}{% endif -%}
+        <img src="{{ nimg | relative_url }}" alt="" loading="lazy">
       </div>
       {%- endif %}
       <div class="news-body">

@@ -1,0 +1,28 @@
+# 掲載先の長い正式名 → 一覧で出す短い名前。
+# publications.csv は手元データから作り直されるので、CSV 側は正式名のままにして
+# ここで表示だけ短くする（media_links.yml と同じ考え方）。キーは完全一致。
+# 年号は venue から落とすので、後ろに ", 2025" が自動で付く。
+
+# 国際会議
+"Proceedings of the 33rd Annual ACM Symposium on User Interface Software and Technology (UIST’20)": "ACM UIST"
+"Proceedings of the 37th Annual ACM Symposium on User Interface Software and Technology (UIST'24)": "ACM UIST"
+"Proceedings of the 38th Annual ACM Symposium on User Interface Software and Technology (ACM UIST)": "ACM UIST"
+"Proceedings of the 2022 CHI Conference on Human Factors in Computing Systems (ACM CHI'22)": "ACM CHI"
+"Extended Abstracts of the 2026 CHI Conference on Human Factors in Computing Systems": "ACM CHI EA"
+"Extended Abstracts of the CHI Conference on Human Factors in Computing Systems (CHI EA ’25)": "ACM CHI EA"
+"Proc. of ACM UbiComp 2025": "ACM UbiComp"
+"Proc. of ACM UbiComp 2026": "ACM UbiComp"
+"Adjunct Proc. of ACM UbiComp 2018": "ACM UbiComp Adjunct"
+"Companion of the 2025 ACM International Joint Conference on Pervasive and Ubiquitous Computing (UbiComp Companion'25)": "ACM UbiComp Companion"
+"Proceedings of the 2026 ACM International Symposium on Wearable Computers (ISWC '26)": "ACM ISWC"
+"Proc. of TEI 2025": "ACM TEI"
+"2026 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)": "IEEE/RSJ IROS"
+"2026 IEEE 39th International Conference on Micro Electro Mechanical Systems (MEMS)": "IEEE MEMS"
+"IEEE MEMS 2025": "IEEE MEMS"
+"Proc. of IEEE International Conference on Consumer Electronics 2020 (ICCE)": "IEEE ICCE"
+"The 7th event of THE YOUNG RESEARCHERS SOCIETY FOR FLEXIBLE AND STRETCHABLE ELECTRONICS": "Young Researchers Society for Flexible and Stretchable Electronics"
+
+# 論文誌
+"IEEE Robotics and Automation Letters": "IEEE RA-L"
+"Proc. of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies (ACM IMWUT)": "ACM IMWUT"
+"Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies (ACM IMWUT)": "ACM IMWUT"

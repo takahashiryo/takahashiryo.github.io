@@ -20,6 +20,9 @@ links:
   - key: "utokyo"
     label: "UTokyo"
     url: "https://www.u-tokyo.ac.jp/focus/ja/people/k0001_05213.html"
+  - key: "cronos"
+    label: "JST CRONOS"
+    url: "https://yokota-cronos.com/"
 
 # 研究テーマ（トップの Research セクション）
 # match / exclude は関連論文を拾うキーワード（題名を小文字化して部分一致）。

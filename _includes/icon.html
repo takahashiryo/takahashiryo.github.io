@@ -1,0 +1,22 @@
+{%- comment %}
+  リンク用の記号。include.name は profile.yml の links の key と "email"。
+  外部のアイコンフォントを読まずに済むよう、単色の SVG をここに直接置いている。
+{%- endcomment -%}
+{%- case include.name -%}
+{%- when "scholar" -%}
+<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 1 9l11 6 9-4.9V17h2V9L12 3z"/><path d="M5 13.2v3.4c0 1.4 3.1 3.4 7 3.4s7-2 7-3.4v-3.4L12 17l-7-3.8z"/></svg>
+{%- when "researchmap" -%}
+<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 4.5 9 2.5 3 4.5v17l6-2 6 2 6-2v-17l-6 2zm-.5 1.7v13.1l-5-1.7V4.5l5 1.7z"/></svg>
+{%- when "orcid" -%}
+<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><text x="12" y="16.2" text-anchor="middle" font-size="10.5" font-family="Helvetica, Arial, sans-serif" fill="#fff">iD</text></svg>
+{%- when "x" -%}
+<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.9 2h3.3l-7.2 8.3L23.5 22h-6.6l-5.2-6.8L5.8 22H2.5l7.7-8.8L2 2h6.8l4.7 6.2L18.9 2zm-1.2 18h1.8L7.3 3.9H5.4L17.7 20z"/></svg>
+{%- when "linkedin" -%}
+<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3V9zm7 0h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.4c0-1.3-.02-2.96-1.8-2.96-1.8 0-2.08 1.4-2.08 2.86V21h-4V9z"/></svg>
+{%- when "utokyo" -%}
+<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 2 7v2h20V7L12 2zM4 11h3v7H4v-7zm6.5 0h3v7h-3v-7zM17 11h3v7h-3v-7zM2 20h20v2H2v-2z"/></svg>
+{%- when "cronos" -%}
+<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm6.9 6h-2.9a15.6 15.6 0 0 0-1.4-3.6A8 8 0 0 1 18.9 8zM12 4c.8 1.1 1.4 2.4 1.8 4h-3.6c.4-1.6 1-2.9 1.8-4zM4.3 14A8 8 0 0 1 4 12c0-.7.1-1.4.3-2h3.3a17 17 0 0 0 0 4H4.3zm.8 2h2.9c.3 1.3.8 2.5 1.4 3.6A8 8 0 0 1 5.1 16zm2.9-8H5.1a8 8 0 0 1 4.3-3.6A15.6 15.6 0 0 0 8 8zM12 20c-.8-1.1-1.4-2.4-1.8-4h3.6c-.4 1.6-1 2.9-1.8 4zm2.2-6H9.8a15 15 0 0 1 0-4h4.4a15 15 0 0 1 0 4zm.4 5.6c.6-1.1 1.1-2.3 1.4-3.6h2.9a8 8 0 0 1-4.3 3.6zM16.4 14a17 17 0 0 0 0-4h3.3c.2.6.3 1.3.3 2s-.1 1.4-.3 2h-3.3z"/></svg>
+{%- when "email" -%}
+<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 5a1 1 0 0 1 1-1h18a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5zm2 1.4V18h16V6.4l-8 5.4-8-5.4zM19.6 6H4.4L12 11.1 19.6 6z"/></svg>
+{%- endcase -%}
