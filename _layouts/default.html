@@ -214,7 +214,8 @@
       var more = document.getElementById('more-pubs');
       if (more) {
         var base = more.getAttribute('href').split('#')[0];
-        more.setAttribute('href', base + '#' + (set === 'all' ? 'publications' : 'pub-' + set));
+        var anchor = set === 'all' ? 'publications' : (set === 'selected' ? 'pub-journal' : 'pub-' + set);
+        more.setAttribute('href', base + '#' + anchor);
       }
     });
   });

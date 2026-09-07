@@ -22,7 +22,8 @@ home_news_limit      : 10
 home_award_limit     : 6
 home_talk_limit      : 5
 
-include              : ["_pages"]
+# _redirects は Cloudflare Pages 用。Jekyll は "_" 始まりを出さないのでここに並べる
+include              : ["_pages", "_redirects"]
 exclude              : ["scripts", "Gemfile", "Gemfile.lock", "README.md", "CLAUDE.md",
                         "*.xlsx", "data_local"]
 

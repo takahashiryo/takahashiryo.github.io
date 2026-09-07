@@ -55,6 +55,7 @@ ja:
     media: "掲載"
   type_sep: "・"
   filter_all: "All"
+  filter_selected: "Selected"
   types:
     journal: "論文誌"
     conference: "国際会議"
@@ -122,6 +123,7 @@ en:
     media: "Media"
   type_sep: " & "
   filter_all: "All"
+  filter_selected: "Selected"
   types:
     journal: "Journal"
     conference: "Conference"
@@ -189,6 +191,7 @@ zh:
     media: "媒体"
   type_sep: "・"
   filter_all: "All"
+  filter_selected: "Selected"
   types:
     journal: "期刊"
     conference: "国际会议"

@@ -12,7 +12,7 @@ import sys
 
 LIMIT = 10        # _config.yml の home_pub_limit
 AWARDS = 6        # 同 home_award_limit
-SETS = 7          # All + 種別6つ
+SETS = 8          # All + Selected + 種別6つ
 
 ENTRY = r'class="entry[ "]'
 
@@ -33,6 +33,8 @@ def main(path="_site/index.html"):
     bad = []
     if len(sets) != SETS:
         bad.append(f"タブの組が {SETS} つでない: {len(sets)}")
+    if len(sets) > 1 and sets[1] != ("selected", LIMIT):
+        bad.append(f"Selected が {LIMIT} 件でない: {sets[1:2]}")
     if not sets or sets[0] != ("all", LIMIT):
         bad.append(f"All が {LIMIT} 件でない: {sets[:1]}")
     if any(n < 1 or n > LIMIT for _, n in sets):

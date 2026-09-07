@@ -24,6 +24,8 @@
   {% endcomment -%}
   <div class="filter" role="tablist">
     <button class="filter-btn is-active" data-set="all" role="tab" aria-selected="true">{{ t.filter_all }}</button>
+    {%- comment %} 査読付きの本体だけを見たい人向け。論文誌と国際会議をまとめて出す {% endcomment -%}
+    <button class="filter-btn" data-set="selected" role="tab" aria-selected="false">{{ t.filter_selected }}</button>
     {%- for g in groups -%}
       {%- assign gt = g | split: "," -%}
       {%- assign k0 = gt[0] -%}{%- assign k1 = gt[1] -%}
@@ -51,6 +53,17 @@
     {%- for p in pubs limit: limit -%}
       {% include pub_entry.html p=p t=t badge=true thumb=true %}
     {%- endfor -%}
+    </div>
+    <div class="pub-list" data-set="selected" hidden>
+      {%- assign shown = 0 -%}
+      {%- for p in pubs -%}
+        {%- if p.type == "journal" or p.type == "conference" -%}
+          {%- if shown < limit %}
+      {% include pub_entry.html p=p t=t badge=true thumb=true %}
+            {%- assign shown = shown | plus: 1 -%}
+          {%- endif -%}
+        {%- endif -%}
+      {%- endfor %}
     </div>
     {%- for g in groups -%}
       {%- assign gt = g | split: "," -%}
