@@ -239,7 +239,9 @@
   .entry-award::before { content: "\1F3C6\FE0E"; margin-right: 0.35em; font-style: normal; }
   .me { color: var(--ink); text-decoration: underline; text-underline-offset: 0.22em;
         text-decoration-thickness: 1px; text-decoration-color: var(--rule); }
-  .entry[hidden], .year-head[hidden], .group-head[hidden] { display: none !important; }
+  {%- comment %} display を持つ要素は hidden 属性だけでは消えないので、明示して打ち消す {% endcomment %}
+  .entry[hidden], .year-head[hidden], .group-head[hidden],
+  .news-card[hidden] { display: none !important; }
 
   .more { margin: 1.4em 0 0; font-size: 0.86em; }
   .more a { color: var(--ink); }
