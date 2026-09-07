@@ -87,7 +87,10 @@
   }
   </script>
   {%- endif %}
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='26'>&#128225;</text></svg>">
+  {%- comment %} タブのアイコン。SVG を読めないブラウザ向けに PNG も並べる {% endcomment -%}
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ '/images/favicon-32.png' | relative_url }}">
+  <link rel="icon" type="image/png" sizes="512x512" href="{{ '/images/favicon-512.png' | relative_url }}">
+  <link rel="apple-touch-icon" href="{{ '/images/apple-touch-icon.png' | relative_url }}">
   {%- comment %}
     名前の表示にだけ使う明朝。システムの明朝は太字を持たないので合成太字になり、
     大きく出したときに輪郭が崩れる。しっぽり明朝は 600 の実体を持っている。

@@ -143,8 +143,11 @@
   .hero-body #about .sechead { margin-top: 0; }
 
   @media (max-width: 640px) {
-    .hero-side { flex: 1 1 auto; width: 100%; }
-    .hero-photo { width: clamp(120px, 40vw, 190px); }
+    /* 幅が狭いときは、写真の下ではなく右横に記号を並べる。
+       下に置くと4列の枠が画面いっぱいに広がって間延びするため */
+    .hero-side { flex: 1 1 auto; width: 100%; display: flex; align-items: center; gap: 1.1em; }
+    .hero-photo { flex: 0 0 auto; width: clamp(112px, 32vw, 170px); }
+    .links { margin-top: 0; grid-template-columns: repeat(4, 30px); gap: 0.45em 0.35em; justify-content: start; }
   }
 
   /* ── 研究テーマ（図＋本文＋関連論文のカード） ── */
