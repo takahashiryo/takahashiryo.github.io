@@ -73,7 +73,7 @@
   <p class="author-note">{{ t.author_note }}</p>
   {% include pub_list.html lang=lang limit=site.home_pub_limit %}
   {%- comment %} タブを選ぶと、リンク先が CV のその種別の見出しに変わる（JS） {% endcomment -%}
-  <p class="more"><a id="more-pubs" href="{{ home | append: 'cv/#publications' | relative_url }}">{{ t.more_publications }} →</a></p>
+  <p class="more"><a id="more-pubs" href="{{ home | append: 'cv/#pub-journal' | relative_url }}">{{ t.more_publications }} →</a></p>
 </section>
 
 <section id="awards">
