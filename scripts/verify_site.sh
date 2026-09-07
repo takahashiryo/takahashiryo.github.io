@@ -67,7 +67,7 @@ chk "entry >= 133（実測 $c）" "test $c -ge 133"
 chk 'pub-groups'  'grep -q "id=\"pub-groups\"" _site/cv/index.html'
 chk 'media タブ'  'grep -q "data-filter=\"media\"" _site/cv/index.html'
 chk '受賞(en)'    'grep -q "Best Paper Award" _site/en/cv/index.html'
-chk '研究費 金額' 'grep -q "18,330,000" _site/cv/index.html'
+chk '研究費 金額' 'grep -q "14,100,000" _site/cv/index.html'
 chk '職歴'        'grep -q "Meta Inc" _site/cv/index.html'
 chk '役割(ja)'     'grep -q "研究代表者" _site/cv/index.html'
 chk '役割(en)'     'grep -q "Principal Investigator" _site/en/cv/index.html'

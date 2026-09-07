@@ -84,7 +84,7 @@ jobs:
           set -e
           grep -q 'id="pub-groups"' _site/cv/index.html
           grep -q "Best Paper Award" _site/en/cv/index.html
-          grep -q "18,330,000" _site/cv/index.html        # 研究費の金額
+          grep -q "14,100,000" _site/cv/index.html        # 研究費の金額
           grep -q "Meta Inc" _site/cv/index.html          # 職歴
           grep -q "研究代表者" _site/cv/index.html            # 日本語CV
           grep -q "Principal Investigator" _site/en/cv/index.html  # 英語CV
