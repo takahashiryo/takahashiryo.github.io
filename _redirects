@@ -1,7 +1,6 @@
 # Cloudflare Pages 用。旧サイト（Google Sites）の URL を 301 で送る。
 # _pages/legacy-*.html の meta refresh より強い信号になるので、そちらより先に効く。
 # GitHub Pages はこのファイルを見ないので、あちらでは meta refresh のままになる。
-/home/pneumodule         /                                301
 /home                    /                                301
 /home/meander-coil       /research/e-textile/             301
 /home/twin-meander-coil  /research/e-textile/             301
