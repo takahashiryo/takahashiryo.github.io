@@ -58,6 +58,8 @@
   {%- assign doi = site.data.doi[p.title] | default: "" -%}
 {%- endif -%}
 {%- assign arx = site.data.arxiv[p.title] -%}
+{%- comment %} 手元で公開する PDF は _data/pdf.yml（タイトル→パス）で持つ {% endcomment -%}
+{%- assign pdf = site.data.pdf[p.title] -%}
 
 {%- comment %} 写真はトップの一覧だけ（thumb=true のとき）。バッジとは別のフラグにしている {% endcomment -%}
 {%- comment %} Liquid では空文字も真になるので、初期値は false にする {% endcomment -%}
@@ -101,8 +103,9 @@
     </div>
     {%- endif -%}
     {%- if p.award != "" %}<div class="entry-award">{{ p.award | escape }}</div>{% endif -%}
-    {%- if doi != "" or arx -%}
+    {%- if doi != "" or arx or pdf -%}
     <div class="entry-links">
+      {%- if pdf %}<a class="pill" href="{{ pdf | relative_url }}" target="_blank" rel="noopener">PDF</a>{% endif -%}
       {%- if doi != "" %}<a class="pill" href="https://doi.org/{{ doi }}" target="_blank" rel="noopener">DOI</a>{% endif -%}
       {%- if arx %}<a class="pill" href="{{ arx }}" target="_blank" rel="noopener">arXiv</a>{% endif -%}
     </div>

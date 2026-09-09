@@ -1,0 +1,4 @@
+# 論文タイトル（publications.csv の title と一字一句一致）→ PDF のパス。
+# PDF は paper/ に短い英語名で置く（例: paper/acs_lm_textile.pdf）。
+# pub_entry.html がここにある論文にだけ「PDF」ピルを出す。
+"Friction-Based Interconnection of Stretchable Liquid Metal-Based Coil with Rigid Capacitors for Mechanically Durable Wireless Powering Textile": "/paper/acs_lm_textile.pdf"
