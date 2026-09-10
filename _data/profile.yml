@@ -106,19 +106,19 @@ research:
     match: ["cuttable", "3d-printing", "plug-n-play", "prototyping",
             "3d印刷", "水溶性", "切断"]
     ja:
-      title: "デジタルファブリケーション"
+      title: "IoTサーフェス"
       body: "ハサミで切れるワイヤレス充電シートや、水溶性の流路に液体金属を流し込む 3D 印刷など、電子デバイスを誰でも作り変えられる製造手法を設計する。"
       detail:
         - "電子デバイスは一度作ると形を変えられない。センサの最適な位置は人によっても用途によっても違うのに、導電糸で縫い付けてしまうと後から動かせない。"
         - "そこで、作り変えられる作り方そのものを設計している。H 木配線のワイヤレス充電シートは、ハサミで切っても残った部分が動き続ける。水溶性樹脂で 3D 印刷した流路に液体金属を流し込めば、水に溶かして液体金属を回収でき、4回の作り直しでも 98% が戻る。機械編みで電力と通信のバスを布に織り込み、センサを磁石で付け替えられるようにすれば、位置合わせを何度でもやり直せる。"
     en:
-      title: "Digital fabrication"
+      title: "IoT surfaces"
       body: "Wireless charging sheets that can be cut with scissors, and 3D-printed water-soluble channels filled with liquid metal — fabrication methods that let anyone reshape an electronic device."
       detail:
         - "Once an electronic device is built, its shape is fixed. The best sensor position differs from person to person and from task to task, yet conductive stitching bonds a sensor permanently in place."
         - "So the fabrication method itself is the research. A wireless charging sheet with H-tree wiring keeps working in whatever part remains after you cut it with scissors. Liquid metal poured into 3D-printed water-soluble channels can be recovered by dissolving the mould in water, with 98% recovered after four rebuild cycles. Machine knitting embeds power and communication buses into the fabric, and magnetically repositionable sensors let the layout be adjusted again and again."
     zh:
-      title: "数字化制造"
+      title: "IoT 表面"
       body: "可用剪刀裁剪的无线充电薄片，以及向水溶性流道注入液态金属的 3D 打印——设计让任何人都能重新塑造电子器件的制造方法。"
       detail:
         - "电子器件一旦制成，形状便固定下来。传感器的最佳位置因人、因用途而异，但用导电线缝合后就无法再移动。"
