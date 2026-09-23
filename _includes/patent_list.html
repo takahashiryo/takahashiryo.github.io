@@ -13,7 +13,11 @@
           <a href="{{ p.url }}" target="_blank" rel="noopener">{{ p.title | escape }}</a>
         {%- else -%}{{ p.title | escape }}{%- endif -%}
       </div>
-      {%- if p.inventors != "" %}<div class="entry-authors">{{ p.inventors | escape }}</div>{% endif -%}
+      {%- comment %} 発明者のうち高橋を強調する（researchmap の表記は「高橋 亮」と姓名の間に空白あり） {% endcomment -%}
+      {%- assign inv = p.inventors | escape -%}
+      {%- assign inv = inv | replace: "高橋 亮", "<span class='me'>高橋 亮</span>" -%}
+      {%- assign inv = inv | replace: "Ryo Takahashi", "<span class='me'>Ryo Takahashi</span>" -%}
+      {%- if p.inventors != "" %}<div class="entry-authors">{{ inv }}</div>{% endif -%}
       <div class="entry-meta">
         {%- if p.application_number != "" %}<span class="tag">{{ p.application_number | escape }}</span>{% endif -%}
         {%- if p.announcement_number != "" %}<span class="tag">{{ p.announcement_number | escape }}</span>{% endif -%}

@@ -68,7 +68,7 @@ def main():
 
         with (OUT / fname).open("w", newline="", encoding="utf-8") as f:
             w = csv.DictWriter(f, fieldnames=cols, quoting=csv.QUOTE_ALL,
-                               extrasaction="ignore", restval="")
+                               extrasaction="ignore", restval="", lineterminator="\n")
             w.writeheader()
             w.writerows(rows)
         print(f"{fname}: {len(rows)} 件")
