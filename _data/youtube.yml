@@ -1,0 +1,10 @@
+# 論文タイトル（publications.csv の title と一字一句一致）→ YouTube の URL。
+# 出所は cronos_web の publications.csv の youtube 列。pub_entry.html が「YouTube」ピルを出す。
+# 同じタイトルの行（本会議とデモ）には同じ動画が付く。
+
+"Ultra-low-power ring-based wireless tinymouse": "https://www.youtube.com/watch?v=7RazVNMx0Ms"
+"Demo of picoRing mouse: ultra-low-powered wireless mouse ring with ring-to-wristband coil-based impedance sensing": "https://www.youtube.com/watch?v=7RazVNMx0Ms"
+"picoRing mouse:極低電力な指輪型無線マウス": "https://www.youtube.com/watch?v=7RazVNMx0Ms"
+"picoRing dual: ultralow-power bimanual ring controllers for everyday AR": "https://www.youtube.com/watch?v=a0z5SKU4_ug"
+"Body-scale NFC for wearables: human-centric body-scale NFC networking for ultra-low-power wearable devices (Demo of UTokyo Kawahara Lab 2025)": "https://youtu.be/xxEWxeqx-Bg"
+"Full-body WPT: wireless powering with meandered e-textiles": "https://www.youtube.com/watch?v=1u3vBoVZhGk"
