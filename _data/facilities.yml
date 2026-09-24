@@ -246,6 +246,7 @@
       name: "USRP X310 + UBX-160"
       maker: "Ettus Research（NI）"
       image: "usrp-x310.jpg"
+      qty: 2
       ja:
         desc: "Kintex-7 FPGA 搭載の高性能 SDR。UBX-160 で 10 MHz〜6 GHz を最大 160 MHz 帯域で送受信、2 スロットで 2×2 MIMO。GNU Radio / UHD で制御。"
         uses:
