@@ -1,0 +1,27 @@
+{%- comment %}
+  研究設備の一覧。_data/facilities.yml を上から順にカードで並べる。
+  文言は facilities.yml（各項目の ja/en/zh）と i18n.yml（見出し・導入文）だけで組む。
+  写真が無い項目はカードの写真枠を出さない。
+{%- endcomment -%}
+{%- assign lang = include.lang -%}
+{%- assign t = site.data.i18n[lang] -%}
+<div style="height: 2.4em"></div>
+{% include sechead.html title=t.sec.facilities en=t.sec_facilities_en lang=lang %}
+{%- if t.facilities_intro and t.facilities_intro != "" %}
+<p class="facilities-intro">{{ t.facilities_intro }}</p>
+{%- endif %}
+<div class="facilities">
+{%- for f in site.data.facilities -%}
+  {%- assign b = f[lang] | default: f.en -%}
+  <div class="facility" id="{{ f.id }}">
+    {%- if f.image and f.image != "" %}
+    <div class="facility-fig"><img src="{{ '/images/facilities/' | append: f.image | relative_url }}" alt="{{ b.name | escape }}" loading="lazy"></div>
+    {%- endif %}
+    <div class="facility-body">
+      <div class="facility-name">{{ b.name | escape }}</div>
+      {%- if b.body and b.body != "" %}<p class="facility-desc">{{ b.body | escape }}</p>{% endif -%}
+    </div>
+  </div>
+{%- endfor -%}
+</div>
+<p class="more"><a href="{{ include.home | relative_url }}">{{ t.back_home }}</a></p>

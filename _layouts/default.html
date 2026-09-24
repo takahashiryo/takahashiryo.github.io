@@ -117,6 +117,7 @@
       {%- assign home = page.home_url | default: '/' -%}
       <a href="{{ home | append: 'cv/#publications' | relative_url }}">{{ t.nav.publications }}</a>
       <a href="{{ home | append: 'cv/' | relative_url }}">{{ t.nav.cv }}</a>
+      <a href="{{ home | append: 'facilities/' | relative_url }}">{{ t.nav.facilities }}</a>
       <span class="lang">
         <a href="{{ '/' | append: suffix | relative_url }}" {% if lang == 'ja' %}class="is-active"{% endif %}>日本語</a>
         <a href="{{ '/en/' | append: suffix | relative_url }}" {% if lang == 'en' %}class="is-active"{% endif %}>EN</a>

@@ -36,6 +36,7 @@ jobs:
           for p in index.html cv/index.html \
                    en/index.html en/cv/index.html \
                    zh/index.html zh/cv/index.html \
+                   facilities/index.html en/facilities/index.html zh/facilities/index.html \
                    publications/index.html en/publications/index.html zh/publications/index.html \
                    research/e-textile/index.html research/low-power-wearable/index.html \
                    research/robot-skin/index.html research/digital-fabrication/index.html \
@@ -44,12 +45,13 @@ jobs:
             test -s "_site/$p" || { echo "missing or empty: $p"; exit 1; }
           done
 
-      - name: Check nav has exactly Publications and CV
+      - name: Check nav has Publications, CV and Facilities
         run: |
           set -e
           n=$(grep -o 'class="navbar"' -A0 _site/index.html | wc -l)
           grep -q '>論文</a>' _site/index.html
           grep -q ">履歴書</a>" _site/index.html
+          grep -q ">設備</a>" _site/index.html
           grep -q ">CV</a>" _site/en/index.html
           ! grep -q '>概要</a>' _site/index.html
 

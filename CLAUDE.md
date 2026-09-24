@@ -59,6 +59,7 @@ Information.xlsx`）から作る古い経路で、いまは使っていない。
 | `_data/talks.csv` | 講演10件 | 手元データから生成 |
 | `_data/i18n.yml` | 3言語の文言 | 手書き |
 | `_data/profile.yml` | リンク・研究テーマ | 手書き＋researchmap |
+| `_data/facilities.yml` | Facilities ページ（/facilities/）の設備一覧。id・image（images/facilities/）・ja/en/zh の name/body。描画は `_includes/page_facilities.html` | 手書き |
 | `_data/arxiv.yml` / `youtube.yml` / `pdf.yml` | タイトル→ arXiv URL / YouTube URL / `paper/` 内の PDF パス。あるものだけピルが出る | 手書き（cronos_web の CSV から転記） |
 
 `type` の値: `journal` / `conference` / `workshop` / `demo` / `poster` / `domestic` / `article`。

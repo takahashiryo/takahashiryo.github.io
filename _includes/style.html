@@ -282,6 +282,15 @@
 
   /* トップの論文一覧に出す写真。cronos_web の見せ方に合わせている。
      論文の図は切り取ると読めなくなるので cover ではなく contain で全体を出す。 */
+  /* Facilities ページ（研究設備のカード） */
+  .facilities-intro { margin: 0 0 1.6em; color: var(--ink); }
+  .facilities { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.6em 1.4em; }
+  @media (max-width: 1000px) { .facilities { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 640px)  { .facilities { grid-template-columns: 1fr; } }
+  .facility { border-top: 1px solid var(--rule); padding-top: 1em; }
+  .facility-fig img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block; margin-bottom: 0.8em; }
+  .facility-name { font-weight: 600; font-size: 0.98em; line-height: 1.65; color: var(--ink); }
+  .facility-desc { margin: 0.35em 0 0; font-size: 0.86em; line-height: 1.8; color: var(--muted, var(--ink)); }
   .entry-fig { flex: 0 0 clamp(150px, 16vw, 190px); }
   .entry-fig img {
     display: block; width: 100%; aspect-ratio: 16 / 10; object-fit: contain;

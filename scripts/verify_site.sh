@@ -19,6 +19,7 @@ echo "--- 6ページ＋補助ファイルが生成されているか ---"
 for p in index.html cv/index.html \
          en/index.html en/cv/index.html \
          zh/index.html zh/cv/index.html \
+         facilities/index.html en/facilities/index.html zh/facilities/index.html \
          sitemap.xml robots.txt 404.html; do
   chk "$p" "test -s '_site/$p'"
 done
@@ -32,8 +33,9 @@ done
 chk 'トップのカードが詳細へリンク' 'grep -q "href=\"/research/e-textile/\"" _site/index.html'
 chk '詳細ページの件数がカードと一致' '[ "$(grep -o "class=\"entry entry--pub\"" _site/research/e-textile/index.html | wc -l | tr -d " ")" = "$(grep -o "theme-pubs-head\">関連論文 [0-9]* 件" _site/index.html | head -1 | grep -o "[0-9]*")" ]'
 
-echo "--- ナビは Publications と CV の2つ ---"
+echo "--- ナビは Publications・CV・Facilities ---"
 chk '論文 リンクあり'   'grep -q ">論文</a>" _site/index.html'
+chk '設備 リンクあり'   'grep -q ">設備</a>" _site/index.html'
 chk 'CV リンク(ja)'   'grep -q ">履歴書</a>" _site/index.html'
 chk 'CV リンク(en)'   'grep -q ">CV</a>" _site/en/index.html'
 chk '概要 リンクなし'   'test -z "$(grep -o ">概要</a>" _site/index.html)"'
