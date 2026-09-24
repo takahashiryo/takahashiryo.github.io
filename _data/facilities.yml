@@ -14,7 +14,7 @@
     - id: "picovna-108"
       name: "PicoVNA 108"
       maker: "Pico Technology"
-      image: "picovna-108.jpg"
+      image: "picovna-108-2.jpg"
       ja:
         desc: "300 kHz〜8.5 GHz の USB 接続 2 ポート VNA。4 受信機構成で 124 dB のダイナミックレンジ、毎秒 5,500 回超の S パラメータ測定。"
         uses:
@@ -60,7 +60,7 @@
     - id: "nanovna"
       name: "NanoVNA"
       maker: ""
-      image: "nanovna.jpg"
+      image: "nanovna-2.jpg"
       ja:
         desc: "手のひらサイズの小型 VNA。数十 kHz〜GHz 帯の S11 / S21 を測れ、バッテリー内蔵。安価なので学生一人ひとりに配れる。"
         uses:
@@ -129,7 +129,7 @@
     - id: "mso44b"
       name: "MSO44B"
       maker: "Tektronix"
-      image: "mso44b.jpg"
+      image: "mso44b-2.jpg"
       ja:
         desc: "帯域 350 MHz、12 ビット、6.25 GS/s のミックスドシグナルオシロ。4 アナログ入力は各 8 本のデジタル入力に切り替え可能。13.3 インチ HD タッチ画面。"
         uses:
@@ -222,7 +222,7 @@
     - id: "ads-max"
       name: "Analog Discovery Studio Max"
       maker: "Digilent"
-      image: "ads-max.jpg"
+      image: "ads-max-2.jpg"
       ja:
         desc: "14 種の計測器を 4 枚のブレッドボードと一体化した教育・実験用ワークベンチ。2 チャンネル・14 ビット・100 MS/s・50 MHz のオシロを内蔵。"
         uses:
@@ -316,7 +316,7 @@
     - id: "mocopi"
       name: "mocopi"
       maker: "Sony"
-      image: "mocopi.jpg"
+      image: "mocopi-2.jpg"
       ja:
         desc: "直径 32 mm・8 g のセンサ 6 個を頭・腰・手首・足首に着けて全身の動きを取るモバイルモーションキャプチャ。スマホと BLE 接続、約 10 時間駆動。"
         uses:
@@ -366,7 +366,7 @@
     - id: "optitrack-flex-3"
       name: "Flex 3"
       maker: "OptiTrack"
-      image: "optitrack-flex-3.jpg"
+      image: "optitrack-flex-3-2.jpg"
       qty: 6
       ja:
         desc: "640×480・100 FPS の USB モーションキャプチャカメラ。グローバルシャッタと赤外 LED リングでマーカーを安定して捉え、小型で卓上や小部屋向き。"
@@ -492,7 +492,7 @@
     - id: "mikasa-ms-b150"
       name: "MS-B150"
       maker: "Mikasa"
-      image: "mikasa-ms-b150.jpg"
+      image: "mikasa-ms-b150-2.jpg"
       ja:
         desc: "研究・小型ラボ向けの回転式スピンコーター。6 インチウェハや 100×100 mm 基板に対応し、回転数と時間をプログラムして均一な薄膜を塗布する。"
         uses:
@@ -515,7 +515,7 @@
     - id: "hakko-fx-971"
       name: "FX-971"
       maker: "HAKKO"
-      image: "hakko-fx-971.jpg"
+      image: "hakko-fx-971-2.jpg"
       ja:
         desc: "100 W のデジタルはんだごてステーション。50〜450 °C、標準・マイクロ両ハンドル対応。プリセット 5 つ、スリープ・自動オフ、PC からの温度記録。"
         uses:
