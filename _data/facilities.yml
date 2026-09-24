@@ -40,7 +40,7 @@
     - id: "sv6301a"
       name: "SV6301A"
       maker: "Chelegance"
-      image: "sv6301a.jpg"
+      image: "sv6301a-2.jpg"
       ja:
         desc: "6.3 GHz までのハンドヘルド VNA。"
         specs:
