@@ -915,6 +915,30 @@
           - "内存 96 GB DDR5-5600"
           - "PCIe 4.0 x16 插槽，10 GbE SFP+ ×2，2.5 GbE ×2，M.2 ×3"
 
+    - id: "minisforum-atomman-g1-pro"
+      name: "AtomMan G1 Pro"
+      maker: "Minisforum"
+      image: "minisforum-atomman-g1-pro.jpg"
+      qty: 2
+      ja:
+        desc: "GPU 内蔵の 3.8 L 小型 PC。"
+        specs:
+          - "CPU AMD Ryzen 9 8945HX（16 コア / 32 スレッド、最大 5.4 GHz）"
+          - "GPU NVIDIA GeForce RTX 5060（8 GB GDDR7、145 W）"
+          - "メモリ DDR5（最大 96 GB）、M.2 PCIe 4.0 ×2"
+      en:
+        desc: "3.8-litre compact PC with a discrete GPU."
+        specs:
+          - "CPU: AMD Ryzen 9 8945HX (16 cores / 32 threads, up to 5.4 GHz)"
+          - "GPU: NVIDIA GeForce RTX 5060 (8 GB GDDR7, 145 W)"
+          - "DDR5 memory (up to 96 GB), two M.2 PCIe 4.0 slots"
+      zh:
+        desc: "内置独立 GPU 的 3.8 L 小型 PC。"
+        specs:
+          - "CPU AMD Ryzen 9 8945HX（16 核 / 32 线程，最高 5.4 GHz）"
+          - "GPU NVIDIA GeForce RTX 5060（8 GB GDDR7，145 W）"
+          - "DDR5 内存（最高 96 GB），M.2 PCIe 4.0 ×2"
+
 - id: "software"
   ja: { name: "ソフト" }
   en: { name: "Software" }
