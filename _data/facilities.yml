@@ -5,6 +5,81 @@
 # devices が空のカテゴリは「準備中」と出る。
 # 写真は sips -s format jpeg -s formatOptions 85 --resampleWidth 1200 入力 --out images/facilities/<id>.jpg で作る。
 
+- id: "robot"
+  ja: { name: "ロボット" }
+  en: { name: "Robots" }
+  zh: { name: "机器人" }
+  devices:
+
+    - id: "toio"
+      name: "toio"
+      maker: "Sony"
+      image: "toio.jpg"
+      ja:
+        desc: "小型キューブロボット。"
+        specs:
+          - "本体 32×32×19.2 mm、底面カメラで専用マット上の絶対位置・向きを検出"
+          - "3 軸ジャイロ、RGB LED、スピーカー内蔵"
+          - "Bluetooth 接続、複数台の同時制御"
+      en:
+        desc: "Small cube robot."
+        specs:
+          - "32 x 32 x 19.2 mm body; bottom camera reads absolute position and heading on the mat"
+          - "3-axis gyro, RGB LED and speaker"
+          - "Bluetooth, several units controlled at once"
+      zh:
+        desc: "小型立方体机器人。"
+        specs:
+          - "机身 32×32×19.2 mm，底部摄像头检测专用垫上的绝对位置与朝向"
+          - "内置三轴陀螺仪、RGB LED、扬声器"
+          - "Bluetooth 连接，多台同时控制"
+
+    - id: "so-101"
+      name: "SO-101"
+      maker: "The Robot Studio / Hugging Face"
+      image: "so-101-2.jpg"
+      ja:
+        desc: "オープンソースの 6 自由度ロボットアーム。"
+        specs:
+          - "6 自由度、STS3215 バスサーボ ×6（フォロワー 1/345 ギア）"
+          - "トルク 30 kg·cm（12 V）"
+          - "360° 磁気エンコーダ、デイジーチェーン接続"
+      en:
+        desc: "Open-source 6-DoF robot arm."
+        specs:
+          - "6 DoF, six STS3215 bus servos (1/345 gearing on the follower)"
+          - "30 kg·cm torque at 12 V"
+          - "360° magnetic encoders, daisy-chained bus"
+      zh:
+        desc: "开源 6 自由度机械臂。"
+        specs:
+          - "6 自由度，STS3215 总线舵机 ×6（从臂 1/345 减速）"
+          - "扭矩 30 kg·cm（12 V）"
+          - "360° 磁编码器，菊花链连接"
+
+    - id: "rebot-b601-dm"
+      name: "reBot Arm B601-DM"
+      maker: "Seeed Studio"
+      image: "rebot-b601-dm-2.jpg"
+      ja:
+        desc: "オープンソースの 6+1 自由度ロボットアーム。"
+        specs:
+          - "6+1 自由度（グリッパ付き）、可搬 1.5 kg"
+          - "リーチ 767 mm、繰り返し精度 0.2 mm"
+          - "Damiao アクチュエータ、CAN（MIT モード：位置・速度・トルク同時指令）"
+      en:
+        desc: "Open-source 6+1-DoF robot arm."
+        specs:
+          - "6+1 DoF with gripper, 1.5 kg payload"
+          - "767 mm reach, 0.2 mm repeatability"
+          - "Damiao actuators, CAN (MIT mode: position, velocity and torque together)"
+      zh:
+        desc: "开源 6+1 自由度机械臂。"
+        specs:
+          - "6+1 自由度（含夹爪），负载 1.5 kg"
+          - "臂展 767 mm，重复精度 0.2 mm"
+          - "Damiao 执行器，CAN（MIT 模式：位置、速度、扭矩同时指令）"
+
 - id: "rf"
   ja: { name: "計測" }
   en: { name: "Measurement" }
@@ -669,81 +744,6 @@
           - "桌面型小型恒温箱"
           - "腔体保持在设定温度"
           - "用于树脂、粘合剂固化与恒温保存"
-
-- id: "robot"
-  ja: { name: "ロボット" }
-  en: { name: "Robots" }
-  zh: { name: "机器人" }
-  devices:
-
-    - id: "toio"
-      name: "toio"
-      maker: "Sony"
-      image: "toio.jpg"
-      ja:
-        desc: "小型キューブロボット。"
-        specs:
-          - "本体 32×32×19.2 mm、底面カメラで専用マット上の絶対位置・向きを検出"
-          - "3 軸ジャイロ、RGB LED、スピーカー内蔵"
-          - "Bluetooth 接続、複数台の同時制御"
-      en:
-        desc: "Small cube robot."
-        specs:
-          - "32 x 32 x 19.2 mm body; bottom camera reads absolute position and heading on the mat"
-          - "3-axis gyro, RGB LED and speaker"
-          - "Bluetooth, several units controlled at once"
-      zh:
-        desc: "小型立方体机器人。"
-        specs:
-          - "机身 32×32×19.2 mm，底部摄像头检测专用垫上的绝对位置与朝向"
-          - "内置三轴陀螺仪、RGB LED、扬声器"
-          - "Bluetooth 连接，多台同时控制"
-
-    - id: "so-101"
-      name: "SO-101"
-      maker: "The Robot Studio / Hugging Face"
-      image: "so-101-2.jpg"
-      ja:
-        desc: "オープンソースの 6 自由度ロボットアーム。"
-        specs:
-          - "6 自由度、STS3215 バスサーボ ×6（フォロワー 1/345 ギア）"
-          - "トルク 30 kg·cm（12 V）"
-          - "360° 磁気エンコーダ、デイジーチェーン接続"
-      en:
-        desc: "Open-source 6-DoF robot arm."
-        specs:
-          - "6 DoF, six STS3215 bus servos (1/345 gearing on the follower)"
-          - "30 kg·cm torque at 12 V"
-          - "360° magnetic encoders, daisy-chained bus"
-      zh:
-        desc: "开源 6 自由度机械臂。"
-        specs:
-          - "6 自由度，STS3215 总线舵机 ×6（从臂 1/345 减速）"
-          - "扭矩 30 kg·cm（12 V）"
-          - "360° 磁编码器，菊花链连接"
-
-    - id: "rebot-b601-dm"
-      name: "reBot Arm B601-DM"
-      maker: "Seeed Studio"
-      image: "rebot-b601-dm-2.jpg"
-      ja:
-        desc: "オープンソースの 6+1 自由度ロボットアーム。"
-        specs:
-          - "6+1 自由度（グリッパ付き）、可搬 1.5 kg"
-          - "リーチ 767 mm、繰り返し精度 0.2 mm"
-          - "Damiao アクチュエータ、CAN（MIT モード：位置・速度・トルク同時指令）"
-      en:
-        desc: "Open-source 6+1-DoF robot arm."
-        specs:
-          - "6+1 DoF with gripper, 1.5 kg payload"
-          - "767 mm reach, 0.2 mm repeatability"
-          - "Damiao actuators, CAN (MIT mode: position, velocity and torque together)"
-      zh:
-        desc: "开源 6+1 自由度机械臂。"
-        specs:
-          - "6+1 自由度（含夹爪），负载 1.5 kg"
-          - "臂展 767 mm，重复精度 0.2 mm"
-          - "Damiao 执行器，CAN（MIT 模式：位置、速度、扭矩同时指令）"
 
 - id: "compute"
   ja: { name: "計算" }
