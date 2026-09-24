@@ -298,6 +298,30 @@
           - "S11 / S21 测量、史密斯圆图显示"
           - "4.3 英寸屏幕，内置电池"
 
+    - id: "tinysa-ultra"
+      name: "tinySA Ultra"
+      maker: ""
+      image: "tinysa-ultra.jpg"
+      qty: 2
+      ja:
+        desc: "手のひらサイズのスペクトラムアナライザ。"
+        specs:
+          - "周波数 100 kHz〜5.3 GHz（Ultra モード）"
+          - "信号発生器内蔵（正弦波 100 kHz〜800 MHz、矩形波 〜4.4 GHz）"
+          - "4 インチタッチ画面、バッテリー内蔵、USB-C"
+      en:
+        desc: "Palm-sized spectrum analyzer."
+        specs:
+          - "100 kHz to 5.3 GHz (Ultra mode)"
+          - "Built-in signal generator (sine 100 kHz to 800 MHz, square to 4.4 GHz)"
+          - "4-inch touchscreen, built-in battery, USB-C"
+      zh:
+        desc: "掌上型频谱分析仪。"
+        specs:
+          - "频率 100 kHz〜5.3 GHz（Ultra 模式）"
+          - "内置信号发生器（正弦波 100 kHz〜800 MHz，方波至 4.4 GHz）"
+          - "4 英寸触摸屏，内置电池，USB-C"
+
     - id: "ssa3032x-r"
       name: "SSA3032X-R"
       maker: "Siglent"
