@@ -514,24 +514,25 @@
           - "光刻胶、绝缘层、保护层的均匀涂布"
           - "液态金属布线封装层的形成"
 
-    - id: "hakko-fx-971"
-      name: "FX-971"
+    - id: "hakko-fx-972"
+      name: "FX-972"
       maker: "HAKKO"
-      image: "hakko-fx-971-2.jpg"
+      image: "hakko-fx-972.jpg"
+      qty: 2
       ja:
-        desc: "100 W のデジタルはんだごてステーション。50〜450 °C、標準・マイクロ両ハンドル対応。プリセット 5 つ、スリープ・自動オフ、PC からの温度記録。"
+        desc: "200 W・2 ポートのデジタルはんだごてステーション。こて先ハンドルを 2 本同時に使え、精密用から大型用まで 8 種類のハンドピースに対応。大型 LCD と USB 接続で PC から設定・温度記録ができる。"
         uses:
           - "センサノード・無線モジュール基板の実装と修正"
           - "0402 サイズなど微小部品のはんだ付け"
           - "導電糸・液体金属配線と基板の接続"
       en:
-        desc: "100 W digital soldering station, 50 to 450 °C, for standard and micro handpieces. Five presets, sleep and auto-off, and tip-temperature logging from a PC."
+        desc: "200 W dual-port digital soldering station that drives two handpieces at once and accepts eight handpiece types from precision to heavy-duty work. A large LCD and USB link allow setup and temperature logging from a PC."
         uses:
           - "Assembling and reworking sensor-node and radio-module boards"
           - "Soldering tiny components down to 0402"
           - "Joining conductive yarn and liquid-metal wiring to PCBs"
       zh:
-        desc: "100 W 数字焊台。50〜450 °C，兼容标准与微型手柄。5 组预设、休眠与自动关机，可从电脑记录烙铁头温度。"
+        desc: "200 W 双端口数字焊台。可同时使用两支手柄，兼容从精密到重型的 8 种手柄。大屏 LCD 与 USB 连接可从电脑设定并记录温度。"
         uses:
           - "传感器节点与无线模块电路板的焊接与返修"
           - "0402 等微小元件的焊接"
