@@ -284,7 +284,9 @@
      論文の図は切り取ると読めなくなるので cover ではなく contain で全体を出す。 */
   /* Facilities ページ（研究設備）。カテゴリ見出し → 機器カード3列 */
   .facilities-intro { margin: 0 0 0.6em; color: var(--ink); }
+  #facility-filter { margin: 1.2em 0 0; }
   .facility-group { margin-top: 2.2em; }
+  .facility-group[hidden] { display: none !important; }
   .facility-group-head {
     margin: 0 0 1.1em; padding-bottom: 0.4em; border-bottom: 1px solid var(--rule);
     font-size: 1.05em; letter-spacing: 0.12em; font-weight: 600; color: var(--ink);

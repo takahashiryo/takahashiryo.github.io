@@ -11,6 +11,14 @@
 {%- if t.facilities_intro and t.facilities_intro != "" %}
 <p class="facilities-intro">{{ t.facilities_intro }}</p>
 {%- endif %}
+{%- comment %} 見出し直下の切り替えタブ。All とカテゴリ名。JS（_layouts/default.html）が .facility-group を出し入れする {% endcomment -%}
+<div class="filter" id="facility-filter" role="tablist">
+  <button class="filter-btn is-active" data-group="all" role="tab" aria-selected="true">{{ t.filter_all }}</button>
+  {%- for c in site.data.facilities -%}
+    {%- assign cb = c[lang] | default: c.en %}
+  <button class="filter-btn" data-group="{{ c.id }}" role="tab" aria-selected="false">{{ cb.name | escape }}</button>
+  {%- endfor %}
+</div>
 {%- for c in site.data.facilities -%}
   {%- assign cb = c[lang] | default: c.en -%}
 <section class="facility-group" id="{{ c.id }}">

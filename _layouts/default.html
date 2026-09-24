@@ -175,6 +175,22 @@
     });
   });
 
+  /* Facilities のカテゴリ切り替え。タブの data-group に合う .facility-group だけ出す。
+     ボタンの is-active は上の共通ハンドラが付け替えるので、ここでは出し入れだけ */
+  document.addEventListener('DOMContentLoaded', function () {
+    var tabs = document.getElementById('facility-filter');
+    if (!tabs) return;
+    var groups = document.querySelectorAll('.facility-group');
+    tabs.addEventListener('click', function (e) {
+      var btn = e.target.closest('.filter-btn');
+      if (!btn) return;
+      var g = btn.getAttribute('data-group') || 'all';
+      groups.forEach(function (sec) {
+        sec.hidden = g !== 'all' && sec.id !== g;
+      });
+    });
+  });
+
   /* お知らせのカテゴリ切り替え。カードの data-cat を見て出し入れするだけ */
   document.addEventListener('DOMContentLoaded', function () {
     var tabs = document.getElementById('news-filter');
