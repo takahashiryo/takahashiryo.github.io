@@ -393,9 +393,9 @@
           - "视场角 46°×35°（4.5 mm 镜头），850 nm 红外 LED ×26，USB 2.0"
 
 - id: "fab"
-  ja: { name: "ファブリケーション・基板実装" }
-  en: { name: "Fabrication and PCB assembly" }
-  zh: { name: "制造加工与 PCB 组装" }
+  ja: { name: "ファブ" }
+  en: { name: "Fab" }
+  zh: { name: "制造" }
   devices:
 
     - id: "bambu-h2d"
@@ -750,3 +750,9 @@
           - "操作 1 kg 级实物的模仿学习与遥操作实验"
           - "搭载机器人皮肤与触觉传感器的操作研究"
           - "包含力控制的接触任务验证"
+
+- id: "compute"
+  ja: { name: "計算" }
+  en: { name: "Computing" }
+  zh: { name: "计算" }
+  devices: []
