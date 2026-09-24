@@ -541,7 +541,7 @@
     - id: "hakko-fr-850"
       name: "FR-850"
       maker: "HAKKO"
-      image: "hakko-fr-850.jpg"
+      image: "hakko-fr-850-2.jpg"
       ja:
         desc: "顕微鏡下で使える細身のマイクロホットエアステーション。50〜600 °C を 1 °C 刻み、風量 1.5〜5 L/min、φ1〜3 mm ノズルで微小部品だけを加熱。"
         uses:
