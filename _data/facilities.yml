@@ -21,21 +21,18 @@
           - "周波数 300 kHz〜8.5 GHz、2 ポート"
           - "ダイナミックレンジ 124 dB（10 Hz 帯域）"
           - "S パラメータ測定 最大 5,500 回/秒、4 受信機構成"
-          - "USB 接続、Touchstone（.s2p）出力"
       en:
         desc: "USB two-port VNA up to 8.5 GHz."
         specs:
           - "300 kHz to 8.5 GHz, two ports"
           - "124 dB dynamic range (10 Hz bandwidth)"
           - "Up to 5,500 S-parameter sweeps per second, four receivers"
-          - "USB control, Touchstone (.s2p) export"
       zh:
         desc: "8.5 GHz 以下的 USB 双端口 VNA。"
         specs:
           - "频率 300 kHz〜8.5 GHz，双端口"
           - "动态范围 124 dB（10 Hz 带宽）"
           - "S 参数测量最高 5,500 次/秒，四接收机架构"
-          - "USB 连接，可导出 Touchstone（.s2p）"
 
     - id: "sv6301a"
       name: "SV6301A"
@@ -47,21 +44,18 @@
           - "周波数 1 MHz〜6.3 GHz"
           - "S11 / S21 測定、スミスチャート、TDR"
           - "7 インチ静電容量式タッチ画面"
-          - "N 型コネクタ、バッテリー駆動"
       en:
         desc: "Handheld VNA up to 6.3 GHz."
         specs:
           - "1 MHz to 6.3 GHz"
           - "S11/S21, Smith chart, TDR"
           - "7-inch capacitive touchscreen"
-          - "N-type connectors, battery powered"
       zh:
         desc: "6.3 GHz 以下的手持式 VNA。"
         specs:
           - "频率 1 MHz〜6.3 GHz"
           - "S11 / S21 测量、史密斯圆图、TDR"
           - "7 英寸电容触摸屏"
-          - "N 型接口，电池供电"
 
     - id: "nanovna"
       name: "NanoVNA"
@@ -73,21 +67,18 @@
           - "NanoVNA-F V2: 周波数 50 kHz〜3 GHz"
           - "S11 / S21 測定、スミスチャート表示"
           - "4.3 インチ画面、バッテリー内蔵"
-          - "SMA コネクタ、USB-C"
       en:
         desc: "Palm-sized VNA."
         specs:
           - "NanoVNA-F V2: 50 kHz to 3 GHz"
           - "S11/S21 with Smith chart display"
           - "4.3-inch screen, built-in battery"
-          - "SMA connectors, USB-C"
       zh:
         desc: "掌上型小型 VNA。"
         specs:
           - "NanoVNA-F V2：频率 50 kHz〜3 GHz"
           - "S11 / S21 测量、史密斯圆图显示"
           - "4.3 英寸屏幕，内置电池"
-          - "SMA 接口，USB-C"
 
     - id: "ssa3032x-r"
       name: "SSA3032X-R"
@@ -99,21 +90,18 @@
           - "周波数 9 kHz〜3.2 GHz"
           - "リアルタイム帯域 25 MHz、RBW 1 Hz〜3 MHz"
           - "DANL −165 dBm/Hz（typ.）、プリアンプ内蔵"
-          - "トラッキングジェネレータ・VNA 機能、10.1 インチタッチ画面"
       en:
         desc: "Real-time spectrum analyzer up to 3.2 GHz."
         specs:
           - "9 kHz to 3.2 GHz"
           - "25 MHz real-time bandwidth, RBW 1 Hz to 3 MHz"
           - "DANL -165 dBm/Hz (typ.), built-in preamplifier"
-          - "Tracking generator and VNA mode, 10.1-inch touchscreen"
       zh:
         desc: "3.2 GHz 以下的实时频谱分析仪。"
         specs:
           - "频率 9 kHz〜3.2 GHz"
           - "实时带宽 25 MHz，RBW 1 Hz〜3 MHz"
           - "DANL −165 dBm/Hz（典型值），内置前置放大器"
-          - "跟踪发生器与 VNA 功能，10.1 英寸触摸屏"
 
     - id: "spectran-v6-eco"
       name: "SPECTRAN V6 ECO"
@@ -125,21 +113,18 @@
           - "周波数 9 kHz〜6 GHz"
           - "リアルタイム帯域 44 MHz、16 ビット ADC"
           - "掃引速度 3 THz/s（6 GHz を 2 ms）"
-          - "USB-C PD 給電、RTSA-Suite PRO 付属"
       en:
         desc: "USB real-time spectrum analyzer up to 6 GHz."
         specs:
           - "9 kHz to 6 GHz"
           - "44 MHz real-time bandwidth, 16-bit ADC"
           - "Sweep speed 3 THz/s (6 GHz in 2 ms)"
-          - "USB-C PD powered, RTSA-Suite PRO included"
       zh:
         desc: "6 GHz 以下的 USB 实时频谱分析仪。"
         specs:
           - "频率 9 kHz〜6 GHz"
           - "实时带宽 44 MHz，16 位 ADC"
           - "扫描速度 3 THz/s（2 ms 扫完 6 GHz）"
-          - "USB-C PD 供电，附带 RTSA-Suite PRO"
 
     - id: "mso44b"
       name: "MSO44B"
@@ -151,21 +136,18 @@
           - "帯域 350 MHz、サンプルレート 6.25 GS/s"
           - "分解能 12 ビット、レコード長 31.25 Mpts"
           - "アナログ 4 ch（各 8 本のデジタル入力に切替可）"
-          - "13.3 インチ HD タッチ画面"
       en:
         desc: "350 MHz, 12-bit mixed-signal oscilloscope."
         specs:
           - "350 MHz bandwidth, 6.25 GS/s sample rate"
           - "12-bit resolution, 31.25 Mpts record length"
           - "4 analog channels, each switchable to 8 digital inputs"
-          - "13.3-inch HD touchscreen"
       zh:
         desc: "350 MHz、12 位混合信号示波器。"
         specs:
           - "带宽 350 MHz，采样率 6.25 GS/s"
           - "12 位分辨率，记录长度 31.25 Mpts"
           - "4 路模拟通道，每路可切换为 8 路数字输入"
-          - "13.3 英寸高清触摸屏"
 
     - id: "mho98"
       name: "MHO98"
@@ -177,21 +159,18 @@
           - "帯域 1 GHz、サンプルレート 4 GSa/s、12 ビット"
           - "アナログ 4 ch＋デジタル 16 ch、メモリ 500 Mpts"
           - "2 ch 波形発生器（100 MHz）内蔵、波形取込 100 万回/秒"
-          - "7 インチタッチ画面、USB-C 給電"
       en:
         desc: "1 GHz, 12-bit mixed-signal oscilloscope."
         specs:
           - "1 GHz bandwidth, 4 GSa/s, 12-bit"
           - "4 analog + 16 digital channels, 500 Mpts memory"
           - "Built-in 2-channel 100 MHz generator, 1,000,000 wfms/s"
-          - "7-inch touchscreen, USB-C powered"
       zh:
         desc: "1 GHz、12 位混合信号示波器。"
         specs:
           - "带宽 1 GHz，采样率 4 GSa/s，12 位"
           - "4 路模拟＋16 路数字，存储深度 500 Mpts"
           - "内置双通道 100 MHz 波形发生器，波形捕获率 100 万次/秒"
-          - "7 英寸触摸屏，USB-C 供电"
 
     - id: "adp3250"
       name: "Analog Discovery Pro ADP3250"
@@ -204,21 +183,18 @@
           - "オシロ 2 ch、14 ビット、最大 0.5 GS/s、帯域 55 MHz"
           - "デジタル 16 ch、波形発生器（15 MHz）"
           - "バッファ 128 MS（レコードモード）"
-          - "USB 接続、WaveForms / Python 制御"
       en:
         desc: "USB multi-instrument."
         specs:
           - "2-channel scope, 14-bit, up to 0.5 GS/s, 55 MHz bandwidth"
           - "16 digital channels, 15 MHz waveform generator"
           - "128 MS buffer in record mode"
-          - "USB, controlled from WaveForms or Python"
       zh:
         desc: "USB 多功能仪器。"
         specs:
           - "示波器 2 通道，14 位，最高 0.5 GS/s，带宽 55 MHz"
           - "16 路数字通道，15 MHz 波形发生器"
           - "记录模式缓冲 128 MS"
-          - "USB 连接，WaveForms / Python 控制"
 
     - id: "ad3"
       name: "Analog Discovery 3"
@@ -231,21 +207,18 @@
           - "オシロ 2 ch、14 ビット、125 MS/s、±25 V、帯域 30 MHz"
           - "波形発生器 2 ch、14 ビット、125 MS/s、±5 V"
           - "デジタル I/O 16 ch、可変電源（約 800 mA）"
-          - "USB-C、WaveForms / Python 制御"
       en:
         desc: "Palm-sized USB multi-instrument."
         specs:
           - "2-channel scope, 14-bit, 125 MS/s, ±25 V, 30 MHz bandwidth"
           - "2-channel generator, 14-bit, 125 MS/s, ±5 V"
           - "16 digital I/O, variable supply (about 800 mA)"
-          - "USB-C, controlled from WaveForms or Python"
       zh:
         desc: "掌上型 USB 多功能仪器。"
         specs:
           - "示波器 2 通道，14 位，125 MS/s，±25 V，带宽 30 MHz"
           - "波形发生器 2 通道，14 位，125 MS/s，±5 V"
           - "16 路数字 I/O，可调电源（约 800 mA）"
-          - "USB-C，WaveForms / Python 控制"
 
     - id: "ads-max"
       name: "Analog Discovery Studio Max"
@@ -257,21 +230,18 @@
           - "計測器 14 種（オシロ・波形発生器・ロジアナ・DMM・電源など）"
           - "オシロ 2 ch、14 ビット、100 MS/s、帯域 50 MHz、±25 V"
           - "波形発生器 2 ch、14 ビット、100 MS/s、±10 V"
-          - "ブレッドボード 4 枚一体の Canvas Max"
       en:
         desc: "Lab workbench with 14 built-in instruments."
         specs:
           - "14 instruments (scope, generator, logic analyzer, DMM, supplies and more)"
           - "2-channel scope, 14-bit, 100 MS/s, 50 MHz, ±25 V"
           - "2-channel generator, 14-bit, 100 MS/s, ±10 V"
-          - "Canvas Max with four integrated breadboards"
       zh:
         desc: "内置 14 种仪器的实验工作台。"
         specs:
           - "14 种仪器（示波器、波形发生器、逻辑分析仪、DMM、电源等）"
           - "示波器 2 通道，14 位，100 MS/s，带宽 50 MHz，±25 V"
           - "波形发生器 2 通道，14 位，100 MS/s，±10 V"
-          - "集成 4 块面包板的 Canvas Max"
 
     - id: "usrp-x310"
       name: "USRP X310 + UBX-160"
@@ -284,21 +254,18 @@
           - "FPGA Kintex-7 XC7K410T、ドーターボード 2 スロット"
           - "UBX-160: 10 MHz〜6 GHz、帯域 160 MHz、全二重"
           - "2×2 MIMO、位相コヒーレント動作"
-          - "10 GbE ×2 / 1 GbE ×2 / PCIe、UHD / GNU Radio 対応"
       en:
         desc: "High-performance software-defined radio with a Kintex-7 FPGA."
         specs:
           - "Kintex-7 XC7K410T FPGA, two daughterboard slots"
           - "UBX-160: 10 MHz to 6 GHz, 160 MHz bandwidth, full duplex"
           - "2x2 MIMO, phase-coherent operation"
-          - "Dual 10 GbE / dual 1 GbE / PCIe, UHD and GNU Radio"
       zh:
         desc: "搭载 Kintex-7 FPGA 的高性能软件无线电。"
         specs:
           - "FPGA Kintex-7 XC7K410T，双子板插槽"
           - "UBX-160：10 MHz〜6 GHz，带宽 160 MHz，全双工"
           - "2×2 MIMO，相位相干工作"
-          - "10 GbE ×2 / 1 GbE ×2 / PCIe，支持 UHD / GNU Radio"
 
     - id: "sdg2042x"
       name: "SDG2042X"
@@ -311,21 +278,18 @@
           - "2 ch、最大 40 MHz"
           - "1.2 GSa/s、16 ビット、任意波形 8 Mpts（TrueArb）"
           - "出力 2 mVpp〜20 Vpp、変調 AM / FM / PM / FSK / ASK / PSK / PWM"
-          - "周波数カウンタ 0.1 Hz〜400 MHz、USB / LAN"
       en:
         desc: "Two-channel 40 MHz arbitrary waveform generator."
         specs:
           - "2 channels, up to 40 MHz"
           - "1.2 GSa/s, 16-bit, 8 Mpts arbitrary waveforms (TrueArb)"
           - "2 mVpp to 20 Vpp output; AM/FM/PM/FSK/ASK/PSK/PWM modulation"
-          - "0.1 Hz to 400 MHz frequency counter, USB and LAN"
       zh:
         desc: "双通道 40 MHz 任意波形发生器。"
         specs:
           - "2 通道，最高 40 MHz"
           - "1.2 GSa/s，16 位，任意波形 8 Mpts（TrueArb）"
           - "输出 2 mVpp〜20 Vpp，调制 AM / FM / PM / FSK / ASK / PSK / PWM"
-          - "频率计 0.1 Hz〜400 MHz，USB / LAN"
 
     - id: "joulescope-js320"
       name: "Joulescope JS320"
@@ -338,21 +302,18 @@
           - "電流 ±3 A 連続（パルス 10 A）、電圧 ±15 V"
           - "電流分解能 0.1 nA、ダイナミックレンジ 36 ビット相当"
           - "サンプルレート 1 MS/s、帯域 200 kHz、24 ビット同時測定"
-          - "シャント切替 1 μs"
       en:
         desc: "Precision DC energy analyzer."
         specs:
           - "±3 A continuous (10 A pulses), ±15 V"
           - "0.1 nA current resolution, 36-bit-equivalent dynamic range"
           - "1 MS/s, 200 kHz bandwidth, 24-bit simultaneous sampling"
-          - "1 µs shunt switching"
       zh:
         desc: "精密直流能量分析仪。"
         specs:
           - "电流 ±3 A 连续（脉冲 10 A），电压 ±15 V"
           - "电流分辨率 0.1 nA，动态范围 36 位等效"
           - "采样率 1 MS/s，带宽 200 kHz，24 位同步测量"
-          - "分流电阻切换 1 μs"
 
     - id: "mocopi"
       name: "mocopi"
@@ -364,21 +325,18 @@
           - "センサ 6 個（頭・腰・両手首・両足首）"
           - "センサ 直径 32 mm・厚さ 11.6 mm・8 g"
           - "Bluetooth LE 5.2、iOS / Android アプリ"
-          - "バッテリー約 10 時間、充電 1.5 時間（USB-C）、防水防塵"
       en:
         desc: "Six-sensor mobile motion capture."
         specs:
           - "Six sensors (head, hip, both wrists, both ankles)"
           - "Each sensor 32 mm diameter, 11.6 mm thick, 8 g"
           - "Bluetooth LE 5.2, iOS and Android app"
-          - "About 10 h battery, 1.5 h USB-C charge, water- and dust-resistant"
       zh:
         desc: "6 传感器移动式动作捕捉。"
         specs:
           - "6 个传感器（头、腰、双腕、双踝）"
           - "传感器直径 32 mm、厚 11.6 mm、8 g"
           - "Bluetooth LE 5.2，iOS / Android 应用"
-          - "续航约 10 小时，USB-C 充电 1.5 小时，防水防尘"
 
     - id: "optitrack-prime-13w"
       name: "Prime 13W"
@@ -391,21 +349,18 @@
           - "解像度 1280×1024（1.3 MP）、グローバルシャッタ"
           - "フレームレート 30〜240 FPS（可変）、遅延 4.2 ms"
           - "視野角 82°×70°（3.5 mm レンズ）、850 nm 赤外 LED ×10"
-          - "接続 GigE / PoE（1000BASE-T）、電源も PoE"
       en:
         desc: "1.3 MP, 240 FPS optical motion-capture camera."
         specs:
           - "Resolution 1280 x 1024 (1.3 MP), global shutter"
           - "Frame rate 30 to 240 FPS (adjustable), latency 4.2 ms"
           - "Field of view 82° x 70° (3.5 mm lens), 10 x 850 nm IR LEDs"
-          - "GigE/PoE (1000BASE-T) data and power"
       zh:
         desc: "1.3 MP、240 FPS 光学动捕相机。"
         specs:
           - "分辨率 1280×1024（1.3 MP），全局快门"
           - "帧率 30〜240 FPS（可调），延迟 4.2 ms"
           - "视场角 82°×70°（3.5 mm 镜头），850 nm 红外 LED ×10"
-          - "GigE / PoE（1000BASE-T）数据与供电"
 
     - id: "optitrack-flex-3"
       name: "Flex 3"
@@ -418,21 +373,18 @@
           - "解像度 640×480（0.3 MP）、グローバルシャッタ"
           - "フレームレート 25 / 50 / 100 FPS、遅延 10 ms"
           - "最大検出距離 6 m（パッシブマーカー）、3D 精度 ±0.5 mm"
-          - "視野角 46°×35°（4.5 mm レンズ）、850 nm 赤外 LED ×26、USB 2.0"
       en:
         desc: "100 FPS USB motion-capture camera."
         specs:
           - "Resolution 640 x 480 (0.3 MP), global shutter"
           - "Frame rate 25 / 50 / 100 FPS, latency 10 ms"
           - "Maximum detection distance 6 m (passive markers), 3D accuracy ±0.5 mm"
-          - "Field of view 46° x 35° (4.5 mm lens), 26 x 850 nm IR LEDs, USB 2.0"
       zh:
         desc: "100 FPS 的 USB 动捕相机。"
         specs:
           - "分辨率 640×480（0.3 MP），全局快门"
           - "帧率 25 / 50 / 100 FPS，延迟 10 ms"
           - "最大检测距离 6 m（被动标记），3D 精度 ±0.5 mm"
-          - "视场角 46°×35°（4.5 mm 镜头），850 nm 红外 LED ×26，USB 2.0"
 
 - id: "fab"
   ja: { name: "ファブ" }
@@ -450,21 +402,18 @@
           - "造形サイズ 350×320×325 mm、デュアルノズル"
           - "最大速度 1,000 mm/s、加速度 20,000 mm/s²"
           - "ノズル 350 °C、加熱チャンバー 65 °C"
-          - "レーザーモジュール（10 W / 40 W）対応"
       en:
         desc: "Dual-nozzle multi-material 3D printer."
         specs:
           - "350 x 320 x 325 mm build volume, dual nozzles"
           - "Up to 1,000 mm/s, 20,000 mm/s² acceleration"
           - "350 °C nozzles, 65 °C heated chamber"
-          - "Optional 10 W / 40 W laser modules"
       zh:
         desc: "双喷头多材料 3D 打印机。"
         specs:
           - "成型尺寸 350×320×325 mm，双喷头"
           - "最高速度 1,000 mm/s，加速度 20,000 mm/s²"
           - "喷头 350 °C，加热腔体 65 °C"
-          - "可选 10 W / 40 W 激光模块"
 
     - id: "bambu-h2c"
       name: "H2C"
@@ -476,21 +425,18 @@
           - "造形サイズ 330×320×325 mm"
           - "Vortek ツールチェンジャ（ホットエンド 6 本、切替 8 秒）"
           - "最大 24 材料（AMS 並列接続）、最大速度 1,000 mm/s"
-          - "ノズル 350 °C、チャンバー 65 °C、ベッド 120 °C"
       en:
         desc: "Multi-material 3D printer with a tool changer."
         specs:
           - "330 x 320 x 325 mm build volume"
           - "Vortek tool changer (six hotends, 8-second swap)"
           - "Up to 24 materials with parallel AMS, up to 1,000 mm/s"
-          - "350 °C nozzles, 65 °C chamber, 120 °C bed"
       zh:
         desc: "配备工具更换系统的多材料 3D 打印机。"
         specs:
           - "成型尺寸 330×320×325 mm"
           - "Vortek 工具更换（6 个热端，8 秒切换）"
           - "最多 24 种材料（AMS 并联），最高 1,000 mm/s"
-          - "喷头 350 °C，腔体 65 °C，热床 120 °C"
 
     - id: "bambu-a1-mini"
       name: "A1 mini"
@@ -503,21 +449,18 @@
           - "造形サイズ 180×180×180 mm"
           - "最大速度 500 mm/s"
           - "自動キャリブレーション（Z オフセット・レベリング・振動補正）"
-          - "動作音 49 dB、AMS lite で 4 色"
       en:
         desc: "Compact 3D printer."
         specs:
           - "180 x 180 x 180 mm build volume"
           - "Up to 500 mm/s"
           - "Automatic calibration (Z offset, levelling, vibration compensation)"
-          - "49 dB noise, four colours with AMS lite"
       zh:
         desc: "小型 3D 打印机。"
         specs:
           - "成型尺寸 180×180×180 mm"
           - "最高速度 500 mm/s"
           - "自动校准（Z 偏移、调平、振动补偿）"
-          - "噪音 49 dB，AMS lite 支持 4 色"
 
     - id: "xtool-p2s"
       name: "P2S"
@@ -529,21 +472,18 @@
           - "CO2 レーザー 55 W"
           - "加工範囲 600×305 mm、最大 600 mm/s、精度 0.01 mm"
           - "切断 木材 18 mm / アクリル 20 mm（1 パス）"
-          - "16 MP カメラ ×2、パススルー・ロータリー対応"
       en:
         desc: "55 W desktop CO2 laser cutter."
         specs:
           - "55 W CO2 laser"
           - "600 x 305 mm work area, up to 600 mm/s, 0.01 mm precision"
           - "Cuts 18 mm wood / 20 mm acrylic in one pass"
-          - "Two 16 MP cameras, passthrough and rotary options"
       zh:
         desc: "55 W 桌面型 CO2 激光切割机。"
         specs:
           - "CO2 激光 55 W"
           - "加工范围 600×305 mm，最高 600 mm/s，精度 0.01 mm"
           - "单次切割 18 mm 木材 / 20 mm 亚克力"
-          - "2 台 16 MP 摄像头，支持直通与旋转附件"
 
     - id: "mikasa-ms-b150"
       name: "MS-B150"
@@ -555,21 +495,18 @@
           - "回転式スピンコーター（Opticoat シリーズ）"
           - "対応基板 6 インチウェハ、100×100 mm 角基板"
           - "回転数・時間のプログラム運転"
-          - "研究・小型ラボ向け卓上型"
       en:
         desc: "Benchtop spin coater for research."
         specs:
           - "Rotary spin coater (Opticoat series)"
           - "Substrates up to 6-inch wafers and 100 x 100 mm squares"
           - "Programmable speed and time"
-          - "Benchtop unit for research labs"
       zh:
         desc: "研究用桌面匀胶机。"
         specs:
           - "旋转式匀胶机（Opticoat 系列）"
           - "支持 6 英寸晶圆、100×100 mm 方形基板"
           - "转速与时间可编程运行"
-          - "面向研究与小型实验室的桌面型"
 
     - id: "hakko-fx-972"
       name: "FX-972"
@@ -582,21 +519,18 @@
           - "出力 200 W、2 ポート同時使用"
           - "温度範囲 50〜450 °C"
           - "対応ハンドピース 8 種、こて先交換式"
-          - "大型 LCD、USB 接続（HAKKO Control Software）、IR オフセット"
       en:
         desc: "200 W dual-port soldering station."
         specs:
           - "200 W, two ports used simultaneously"
           - "50 to 450 °C"
           - "Eight handpiece types, interchangeable tips"
-          - "Large LCD, USB (HAKKO Control Software), IR offsetting"
       zh:
         desc: "200 W 双端口焊台。"
         specs:
           - "功率 200 W，双端口同时使用"
           - "温度范围 50〜450 °C"
           - "兼容 8 种手柄，烙铁头可更换"
-          - "大屏 LCD，USB 连接（HAKKO Control Software），红外偏移"
 
     - id: "hakko-fr-850"
       name: "FR-850"
@@ -608,21 +542,18 @@
           - "温度範囲 50〜600 °C（1 °C 刻み）"
           - "風量 1.5〜5 L/min"
           - "ヒーター 105 W（ステーション 112 W）"
-          - "ノズル φ1〜3 mm、USB-C、着脱式ハンドル"
       en:
         desc: "Micro hot-air rework station."
         specs:
           - "50 to 600 °C in 1 °C steps"
           - "Airflow 1.5 to 5 L/min"
           - "105 W heater (112 W station)"
-          - "1 to 3 mm nozzles, USB-C, detachable handle"
       zh:
         desc: "微型热风返修台。"
         specs:
           - "温度范围 50〜600 °C（1 °C 步进）"
           - "风量 1.5〜5 L/min"
           - "加热器 105 W（主机 112 W）"
-          - "喷嘴 φ1〜3 mm，USB-C，可拆卸手柄"
 
     - id: "hakko-fx-300"
       name: "FX-300"
@@ -634,21 +565,18 @@
           - "温度範囲 200〜450 °C、安定度 ±5 °C"
           - "るつぼ 50×50 mm、はんだ容量 0.85 kg"
           - "消費電力 290 W、セラミックヒーター"
-          - "鉛フリー対応、アナログ調整"
       en:
         desc: "Analog solder pot."
         specs:
           - "200 to 450 °C, ±5 °C stability"
           - "50 x 50 mm crucible, 0.85 kg solder capacity"
           - "290 W, ceramic heater"
-          - "Lead-free compatible, analog control"
       zh:
         desc: "模拟式锡炉。"
         specs:
           - "温度范围 200〜450 °C，稳定度 ±5 °C"
           - "坩埚 50×50 mm，焊锡容量 0.85 kg"
           - "功率 290 W，陶瓷加热器"
-          - "支持无铅，模拟调节"
 
     - id: "tecprint-700"
       name: "TECPRINT 700"
@@ -660,21 +588,18 @@
           - "基板サイズ 30×50〜300×400 mm"
           - "ステンシルサイズ 50×50〜320×480 mm"
           - "X・Y・θ 調整 ±7 mm"
-          - "自動テンションフレーム、手動スキージ"
       en:
         desc: "Benchtop manual stencil printer."
         specs:
           - "Board size 30 x 50 to 300 x 400 mm"
           - "Stencil size 50 x 50 to 320 x 480 mm"
           - "X, Y and theta adjustment ±7 mm"
-          - "Self-tensioning frame, manual squeegee"
       zh:
         desc: "桌面型手动钢网印刷机。"
         specs:
           - "电路板尺寸 30×50〜300×400 mm"
           - "钢网尺寸 50×50〜320×480 mm"
           - "X、Y、θ 调整 ±7 mm"
-          - "自张紧框架，手动刮刀"
 
     - id: "xtool-hp2"
       name: "HP2"
@@ -686,21 +611,18 @@
           - "熱盤 381×381 mm（15×15 インチ）"
           - "圧力 4 段階（60〜180 kg）"
           - "全自動プレス（押下・加熱・カウント・持ち上げ）"
-          - "プリセット 5 種、15 分放置で自動停止"
       en:
         desc: "Fully automatic heat press."
         specs:
           - "381 x 381 mm (15 x 15 in) platen"
           - "Four pressure levels (60 to 180 kg)"
           - "Fully automatic press (lower, heat, count, lift)"
-          - "Five presets, auto shut-off after 15 minutes idle"
       zh:
         desc: "全自动热压机。"
         specs:
           - "热板 381×381 mm（15×15 英寸）"
           - "4 档压力（60〜180 kg）"
           - "全自动压制（压下、加热、计时、抬起）"
-          - "5 组预设，闲置 15 分钟自动关机"
 
     - id: "and-mct-2150w"
       name: "MCT-2150W"
@@ -712,21 +634,18 @@
           - "卓上型引張圧縮試験機、低試験力タイプ"
           - "試験力表示分解能 0.001 N"
           - "カラータッチパネル、デジタル速度設定、変位表示"
-          - "USB 接続、データ取込ソフト MSAT-Lite 付属"
       en:
         desc: "Benchtop tensile and compression tester."
         specs:
           - "Benchtop tensile and compression tester, low-force type"
           - "0.001 N force display resolution"
           - "Colour touch panel, digital speed setting, displacement display"
-          - "USB, MSAT-Lite data-capture software included"
       zh:
         desc: "桌面拉伸压缩试验机。"
         specs:
           - "桌面拉伸压缩试验机，低试验力型"
           - "试验力显示分辨率 0.001 N"
           - "彩色触摸屏，数字速度设定，位移显示"
-          - "USB 连接，附带 MSAT-Lite 数据采集软件"
 
     - id: "asone-incubator"
       name: "パーソナルインキュベータ"
@@ -767,21 +686,18 @@
           - "本体 32×32×19.2 mm、底面カメラで専用マット上の絶対位置・向きを検出"
           - "3 軸ジャイロ、RGB LED、スピーカー内蔵"
           - "Bluetooth 接続、複数台の同時制御"
-          - "内蔵バッテリー約 2 時間"
       en:
         desc: "Small cube robot."
         specs:
           - "32 x 32 x 19.2 mm body; bottom camera reads absolute position and heading on the mat"
           - "3-axis gyro, RGB LED and speaker"
           - "Bluetooth, several units controlled at once"
-          - "About 2 hours on the built-in battery"
       zh:
         desc: "小型立方体机器人。"
         specs:
           - "机身 32×32×19.2 mm，底部摄像头检测专用垫上的绝对位置与朝向"
           - "内置三轴陀螺仪、RGB LED、扬声器"
           - "Bluetooth 连接，多台同时控制"
-          - "内置电池约 2 小时"
 
     - id: "so-101"
       name: "SO-101"
@@ -793,21 +709,18 @@
           - "6 自由度、STS3215 バスサーボ ×6（フォロワー 1/345 ギア）"
           - "トルク 30 kg·cm（12 V）"
           - "360° 磁気エンコーダ、デイジーチェーン接続"
-          - "Hugging Face LeRobot 標準対応、オープンソース"
       en:
         desc: "Open-source 6-DoF robot arm."
         specs:
           - "6 DoF, six STS3215 bus servos (1/345 gearing on the follower)"
           - "30 kg·cm torque at 12 V"
           - "360° magnetic encoders, daisy-chained bus"
-          - "Native Hugging Face LeRobot support, open source"
       zh:
         desc: "开源 6 自由度机械臂。"
         specs:
           - "6 自由度，STS3215 总线舵机 ×6（从臂 1/345 减速）"
           - "扭矩 30 kg·cm（12 V）"
           - "360° 磁编码器，菊花链连接"
-          - "Hugging Face LeRobot 原生支持，开源"
 
     - id: "rebot-b601-dm"
       name: "reBot Arm B601-DM"
@@ -819,21 +732,18 @@
           - "6+1 自由度（グリッパ付き）、可搬 1.5 kg"
           - "リーチ 767 mm、繰り返し精度 0.2 mm"
           - "Damiao アクチュエータ、CAN（MIT モード：位置・速度・トルク同時指令）"
-          - "5052 アルミ CNC フレーム、Python SDK / ROS1・ROS2 / LeRobot / Isaac Sim"
       en:
         desc: "Open-source 6+1-DoF robot arm."
         specs:
           - "6+1 DoF with gripper, 1.5 kg payload"
           - "767 mm reach, 0.2 mm repeatability"
           - "Damiao actuators, CAN (MIT mode: position, velocity and torque together)"
-          - "CNC 5052 aluminium frame; Python SDK, ROS1/ROS2, LeRobot, Isaac Sim"
       zh:
         desc: "开源 6+1 自由度机械臂。"
         specs:
           - "6+1 自由度（含夹爪），负载 1.5 kg"
           - "臂展 767 mm，重复精度 0.2 mm"
           - "Damiao 执行器，CAN（MIT 模式：位置、速度、扭矩同时指令）"
-          - "5052 铝合金 CNC 框架，Python SDK / ROS1・ROS2 / LeRobot / Isaac Sim"
 
 - id: "compute"
   ja: { name: "計算" }
