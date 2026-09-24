@@ -486,6 +486,29 @@
           - "电流分辨率 0.1 nA，动态范围 36 位等效"
           - "采样率 1 MS/s，带宽 200 kHz，24 位同步测量"
 
+    - id: "fnirsi-lcr-st2-plus"
+      name: "LCR-ST2 Plus"
+      maker: "FNIRSI"
+      image: "fnirsi-lcr-st2-plus.jpg"
+      ja:
+        desc: "ピンセット型の LCR メータ。"
+        specs:
+          - "抵抗 10 mΩ〜10 MΩ、静電容量 1 pF〜22 mF、インダクタンス 1 μH〜10 H"
+          - "測定周波数 100 Hz / 120 Hz / 1 kHz / 10 kHz / 100 kHz、ESR・D・Q・Z・θ"
+          - "1.47 インチ画面、ケルビンクリップ対応、バッテリー内蔵"
+      en:
+        desc: "Tweezer-type LCR meter."
+        specs:
+          - "Resistance 10 mΩ to 10 MΩ, capacitance 1 pF to 22 mF, inductance 1 µH to 10 H"
+          - "Test frequencies 100 Hz / 120 Hz / 1 kHz / 10 kHz / 100 kHz; ESR, D, Q, Z, θ"
+          - "1.47-inch display, Kelvin-clip mode, built-in battery"
+      zh:
+        desc: "镊子型 LCR 表。"
+        specs:
+          - "电阻 10 mΩ〜10 MΩ，电容 1 pF〜22 mF，电感 1 μH〜10 H"
+          - "测试频率 100 Hz / 120 Hz / 1 kHz / 10 kHz / 100 kHz，ESR、D、Q、Z、θ"
+          - "1.47 英寸屏幕，支持开尔文夹，内置电池"
+
     - id: "mocopi"
       name: "mocopi"
       maker: "Sony"
@@ -607,6 +630,29 @@
           - "成型尺寸 180×180×180 mm"
           - "最高速度 500 mm/s"
           - "自动校准（Z 偏移、调平、振动补偿）"
+
+    - id: "bambu-x1c"
+      name: "X1 Carbon"
+      maker: "Bambu Lab"
+      image: "bambu-x1c.jpg"
+      ja:
+        desc: "密閉型の高速 3D プリンタ。"
+        specs:
+          - "造形サイズ 256×256×256 mm"
+          - "最大速度 500 mm/s、加速度 20,000 mm/s²、ノズル 300 °C"
+          - "LiDAR による自動キャリブレーション、AMS で 4 色（最大 16 色）"
+      en:
+        desc: "Enclosed high-speed 3D printer."
+        specs:
+          - "256 x 256 x 256 mm build volume"
+          - "Up to 500 mm/s, 20,000 mm/s² acceleration, 300 °C hotend"
+          - "LiDAR-based calibration, four colours with AMS (up to 16)"
+      zh:
+        desc: "封闭式高速 3D 打印机。"
+        specs:
+          - "成型尺寸 256×256×256 mm"
+          - "最高速度 500 mm/s，加速度 20,000 mm/s²，喷头 300 °C"
+          - "LiDAR 自动校准，AMS 支持 4 色（最多 16 色）"
 
     - id: "xtool-p2s"
       name: "P2S"
