@@ -176,6 +176,7 @@
       name: "Analog Discovery Pro ADP3250"
       maker: "Digilent"
       image: "adp3250.jpg"
+      qty: 2
       ja:
         desc: "2 チャンネル・14 ビット・0.5 GS/s のアナログ入力と 16 デジタル入力を持つ USB 多機能計測器。オシロ・波形発生器・ロジアナを 1 台に集約。"
         uses:
