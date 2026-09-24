@@ -341,7 +341,7 @@
     - id: "optitrack-prime-13w"
       name: "Prime 13W"
       maker: "OptiTrack"
-      image: "optitrack-prime-13w.jpg"
+      image: "optitrack-prime-13w-2.jpg"
       qty: 3
       ja:
         desc: "1.3 MP・最大 240 FPS の光学式モーションキャプチャカメラ。82°×70° の広角レンズで狭い部屋でも撮影範囲を確保でき、GigE / PoE で LAN ケーブル 1 本。"
