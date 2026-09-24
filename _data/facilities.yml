@@ -11,29 +11,6 @@
   zh: { name: "机器人" }
   devices:
 
-    - id: "toio"
-      name: "toio"
-      maker: "Sony"
-      image: "toio.jpg"
-      ja:
-        desc: "小型キューブロボット。"
-        specs:
-          - "本体 32×32×19.2 mm、底面カメラで専用マット上の絶対位置・向きを検出"
-          - "3 軸ジャイロ、RGB LED、スピーカー内蔵"
-          - "Bluetooth 接続、複数台の同時制御"
-      en:
-        desc: "Small cube robot."
-        specs:
-          - "32 x 32 x 19.2 mm body; bottom camera reads absolute position and heading on the mat"
-          - "3-axis gyro, RGB LED and speaker"
-          - "Bluetooth, several units controlled at once"
-      zh:
-        desc: "小型立方体机器人。"
-        specs:
-          - "机身 32×32×19.2 mm，底部摄像头检测专用垫上的绝对位置与朝向"
-          - "内置三轴陀螺仪、RGB LED、扬声器"
-          - "Bluetooth 连接，多台同时控制"
-
     - id: "so-101"
       name: "SO-101"
       maker: "The Robot Studio / Hugging Face"
@@ -79,6 +56,29 @@
           - "6+1 自由度（含夹爪），负载 1.5 kg"
           - "臂展 767 mm，重复精度 0.2 mm"
           - "Damiao 执行器，CAN（MIT 模式：位置、速度、扭矩同时指令）"
+
+    - id: "toio"
+      name: "toio"
+      maker: "Sony"
+      image: "toio.jpg"
+      ja:
+        desc: "小型キューブロボット。"
+        specs:
+          - "本体 32×32×19.2 mm、底面カメラで専用マット上の絶対位置・向きを検出"
+          - "3 軸ジャイロ、RGB LED、スピーカー内蔵"
+          - "Bluetooth 接続、複数台の同時制御"
+      en:
+        desc: "Small cube robot."
+        specs:
+          - "32 x 32 x 19.2 mm body; bottom camera reads absolute position and heading on the mat"
+          - "3-axis gyro, RGB LED and speaker"
+          - "Bluetooth, several units controlled at once"
+      zh:
+        desc: "小型立方体机器人。"
+        specs:
+          - "机身 32×32×19.2 mm，底部摄像头检测专用垫上的绝对位置与朝向"
+          - "内置三轴陀螺仪、RGB LED、扬声器"
+          - "Bluetooth 连接，多台同时控制"
 
 - id: "rf"
   ja: { name: "計測" }
