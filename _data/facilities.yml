@@ -812,7 +812,7 @@
     - id: "rebot-b601-dm"
       name: "reBot Arm B601-DM"
       maker: "Seeed Studio"
-      image: "rebot-b601-dm.jpg"
+      image: "rebot-b601-dm-2.jpg"
       ja:
         desc: "オープンソースの 6+1 自由度ロボットアーム。"
         specs:
