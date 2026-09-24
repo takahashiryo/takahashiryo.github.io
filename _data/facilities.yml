@@ -786,7 +786,7 @@
     - id: "so-101"
       name: "SO-101"
       maker: "The Robot Studio / Hugging Face"
-      image: "so-101.jpg"
+      image: "so-101-2.jpg"
       ja:
         desc: "オープンソースの 6 自由度ロボットアーム。"
         specs:
