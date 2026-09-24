@@ -461,6 +461,29 @@
           - "传感器直径 32 mm、厚 11.6 mm、8 g"
           - "Bluetooth LE 5.2，iOS / Android 应用"
 
+    - id: "asahi-emg-kit"
+      name: "筋電計測スターターキット"
+      maker: "朝日ラバー"
+      image: "asahi-emg-kit.jpg"
+      ja:
+        desc: "ナノシート電極と伸縮配線を使う筋電計測キット。"
+        specs:
+          - "ナノシート電極 φ18 mm（厚さ 1 μm 以下、水だけで貼付）"
+          - "伸縮配線 AR01GLT1-X411、筋電計 EMG-EYE II"
+          - "サンプリング周波数 最大 500 Hz、専用アプリ付属"
+      en:
+        desc: "EMG measurement kit with nanosheet electrodes and stretchable wiring."
+        specs:
+          - "18 mm nanosheet electrodes (under 1 µm thick, applied with water only)"
+          - "Stretchable wiring AR01GLT1-X411, EMG-EYE II amplifier"
+          - "Sampling up to 500 Hz, dedicated app included"
+      zh:
+        desc: "使用纳米片电极与可拉伸布线的肌电测量套件。"
+        specs:
+          - "纳米片电极 φ18 mm（厚度 1 μm 以下，仅用水即可贴附）"
+          - "可拉伸布线 AR01GLT1-X411，肌电仪 EMG-EYE II"
+          - "采样频率最高 500 Hz，附专用应用"
+
 - id: "fab"
   ja: { name: "ファブ" }
   en: { name: "Fab" }
