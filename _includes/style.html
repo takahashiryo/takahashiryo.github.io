@@ -297,10 +297,19 @@
   .device-fig { background: #f3f5f7; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; margin-bottom: 1em; }
   .device-fig img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: contain; }
   .device-name { margin: 0 0 0.6em; font-size: 1em; letter-spacing: 0.04em; font-weight: 600; line-height: 1.6; color: var(--ink); }
+  .device-qty { font-weight: 400; color: var(--faint); font-size: 0.9em; margin-left: 0.2em; }
   .device-desc { margin: 0; font-size: 0.86em; line-height: 1.85; color: var(--ink); }
   .device-uses-head { margin: 1em 0 0.35em; font-size: 0.84em; font-weight: 600; color: var(--ink); }
   .device-uses { margin: 0; padding-left: 1.3em; font-size: 0.84em; line-height: 1.8; color: var(--ink); }
   .device-uses li { margin: 0.1em 0; }
+  /* 支援機関ロゴ（Facilities ページ下部） */
+  .funders {
+    display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 1.6em 3em;
+    margin: 3em 0 1.5em; padding-top: 1.6em; border-top: 1px solid var(--rule);
+  }
+  .funders a { display: block; line-height: 0; }
+  .funders img { height: 56px; width: auto; max-width: 240px; object-fit: contain; }
+  @media (max-width: 640px) { .funders { gap: 1.2em 1.8em; } .funders img { height: 42px; max-width: 160px; } }
   .entry-fig { flex: 0 0 clamp(150px, 16vw, 190px); }
   .entry-fig img {
     display: block; width: 100%; aspect-ratio: 16 / 10; object-fit: contain;

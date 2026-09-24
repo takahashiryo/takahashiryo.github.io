@@ -1,0 +1,13 @@
+{%- comment %}
+  支援機関のロゴ列。Facilities ページの一番下に置く。ロゴは images/logos/。
+  JSPS は日本語ページだけ和文ロゴ、それ以外は英文ロゴ。リンクは各機関の公式ページ。
+{%- endcomment -%}
+{%- assign lang = include.lang -%}
+{%- if lang == "ja" -%}{%- assign jsps = "/images/logos/jsps-ja.svg" -%}{%- assign jspsurl = "https://www.jsps.go.jp/" -%}
+{%- else -%}{%- assign jsps = "/images/logos/jsps-en.svg" -%}{%- assign jspsurl = "https://www.jsps.go.jp/english/" -%}{%- endif -%}
+<div class="funders">
+  <a href="https://www.jst.go.jp/kisoken/act-x/" target="_blank" rel="noopener"><img src="{{ '/images/logos/jst-act-x.svg' | relative_url }}" alt="JST ACT-X" loading="lazy"></a>
+  <a href="https://www.jst.go.jp/kisoken/presto/" target="_blank" rel="noopener"><img src="{{ '/images/logos/jst-presto.svg' | relative_url }}" alt="JST さきがけ (PRESTO)" loading="lazy"></a>
+  <a href="https://yokota-cronos.com/" target="_blank" rel="noopener"><img src="{{ '/images/logos/cronos.jpg' | relative_url }}" alt="JST CRONOS" loading="lazy"></a>
+  <a href="{{ jspsurl }}" target="_blank" rel="noopener"><img src="{{ jsps | relative_url }}" alt="JSPS" loading="lazy"></a>
+</div>

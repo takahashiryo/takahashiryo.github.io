@@ -23,7 +23,7 @@
       {%- if d.image and d.image != "" %}
       <div class="device-fig"><img src="{{ '/images/facilities/' | append: d.image | relative_url }}" alt="{{ d.name | escape }}" loading="lazy"></div>
       {%- endif %}
-      <h4 class="device-name">{% if d.maker and d.maker != "" %}{{ d.maker | escape }} {% endif %}{{ d.name | escape }}</h4>
+      <h4 class="device-name">{% if d.maker and d.maker != "" %}{{ d.maker | escape }} {% endif %}{{ d.name | escape }}{% if d.qty and d.qty > 1 %} <span class="device-qty">×{{ d.qty }}</span>{% endif %}</h4>
       {%- if b.desc and b.desc != "" %}<p class="device-desc">{{ b.desc | escape }}</p>{% endif -%}
       {%- if b.uses and b.uses.size > 0 %}
       <div class="device-uses-head">{{ t.facilities_uses }}</div>
@@ -40,3 +40,4 @@
 </section>
 {%- endfor -%}
 <p class="more"><a href="{{ include.home | relative_url }}">{{ t.back_home }}</a></p>
+{% include funders.html lang=lang %}
