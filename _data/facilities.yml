@@ -144,7 +144,7 @@
     - id: "mso44b"
       name: "MSO44B"
       maker: "Tektronix"
-      image: "mso44b-m.jpg"
+      image: "mso44b-2.jpg"
       ja:
         desc: "350 MHz・12 ビットのミックスドシグナルオシロスコープ。"
         specs:
@@ -196,7 +196,7 @@
     - id: "adp3250"
       name: "Analog Discovery Pro ADP3250"
       maker: "Digilent"
-      image: "adp3250-m.jpg"
+      image: "adp3250.jpg"
       qty: 2
       ja:
         desc: "USB 接続の多機能計測器。"
@@ -223,7 +223,7 @@
     - id: "ad3"
       name: "Analog Discovery 3"
       maker: "Digilent"
-      image: "ad3-m.jpg"
+      image: "ad3.jpg"
       qty: 4
       ja:
         desc: "手のひらサイズの USB 多機能計測器。"
@@ -383,7 +383,7 @@
     - id: "optitrack-prime-13w"
       name: "Prime 13W"
       maker: "OptiTrack"
-      image: "optitrack-prime-13w-m.jpg"
+      image: "optitrack-prime-13w-3.jpg"
       qty: 3
       ja:
         desc: "1.3 MP・240 FPS の光学式モーションキャプチャカメラ。"
