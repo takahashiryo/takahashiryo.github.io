@@ -131,19 +131,19 @@
       maker: "Tektronix"
       image: ""
       ja:
-        desc: "4 シリーズ B のミックスドシグナルオシロスコープ。12 ビット分解能、6.25 GS/s、4 本のアナログ入力に加え、各チャンネルを 8 本のデジタル入力に切り替えられる FlexChannel 構成。13.3 インチの HD タッチ画面で波形とスペクトルを同時に見られる。"
+        desc: "4 シリーズ B のミックスドシグナルオシロスコープ（帯域 350 MHz）。12 ビット分解能、6.25 GS/s、4 本のアナログ入力に加え、各チャンネルを 8 本のデジタル入力に切り替えられる FlexChannel 構成。13.3 インチの HD タッチ画面で波形とスペクトルを同時に見られる。"
         uses:
           - "無線給電回路のスイッチング波形・整流波形の観測"
           - "センサノードの I2C / SPI / UART 通信のデコード"
           - "低電力デバイスの電流波形と消費電力の評価"
       en:
-        desc: "4 Series B mixed-signal oscilloscope with 12-bit resolution, 6.25 GS/s and four analog inputs, each of which can become eight digital inputs (FlexChannel). Waveforms and spectra are viewed together on a 13.3-inch HD touchscreen."
+        desc: "4 Series B mixed-signal oscilloscope with 350 MHz bandwidth, 12-bit resolution, 6.25 GS/s and four analog inputs, each of which can become eight digital inputs (FlexChannel). Waveforms and spectra are viewed together on a 13.3-inch HD touchscreen."
         uses:
           - "Switching and rectifier waveforms in wireless-power circuits"
           - "Decoding I2C, SPI and UART traffic of sensor nodes"
           - "Current waveforms and power consumption of low-power devices"
       zh:
-        desc: "4 系列 B 混合信号示波器。12 位分辨率、6.25 GS/s、4 路模拟输入，且每路可切换为 8 路数字输入（FlexChannel）。13.3 英寸高清触摸屏可同时显示波形与频谱。"
+        desc: "4 系列 B 混合信号示波器（带宽 350 MHz）。12 位分辨率、6.25 GS/s、4 路模拟输入，且每路可切换为 8 路数字输入（FlexChannel）。13.3 英寸高清触摸屏可同时显示波形与频谱。"
         uses:
           - "观测无线供电电路的开关波形与整流波形"
           - "解码传感器节点的 I2C / SPI / UART 通信"
