@@ -368,7 +368,7 @@
     - id: "optitrack-flex-3"
       name: "Flex 3"
       maker: "OptiTrack"
-      image: "optitrack-flex-3-2.jpg"
+      image: "optitrack-flex-3-3.jpg"
       qty: 6
       ja:
         desc: "640×480・100 FPS の USB モーションキャプチャカメラ。グローバルシャッタと赤外 LED リングでマーカーを安定して捉え、小型で卓上や小部屋向き。"
