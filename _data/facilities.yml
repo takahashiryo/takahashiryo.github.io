@@ -783,7 +783,7 @@
     - id: "cst-studio-suite"
       name: "CST Studio Suite 2026"
       maker: "Dassault Systèmes SIMULIA"
-      image: "soft-cst.jpg"
+      image: "soft-cst-2.jpg"
       ja:
         desc: "3 次元電磁界シミュレータ。"
         specs:
