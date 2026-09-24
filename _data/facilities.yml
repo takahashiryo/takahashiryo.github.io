@@ -801,7 +801,7 @@
     - id: "hp-z6-g5-a"
       name: "Z6 G5 A Workstation"
       maker: "HP"
-      image: ""
+      image: "hp-z6-g5-a.jpg"
       ja:
         desc: "GPU ワークステーション。"
         specs:
@@ -820,6 +820,30 @@
           - "CPU AMD Ryzen Threadripper PRO 9975WX（32 核 / 64 线程，最高 5.4 GHz）"
           - "内存 512 GB（64 GB ×8）"
           - "GPU NVIDIA RTX PRO 6000 Blackwell Max-Q（96 GB GDDR7，24,064 CUDA 核心）"
+
+    - id: "minisforum-ms-a2"
+      name: "MS-A2"
+      maker: "Minisforum"
+      image: "minisforum-ms-a2.jpg"
+      qty: 2
+      ja:
+        desc: "1.78 L の小型ワークステーション。"
+        specs:
+          - "CPU AMD Ryzen 9 9955HX（16 コア / 32 スレッド、最大 5.4 GHz）"
+          - "メモリ 96 GB DDR5-5600"
+          - "PCIe 4.0 x16 スロット、10 GbE SFP+ ×2、2.5 GbE ×2、M.2 ×3"
+      en:
+        desc: "1.78-litre compact workstation."
+        specs:
+          - "CPU: AMD Ryzen 9 9955HX (16 cores / 32 threads, up to 5.4 GHz)"
+          - "Memory: 96 GB DDR5-5600"
+          - "PCIe 4.0 x16 slot, dual 10 GbE SFP+, dual 2.5 GbE, three M.2 slots"
+      zh:
+        desc: "1.78 L 的小型工作站。"
+        specs:
+          - "CPU AMD Ryzen 9 9955HX（16 核 / 32 线程，最高 5.4 GHz）"
+          - "内存 96 GB DDR5-5600"
+          - "PCIe 4.0 x16 插槽，10 GbE SFP+ ×2，2.5 GbE ×2，M.2 ×3"
 
 - id: "software"
   ja: { name: "ソフト" }
