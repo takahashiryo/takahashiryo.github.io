@@ -773,3 +773,55 @@
   en: { name: "Computing" }
   zh: { name: "计算" }
   devices: []
+
+- id: "software"
+  ja: { name: "ソフト" }
+  en: { name: "Software" }
+  zh: { name: "软件" }
+  devices:
+
+    - id: "cst-studio-suite"
+      name: "CST Studio Suite 2026"
+      maker: "Dassault Systèmes SIMULIA"
+      image: "soft-cst.jpg"
+      ja:
+        desc: "3 次元電磁界シミュレータ。"
+        specs:
+          - "時間領域・周波数領域・固有モードなど複数ソルバ"
+          - "アンテナ・コイル・近傍界結合の S パラメータ／電磁界解析"
+          - "人体ファントムによる SAR 評価"
+      en:
+        desc: "3D electromagnetic simulation suite."
+        specs:
+          - "Time-domain, frequency-domain and eigenmode solvers"
+          - "S-parameter and field analysis of antennas, coils and near-field coupling"
+          - "SAR evaluation with human body phantoms"
+      zh:
+        desc: "三维电磁场仿真软件。"
+        specs:
+          - "时域、频域、本征模等多种求解器"
+          - "天线、线圈与近场耦合的 S 参数 / 电磁场分析"
+          - "基于人体模型的 SAR 评估"
+
+    - id: "rhino-8"
+      name: "Rhino 8"
+      maker: "McNeel"
+      image: "soft-rhino.jpg"
+      ja:
+        desc: "NURBS ベースの 3D CAD。"
+        specs:
+          - "曲面・ソリッド・メッシュ・SubD のモデリング"
+          - "Grasshopper によるパラメトリック設計"
+          - "3D プリント・レーザーカット用データ（STL / DXF 等）の書き出し"
+      en:
+        desc: "NURBS-based 3D CAD."
+        specs:
+          - "Surface, solid, mesh and SubD modelling"
+          - "Parametric design with Grasshopper"
+          - "Export for 3D printing and laser cutting (STL, DXF and more)"
+      zh:
+        desc: "基于 NURBS 的三维 CAD。"
+        specs:
+          - "曲面、实体、网格与 SubD 建模"
+          - "基于 Grasshopper 的参数化设计"
+          - "导出 3D 打印与激光切割数据（STL / DXF 等）"
