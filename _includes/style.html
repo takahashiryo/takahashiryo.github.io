@@ -233,7 +233,8 @@
   .badge--domestic { background: #f1f3f5; color: #5b6b7b; }
   .badge--article { background: #fdeef2; color: #b83a5e; }
   .entry-body { flex: 1 1 auto; min-width: 0; }
-  .entry-title { font-size: 0.98em; line-height: 1.65; color: var(--ink); }
+  /* 一覧のタイトルはすべて論文と同じ太さ（学歴・職歴・受賞・助成・特許・講演） */
+  .entry-title { font-size: 0.98em; line-height: 1.65; color: var(--ink); font-weight: 600; }
   .entry-title a { color: var(--ink); }
   .entry-title a:hover { color: var(--blue); }
   .entry-authors { font-size: 0.8em; color: var(--ink); margin-top: 0.25em; line-height: 1.7; }
@@ -254,11 +255,6 @@
      .entry は受賞・学歴・研究費の一覧とも共有しているので、
      論文だけの見た目はすべて .entry--pub に閉じ込める。 */
   .entry--pub .entry-title { font-weight: 600; }
-  /* 特許・講演・受賞・助成のタイトルも論文と同じ太さにする */
-  .entry[data-type="patent"] .entry-title,
-  .entry[data-type="talk"] .entry-title,
-  .entry[data-type="award"] .entry-title,
-  .entry[data-type="grant"] .entry-title { font-weight: 600; }
   .entry--pub .entry-authors { margin-top: 0.3em; }
 
   /* 種別ごとに 1 から振り直す。counter-reset は「その要素と後続の兄弟」に
