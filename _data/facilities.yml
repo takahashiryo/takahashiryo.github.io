@@ -118,7 +118,7 @@
     - id: "spectran-v6-eco"
       name: "SPECTRAN V6 ECO"
       maker: "Aaronia"
-      image: "spectran-v6-eco.jpg"
+      image: "spectran-v6-eco-2.jpg"
       ja:
         desc: "6 GHz までの USB リアルタイムスペクトラムアナライザ。"
         specs:
