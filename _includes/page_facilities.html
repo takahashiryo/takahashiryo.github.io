@@ -25,6 +25,12 @@
       {%- endif %}
       <h4 class="device-name">{% if d.maker and d.maker != "" %}{{ d.maker | escape }} {% endif %}{{ d.name | escape }}{% if d.qty and d.qty > 1 %} <span class="device-qty">×{{ d.qty }}</span>{% endif %}</h4>
       {%- if b.desc and b.desc != "" %}<p class="device-desc">{{ b.desc | escape }}</p>{% endif -%}
+      {%- if b.specs and b.specs.size > 0 %}
+      <div class="device-uses-head">{{ t.facilities_specs }}</div>
+      <ul class="device-uses">
+        {%- for u in b.specs %}<li>{{ u | escape }}</li>{% endfor %}
+      </ul>
+      {%- endif %}
       {%- if b.uses and b.uses.size > 0 %}
       <div class="device-uses-head">{{ t.facilities_uses }}</div>
       <ul class="device-uses">

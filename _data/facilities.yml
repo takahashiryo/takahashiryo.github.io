@@ -1,7 +1,7 @@
 # 研究設備（Facilities ページ）。カテゴリ → 機器 の2段。上から順に並ぶ。
 # カテゴリ: id, ja/en/zh の name, devices。
 # 機器: id, name（製品名。原語のまま）, maker, image（images/facilities/ 内のファイル名。無ければ空）, qty（2台以上なら台数）,
-#       ja/en/zh の desc（説明1段落）と uses（主な用途、箇条書き）。
+#       ja/en/zh の desc（説明1段落）と uses（主な用途、箇条書き）または specs（仕様、箇条書き）。両方あれば両方出る。
 # devices が空のカテゴリは「準備中」と出る。
 # 写真は sips -s format jpeg -s formatOptions 85 --resampleWidth 1200 入力 --out images/facilities/<id>.jpg で作る。
 
@@ -342,23 +342,26 @@
       image: "optitrack-prime-13w.jpg"
       qty: 3
       ja:
-        desc: "1.3 MP・最大 240 FPS の光学式モーションキャプチャカメラ。82° の広角で狭い部屋にも対応、遅延 4.2 ms、GigE / PoE で LAN ケーブル 1 本。"
-        uses:
-          - "ロボット・ウェアラブルの位置と姿勢のサブミリ精度の計測"
-          - "ヘビ型・移動ロボットの走行軌跡の記録"
-          - "手指・腕の動きと指輪型デバイスの入力の対応付け"
+        desc: "1.3 MP・最大 240 FPS の光学式モーションキャプチャカメラ。82°×70° の広角レンズで狭い部屋でも撮影範囲を確保でき、GigE / PoE で LAN ケーブル 1 本。"
+        specs:
+          - "解像度 1280×1024（1.3 MP）、グローバルシャッタ"
+          - "フレームレート 30〜240 FPS（可変）、遅延 4.2 ms"
+          - "視野角 82°×70°（3.5 mm レンズ）、850 nm 赤外 LED ×10"
+          - "接続 GigE / PoE（1000BASE-T）、電源も PoE"
       en:
-        desc: "Optical motion-capture camera at 1.3 MP and up to 240 FPS. 82° wide-angle lens for small rooms, 4.2 ms latency, and GigE/PoE over a single LAN cable."
-        uses:
-          - "Sub-millimetre position and orientation of robots and wearables"
-          - "Recording trajectories of snake and mobile robots"
-          - "Matching hand and arm motion to ring-device input"
+        desc: "Optical motion-capture camera at 1.3 MP and up to 240 FPS. Its 82° x 70° wide-angle lens covers small rooms, and GigE/PoE carries data and power on one LAN cable."
+        specs:
+          - "Resolution 1280 x 1024 (1.3 MP), global shutter"
+          - "Frame rate 30 to 240 FPS (adjustable), latency 4.2 ms"
+          - "Field of view 82° x 70° (3.5 mm lens), 10 x 850 nm IR LEDs"
+          - "GigE/PoE (1000BASE-T) data and power"
       zh:
-        desc: "1.3 MP、最高 240 FPS 的光学动捕相机。82° 广角适合狭小房间，延迟 4.2 ms，GigE / PoE 一根网线即可。"
-        uses:
-          - "机器人与可穿戴设备位置和姿态的亚毫米级测量"
-          - "蛇形机器人与移动机器人运动轨迹的记录"
-          - "手指、手臂动作与戒指型设备输入的对应"
+        desc: "1.3 MP、最高 240 FPS 的光学动捕相机。82°×70° 广角镜头适合狭小房间，GigE / PoE 一根网线即可传输数据与供电。"
+        specs:
+          - "分辨率 1280×1024（1.3 MP），全局快门"
+          - "帧率 30〜240 FPS（可调），延迟 4.2 ms"
+          - "视场角 82°×70°（3.5 mm 镜头），850 nm 红外 LED ×10"
+          - "GigE / PoE（1000BASE-T）数据与供电"
 
     - id: "optitrack-flex-3"
       name: "Flex 3"
@@ -366,23 +369,26 @@
       image: "optitrack-flex-3.jpg"
       qty: 6
       ja:
-        desc: "640×480・100 FPS の USB モーションキャプチャカメラ。グローバルシャッタと赤外 LED リングで 3D 精度 ±0.5 mm。小型で卓上や小部屋向き。"
-        uses:
-          - "卓上サイズのロボットや小型移動体の追跡"
-          - "デモ会場・出張先での簡易モーションキャプチャ"
-          - "Prime 13W と組み合わせたカメラ台数の増設"
+        desc: "640×480・100 FPS の USB モーションキャプチャカメラ。グローバルシャッタと赤外 LED リングでマーカーを安定して捉え、小型で卓上や小部屋向き。"
+        specs:
+          - "解像度 640×480（0.3 MP）、グローバルシャッタ"
+          - "フレームレート 25 / 50 / 100 FPS、遅延 10 ms"
+          - "最大検出距離 6 m（パッシブマーカー）、3D 精度 ±0.5 mm"
+          - "視野角 46°×35°（4.5 mm レンズ）、850 nm 赤外 LED ×26、USB 2.0"
       en:
-        desc: "USB motion-capture camera at 640 x 480 and 100 FPS. Global shutter and IR LED ring give ±0.5 mm 3D accuracy; compact for tabletop and small rooms."
-        uses:
-          - "Tracking tabletop robots and small mobile platforms"
-          - "Portable motion capture at demo venues and on the road"
-          - "Adding cameras alongside the Prime 13W"
+        desc: "USB motion-capture camera at 640 x 480 and 100 FPS. A global shutter and IR LED ring track markers reliably; compact for tabletop and small rooms."
+        specs:
+          - "Resolution 640 x 480 (0.3 MP), global shutter"
+          - "Frame rate 25 / 50 / 100 FPS, latency 10 ms"
+          - "Maximum detection distance 6 m (passive markers), 3D accuracy ±0.5 mm"
+          - "Field of view 46° x 35° (4.5 mm lens), 26 x 850 nm IR LEDs, USB 2.0"
       zh:
-        desc: "640×480、100 FPS 的 USB 动捕相机。全局快门与红外 LED 环实现 ±0.5 mm 3D 精度，小巧适合桌面与小房间。"
-        uses:
-          - "桌面级机器人与小型移动平台的跟踪"
-          - "演示现场与出差时的便携动作捕捉"
-          - "与 Prime 13W 组合扩充相机数量"
+        desc: "640×480、100 FPS 的 USB 动捕相机。全局快门与红外 LED 环可稳定捕捉标记点，小巧适合桌面与小房间。"
+        specs:
+          - "分辨率 640×480（0.3 MP），全局快门"
+          - "帧率 25 / 50 / 100 FPS，延迟 10 ms"
+          - "最大检测距离 6 m（被动标记），3D 精度 ±0.5 mm"
+          - "视场角 46°×35°（4.5 mm 镜头），850 nm 红外 LED ×26，USB 2.0"
 
 - id: "fab"
   ja: { name: "ファブリケーション・基板実装" }
@@ -486,7 +492,7 @@
     - id: "mikasa-ms-b150"
       name: "MS-B150"
       maker: "Mikasa"
-      image: ""
+      image: "mikasa-ms-b150.jpg"
       ja:
         desc: "研究・小型ラボ向けの回転式スピンコーター。6 インチウェハや 100×100 mm 基板に対応し、回転数と時間をプログラムして均一な薄膜を塗布する。"
         uses:
