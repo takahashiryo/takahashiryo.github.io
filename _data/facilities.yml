@@ -241,6 +241,150 @@
           - "模拟与数字相结合的电路实训"
           - "面包板上的快速电路验证"
 
+- id: "fab"
+  ja: { name: "ファブリケーション" }
+  en: { name: "Fabrication" }
+  zh: { name: "制造加工" }
+  devices:
+
+    - id: "bambu-h2d"
+      name: "H2D"
+      maker: "Bambu Lab"
+      image: ""
+      ja:
+        desc: "デュアルノズルのマルチマテリアル 3D プリンタ。造形サイズ 350×320×325 mm、最大 1,000 mm/s、ノズル温度 350 °C、最高 65 °C まで加熱できる密閉チャンバーを備え、ABS・PC・炭素繊維入りフィラメントも扱える。オプションのレーザーモジュールで切断・刻印もできる。"
+        uses:
+          - "ロボットの外装・関節部品や大型治具の造形"
+          - "水溶性樹脂（PVA）と本体樹脂を組み合わせた 2 材料造形"
+          - "エンジニアリングプラスチックによる耐熱・高強度部品"
+      en:
+        desc: "Dual-nozzle multi-material 3D printer with a 350 x 320 x 325 mm build volume, up to 1,000 mm/s, 350 °C nozzles and an enclosed chamber heated to 65 °C, so ABS, PC and carbon-fibre filaments print reliably. Optional laser modules add cutting and engraving."
+        uses:
+          - "Robot housings, joints and large jigs"
+          - "Two-material prints combining water-soluble PVA with a body material"
+          - "Heat-resistant, high-strength parts in engineering plastics"
+      zh:
+        desc: "双喷头多材料 3D 打印机。成型尺寸 350×320×325 mm，最高 1,000 mm/s，喷头温度 350 °C，密闭腔体可加热至 65 °C，可稳定打印 ABS、PC 与碳纤维材料。可选激光模块支持切割与雕刻。"
+        uses:
+          - "机器人外壳、关节部件与大型夹具的成型"
+          - "水溶性树脂（PVA）与主体材料的双材料打印"
+          - "工程塑料的耐热高强度零件"
+
+    - id: "bambu-h2c"
+      name: "H2C"
+      maker: "Bambu Lab"
+      image: ""
+      ja:
+        desc: "誘導加熱のツールチェンジャ「Vortek」を備えたマルチマテリアル 3D プリンタ。固定ノズルに加えて 6 本のホットエンドを 8 秒で切り替え、AMS を並列接続すれば 1 回の造形で最大 24 材料を扱える。造形サイズ 330×320×325 mm、密閉チャンバーは 65 °C まで加熱できる。"
+        uses:
+          - "多色・多材料のプロトタイプの一括造形"
+          - "サポート材と本体材の切り替えが多い複雑形状"
+          - "材料ごとの試し刷りを減らした短納期の試作"
+      en:
+        desc: "Multi-material 3D printer built around the inductively heated Vortek tool changer: besides a fixed nozzle it swaps among six hotends in 8 seconds, and with parallel AMS units handles up to 24 materials in one print. Build volume is 330 x 320 x 325 mm with a chamber heated to 65 °C."
+        uses:
+          - "Multi-colour, multi-material prototypes in a single job"
+          - "Complex shapes with frequent support and body material changes"
+          - "Fast turnaround prototyping with fewer test prints"
+      zh:
+        desc: "配备感应加热工具更换系统「Vortek」的多材料 3D 打印机。除固定喷头外，可在 8 秒内切换 6 个热端，并联 AMS 后单次打印最多可使用 24 种材料。成型尺寸 330×320×325 mm，密闭腔体可加热至 65 °C。"
+        uses:
+          - "多色多材料原型的一次成型"
+          - "支撑材与主体材频繁切换的复杂形状"
+          - "减少试打次数的快速试制"
+
+    - id: "bambu-a1-mini"
+      name: "A1 mini"
+      maker: "Bambu Lab"
+      image: ""
+      ja:
+        desc: "造形サイズ 180×180×180 mm の小型 3D プリンタ。最大 500 mm/s、自動キャリブレーション、動作音 49 dB と扱いやすく、AMS lite を付ければ 4 色・4 材料に対応する。"
+        uses:
+          - "指輪・リストバンドなど小物の筐体"
+          - "学生の練習用・並列の試作"
+          - "静かに動かしたい居室での小さな造形"
+      en:
+        desc: "Compact 3D printer with a 180 x 180 x 180 mm build volume, up to 500 mm/s, fully automatic calibration and only 49 dB of noise. With AMS lite it prints four colours or materials."
+        uses:
+          - "Enclosures for rings, wristbands and other small devices"
+          - "Practice prints for students and parallel prototyping"
+          - "Small parts in shared rooms where quiet operation matters"
+      zh:
+        desc: "成型尺寸 180×180×180 mm 的小型 3D 打印机。最高 500 mm/s，自动校准，噪音仅 49 dB，配合 AMS lite 可打印 4 色 / 4 种材料。"
+        uses:
+          - "戒指、腕带等小型设备的外壳"
+          - "学生练习与并行试制"
+          - "需要安静运行的办公室内的小型成型"
+
+    - id: "xtool-p2s"
+      name: "P2S"
+      maker: "xTool"
+      image: ""
+      ja:
+        desc: "55 W の卓上 CO2 レーザーカッター。加工範囲 600×305 mm、最大 600 mm/s、精度 0.01 mm。木材 18 mm・アクリル 20 mm まで一度に切断でき、2 台の 16 MP カメラで材料の上に図面を合わせられる。オプションのパススルーで長尺材にも対応する。"
+        uses:
+          - "アクリル・木材による治具・筐体・デモ台の加工"
+          - "布・革・フィルムの型抜きと切断"
+          - "テキスタイル用のパターンや位置合わせマスクの作成"
+      en:
+        desc: "55 W desktop CO2 laser cutter with a 600 x 305 mm work area, up to 600 mm/s and 0.01 mm precision. It cuts wood up to 18 mm and acrylic up to 20 mm in one pass, and two 16 MP cameras align designs on the material. An optional passthrough handles long stock."
+        uses:
+          - "Jigs, enclosures and demo stands in acrylic and wood"
+          - "Die-cutting fabric, leather and film"
+          - "Patterns and alignment masks for textiles"
+      zh:
+        desc: "55 W 桌面型 CO2 激光切割机。加工范围 600×305 mm，最高 600 mm/s，精度 0.01 mm。可一次切割 18 mm 木材与 20 mm 亚克力，两台 16 MP 摄像头可将图纸对准材料。可选直通模块支持长条材料。"
+        uses:
+          - "亚克力、木材制作的夹具、外壳与演示台"
+          - "布料、皮革、薄膜的模切与切割"
+          - "纺织品用图案与对位掩模的制作"
+
+    - id: "mikasa-ms-b150"
+      name: "MS-B150"
+      maker: "ミカサ"
+      image: ""
+      ja:
+        desc: "研究・小型ラボ向けの回転式スピンコーター。6 インチウェハや 100×100 mm の基板に対応し、回転数と時間をプログラムして均一な薄膜を塗布できる。"
+        uses:
+          - "伸縮エレクトロニクス用エラストマー（PDMS など）の薄膜作製"
+          - "フォトレジスト・絶縁膜・保護膜の均一塗布"
+          - "液体金属配線の封止層の形成"
+      en:
+        desc: "Rotary spin coater for research and small laboratories. It takes 6-inch wafers and 100 x 100 mm substrates, and programmable speed and time give uniform thin films."
+        uses:
+          - "Thin elastomer films (such as PDMS) for stretchable electronics"
+          - "Uniform coating of photoresist, insulating and protective layers"
+          - "Encapsulation layers for liquid-metal wiring"
+      zh:
+        desc: "面向研究与小型实验室的旋转式匀胶机（旋涂仪）。支持 6 英寸晶圆与 100×100 mm 基板，可编程设定转速与时间，获得均匀薄膜。"
+        uses:
+          - "可拉伸电子用弹性体（如 PDMS）薄膜的制备"
+          - "光刻胶、绝缘层、保护层的均匀涂布"
+          - "液态金属布线封装层的形成"
+
+    - id: "hakko-fx-971"
+      name: "FX-971"
+      maker: "HAKKO"
+      image: ""
+      ja:
+        desc: "100 W のデジタルはんだごてステーション。50〜450 °C で温度設定でき、標準とマイクロの 2 種のこて先ハンドルに対応する。プリセット温度 5 つ、スリープ・自動オフ、パスワードロックを備え、PC ソフトからこて先温度の記録もできる。"
+        uses:
+          - "センサノード・無線モジュール基板の実装と修正"
+          - "0402 サイズなど微小部品のはんだ付け"
+          - "導電糸・液体金属配線と基板の接続"
+      en:
+        desc: "100 W digital soldering station adjustable from 50 to 450 °C that drives both standard and micro handpieces. It offers five preset temperatures, sleep and auto shut-off, password lockout, and tip-temperature logging from PC software."
+        uses:
+          - "Assembling and reworking sensor-node and radio-module boards"
+          - "Soldering tiny components down to 0402"
+          - "Joining conductive yarn and liquid-metal wiring to PCBs"
+      zh:
+        desc: "100 W 数字焊台。温度可在 50〜450 °C 间设定，兼容标准与微型两种手柄。具备 5 组预设温度、休眠与自动关机、密码锁定，并可通过电脑软件记录烙铁头温度。"
+        uses:
+          - "传感器节点与无线模块电路板的焊接与返修"
+          - "0402 等微小元件的焊接"
+          - "导电纱、液态金属布线与电路板的连接"
+
 - id: "pcb"
   ja: { name: "基板実装（PCB）" }
   en: { name: "PCB fabrication" }
