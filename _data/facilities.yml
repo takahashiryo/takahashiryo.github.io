@@ -796,7 +796,30 @@
   ja: { name: "計算" }
   en: { name: "Computing" }
   zh: { name: "计算" }
-  devices: []
+  devices:
+
+    - id: "hp-z6-g5-a"
+      name: "Z6 G5 A Workstation"
+      maker: "HP"
+      image: ""
+      ja:
+        desc: "GPU ワークステーション。"
+        specs:
+          - "CPU AMD Ryzen Threadripper PRO 9975WX（32 コア / 64 スレッド、最大 5.4 GHz）"
+          - "メモリ 512 GB（64 GB ×8）"
+          - "GPU NVIDIA RTX PRO 6000 Blackwell Max-Q（96 GB GDDR7、24,064 CUDA コア）"
+      en:
+        desc: "GPU workstation."
+        specs:
+          - "CPU: AMD Ryzen Threadripper PRO 9975WX (32 cores / 64 threads, up to 5.4 GHz)"
+          - "Memory: 512 GB (8 x 64 GB)"
+          - "GPU: NVIDIA RTX PRO 6000 Blackwell Max-Q (96 GB GDDR7, 24,064 CUDA cores)"
+      zh:
+        desc: "GPU 工作站。"
+        specs:
+          - "CPU AMD Ryzen Threadripper PRO 9975WX（32 核 / 64 线程，最高 5.4 GHz）"
+          - "内存 512 GB（64 GB ×8）"
+          - "GPU NVIDIA RTX PRO 6000 Blackwell Max-Q（96 GB GDDR7，24,064 CUDA 核心）"
 
 - id: "software"
   ja: { name: "ソフト" }
