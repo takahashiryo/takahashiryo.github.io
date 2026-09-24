@@ -254,9 +254,11 @@
      .entry は受賞・学歴・研究費の一覧とも共有しているので、
      論文だけの見た目はすべて .entry--pub に閉じ込める。 */
   .entry--pub .entry-title { font-weight: 600; }
-  /* 特許・講演のタイトルも論文と同じ太さにする */
+  /* 特許・講演・受賞・助成のタイトルも論文と同じ太さにする */
   .entry[data-type="patent"] .entry-title,
-  .entry[data-type="talk"] .entry-title { font-weight: 600; }
+  .entry[data-type="talk"] .entry-title,
+  .entry[data-type="award"] .entry-title,
+  .entry[data-type="grant"] .entry-title { font-weight: 600; }
   .entry--pub .entry-authors { margin-top: 0.3em; }
 
   /* 種別ごとに 1 から振り直す。counter-reset は「その要素と後続の兄弟」に
