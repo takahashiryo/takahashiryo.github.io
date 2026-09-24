@@ -289,8 +289,13 @@
   @media (max-width: 640px)  { .facilities { grid-template-columns: 1fr; } }
   .facility { border-top: 1px solid var(--rule); padding-top: 1em; }
   .facility-fig img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block; margin-bottom: 0.8em; }
-  .facility-name { font-weight: 600; font-size: 0.98em; line-height: 1.65; color: var(--ink); }
+  .facility-name { margin: 0; font-weight: 600; font-size: 1em; letter-spacing: 0.06em; line-height: 1.65; color: var(--ink); }
   .facility-desc { margin: 0.35em 0 0; font-size: 0.86em; line-height: 1.8; color: var(--muted, var(--ink)); }
+  .facility-tba { color: var(--faint); }
+  .facility-items { list-style: none; margin: 0.6em 0 0; padding: 0; }
+  .facility-items li { font-size: 0.86em; line-height: 1.8; padding: 0.35em 0; border-top: 1px solid var(--line); }
+  .facility-kind { display: block; font-weight: 600; color: var(--ink); }
+  .facility-models { display: block; color: var(--muted, var(--ink)); }
   .entry-fig { flex: 0 0 clamp(150px, 16vw, 190px); }
   .entry-fig img {
     display: block; width: 100%; aspect-ratio: 16 / 10; object-fit: contain;

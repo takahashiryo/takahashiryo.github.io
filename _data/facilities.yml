@@ -1,40 +1,42 @@
-# 研究設備（Facilities ページ）。上から順に並ぶ。
-# 各項目: id（英数字）, image（images/facilities/ 内のファイル名。無ければ空）, ja/en/zh の name と body。
+# 研究設備（Facilities ページ）。カテゴリ → 機器種別 → 型番 の3段。上から順に並ぶ。
+# カテゴリ: id（英数字）, image（images/facilities/ 内のファイル名。無ければ空）, ja/en/zh の name, items。
+# items: ja/en/zh の name（機器種別）と models（型番の配列。原語のまま、翻訳しない）。
+# items が空のカテゴリは「準備中」と出る。
 # 写真は sips -s format jpeg -s formatOptions 85 --resampleWidth 1200 入力 --out images/facilities/<id>.jpg で作る。
-# ※ 以下は研究内容から起こした暫定の項目。実際の設備に合わせて書き換えること。
 
-- id: "knitting-machine"
+- id: "rf"
   image: ""
-  ja:
-    name: "工業用デジタル横編機"
-    body: "導電糸を含む編地をプログラムどおりに自動で編む。メアンダコイルや電力・通信バスを衣服の全面に機械編みで組み込むために使う。"
-  en:
-    name: "Industrial digital flat knitting machine"
-    body: "Knits programmed fabric structures automatically, including conductive yarn. Used to machine-knit meander coils and power/data buses across an entire garment."
-  zh:
-    name: "工业用数字横机"
-    body: "按程序自动编织含导电纱的织物。用于将蛇形线圈与供电/通信总线机器编织到整件衣服中。"
+  ja: { name: "RF 計測" }
+  en: { name: "RF measurement" }
+  zh: { name: "射频测量" }
+  items:
+    - ja: { name: "ベクトルネットワークアナライザ（VNA）" }
+      en: { name: "Vector network analyzer (VNA)" }
+      zh: { name: "矢量网络分析仪（VNA）" }
+      models: ["PicoVNA 108", "SV6031A", "NanoVNA"]
+    - ja: { name: "スペクトラムアナライザ" }
+      en: { name: "Spectrum analyzer" }
+      zh: { name: "频谱分析仪" }
+      models: ["SSA3032X-R", "SPECTRAN V6 ECO"]
+    - ja: { name: "オシロスコープ" }
+      en: { name: "Oscilloscope" }
+      zh: { name: "示波器" }
+      models: ["Tektronix MSO44B", "MHO98"]
+    - ja: { name: "マルチメータ" }
+      en: { name: "Multimeter" }
+      zh: { name: "万用表" }
+      models: ["ADP3250", "AD3", "Digilent Analog Discovery Studio Max"]
 
-- id: "3d-printer"
+- id: "pcb"
   image: ""
-  ja:
-    name: "3D プリンタ"
-    body: "水溶性樹脂（PVA）で流路を印刷し、液体金属を流し込んで配線を作る。水に溶かして液体金属を回収できる。"
-  en:
-    name: "3D printer"
-    body: "Prints water-soluble (PVA) channels that are filled with liquid metal to form wiring. The mould dissolves in water so the liquid metal can be recovered."
-  zh:
-    name: "3D 打印机"
-    body: "用水溶性树脂（PVA）打印流道并注入液态金属形成布线。模具可溶于水，回收液态金属。"
+  ja: { name: "基板実装（PCB）" }
+  en: { name: "PCB fabrication" }
+  zh: { name: "PCB 制作" }
+  items: []
 
-- id: "liquid-metal"
+- id: "robot"
   image: ""
-  ja:
-    name: "液体金属配線"
-    body: "ガリンスタンなどの液体金属をチューブに充填した伸縮配線。伸びる・洗えるコイルの試作に使う。"
-  en:
-    name: "Liquid-metal wiring"
-    body: "Stretchable wiring made by filling tubes with liquid metal such as galinstan. Used to prototype stretchable, washable coils."
-  zh:
-    name: "液态金属布线"
-    body: "将镓铟锡等液态金属填充进软管制成的可拉伸布线。用于试制可拉伸、可水洗的线圈。"
+  ja: { name: "ロボット" }
+  en: { name: "Robots" }
+  zh: { name: "机器人" }
+  items: []
