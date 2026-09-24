@@ -1,8 +1,8 @@
 {%- comment %}
-  研究設備の一覧。_data/facilities.yml のカテゴリを上から順にカードで並べ、
-  カード内に「機器種別: 型番, 型番, …」を並べる。型番は原語のまま。
-  文言は facilities.yml（各項目の ja/en/zh）と i18n.yml（見出し・導入文・準備中）だけで組む。
-  写真が無いカテゴリはカードの写真枠を出さない。items が空なら「準備中」を出す。
+  研究設備の一覧。_data/facilities.yml のカテゴリごとに見出しを出し、
+  その下に機器ごとのカード（写真・製品名・説明・主な用途）を3列で並べる。
+  製品名・型番は原語のまま。文言は facilities.yml と i18n.yml だけで組む。
+  写真が無い機器はカードの写真枠を出さない。devices が空なら「準備中」を出す。
 {%- endcomment -%}
 {%- assign lang = include.lang -%}
 {%- assign t = site.data.i18n[lang] -%}
@@ -11,29 +11,32 @@
 {%- if t.facilities_intro and t.facilities_intro != "" %}
 <p class="facilities-intro">{{ t.facilities_intro }}</p>
 {%- endif %}
-<div class="facilities">
-{%- for f in site.data.facilities -%}
-  {%- assign b = f[lang] | default: f.en -%}
-  <div class="facility" id="{{ f.id }}">
-    {%- if f.image and f.image != "" %}
-    <div class="facility-fig"><img src="{{ '/images/facilities/' | append: f.image | relative_url }}" alt="{{ b.name | escape }}" loading="lazy"></div>
-    {%- endif %}
-    <div class="facility-body">
-      <h3 class="facility-name">{{ b.name | escape }}</h3>
-      {%- if f.items and f.items.size > 0 %}
-      <ul class="facility-items">
-        {%- for it in f.items -%}
-          {%- assign ib = it[lang] | default: it.en -%}
-        <li><span class="facility-kind">{{ ib.name | escape }}</span>
-          {%- if it.models and it.models.size > 0 %}<span class="facility-models">{{ it.models | join: ", " | escape }}</span>{% endif -%}
-        </li>
-        {%- endfor -%}
+{%- for c in site.data.facilities -%}
+  {%- assign cb = c[lang] | default: c.en -%}
+<section class="facility-group" id="{{ c.id }}">
+  <h3 class="facility-group-head">{{ cb.name | escape }}</h3>
+  {%- if c.devices and c.devices.size > 0 %}
+  <div class="devices">
+    {%- for d in c.devices -%}
+      {%- assign b = d[lang] | default: d.en -%}
+    <div class="device" id="{{ d.id }}">
+      {%- if d.image and d.image != "" %}
+      <div class="device-fig"><img src="{{ '/images/facilities/' | append: d.image | relative_url }}" alt="{{ d.name | escape }}" loading="lazy"></div>
+      {%- endif %}
+      <h4 class="device-name">{% if d.maker and d.maker != "" %}{{ d.maker | escape }} {% endif %}{{ d.name | escape }}</h4>
+      {%- if b.desc and b.desc != "" %}<p class="device-desc">{{ b.desc | escape }}</p>{% endif -%}
+      {%- if b.uses and b.uses.size > 0 %}
+      <div class="device-uses-head">{{ t.facilities_uses }}</div>
+      <ul class="device-uses">
+        {%- for u in b.uses %}<li>{{ u | escape }}</li>{% endfor %}
       </ul>
-      {%- else %}
-      <p class="facility-desc facility-tba">{{ t.facilities_tba }}</p>
       {%- endif %}
     </div>
+    {%- endfor -%}
   </div>
+  {%- else %}
+  <p class="facility-tba">{{ t.facilities_tba }}</p>
+  {%- endif %}
+</section>
 {%- endfor -%}
-</div>
 <p class="more"><a href="{{ include.home | relative_url }}">{{ t.back_home }}</a></p>

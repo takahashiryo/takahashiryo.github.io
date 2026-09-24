@@ -1,42 +1,254 @@
-# 研究設備（Facilities ページ）。カテゴリ → 機器種別 → 型番 の3段。上から順に並ぶ。
-# カテゴリ: id（英数字）, image（images/facilities/ 内のファイル名。無ければ空）, ja/en/zh の name, items。
-# items: ja/en/zh の name（機器種別）と models（型番の配列。原語のまま、翻訳しない）。
-# items が空のカテゴリは「準備中」と出る。
+# 研究設備（Facilities ページ）。カテゴリ → 機器 の2段。上から順に並ぶ。
+# カテゴリ: id, ja/en/zh の name, devices。
+# 機器: id, name（製品名。原語のまま）, maker, image（images/facilities/ 内のファイル名。無ければ空）,
+#       ja/en/zh の desc（説明1段落）と uses（主な用途、箇条書き）。
+# devices が空のカテゴリは「準備中」と出る。
 # 写真は sips -s format jpeg -s formatOptions 85 --resampleWidth 1200 入力 --out images/facilities/<id>.jpg で作る。
 
 - id: "rf"
-  image: ""
   ja: { name: "RF 計測" }
   en: { name: "RF measurement" }
   zh: { name: "射频测量" }
-  items:
-    - ja: { name: "ベクトルネットワークアナライザ（VNA）" }
-      en: { name: "Vector network analyzer (VNA)" }
-      zh: { name: "矢量网络分析仪（VNA）" }
-      models: ["PicoVNA 108", "SV6031A", "NanoVNA"]
-    - ja: { name: "スペクトラムアナライザ" }
-      en: { name: "Spectrum analyzer" }
-      zh: { name: "频谱分析仪" }
-      models: ["SSA3032X-R", "SPECTRAN V6 ECO"]
-    - ja: { name: "オシロスコープ" }
-      en: { name: "Oscilloscope" }
-      zh: { name: "示波器" }
-      models: ["Tektronix MSO44B", "MHO98"]
-    - ja: { name: "マルチメータ" }
-      en: { name: "Multimeter" }
-      zh: { name: "万用表" }
-      models: ["ADP3250", "AD3", "Digilent Analog Discovery Studio Max"]
+  devices:
+
+    - id: "picovna-108"
+      name: "PicoVNA 108"
+      maker: "Pico Technology"
+      image: ""
+      ja:
+        desc: "300 kHz〜8.5 GHz をカバーする USB 接続の 2 ポート・ベクトルネットワークアナライザ。4 受信機構成で 124 dB のダイナミックレンジを持ち、毎秒 5,500 回を超える S パラメータ測定ができる。PC 上のソフトウェアから制御し、Touchstone（.s2p）ファイルをそのまま書き出せる。"
+        uses:
+          - "メアンダコイル・アンテナのインピーダンスと共振周波数の測定"
+          - "コイル間の結合係数（S21）と伝送効率の評価"
+          - "NFC / 無線給電回路の整合設計"
+      en:
+        desc: "USB-connected two-port vector network analyzer covering 300 kHz to 8.5 GHz. Its four-receiver architecture gives 124 dB of dynamic range and more than 5,500 S-parameter sweeps per second. Controlled from a PC, it exports Touchstone (.s2p) files directly."
+        uses:
+          - "Impedance and resonance measurement of meander coils and antennas"
+          - "Coil-to-coil coupling (S21) and power-transfer efficiency"
+          - "Matching design for NFC and wireless-power circuits"
+      zh:
+        desc: "覆盖 300 kHz 至 8.5 GHz 的 USB 双端口矢量网络分析仪。四接收机架构提供 124 dB 动态范围，每秒可完成 5,500 次以上 S 参数测量。由电脑软件控制，可直接导出 Touchstone（.s2p）文件。"
+        uses:
+          - "蛇形线圈与天线的阻抗和谐振频率测量"
+          - "线圈间耦合系数（S21）与传输效率评估"
+          - "NFC / 无线供电电路的匹配设计"
+
+    - id: "sv6301a"
+      name: "SV6301A"
+      maker: "Chelegance"
+      image: ""
+      ja:
+        desc: "1 MHz〜6.3 GHz、7 インチのタッチパネルを備えたハンドヘルド型ベクトルネットワークアナライザ。S11 / S21 の測定、スミスチャート表示、TDR によるケーブル長測定ができ、バッテリー駆動で PC なしに使える。"
+        uses:
+          - "服やロボットに組み込んだコイルのその場での共振確認"
+          - "実験室外・デモ会場での簡易的なアンテナ測定"
+          - "ケーブル・コネクタの断線や長さの確認"
+      en:
+        desc: "Handheld vector network analyzer covering 1 MHz to 6.3 GHz with a 7-inch touchscreen. It measures S11 and S21, shows Smith charts and can find cable lengths by TDR, running on battery without a PC."
+        uses:
+          - "On-the-spot resonance checks of coils built into garments and robots"
+          - "Quick antenna measurements outside the lab or at demo venues"
+          - "Checking cables and connectors for breaks and length"
+      zh:
+        desc: "覆盖 1 MHz 至 6.3 GHz、配备 7 英寸触摸屏的手持式矢量网络分析仪。可测量 S11 / S21、显示史密斯圆图，并通过 TDR 测量电缆长度，电池供电，无需电脑。"
+        uses:
+          - "现场确认衣物和机器人中线圈的谐振"
+          - "实验室外或演示现场的简易天线测量"
+          - "检查电缆、连接器的断线与长度"
+
+    - id: "nanovna"
+      name: "NanoVNA"
+      maker: ""
+      image: ""
+      ja:
+        desc: "手のひらに収まる小型のベクトルネットワークアナライザ。数十 kHz から GHz 帯までの S11 / S21 を測定でき、バッテリー内蔵で持ち運べる。安価なので学生一人ひとりに配って使える。"
+        uses:
+          - "試作コイルの共振周波数のざっくりした確認"
+          - "学生実験・演習での VNA 入門"
+          - "フィールドでのアンテナ調整"
+      en:
+        desc: "Palm-sized vector network analyzer that measures S11 and S21 from tens of kHz into the GHz range, with a built-in battery. It is inexpensive enough to hand one to every student."
+        uses:
+          - "Rough resonance checks of prototype coils"
+          - "Introduction to VNA measurement in student labs"
+          - "Antenna tuning in the field"
+      zh:
+        desc: "可握于掌中的小型矢量网络分析仪。可测量数十 kHz 至 GHz 频段的 S11 / S21，内置电池便于携带。价格低廉，可为每位学生配备一台。"
+        uses:
+          - "试制线圈谐振频率的粗略确认"
+          - "学生实验与练习中的 VNA 入门"
+          - "现场的天线调整"
+
+    - id: "ssa3032x-r"
+      name: "SSA3032X-R"
+      maker: "Siglent"
+      image: ""
+      ja:
+        desc: "9 kHz〜3.2 GHz のリアルタイムスペクトラムアナライザ。25 MHz のリアルタイム帯域とスペクトログラム表示で、ホッピングや瞬間的な信号も捉えられる。トラッキングジェネレータと VNA 機能を標準で備え、10.1 インチのタッチ画面で操作する。"
+        uses:
+          - "13.56 MHz / 6.78 MHz 帯の無線給電・NFC 信号の観測"
+          - "不要輻射（スプリアス）と EMC の事前確認"
+          - "トラッキングジェネレータによるフィルタ・コイルの周波数特性測定"
+      en:
+        desc: "Real-time spectrum analyzer covering 9 kHz to 3.2 GHz. Its 25 MHz real-time bandwidth and spectrogram view capture hopping and transient signals. A tracking generator and VNA mode are included, operated from a 10.1-inch touchscreen."
+        uses:
+          - "Observing wireless-power and NFC signals in the 13.56 MHz and 6.78 MHz bands"
+          - "Pre-checks of spurious emissions and EMC"
+          - "Frequency response of filters and coils with the tracking generator"
+      zh:
+        desc: "覆盖 9 kHz 至 3.2 GHz 的实时频谱分析仪。25 MHz 实时带宽与频谱图显示可捕捉跳频与瞬时信号。标配跟踪发生器与 VNA 功能，通过 10.1 英寸触摸屏操作。"
+        uses:
+          - "观测 13.56 MHz / 6.78 MHz 频段的无线供电与 NFC 信号"
+          - "杂散辐射与 EMC 的预先确认"
+          - "用跟踪发生器测量滤波器与线圈的频率特性"
+
+    - id: "spectran-v6-eco"
+      name: "SPECTRAN V6 ECO"
+      maker: "Aaronia"
+      image: ""
+      ja:
+        desc: "9 kHz〜6 GHz の USB 接続リアルタイムスペクトラムアナライザ。44 MHz のリアルタイム帯域と 16 ビット ADC を持ち、6 GHz 全域を 2 ms で掃引できる。USB-C 給電なのでノート PC と一緒に持ち運べ、RTSA-Suite PRO で複数台を同時に扱える。"
+        uses:
+          - "人体周りの電磁界分布の走査・可視化"
+          - "Bluetooth / Wi-Fi 帯との干渉確認"
+          - "デモ会場での持ち運び計測"
+      en:
+        desc: "USB real-time spectrum analyzer covering 9 kHz to 6 GHz, with 44 MHz real-time bandwidth and a 16-bit ADC that sweeps the full 6 GHz in 2 ms. Powered over USB-C, it travels with a laptop, and RTSA-Suite PRO can run several units at once."
+        uses:
+          - "Scanning and visualizing the electromagnetic field around the body"
+          - "Checking interference with the Bluetooth and Wi-Fi bands"
+          - "Portable measurements at demo venues"
+      zh:
+        desc: "覆盖 9 kHz 至 6 GHz 的 USB 实时频谱分析仪。具备 44 MHz 实时带宽与 16 位 ADC，可在 2 ms 内扫描整个 6 GHz 频段。USB-C 供电，可与笔记本电脑一同携带，RTSA-Suite PRO 可同时管理多台设备。"
+        uses:
+          - "扫描并可视化人体周围的电磁场分布"
+          - "确认与 Bluetooth / Wi-Fi 频段的干扰"
+          - "演示现场的便携测量"
+
+    - id: "mso44b"
+      name: "MSO44B"
+      maker: "Tektronix"
+      image: ""
+      ja:
+        desc: "4 シリーズ B のミックスドシグナルオシロスコープ。12 ビット分解能、6.25 GS/s、4 本のアナログ入力に加え、各チャンネルを 8 本のデジタル入力に切り替えられる FlexChannel 構成。13.3 インチの HD タッチ画面で波形とスペクトルを同時に見られる。"
+        uses:
+          - "無線給電回路のスイッチング波形・整流波形の観測"
+          - "センサノードの I2C / SPI / UART 通信のデコード"
+          - "低電力デバイスの電流波形と消費電力の評価"
+      en:
+        desc: "4 Series B mixed-signal oscilloscope with 12-bit resolution, 6.25 GS/s and four analog inputs, each of which can become eight digital inputs (FlexChannel). Waveforms and spectra are viewed together on a 13.3-inch HD touchscreen."
+        uses:
+          - "Switching and rectifier waveforms in wireless-power circuits"
+          - "Decoding I2C, SPI and UART traffic of sensor nodes"
+          - "Current waveforms and power consumption of low-power devices"
+      zh:
+        desc: "4 系列 B 混合信号示波器。12 位分辨率、6.25 GS/s、4 路模拟输入，且每路可切换为 8 路数字输入（FlexChannel）。13.3 英寸高清触摸屏可同时显示波形与频谱。"
+        uses:
+          - "观测无线供电电路的开关波形与整流波形"
+          - "解码传感器节点的 I2C / SPI / UART 通信"
+          - "评估低功耗器件的电流波形与功耗"
+
+    - id: "mho98"
+      name: "MHO98"
+      maker: "Rigol"
+      image: ""
+      ja:
+        desc: "1 GHz 帯域、4 GSa/s、12 ビット分解能のミックスドシグナルオシロスコープ。4 本のアナログと 16 本のデジタル入力、500 Mpts のメモリ、100 MHz の 2 チャンネル波形発生器を備え、USB-C で給電できるので持ち運びやすい。"
+        uses:
+          - "ロボット・ウェアラブルの基板デバッグ"
+          - "長時間のセンサ信号記録"
+          - "出張先・デモ会場での波形観測"
+      en:
+        desc: "Mixed-signal oscilloscope with 1 GHz bandwidth, 4 GSa/s and 12-bit resolution. It has four analog and 16 digital inputs, 500 Mpts of memory and a two-channel 100 MHz waveform generator, and runs on USB-C power for easy transport."
+        uses:
+          - "Board-level debugging of robots and wearables"
+          - "Long-duration recording of sensor signals"
+          - "Waveform checks on the road and at demo venues"
+      zh:
+        desc: "1 GHz 带宽、4 GSa/s、12 位分辨率的混合信号示波器。配备 4 路模拟与 16 路数字输入、500 Mpts 存储深度以及 100 MHz 双通道波形发生器，USB-C 供电便于携带。"
+        uses:
+          - "机器人与可穿戴设备的电路板调试"
+          - "长时间记录传感器信号"
+          - "出差与演示现场的波形观测"
+
+    - id: "adp3250"
+      name: "Analog Discovery Pro ADP3250"
+      maker: "Digilent"
+      image: ""
+      ja:
+        desc: "2 チャンネル・14 ビット・最大 0.5 GS/s のアナログ入力と 16 本のデジタル入力を持つ USB 接続の多機能計測器。オシロスコープ、波形発生器、ロジックアナライザ、電圧計などを 1 台にまとめ、WaveForms から Python でも制御できる。"
+        uses:
+          - "自動計測・データロギングのスクリプト化"
+          - "ミックスドシグナル回路のデバッグ"
+          - "研究室内の共用ベンチ計測器"
+      en:
+        desc: "USB multi-instrument with two 14-bit analog inputs at up to 0.5 GS/s and 16 digital inputs. It combines an oscilloscope, waveform generator, logic analyzer and voltmeter in one box, and can be scripted from WaveForms or Python."
+        uses:
+          - "Scripted automated measurement and data logging"
+          - "Debugging mixed-signal circuits"
+          - "Shared bench instrument in the lab"
+      zh:
+        desc: "配备 2 路 14 位、最高 0.5 GS/s 模拟输入与 16 路数字输入的 USB 多功能测量仪。将示波器、波形发生器、逻辑分析仪、电压表等集成于一体，可通过 WaveForms 或 Python 控制。"
+        uses:
+          - "自动测量与数据记录的脚本化"
+          - "混合信号电路调试"
+          - "实验室共用台式仪器"
+
+    - id: "ad3"
+      name: "Analog Discovery 3"
+      maker: "Digilent"
+      image: ""
+      ja:
+        desc: "オシロスコープ、波形発生器、ロジックアナライザ、可変電源などを 1 台にまとめた手のひらサイズの USB 計測器。2 チャンネル・14 ビット・125 MS/s のアナログ入出力と 16 本のデジタル I/O を備え、WaveForms から Python でも扱える。学生や個人のラボに最適。"
+        uses:
+          - "学生一人ひとりの机上での回路試作・デバッグ"
+          - "信号生成とミックスドシグナル解析"
+          - "遠隔・自宅での実験"
+      en:
+        desc: "Palm-sized USB instrument that bundles an oscilloscope, waveform generator, logic analyzer and variable power supply. It offers two 14-bit, 125 MS/s analog inputs and outputs plus 16 digital I/O, controllable from WaveForms or Python. Ideal for individual and student benches."
+        uses:
+          - "Personal circuit prototyping and debugging at each student's desk"
+          - "Signal generation and mixed-signal analysis"
+          - "Remote and at-home experiments"
+      zh:
+        desc: "将示波器、波形发生器、逻辑分析仪、可调电源等集成于一体的掌上型 USB 测量仪。具备 2 路 14 位、125 MS/s 模拟输入输出与 16 路数字 I/O，可通过 WaveForms 或 Python 控制。适合学生与个人实验台。"
+        uses:
+          - "每位学生桌上的电路试制与调试"
+          - "信号生成与混合信号分析"
+          - "远程与居家实验"
+
+    - id: "ads-max"
+      name: "Analog Discovery Studio Max"
+      maker: "Digilent"
+      image: ""
+      ja:
+        desc: "教育・実験用に設計された 14 種の計測器入りワークベンチ。2 チャンネル・14 ビット・100 MS/s・50 MHz 帯域のオシロスコープ、波形発生器、デジタルマルチメータ、内蔵電源を、4 枚のブレッドボードと一体になった筐体に収めている。"
+        uses:
+          - "学生実験・演習での共用実験台"
+          - "アナログとデジタルを合わせた回路実習"
+          - "ブレッドボード上での素早い回路検証"
+      en:
+        desc: "Workbench for teaching and experiments that integrates 14 instruments: a two-channel 14-bit, 100 MS/s, 50 MHz oscilloscope, waveform generator, digital multimeter and built-in power supplies, housed together with four breadboards."
+        uses:
+          - "Shared bench for student labs and exercises"
+          - "Hands-on circuit courses covering analog and digital"
+          - "Quick circuit checks on the breadboard"
+      zh:
+        desc: "面向教学与实验设计的 14 合 1 仪器工作台。将 2 路 14 位、100 MS/s、50 MHz 带宽的示波器、波形发生器、数字万用表与内置电源，与 4 块面包板集成在同一机箱中。"
+        uses:
+          - "学生实验与练习的共用实验台"
+          - "模拟与数字相结合的电路实训"
+          - "面包板上的快速电路验证"
 
 - id: "pcb"
-  image: ""
   ja: { name: "基板実装（PCB）" }
   en: { name: "PCB fabrication" }
   zh: { name: "PCB 制作" }
-  items: []
+  devices: []
 
 - id: "robot"
-  image: ""
   ja: { name: "ロボット" }
   en: { name: "Robots" }
   zh: { name: "机器人" }
-  items: []
+  devices: []

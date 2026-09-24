@@ -282,20 +282,25 @@
 
   /* トップの論文一覧に出す写真。cronos_web の見せ方に合わせている。
      論文の図は切り取ると読めなくなるので cover ではなく contain で全体を出す。 */
-  /* Facilities ページ（研究設備のカード） */
-  .facilities-intro { margin: 0 0 1.6em; color: var(--ink); }
-  .facilities { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.6em 1.4em; }
-  @media (max-width: 1000px) { .facilities { grid-template-columns: repeat(2, 1fr); } }
-  @media (max-width: 640px)  { .facilities { grid-template-columns: 1fr; } }
-  .facility { border-top: 1px solid var(--rule); padding-top: 1em; }
-  .facility-fig img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block; margin-bottom: 0.8em; }
-  .facility-name { margin: 0; font-weight: 600; font-size: 1em; letter-spacing: 0.06em; line-height: 1.65; color: var(--ink); }
-  .facility-desc { margin: 0.35em 0 0; font-size: 0.86em; line-height: 1.8; color: var(--muted, var(--ink)); }
-  .facility-tba { color: var(--faint); }
-  .facility-items { list-style: none; margin: 0.6em 0 0; padding: 0; }
-  .facility-items li { font-size: 0.86em; line-height: 1.8; padding: 0.35em 0; border-top: 1px solid var(--line); }
-  .facility-kind { display: block; font-weight: 600; color: var(--ink); }
-  .facility-models { display: block; color: var(--muted, var(--ink)); }
+  /* Facilities ページ（研究設備）。カテゴリ見出し → 機器カード3列 */
+  .facilities-intro { margin: 0 0 0.6em; color: var(--ink); }
+  .facility-group { margin-top: 2.2em; }
+  .facility-group-head {
+    margin: 0 0 1.1em; padding-bottom: 0.4em; border-bottom: 1px solid var(--rule);
+    font-size: 1.05em; letter-spacing: 0.12em; font-weight: 600; color: var(--ink);
+  }
+  .facility-tba { margin: 0; color: var(--faint); }
+  .devices { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.2em 2em; }
+  @media (max-width: 1000px) { .devices { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 640px)  { .devices { grid-template-columns: 1fr; } }
+  .device { min-width: 0; }
+  .device-fig { background: #f3f5f7; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; margin-bottom: 1em; }
+  .device-fig img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: contain; }
+  .device-name { margin: 0 0 0.6em; font-size: 1em; letter-spacing: 0.04em; font-weight: 600; line-height: 1.6; color: var(--ink); }
+  .device-desc { margin: 0; font-size: 0.86em; line-height: 1.85; color: var(--ink); }
+  .device-uses-head { margin: 1em 0 0.35em; font-size: 0.84em; font-weight: 600; color: var(--ink); }
+  .device-uses { margin: 0; padding-left: 1.3em; font-size: 0.84em; line-height: 1.8; color: var(--ink); }
+  .device-uses li { margin: 0.1em 0; }
   .entry-fig { flex: 0 0 clamp(150px, 16vw, 190px); }
   .entry-fig img {
     display: block; width: 100%; aspect-ratio: 16 / 10; object-fit: contain;
