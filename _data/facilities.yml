@@ -385,6 +385,144 @@
           - "0402 等微小元件的焊接"
           - "导电纱、液态金属布线与电路板的连接"
 
+    - id: "hakko-fr-850"
+      name: "FR-850"
+      maker: "HAKKO"
+      image: ""
+      ja:
+        desc: "顕微鏡下で使える細身のマイクロホットエアステーション。50〜600 °C を 1 °C 刻みで設定でき、風量は 1.5〜5 L/min。φ1〜3 mm のノズルで微小部品だけを狙って加熱でき、USB-C で PC ソフトからプリセット管理もできる。"
+        uses:
+          - "0402・BGA など微小部品の取り外しと付け直し"
+          - "無線モジュール・フレキ基板のリワーク"
+          - "熱収縮チューブや小面積の局所加熱"
+      en:
+        desc: "Slim micro hot-air station usable under a microscope. Temperature is set from 50 to 600 °C in 1 °C steps with airflow of 1.5 to 5 L/min; nozzles of 1 to 3 mm heat only the target component, and USB-C links to PC software for presets."
+        uses:
+          - "Removing and replacing tiny parts such as 0402 and BGA packages"
+          - "Rework of radio modules and flexible PCBs"
+          - "Local heating of heat-shrink tubing and small areas"
+      zh:
+        desc: "可在显微镜下使用的细长型微型热风台。温度可在 50〜600 °C 间以 1 °C 为单位设定，风量 1.5〜5 L/min。φ1〜3 mm 喷嘴可只加热目标微小元件，并通过 USB-C 用电脑软件管理预设。"
+        uses:
+          - "0402、BGA 等微小元件的拆除与重焊"
+          - "无线模块与柔性电路板的返修"
+          - "热缩管与小面积的局部加热"
+
+    - id: "hakko-fx-300"
+      name: "FX-300"
+      maker: "HAKKO"
+      image: ""
+      ja:
+        desc: "50×50 mm のるつぼを持つアナログ式はんだ槽。200〜450 °C で ±5 °C に保温でき、鉛フリーはんだにも対応する。溶けたはんだに浸すだけで、線材の予備はんだや細線の一括処理ができる。"
+        uses:
+          - "導電糸・リッツ線・細線の端末への予備はんだ"
+          - "多数の線材やピンヘッダの一括はんだ付け"
+          - "フレキ基板の端子のはんだメッキ"
+      en:
+        desc: "Analog solder pot with a 50 x 50 mm crucible held at 200 to 450 °C within ±5 °C, compatible with lead-free solder. Dipping into the molten solder tins wire ends and processes many fine wires at once."
+        uses:
+          - "Tinning the ends of conductive yarn, litz wire and fine wires"
+          - "Batch soldering of wire bundles and pin headers"
+          - "Solder-plating terminals on flexible PCBs"
+      zh:
+        desc: "配备 50×50 mm 坩埚的模拟式锡炉。可在 200〜450 °C 间保持 ±5 °C，支持无铅焊锡。只需浸入熔融焊锡，即可对线材预镀锡并批量处理细线。"
+        uses:
+          - "导电纱、利兹线与细线端头的预镀锡"
+          - "大量线材与排针的批量焊接"
+          - "柔性电路板端子的镀锡"
+
+    - id: "tecprint-700"
+      name: "TECPRINT 700"
+      maker: "CIF"
+      image: ""
+      ja:
+        desc: "卓上の手動ステンシル印刷機。最大 300×400 mm の基板と 320×480 mm のメタルステンシルに対応し、取り付け穴のないステンシルも自動テンションフレームで数秒で固定できる。X・Y・θ を ±7 mm の範囲で微調整してからスキージで手引きし、はんだペーストを均一に塗布する。"
+        uses:
+          - "センサノード基板へのはんだペースト印刷"
+          - "少量多品種の表面実装基板の試作"
+          - "導電ペースト・接着剤のパターン塗布"
+      en:
+        desc: "Benchtop manual stencil printer for boards up to 300 x 400 mm and metal stencils up to 320 x 480 mm; a self-tensioning frame clamps stencils without mounting holes in seconds. After fine alignment in X, Y and theta (±7 mm), a hand squeegee lays down an even solder-paste deposit."
+        uses:
+          - "Solder-paste printing for sensor-node boards"
+          - "Low-volume, high-mix surface-mount prototypes"
+          - "Patterned deposition of conductive paste and adhesives"
+      zh:
+        desc: "桌面型手动钢网印刷机。支持最大 300×400 mm 的电路板与 320×480 mm 的金属钢网，自张紧框架可在数秒内固定无安装孔的钢网。可在 X、Y、θ 方向 ±7 mm 范围内微调后手动刮刷，均匀涂布焊膏。"
+        uses:
+          - "传感器节点电路板的焊膏印刷"
+          - "小批量多品种表面贴装板的试制"
+          - "导电胶与粘合剂的图案涂布"
+
+    - id: "xtool-hp2"
+      name: "HP2"
+      maker: "xTool"
+      image: ""
+      ja:
+        desc: "381×381 mm の熱盤を持つ全自動ヒートプレス。押し下げ・加熱・カウント・持ち上げを自動で行い、60〜180 kg の 4 段階の圧力と 5 つのプリセットを使い分けられる。15 分放置で自動停止する。"
+        uses:
+          - "フレキ基板・チップ部品のテキスタイルへの熱圧着"
+          - "転写フィルムや熱接着シートによる導電パターンの貼り付け"
+          - "電子ニット・給電服の封止と防水加工"
+      en:
+        desc: "Fully automatic heat press with a 381 x 381 mm platen that lowers, heats, counts and lifts on its own. Four pressure levels from 60 to 180 kg and five presets cover different materials, and it shuts off after 15 minutes idle."
+        uses:
+          - "Heat-bonding flexible PCBs and chip components onto textiles"
+          - "Attaching conductive patterns with transfer films and hot-melt sheets"
+          - "Sealing and waterproofing e-knits and wireless-power garments"
+      zh:
+        desc: "配备 381×381 mm 热板的全自动热压机。压下、加热、计时、抬起全程自动，具备 60〜180 kg 四档压力与 5 组预设，闲置 15 分钟自动关机。"
+        uses:
+          - "柔性电路板与贴片元件在纺织品上的热压粘接"
+          - "用转印膜或热熔片贴附导电图案"
+          - "电子针织物与供电服装的封装与防水加工"
+
+    - id: "and-mct-2150w"
+      name: "MCT-2150W"
+      maker: "エー・アンド・デイ（A&D）"
+      image: ""
+      ja:
+        desc: "低試験力タイプの卓上引張圧縮試験機（フォーステスター）。試験力を 0.001 N 分解能で表示し、カラータッチパネルで速度と変位を設定して自動試験する。付属ソフト MSAT-Lite で PC に荷重・変位を取り込める。"
+        uses:
+          - "液体金属配線とコンデンサ接合部の引張・曲げ耐力の測定"
+          - "電子ニット・伸縮配線の繰り返し伸縮試験"
+          - "磁石コネクタや接着接合の保持力評価"
+      en:
+        desc: "Low-force benchtop tensile and compression tester that displays force with 0.001 N resolution. Speed and displacement are set on a colour touch panel for automated tests, and the bundled MSAT-Lite software logs load and displacement to a PC."
+        uses:
+          - "Tensile and bending strength of liquid-metal-to-capacitor joints"
+          - "Cyclic stretch tests of e-knits and stretchable wiring"
+          - "Holding force of magnetic connectors and adhesive joints"
+      zh:
+        desc: "低试验力型桌面拉伸压缩试验机（力测试仪）。试验力显示分辨率 0.001 N，可在彩色触摸屏上设定速度与位移进行自动测试，附带软件 MSAT-Lite 可将载荷与位移记录到电脑。"
+        uses:
+          - "液态金属布线与电容接合处的拉伸、弯曲强度测量"
+          - "电子针织物与可拉伸布线的反复拉伸试验"
+          - "磁性连接器与粘接接合的保持力评估"
+
+    - id: "asone-incubator"
+      name: "パーソナルインキュベータ"
+      maker: "アズワン（AS ONE）"
+      image: ""
+      ja:
+        desc: "卓上に置ける小型の恒温器。一定温度に保った庫内で試料を静置でき、樹脂やシリコーンの硬化、接着剤の養生、温度をそろえた保管に使う。"
+        uses:
+          - "PDMS・シリコーン封止材の加熱硬化"
+          - "導電性接着剤・エポキシの養生"
+          - "試料・材料の一定温度での保管"
+      en:
+        desc: "Compact benchtop incubator that keeps its chamber at a set temperature. Used for curing resins and silicones, letting adhesives set, and storing samples at a constant temperature."
+        uses:
+          - "Heat-curing PDMS and silicone encapsulants"
+          - "Curing conductive adhesives and epoxies"
+          - "Storing samples and materials at a constant temperature"
+      zh:
+        desc: "可放置于桌面的小型恒温箱。可在恒定温度的腔体内静置样品，用于树脂与硅胶的固化、粘合剂的养护以及恒温保存。"
+        uses:
+          - "PDMS 与硅胶封装材料的加热固化"
+          - "导电胶与环氧树脂的养护"
+          - "样品与材料的恒温保存"
+
 - id: "pcb"
   ja: { name: "基板実装（PCB）" }
   en: { name: "PCB fabrication" }
