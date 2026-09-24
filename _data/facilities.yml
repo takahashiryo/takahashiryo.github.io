@@ -241,6 +241,52 @@
           - "模拟与数字相结合的电路实训"
           - "面包板上的快速电路验证"
 
+    - id: "usrp-x310"
+      name: "USRP X310 + UBX-160"
+      maker: "Ettus Research（NI）"
+      image: ""
+      ja:
+        desc: "Kintex-7 FPGA を積んだ高性能ソフトウェア無線機。UBX-160 ドーターボードにより 10 MHz〜6 GHz を最大 160 MHz の帯域で送受信でき、2 スロットで 2×2 MIMO や位相のそろった多チャンネル受信ができる。10 GbE / PCIe で PC と接続し、GNU Radio や UHD から制御する。"
+        uses:
+          - "コイル間の近傍界通信・給電のプロトコル試作"
+          - "ウェアラブル無線の受信信号の生波形記録と解析"
+          - "多チャンネルの位相計測・到来方向推定"
+      en:
+        desc: "High-performance software-defined radio built around a Kintex-7 FPGA. With the UBX-160 daughterboard it transmits and receives from 10 MHz to 6 GHz with up to 160 MHz of bandwidth, and its two slots allow 2x2 MIMO and phase-coherent multichannel reception. It connects over 10 GbE or PCIe and is driven from GNU Radio or UHD."
+        uses:
+          - "Prototyping near-field communication and power-transfer protocols between coils"
+          - "Recording and analysing raw RF waveforms from wearable radios"
+          - "Multichannel phase measurement and direction finding"
+      zh:
+        desc: "搭载 Kintex-7 FPGA 的高性能软件无线电。配合 UBX-160 子板可在 10 MHz〜6 GHz 范围内以最高 160 MHz 带宽收发，双插槽支持 2×2 MIMO 与相位相干的多通道接收。通过 10 GbE / PCIe 连接电脑，由 GNU Radio 或 UHD 控制。"
+        uses:
+          - "线圈间近场通信与供电协议的原型验证"
+          - "可穿戴无线设备接收信号的原始波形记录与分析"
+          - "多通道相位测量与到达方向估计"
+
+    - id: "sdg2042x"
+      name: "SDG2042X"
+      maker: "Siglent"
+      image: ""
+      ja:
+        desc: "2 チャンネル・40 MHz のファンクション／任意波形発生器。1.2 GSa/s・16 ビット・8 Mpts の TrueArb 方式で任意波形をそのまま出力でき、AM / FM / ASK / FSK / PSK などの変調と 400 MHz までの周波数カウンタを備える。2 mVpp〜20 Vpp を出力できる。"
+        uses:
+          - "6.78 MHz / 13.56 MHz 帯の無線給電・NFC 送信信号の生成"
+          - "コイル・整合回路の周波数掃引試験"
+          - "センサ回路への模擬信号入力と変調実験"
+      en:
+        desc: "Two-channel 40 MHz function and arbitrary waveform generator. TrueArb output at 1.2 GSa/s with 16-bit resolution and 8 Mpts plays arbitrary waveforms point by point, with AM, FM, ASK, FSK and PSK modulation and a frequency counter to 400 MHz. Output ranges from 2 mVpp to 20 Vpp."
+        uses:
+          - "Generating wireless-power and NFC drive signals in the 6.78 MHz and 13.56 MHz bands"
+          - "Frequency-sweep tests of coils and matching networks"
+          - "Injecting simulated signals into sensor circuits and modulation experiments"
+      zh:
+        desc: "双通道 40 MHz 函数 / 任意波形发生器。TrueArb 方式以 1.2 GSa/s、16 位、8 Mpts 逐点输出任意波形，具备 AM / FM / ASK / FSK / PSK 等调制与最高 400 MHz 的频率计数器。输出范围 2 mVpp〜20 Vpp。"
+        uses:
+          - "生成 6.78 MHz / 13.56 MHz 频段的无线供电与 NFC 驱动信号"
+          - "线圈与匹配电路的扫频测试"
+          - "向传感器电路注入模拟信号与调制实验"
+
 - id: "fab"
   ja: { name: "ファブリケーション" }
   en: { name: "Fabrication" }
