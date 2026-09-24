@@ -579,4 +579,73 @@
   ja: { name: "ロボット" }
   en: { name: "Robots" }
   zh: { name: "机器人" }
-  devices: []
+  devices:
+
+    - id: "toio"
+      name: "toio"
+      maker: "ソニー"
+      image: ""
+      ja:
+        desc: "32×32×19 mm の小型キューブロボット。底面のカメラで専用マットの光学パターンを読み、自分の位置と向きを絶対座標で取得する。Bluetooth で PC やスマートフォンから制御でき、複数台を同時に動かして精密な協調動作ができる。"
+        uses:
+          - "無線給電マット・コイル上を走る小型移動ロボットの実験台"
+          - "多数のロボットの位置追跡と協調制御の検証"
+          - "学生実験・デモ用の手軽な移動体プラットフォーム"
+      en:
+        desc: "Small cube robot measuring 32 x 32 x 19 mm. A downward camera reads the optical pattern on a dedicated mat to obtain absolute position and heading, and Bluetooth control from a PC or phone lets several units move in precise coordination."
+        uses:
+          - "Test platform for small mobile robots running on wireless-power mats and coils"
+          - "Position tracking and coordinated control of many robots"
+          - "Easy mobile platform for student labs and demos"
+      zh:
+        desc: "32×32×19 mm 的小型立方体机器人。底部摄像头读取专用垫上的光学图案，以绝对坐标获取自身位置与朝向。可通过 Bluetooth 由电脑或手机控制，多台可同时运行实现精确协同。"
+        uses:
+          - "在无线供电垫与线圈上运行的小型移动机器人实验平台"
+          - "多台机器人的位置跟踪与协同控制验证"
+          - "学生实验与演示用的便捷移动平台"
+
+    - id: "so-101"
+      name: "SO-101"
+      maker: "The Robot Studio / Hugging Face"
+      image: ""
+      ja:
+        desc: "オープンソースの 6 自由度ロボットアーム。STS3215 バスサーボ 6 個で構成され、12 V 駆動で 30 kg·cm のトルクを出す。リーダーアームと対で使うと人の操作をそのまま追従させられ、Hugging Face の LeRobot が標準対応しているので模倣学習のデータ収集からポリシー実行まで一貫して扱える。"
+        uses:
+          - "リーダー・フォロワー構成による遠隔操作とデモンストレーション収集"
+          - "LeRobot を使った模倣学習・強化学習の実験"
+          - "ウェアラブル入力デバイス（指輪など）によるロボット操作の検証"
+      en:
+        desc: "Open-source 6-DoF robot arm built from six STS3215 bus servos delivering 30 kg·cm at 12 V. Paired with a leader arm it follows human motion directly, and native support in Hugging Face LeRobot covers everything from demonstration collection to policy execution."
+        uses:
+          - "Teleoperation and demonstration collection with a leader-follower pair"
+          - "Imitation and reinforcement learning experiments with LeRobot"
+          - "Testing robot control from wearable input devices such as rings"
+      zh:
+        desc: "开源 6 自由度机械臂。由 6 个 STS3215 总线舵机构成，12 V 供电时输出 30 kg·cm 扭矩。与主臂配对可直接跟随人的操作，且 Hugging Face LeRobot 原生支持，可从示范数据采集到策略执行一体化处理。"
+        uses:
+          - "主从臂配置的遥操作与示范数据采集"
+          - "基于 LeRobot 的模仿学习与强化学习实验"
+          - "用可穿戴输入设备（如智能戒指）操控机器人的验证"
+
+    - id: "rebot-b601-dm"
+      name: "reBot Arm B601-DM"
+      maker: "Seeed Studio"
+      image: ""
+      ja:
+        desc: "5052 アルミの CNC 加工フレームと Damiao 製アクチュエータで組んだオープンソースの 6+1 自由度ロボットアーム。可搬 1.5 kg、リーチ 767 mm、繰り返し精度 0.2 mm。CAN 経由の MIT モードで位置・速度・トルクを同時に指令でき、Python SDK・ROS1/ROS2・LeRobot・Isaac Sim に対応する。"
+        uses:
+          - "1 kg 級の実物を扱う模倣学習・遠隔操作の実験"
+          - "ロボット皮膚・触覚センサを載せたマニピュレーション研究"
+          - "力制御を含む接触タスクの検証"
+      en:
+        desc: "Open-source 6+1-DoF robot arm with a CNC-machined 5052 aluminium frame and Damiao actuators: 1.5 kg payload, 767 mm reach and 0.2 mm repeatability. MIT mode over CAN commands position, velocity and torque together, and it works with a Python SDK, ROS1/ROS2, LeRobot and Isaac Sim."
+        uses:
+          - "Imitation learning and teleoperation with kilogram-class real objects"
+          - "Manipulation research with robot skin and tactile sensors mounted on the arm"
+          - "Contact tasks that need force control"
+      zh:
+        desc: "采用 5052 铝合金 CNC 框架与 Damiao 执行器的开源 6+1 自由度机械臂。负载 1.5 kg，臂展 767 mm，重复精度 0.2 mm。通过 CAN 的 MIT 模式可同时下发位置、速度与扭矩指令，支持 Python SDK、ROS1/ROS2、LeRobot 与 Isaac Sim。"
+        uses:
+          - "操作 1 kg 级实物的模仿学习与遥操作实验"
+          - "搭载机器人皮肤与触觉传感器的操作研究"
+          - "包含力控制的接触任务验证"
