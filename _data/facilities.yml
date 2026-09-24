@@ -175,7 +175,7 @@
     - id: "adp3250"
       name: "Analog Discovery Pro ADP3250"
       maker: "Digilent"
-      image: "adp3250.jpg"
+      image: "adp3250-2.jpg"
       qty: 2
       ja:
         desc: "USB 接続の多機能計測器。"
