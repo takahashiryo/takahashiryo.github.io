@@ -60,6 +60,7 @@ Information.xlsx`）から作る古い経路で、いまは使っていない。
 | `_data/i18n.yml` | 3言語の文言 | 手書き |
 | `_data/profile.yml` | リンク・研究テーマ | 手書き＋researchmap |
 | `_data/facilities.yml` | Facilities ページ（/facilities/）。カテゴリ→機器の2段。機器は name/maker/image（images/facilities/）/qty と ja/en/zh の desc と uses または specs。写真はメーカー公式ページ由来。ページ下部の支援機関ロゴは `_includes/funders.html`（images/logos/）。描画は `_includes/page_facilities.html` | 手書き |
+| `_data/bibtex.yml` | タイトル→BibTeX。`scripts/build_bibtex.py` が CSV から生成（DOI があれば Crossref、無ければ CSV から組む。既存の題名は上書きしない）。論文の「BibTeX」ピルで折りたたみ表示 | 生成＋手直し可 |
 | `_data/arxiv.yml` / `youtube.yml` / `pdf.yml` | タイトル→ arXiv URL / YouTube URL / `paper/` 内の PDF パス。あるものだけピルが出る | 手書き（cronos_web の CSV から転記） |
 
 `type` の値: `journal` / `conference` / `workshop` / `demo` / `poster` / `domestic` / `article`。

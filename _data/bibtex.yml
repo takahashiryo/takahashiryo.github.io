@@ -1,0 +1,415 @@
+# 論文タイトル → BibTeX。scripts/build_bibtex.py が publications.csv から作る（手で直してよい。再実行時は既存の題名を上書きしない）。
+"Dense-Joint-Based Obstacle-Aided Locomotion with a Joint-Repositionable Snake Robot": |-
+  @inproceedings{minomo2026densejointbased,
+    title = {Dense-Joint-Based Obstacle-Aided Locomotion with a Joint-Repositionable Snake Robot},
+    author = {K. Minomo and R. Takahashi and K. Yasui and Y. Nakashima and M. Yamamoto and A. Kanada},
+    booktitle = {2026 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)},
+    note = {To appear},
+    address = {Pittsburgh, USA},
+    year = {2026},
+    month = oct
+  }
+"Machine-knittable, Magnetically-Plug-n-Play E-Textile Prototyping": |-
+  @inproceedings{li2026machineknittable,
+    title = {Machine-knittable, Magnetically-Plug-n-Play E-Textile Prototyping},
+    author = {Y. Li and R. Takahashi and W. Yukita and I. Wicaksono and K. Matsutani and Y. Iwamoto and S. Lee and T. Yokota and T. Someya and Y. Kawahara},
+    booktitle = {2026 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)},
+    note = {To appear},
+    address = {Pittsburgh, USA},
+    year = {2026},
+    month = oct
+  }
+"picoRing dual: ultralow-power bimanual ring controllers for everyday AR": |-
+  @inproceedings{yamamoto2026picoring,
+    title = {picoRing dual: ultralow-power bimanual ring controllers for everyday AR},
+    author = {H. Yamamoto and Y. Li and Y. Kawahara and R. Takahashi},
+    booktitle = {Proceedings of the 2026 ACM International Symposium on Wearable Computers (ISWC '26)},
+    note = {To appear},
+    year = {2026},
+    month = oct
+  }
+"Collisionless Multi-Tag NFC Sensing for Indoor Activity Recognition Using Meander E-Textiles": |-
+  @inproceedings{ido2026collisionless,
+    title = {Collisionless Multi-Tag NFC Sensing for Indoor Activity Recognition Using Meander E-Textiles},
+    author = {S. Ido and K. Tanaka and R. Maeda and R. Takahashi and A. Noda and S. Ishida},
+    booktitle = {Proc. of ACM UbiComp 2026},
+    note = {Intelligent Soft Wearables Workshop},
+    address = {Shanghai, China},
+    year = {2026},
+    month = oct
+  }
+"Flexible NFC wristband for ultralow-power ring-to-wristband interaction": |-
+  @inproceedings{yamamoto2026flexible,
+    title = {Flexible NFC wristband for ultralow-power ring-to-wristband interaction},
+    author = {H. Yamamoto and Y. Li and Y. Kawahara and R. Takahashi},
+    booktitle = {Proc. of ACM UbiComp 2026},
+    note = {Intelligent Soft Wearables Workshop},
+    address = {Shanghai, China},
+    year = {2026},
+    month = oct
+  }
+"Intelligent Soft Wearables: Bridging Disciplines Towards Soft Wearables for Everyone, Everywhere": |-
+  @inproceedings{honnet2026intelligent,
+    title = {Intelligent Soft Wearables: Bridging Disciplines Towards Soft Wearables for Everyone, Everywhere},
+    author = {C. Honnet and T. C. Yu and R. Takahashi and T. Cheng and C. Zhang and Y. Kawahara and Y. Luo and I. Wicaksono and J. Paradiso},
+    booktitle = {Proc. of ACM UbiComp 2026},
+    note = {To appear},
+    address = {Shanghai, China},
+    year = {2026},
+    month = oct
+  }
+? |-
+  Friction-Based Interconnection of Stretchable Liquid Metal-Based Coil with Rigid Capacitors for Mechanically Durable Wireless Powering Textile
+: |-
+  @article{Sato_2026, title={Friction-Based Interconnection of Stretchable Liquid Metal-Based Coil with Rigid Capacitors for Mechanically Durable Wireless Powering Textiles}, volume={18}, ISSN={1944-8252}, url={http://dx.doi.org/10.1021/acsami.6c06181}, DOI={10.1021/acsami.6c06181}, number={37}, journal={ACS Applied Materials &amp; Interfaces}, publisher={American Chemical Society (ACS)}, author={Sato, Takashi and Takahashi, Ryo and Watanabe, Shinto and Yukita, Wakako and Yokota, Tomoyuki and Someya, Takao and Kawahara, Yoshihiro and Iwase, Eiji and Iwasaki, Wataru}, year={2026}, month=Sept, pages={51721–51730} }
+"Ultra-Low-Power Wireless Ring Mouse": |-
+  @article{Takahashi_2026, title={Ultra‐Low‐Power Wireless Ring Mouse}, volume={109}, ISSN={1942-9541}, url={http://dx.doi.org/10.1002/ecj.70049}, DOI={10.1002/ecj.70049}, number={3}, journal={Electronics and Communications in Japan}, publisher={Wiley}, author={Takahashi, Ryo and Yifan, Li and Fukumoto, Masaaki and Noda, Akihito and Ishida, Shigemi and Yokota, Tomoyuki and Someya, Takao and Kawahara, Yoshihiro}, year={2026}, month=Aug, pages={88–93} }
+"無線で給電・通信ができる衣服を実現 多彩なウエアラブルデバイス活用に道": |-
+  @article{高橋2026x,
+    title = {無線で給電・通信ができる衣服を実現 多彩なウエアラブルデバイス活用に道},
+    author = {高橋亮},
+    journal = {JSTnews},
+    note = {8月号},
+    year = {2026},
+    month = aug
+  }
+"Knittable electronic textiles for intelligent soft wearables": |-
+  @article{Takahashi_2026, title={Knittable electronic textiles for intelligent soft wearables}, ISSN={2397-4621}, url={http://dx.doi.org/10.1038/s41528-026-00611-y}, DOI={10.1038/s41528-026-00611-y}, journal={npj Flexible Electronics}, publisher={Springer Science and Business Media LLC}, author={Takahashi, Ryo and Chen, Hsin Huei and Mao, Hongyu and Yukita, Wakako and Yokota, Tomoyuki and Someya, Takao and Kawahara, Yoshihiro and Luo, Yiyue and Wicaksono, Irmandy}, year={2026}, month=July }
+"picoRing mouse:極低電力な指輪型無線マウス": |-
+  @article{Takahashi_2026, title={Ultra-low-power Wireless Ring Mouse}, volume={146}, ISSN={1347-5525}, url={http://dx.doi.org/10.1541/ieejsmas.146.186}, DOI={10.1541/ieejsmas.146.186}, number={7}, journal={IEEJ Transactions on Sensors and Micromachines}, publisher={Institute of Electrical Engineers of Japan (IEE Japan)}, author={Takahashi, Ryo and Yifan, Li and Fukumoto, Masaaki and Noda, Akihito and Ishida, Shigemi and Yokota, Tomoyuki and Someya, Takao and Kawahara, Yoshihiro}, year={2026}, month=July, pages={186–192} }
+"Near-field power and data networking via meandered e-textiles for continuous, large-scale BodyNet": |-
+  @article{Takahashi_2026, title={Near-Field Power and Data Networking via Meandered E-Textiles for Continuous, Large-Scale BodyNet}, ISSN={1558-2590}, url={http://dx.doi.org/10.1109/MPRV.2026.3712563}, DOI={10.1109/mprv.2026.3712563}, journal={IEEE Pervasive Computing}, publisher={Institute of Electrical and Electronics Engineers (IEEE)}, author={Takahashi, Ryo and Kawahara, Yoshihiro}, year={2026}, pages={1–9} }
+"ヒトの周りでの安全・大面積・W級の服型無線給電ネットワーク": |-
+  @article{高橋2026w,
+    title = {ヒトの周りでの安全・大面積・W級の服型無線給電ネットワーク},
+    author = {高橋亮},
+    journal = {月刊EMC},
+    note = {8月号},
+    year = {2026},
+    month = jul
+  }
+"メアンダコイル上の小型移動ロボットの走行中無線給電における給電効率を考慮した探索的経路生成手法": |-
+  @inproceedings{韓燦2026x,
+    title = {メアンダコイル上の小型移動ロボットの走行中無線給電における給電効率を考慮した探索的経路生成手法},
+    author = {韓燦教 and 高橋亮 and 横田知之 and 川原圭博},
+    booktitle = {ROBOMECH},
+    note = {1P1-H09},
+    address = {福岡},
+    year = {2026},
+    month = jun
+  }
+"picoRing NFC: 中距離NFCを用いた極低電力なワイヤレススマートリング": |-
+  @inproceedings{山本2026picoring,
+    title = {picoRing NFC: 中距離NFCを用いた極低電力なワイヤレススマートリング},
+    author = {山本英昂 and 高橋亮 and 川原圭博},
+    booktitle = {ROBOMECH 2026},
+    note = {2A1-R04},
+    address = {福岡},
+    year = {2026},
+    month = jun
+  }
+"機械編みによる人体スケールの NFC リーダ服": |-
+  @inproceedings{高橋2026x,
+    title = {機械編みによる人体スケールの NFC リーダ服},
+    author = {高橋亮 and 川原圭博},
+    booktitle = {ROBOMECH 2026},
+    note = {2P1-O10},
+    address = {福岡},
+    year = {2026},
+    month = jun
+  }
+"関節の高密度化がヘビ型ロボットの障害物利用推進に与える影響の調査": |-
+  @inproceedings{蓑毛2026x,
+    title = {関節の高密度化がヘビ型ロボットの障害物利用推進に与える影響の調査},
+    author = {蓑毛響介 and 高橋亮 and 安井浩太郎 and 山本元司 and 中島康貴 and 金田礼人},
+    booktitle = {ROBOMECH 2026},
+    note = {2A1-I09},
+    address = {福岡},
+    year = {2026},
+    month = jun
+  }
+? |-
+  Body-scale NFC for wearables: human-centric body-scale NFC networking for ultra-low-power wearable devices (Demo of UTokyo Kawahara Lab 2025)
+: |-
+  @inproceedings{Yamamoto_2026, series={CHI EA ’26}, title={Body-scale NFC for wearables: human-centric body-scale NFC networking for ultra-low-power wearable devices (Demo of UTokyo Kawahara Lab 2025)}, url={http://dx.doi.org/10.1145/3772363.3799126}, DOI={10.1145/3772363.3799126}, booktitle={Proceedings of the Extended Abstracts of the 2026 CHI Conference on Human Factors in Computing Systems}, publisher={ACM}, author={Yamamoto, Hideaki and Li, Yifan and Yukita, Wakako and Yokota, Tomoyuki and Someya, Takao and Takahashi, Ryo and Kawahara, Yoshihiro}, year={2026}, month=Apr, pages={1–6}, collection={CHI EA ’26} }
+"3D-printing water-soluble channels filled with liquid metal for recyclable and cuttable wireless power sheet": |-
+  @inproceedings{Sato_2026, title={3D-Printing Water-Soluble Channels Filled with Liquid Metal for Recyclable and Cuttable Wireless Power Sheet}, url={http://dx.doi.org/10.1109/mems64181.2026.11419301}, DOI={10.1109/mems64181.2026.11419301}, booktitle={2026 IEEE 39th International Conference on Micro Electro Mechanical Systems (MEMS)}, publisher={IEEE}, author={Sato, Takashi and Takahashi, Ryo and Yamagishi, Kento and Someya, Takao and Hashimoto, Michinao and Iwase, Eiji and Kawahara, Yoshihiro and Kurumida, Junya and Iwasaki, Wataru}, year={2026}, month=Jan, pages={1–4} }
+"極低電力な指輪型無線マウス": |-
+  @inproceedings{高橋2025x,
+    title = {極低電力な指輪型無線マウス},
+    author = {高橋亮 and Y. Li and 福本雅朗 and M. Kari and 野田聡人 and 石田繁巳 and 横田知之 and 染谷隆夫 and 川原圭博},
+    booktitle = {「センサ・マイクロマシンと応用システム」シンポジウム},
+    note = {第42回},
+    address = {宇都宮},
+    year = {2025},
+    month = nov
+  }
+"液体金属を充填した3D印刷水溶性流路によるリサイクル可能なフレキシブル電子デバイス": |-
+  @inproceedings{佐藤2025d,
+    title = {液体金属を充填した3D印刷水溶性流路によるリサイクル可能なフレキシブル電子デバイス},
+    author = {佐藤峻 and 高橋亮 and 山岸健人 and 染谷隆夫 and 橋本道尚 and 岩瀬英治 and 川原圭博 and 来見田淳也 and 岩﨑渉},
+    booktitle = {第16回マイクロ・ナノ工学シンポジウム},
+    note = {12P2-PN-92},
+    address = {宇都宮},
+    year = {2025},
+    month = nov
+  }
+"Full-body WPT: wireless powering with meandered e-textiles": |-
+  @inproceedings{Takahashi_2025, title={Full-body WPT: Wireless Powering with Meandered E-textiles}, url={http://dx.doi.org/10.1145/3714394.3750714}, DOI={10.1145/3714394.3750714}, booktitle={Companion of the 2025 ACM International Joint Conference on Pervasive and Ubiquitous Computing}, publisher={ACM}, author={Takahashi, Ryo and Sato, Takashi and Yukita, Wakako and Yokota, Tomoyuki and Someya, Takao and Kawahara, Yoshihiro}, year={2025}, month=Oct, pages={529–533} }
+"Plug-n-play e-knit with LED-based sensor positioning": |-
+  @inproceedings{Li_2025, title={Plug-n-play e-knit with LED-based Sensor Positioning}, url={http://dx.doi.org/10.1145/3714394.3756222}, DOI={10.1145/3714394.3756222}, booktitle={Companion of the 2025 ACM International Joint Conference on Pervasive and Ubiquitous Computing}, publisher={ACM}, author={Li, Yifan and Takahashi, Ryo and Wicaksono, Irmandy and Yukita, Wakako and Iwamoto, Yuhiro and Lee, Sunghoon and Yokota, Tomoyuki and Someya, Takao and Kawahara, Yoshihiro}, year={2025}, month=Oct, pages={1143–1144} }
+"Ultra-low-power ring-based wireless tinymouse": |-
+  @inproceedings{Li_2025, series={UIST ’25}, title={Ultra-low-power ring-based wireless tinymouse}, url={http://dx.doi.org/10.1145/3746059.3747615}, DOI={10.1145/3746059.3747615}, booktitle={Proceedings of the 38th Annual ACM Symposium on User Interface Software and Technology}, publisher={ACM}, author={Li, Yifan and Fukumoto, Masaaki and Kari, Mohamed and Ishida, Shigemi and Noda, Akihito and Yokota, Tomoyuki and Someya, Takao and Kawahara, Yoshihiro and Takahashi, Ryo}, year={2025}, month=Sept, pages={1–12}, collection={UIST ’25} }
+"Intelligent Soft Wearables": |-
+  @inproceedings{yu2025intelligent,
+    title = {Intelligent Soft Wearables},
+    author = {T. C. Yu and C. Honnet and T. Cheng and R. Takahashi and B. Zhou and C. Zhang and J. A. Paradiso and Y. Kawahara and P. Lukowicz and J. Hester and Y. Luo and I. Wicaksono},
+    booktitle = {Proc. of ACM UbiComp 2025},
+    note = {1123-126},
+    address = {Espoo, Finland},
+    year = {2025},
+    month = oct
+  }
+"指輪-リストバンドコイル間の磁気結合を用いた超低電力な指輪型無線XRコントローラの設計": |-
+  @inproceedings{山本2025xr,
+    title = {指輪-リストバンドコイル間の磁気結合を用いた超低電力な指輪型無線XRコントローラの設計},
+    author = {山本英昂 and 李蘊韜 and 韓燦教 and 横田知之 and 染谷隆夫 and 川原圭博 and 高橋亮},
+    booktitle = {信学ソ大2025},
+    note = {B-15-32},
+    address = {岡山},
+    year = {2025},
+    month = sep
+  }
+"超低電力な指輪型無線マウス": |-
+  @inproceedings{高橋2025x,
+    title = {超低電力な指輪型無線マウス},
+    author = {高橋亮 and Y. Li and 福本雅朗 and M. Kari and 山本英昂 and 野田聡人 and 石田繁巳 and 横田知之 and 染谷隆夫 and 川原圭博},
+    booktitle = {情報処理学会 UBI研究会},
+    note = {第87回},
+    address = {富山},
+    year = {2025},
+    month = sep
+  }
+"Roam beyond Battery: 長期的な屋内広範囲運用に向けた無線給電対応の小型移動ロボットネットワーク": |-
+  @inproceedings{韓燦2025roam,
+    title = {Roam beyond Battery: 長期的な屋内広範囲運用に向けた無線給電対応の小型移動ロボットネットワーク},
+    author = {韓燦教 and 高橋亮 and 野田聡人 and 川原圭博},
+    booktitle = {ROBOMECH2025},
+    note = {2A1-J10},
+    address = {山形},
+    year = {2025},
+    month = jun
+  }
+"移動関節ヘビ型ロボット:任意の体幹位置を能動屈曲可能なヘビ型ロボットによるセンサレス狭路推進制御の検討": |-
+  @inproceedings{保坂2025x,
+    title = {移動関節ヘビ型ロボット:任意の体幹位置を能動屈曲可能なヘビ型ロボットによるセンサレス狭路推進制御の検討},
+    author = {保坂琉介 and 金田礼人 and 林渓人 and 中島康貴 and 高橋亮 and 雪田和歌子 and 横田知之 and 染谷隆夫 and 亀﨑允啓 and 川原圭博 and 佐藤峻 and 来見田淳也 and 岩瀬英治 and 山本元司},
+    booktitle = {ROBOMECH2025},
+    note = {2A1-R01},
+    address = {山形},
+    year = {2025},
+    month = jun
+  }
+"Joint-repositionable Inner-wireless Planar Snake Robot": |-
+  @article{Kanada_2025, title={Joint-Repositionable Inner-Wireless Planar Snake Robot}, volume={10}, ISSN={2377-3774}, url={http://dx.doi.org/10.1109/LRA.2025.3555394}, DOI={10.1109/lra.2025.3555394}, number={5}, journal={IEEE Robotics and Automation Letters}, publisher={Institute of Electrical and Electronics Engineers (IEEE)}, author={Kanada, Ayato and Takahashi, Ryo and Hayashi, Keito and Hosaka, Ryusuke and Yukita, Wakako and Nakashima, Yasutaka and Yokota, Tomoyuki and Someya, Takao and Kamezaki, Mitsuhiro and Kawahara, Yoshihiro and Yamamoto, Motoji}, year={2025}, month=May, pages={4994–5001} }
+"Design of full-body wireless charging-enabled textiles with liquid metal-based jointing": |-
+  @inproceedings{sato2025design,
+    title = {Design of full-body wireless charging-enabled textiles with liquid metal-based jointing},
+    author = {T. Sato and S. Watanabe and R. Takahashi and T. Yokota and T. Someya and Y. Kawahara and E. Iwase},
+    booktitle = {The 8th Event of the Researchers Society for Flexible and Stretchable Electronics},
+    address = {Hokkaido,Japan},
+    year = {2025},
+    month = may
+  }
+"Full-body NFC: メアンダ形状の電子ニットによる全身電池レス無線センサネットワーク": |-
+  @inproceedings{高橋2025fullbody,
+    title = {Full-body NFC: メアンダ形状の電子ニットによる全身電池レス無線センサネットワーク},
+    author = {高橋亮 and 韓燦教 and 雪田和歌子 and J. S. Ho and 笹谷拓也 and 野田聡人 and 横田知之 and 染谷隆夫 and 川原圭博},
+    booktitle = {UBI研究会},
+    note = {第86回セッション2:IoT},
+    address = {東京},
+    year = {2025},
+    month = may
+  }
+"Demo of picoRing mouse: ultra-low-powered wireless mouse ring with ring-to-wristband coil-based impedance sensing": |-
+  @inproceedings{Li_2025, series={CHI EA ’25}, title={Demo of picoRing mouse: ultra-low-powered wireless mouse ring with ring-to-wristband coil-based impedance sensing}, url={http://dx.doi.org/10.1145/3706599.3721183}, DOI={10.1145/3706599.3721183}, booktitle={Proceedings of the Extended Abstracts of the CHI Conference on Human Factors in Computing Systems}, publisher={ACM}, author={Li, Yifan and Fukumoto, Masaaki and Kari, Mohamed and Yokota, Tomoyuki and Someya, Takao and Kawahara, Yoshihiro and Takahashi, Ryo}, year={2025}, month=Apr, pages={1–5}, collection={CHI EA ’25} }
+"Plug-n-play e-knit: prototyping large-area e-textiles using machine-knitted magnetically-repositionable sensor networks": |-
+  @inproceedings{Li_2025, series={TEI ’25}, title={Plug-n-play e-knit: prototyping large-area e-textiles using machine-knitted magnetically-repositionable sensor networks}, url={http://dx.doi.org/10.1145/3689050.3705973}, DOI={10.1145/3689050.3705973}, booktitle={Proceedings of the Nineteenth International Conference on Tangible, Embedded, and Embodied Interaction}, publisher={ACM}, author={Li, Yifan and Takahashi, Ryo and Yukita, Wakako and Matsutani, Kanata and Caremel, Cedric and Iwamoto, Yuhiro and Lee, Sunghoon and Yokota, Tomoyuki and Someya, Takao and Kawahara, Yoshihiro}, year={2025}, month=Mar, pages={1–7}, collection={TEI ’25} }
+"強化学習による移動関節ヘビ型ロボットの移動パターン獲得": |-
+  @inproceedings{黒田2025x,
+    title = {強化学習による移動関節ヘビ型ロボットの移動パターン獲得},
+    author = {黒田楓馬 and 金田礼人 and 高橋亮 and 亀﨑允啓 and 川原圭博},
+    booktitle = {情報処理学会 総合大会},
+    note = {5J-05},
+    address = {大阪},
+    year = {2025},
+    month = mar
+  }
+? |-
+  Friction Jointing of Distributed Rigid Capacitors to Stretchable Liquid Metal Coil for Full-Body Wireless Charging Clothing
+: |-
+  @inproceedings{Sato_2025, title={Friction Jointing Of Distributed Rigid Capacitors To Stretchable Liquid Metal Coil For Full-Body Wireless Charging Clothing}, url={http://dx.doi.org/10.1109/mems61431.2025.10917417}, DOI={10.1109/mems61431.2025.10917417}, booktitle={2025 IEEE 38th International Conference on Micro Electro Mechanical Systems (MEMS)}, publisher={IEEE}, author={Sato, Takashi and Watanabe, Shinto and Takahashi, Ryo and Yukita, Wakako and Yokota, Tomoyuki and Someya, Takao and Kawahara, Yoshihito and Iwase, Eiji and Kurumida, Junya}, year={2025}, month=Jan, pages={181–184} }
+"picoRing: バッテリーレスな指輪型入力デバイス": |-
+  @inproceedings{takahashi2024picoring,
+    title = {picoRing: バッテリーレスな指輪型入力デバイス},
+    author = {R. Takahashi and E. Whitmire and R. Boldu and S. Ng and W. Kienzle and H. Benko},
+    booktitle = {第32回インタラクティブシステムとソフトウェアに関するワークショップ(WISS2024)},
+    note = {国際学会招待発表枠},
+    address = {日本},
+    year = {2024},
+    month = dec
+  }
+"全身無線給電服に向けた分散コンデンサ付き液体金属メアンダ配線の検討": |-
+  @inproceedings{佐藤2024x,
+    title = {全身無線給電服に向けた分散コンデンサ付き液体金属メアンダ配線の検討},
+    author = {佐藤峻 and 渡邉慎人 and 高橋亮 and 川原圭博 and 岩瀬英治 and 来見田淳也},
+    booktitle = {第15 回マイクロ・ナノ工学シンポジウム},
+    note = {マイクロナノシステム},
+    address = {仙台},
+    year = {2024},
+    month = nov
+  }
+"医療デジタルツインの実現に向けた全身無線通信・給電服の設計": |-
+  @inproceedings{高橋2024x,
+    title = {医療デジタルツインの実現に向けた全身無線通信・給電服の設計},
+    author = {高橋亮 and 野田聡人 and 韓燦教 and 横田知之 and 染谷隆夫 and 川原圭博},
+    booktitle = {超知性ネットワーキングに関する分野横断型研究会(RISING)},
+    note = {41.0},
+    address = {北海道},
+    year = {2024},
+    month = nov
+  }
+"picoRing: battery-free rings for subtle thumb-to-index input": |-
+  @inproceedings{Takahashi_2024, series={UIST ’24}, title={picoRing: battery-free rings for subtle thumb-to-index input}, url={http://dx.doi.org/10.1145/3654777.3676365}, DOI={10.1145/3654777.3676365}, booktitle={Proceedings of the 37th Annual ACM Symposium on User Interface Software and Technology}, publisher={ACM}, author={Takahashi, Ryo and Whitmire, Eric and Boldu, Roger and Ng, Shiu and Kienzle, Wolf and Benko, Hrvoje}, year={2024}, month=Oct, pages={1–11}, collection={UIST ’24} }
+"自在関節索状ロボットのインナーワイヤレス化に向けた無線給電ソフトロボットスキンの検討": |-
+  @inproceedings{黒田2024x,
+    title = {自在関節索状ロボットのインナーワイヤレス化に向けた無線給電ソフトロボットスキンの検討},
+    author = {黒田楓馬 and 高橋亮 and 金田礼人 and 佐藤峻 and 亀﨑允啓 and 川原圭博},
+    booktitle = {第42回日本ロボット学会学術講演会},
+    note = {1C2-02},
+    address = {大阪},
+    year = {2024},
+    month = sep
+  }
+"Body-scale wireless charging via meandered textile coil for continuous full-body electric skin": |-
+  @inproceedings{takahashi2024bodyscale,
+    title = {Body-scale wireless charging via meandered textile coil for continuous full-body electric skin},
+    author = {R. Takahashi and T. Sato and W. Yukita and T. Yokota and T. Someya and E. Iwase and Y. Kawahara},
+    booktitle = {The 7th event of THE YOUNG RESEARCHERS SOCIETY FOR FLEXIBLE AND STRETCHABLE ELECTRONICS},
+    address = {Osaka,Japan},
+    year = {2024},
+    month = may
+  }
+"メアンダコイル++:継続的なウェアラブルコンピューティングのための衣類全面での安全で高効率な無線給電": |-
+  @article{高橋2023x,
+    title = {メアンダコイル++:継続的なウェアラブルコンピューティングのための衣類全面での安全で高効率な無線給電},
+    author = {高橋亮 and 雪田和歌子 and 横田知之 and 染谷隆夫 and 川原圭博},
+    journal = {コンピュータソフトウェア(サイバー増大号)},
+    note = {Vol.40, No.3, pp. 113-122},
+    year = {2023},
+    month = aug
+  }
+"Meander Coil++: A Body-scale Wireless Power Transmission using Safe-to-body and Energy-efficient Transmitter Coil": |-
+  @inproceedings{Takahashi_2022, series={CHI ’22}, title={Meander Coil++: A Body-scale Wireless Power Transmission Using Safe-to-body and Energy-efficient Transmitter Coil}, url={http://dx.doi.org/10.1145/3491102.3502119}, DOI={10.1145/3491102.3502119}, booktitle={CHI Conference on Human Factors in Computing Systems}, publisher={ACM}, author={Takahashi, Ryo and Yukita, Wakako and Yokota, Tomoyuki and Someya, Takao and Kawahara, Yoshihiro}, year={2022}, month=Apr, pages={1–12}, collection={CHI ’22} }
+"ユビキタスな面状センサアレイに向けた単一センサアレイによる多機能センシングの設計": |-
+  @inproceedings{高橋2022x,
+    title = {ユビキタスな面状センサアレイに向けた単一センサアレイによる多機能センシングの設計},
+    author = {高橋亮 and 雪田和歌子 and 横田知之 and 染谷隆夫 and 川原圭博},
+    booktitle = {信学総大 2022},
+    note = {B-15},
+    address = {オンライン},
+    year = {2022},
+    month = mar
+  }
+"Twin Meander Coil: Sensitive Readout of Battery-free On-body Wireless Sensors Using Body-scale Meander Coils": |-
+  @article{Takahashi_2021, title={Twin Meander Coil: Sensitive Readout of Battery-free On-body Wireless Sensors Using Body-scale Meander Coils}, volume={5}, ISSN={2474-9567}, url={http://dx.doi.org/10.1145/3494996}, DOI={10.1145/3494996}, number={4}, journal={Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies}, publisher={Association for Computing Machinery (ACM)}, author={Takahashi, Ryo and Yukita, Wakako and Sasatani, Takuya and Yokota, Tomoyuki and Someya, Takao and Kawahara, Yoshihiro}, year={2021}, month=Dec, pages={1–21} }
+"Surface Routing for Wireless Power Transfer using 2-D Relay Resonator Arrays": |-
+  @article{Morita_2021, title={Surface Routing for Wireless Power Transfer Using 2-D Relay Resonator Arrays}, volume={9}, ISSN={2169-3536}, url={http://dx.doi.org/10.1109/ACCESS.2021.3115143}, DOI={10.1109/access.2021.3115143}, journal={IEEE Access}, publisher={Institute of Electrical and Electronics Engineers (IEEE)}, author={Morita, Masahiro and Sasatani, Takuya and Takahashi, Ryo and Kawahara, Yoshihiro}, year={2021}, pages={133102–133110} }
+"衣服スケールのメアンダコイルによるバッテリレスセンサの高感度な無線読み取り手法": |-
+  @inproceedings{高橋2021x,
+    title = {衣服スケールのメアンダコイルによるバッテリレスセンサの高感度な無線読み取り手法},
+    author = {高橋亮 and 雪田和歌子 and 笹谷拓也 and 横田知之 and 染谷隆夫 and 川原圭博},
+    booktitle = {UBI研究会},
+    note = {第71回},
+    address = {オンライン},
+    year = {2021},
+    month = sep
+  }
+"衣類全面での無線給電に向けた人体に安全な送電コイルの設計": |-
+  @inproceedings{高橋2021x,
+    title = {衣類全面での無線給電に向けた人体に安全な送電コイルの設計},
+    author = {高橋亮 and 雪田和歌子 and 横田知之 and 染谷隆夫 and 川原圭博},
+    booktitle = {信学ソ大 2021},
+    note = {B-15},
+    address = {オンライン},
+    year = {2021},
+    month = sep
+  }
+"バッテリレスなウェアラブルの無線センシングに向けた衣類型リーダコイルの設計": |-
+  @inproceedings{高橋2021x,
+    title = {バッテリレスなウェアラブルの無線センシングに向けた衣類型リーダコイルの設計},
+    author = {高橋亮 and 雪田和歌子 and 笹谷拓也 and 横田知之 and 染谷隆夫 and 川原圭博},
+    booktitle = {信学総大 2021},
+    note = {B-15-23},
+    address = {Online},
+    year = {2021},
+    month = mar
+  }
+"TelemetRing: A Batteryless and Wireless Ring-Shaped Keyboard using Passive Inductive Telemetry": |-
+  @inproceedings{Takahashi_2020, series={UIST ’20}, title={TelemetRing: A Batteryless and Wireless Ring-shaped Keyboard using Passive Inductive Telemetry}, url={http://dx.doi.org/10.1145/3379337.3415873}, DOI={10.1145/3379337.3415873}, booktitle={Proceedings of the 33rd Annual ACM Symposium on User Interface Software and Technology}, publisher={ACM}, author={Takahashi, Ryo and Fukumoto, Masaaki and Han, Changyo and Sasatani, Takuya and Narusue, Yoshiaki and Kawahara, Yoshihiro}, year={2020}, month=Oct, pages={1161–1168}, collection={UIST ’20} }
+"体内への電磁界暴露を抑制可能な無線給電・通信用テキスタイルコイルの設計": |-
+  @inproceedings{高橋2020x,
+    title = {体内への電磁界暴露を抑制可能な無線給電・通信用テキスタイルコイルの設計},
+    author = {高橋亮 and 笹谷拓也 and 川原圭博},
+    booktitle = {信学ソ大 2020},
+    note = {B-15},
+    address = {オンライン},
+    year = {2020},
+    month = sep
+  }
+"マルチモード準静空洞共振器を用いた無線給電における中継器の構成についての検討": |-
+  @inproceedings{平井2020x,
+    title = {マルチモード準静空洞共振器を用いた無線給電における中継器の構成についての検討},
+    author = {平井雄太 and 笹谷拓也 and 高橋亮 and 川原圭博},
+    booktitle = {信学総大 2020},
+    note = {B-20-11},
+    address = {広島,日本},
+    year = {2020},
+    month = mar
+  }
+"ワイヤレスな指輪型キーボードのバッテリレス化手法": |-
+  @inproceedings{高橋2020x,
+    title = {ワイヤレスな指輪型キーボードのバッテリレス化手法},
+    author = {高橋亮 and 韓燦教 and 笹谷拓也 and 成末義哲 and 福本雅朗 and 川原圭博 and 苗村健},
+    booktitle = {信学総大 2020},
+    note = {B-15-13},
+    address = {広島,日本},
+    year = {2020},
+    month = mar
+  }
+"Topology Construction Protocol for Wireless Power Transfer System with a 2-D Relay Resonator Array": |-
+  @inproceedings{Morita_2020, title={Topology Construction Protocol for Wireless Power Transfer System with a 2-D Relay Resonator Array}, url={http://dx.doi.org/10.1109/ICCE46568.2020.9043052}, DOI={10.1109/icce46568.2020.9043052}, booktitle={2020 IEEE International Conference on Consumer Electronics (ICCE)}, publisher={IEEE}, author={Morita, Masahiro and Sasatani, Takuya and Takahashi, Ryo and Kawahara, Yoshihiro}, year={2020}, month=Jan, pages={1–5} }
+"A Cuttable Wireless Power Transfer Sheet": |-
+  @article{Takahashi_2018, title={A Cuttable Wireless Power Transfer Sheet}, volume={2}, ISSN={2474-9567}, url={http://dx.doi.org/10.1145/3287068}, DOI={10.1145/3287068}, number={4}, journal={Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies}, publisher={Association for Computing Machinery (ACM)}, author={Takahashi, Ryo and Sasatani, Takuya and Okuya, Fuminori and Narusue, Yoshiaki and Kawahara, Yoshihiro}, year={2018}, month=Dec, pages={1–25} }
+"Demo: Design of Cuttable Wireless Power Transfer Sheet": |-
+  @inproceedings{Takahashi_2018, series={UbiComp ’18}, title={Design of Cuttable Wireless Power Transfer Sheet}, url={http://dx.doi.org/10.1145/3267305.3267570}, DOI={10.1145/3267305.3267570}, booktitle={Proceedings of the 2018 ACM International Joint Conference and 2018 International Symposium on Pervasive and Ubiquitous Computing and Wearable Computers}, publisher={ACM}, author={Takahashi, Ryo and Sasatani, Takuya and Okuya, Fuminori and Narusue, Yoshiaki and Kawahara, Yoshihiro}, year={2018}, month=Oct, pages={456–459}, collection={UbiComp ’18} }
+"1MHz磁界共振結合方式を用いた無線給電プラレールの設計と製作": |-
+  @inproceedings{角谷2018mhz,
+    title = {1MHz磁界共振結合方式を用いた無線給電プラレールの設計と製作},
+    author = {角谷和宣 and 西澤勇輝 and 笹谷拓也 and 高橋亮 and 成末義哲 and 川原圭博},
+    booktitle = {信学技報},
+    note = {Vol. 118, No. 227, WPT2018-50, pp. 111-114},
+    address = {京都},
+    year = {2018},
+    month = oct
+  }
+"切断により形状の変更が可能な無線電力伝送シートの設計の一検討": |-
+  @inproceedings{高橋2018x,
+    title = {切断により形状の変更が可能な無線電力伝送シートの設計の一検討},
+    author = {高橋亮 and 笹谷拓也 and 奥谷文徳 and 成末義哲 and 川原圭博},
+    booktitle = {信学総大 2018},
+    note = {B-21-19},
+    address = {東京, 日本},
+    year = {2018},
+    month = mar
+  }

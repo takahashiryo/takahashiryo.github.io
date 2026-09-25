@@ -62,6 +62,8 @@
 {%- comment %} 手元で公開する PDF は _data/pdf.yml（タイトル→パス）で持つ {% endcomment -%}
 {%- assign pdf = site.data.pdf[p.title] -%}
 {%- assign yt = site.data.youtube[p.title] -%}
+{%- comment %} BibTeX は _data/bibtex.yml（scripts/build_bibtex.py が生成）。ピルで折りたたみ表示 {% endcomment -%}
+{%- assign bib = site.data.bibtex[p.title] -%}
 
 {%- comment %} 写真はトップの一覧だけ（thumb=true のとき）。バッジとは別のフラグにしている {% endcomment -%}
 {%- comment %} Liquid では空文字も真になるので、初期値は false にする {% endcomment -%}
@@ -105,13 +107,15 @@
     </div>
     {%- endif -%}
     {%- if p.award != "" %}<div class="entry-award">{{ p.award | escape }}</div>{% endif -%}
-    {%- if doi != "" or arx or pdf or yt -%}
+    {%- if doi != "" or arx or pdf or yt or bib -%}
     <div class="entry-links">
       {%- if pdf %}<a class="pill" href="{{ pdf | relative_url }}" target="_blank" rel="noopener">PDF</a>{% endif -%}
       {%- if doi != "" %}<a class="pill" href="https://doi.org/{{ doi }}" target="_blank" rel="noopener">DOI</a>{% endif -%}
       {%- if arx %}<a class="pill" href="{{ arx }}" target="_blank" rel="noopener">arXiv</a>{% endif -%}
       {%- if yt %}<a class="pill" href="{{ yt }}" target="_blank" rel="noopener">YouTube</a>{% endif -%}
+      {%- if bib %}<button class="pill bib-toggle" type="button" aria-expanded="false">BibTeX</button>{% endif -%}
     </div>
+    {%- if bib %}<pre class="bibtex" hidden>{{ bib | strip | escape }}</pre>{% endif -%}
     {%- endif -%}
   </div>
 </div>

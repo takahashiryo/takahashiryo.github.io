@@ -149,6 +149,17 @@
   document.addEventListener('DOMContentLoaded', fit);
   window.addEventListener('load', fit);
 
+  /* BibTeX ピル。同じ論文の .bibtex を出し入れする（entry-body 内の次の pre） */
+  document.addEventListener('click', function (e) {
+    var btn = e.target.closest && e.target.closest('.bib-toggle');
+    if (!btn) return;
+    var pre = btn.closest('.entry-body') && btn.closest('.entry-body').querySelector('.bibtex');
+    if (!pre) return;
+    pre.hidden = !pre.hidden;
+    btn.classList.toggle('is-open', !pre.hidden);
+    btn.setAttribute('aria-expanded', pre.hidden ? 'false' : 'true');
+  });
+
   /* 一覧ページの種別フィルタ。head で走るわけではないが委譲で統一しておく */
   document.addEventListener('click', function (e) {
     var btn = e.target.closest && e.target.closest('.filter-btn');

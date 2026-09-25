@@ -279,6 +279,14 @@
     background: #eef3fb; color: var(--blue);
   }
   .pill:hover { background: var(--blue); color: #fff; text-decoration: none; }
+  button.pill { font: inherit; cursor: pointer; }
+  .pill.is-open { background: var(--blue); color: #fff; }
+  .bibtex {
+    margin: 0.6em 0 0; padding: 0.7em 0.9em; font-size: 0.74em; line-height: 1.6;
+    white-space: pre-wrap; word-break: break-all; background: #f6f8fa; border: 1px solid var(--line); border-radius: 6px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; color: var(--ink);
+  }
+  .bibtex[hidden] { display: none !important; }
 
   /* トップの論文一覧に出す写真。cronos_web の見せ方に合わせている。
      論文の図は切り取ると読めなくなるので cover ではなく contain で全体を出す。 */
