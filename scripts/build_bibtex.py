@@ -36,6 +36,15 @@ def fetch_bibtex(doi):
     except Exception as e:
         print(f"  ! {doi}: {e}", file=sys.stderr); return None
 
+def pretty(bib):
+    """Crossref の 1 行 BibTeX を 1 フィールド 1 行に整形する。"""
+    bib = bib.strip()
+    m = re.match(r"(@\w+\{[^,]+,)\s*(.*)\}\s*$", bib, re.S)
+    if not m: return bib
+    head, body = m.group(1), m.group(2).strip().rstrip(",")
+    fields = re.split(r",\s+(?=[A-Za-z_]+=)", body)
+    return head + "\n" + ",\n".join("  " + f.strip() for f in fields) + "\n}"
+
 def clean_authors(a):
     a = re.sub(r"[*†]", "", a)
     if "," in a and " " not in a.split(",")[0].strip():   # 日本語著者（カンマ区切り、空白なし）
@@ -77,7 +86,7 @@ def main():
         doi = find_doi(r, doi_map)
         bib = fetch_bibtex(doi) if doi else None
         if bib and bib.startswith("@"):
-            n_fetch += 1; time.sleep(0.3)
+            bib = pretty(bib); n_fetch += 1; time.sleep(0.3)
         else:
             bib = compose(r); n_comp += 1
         out[t] = bib
