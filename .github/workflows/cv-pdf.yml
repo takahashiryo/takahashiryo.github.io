@@ -63,7 +63,18 @@ jobs:
             git config user.email "github-actions[bot]@users.noreply.github.com"
             git add cv.pdf cv-ja.pdf
             git commit -m "chore: CV の PDF を更新 [skip ci]"
-            git push
+            # 直後に別の push が入ると main が進んで push が弾かれる。
+            # 取り込み直して再試行し、それでも駄目なら新しい push 側の実行に任せて成功扱いにする
+            # （PDF は毎回作り直されるので、取りこぼしても次の実行で最新になる）。
+            ok=0
+            for i in 1 2 3; do
+              if git pull --rebase origin main && git push; then ok=1; break; fi
+              git rebase --abort 2>/dev/null || true
+              sleep 5
+            done
+            if [ "$ok" != "1" ]; then
+              echo "::notice::main が先に進んだため PDF の push を見送った（後続の実行が更新する）"
+            fi
           else
             echo "変更なし"
           fi
