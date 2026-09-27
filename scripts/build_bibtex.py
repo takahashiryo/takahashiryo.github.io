@@ -38,7 +38,8 @@ def fetch_bibtex(doi):
 
 def pretty(bib):
     """Crossref の 1 行 BibTeX を 1 フィールド 1 行に整形する。"""
-    bib = bib.strip()
+    import html as _html
+    bib = _html.unescape(bib.strip()).replace(" & ", " \\& ")
     m = re.match(r"(@\w+\{[^,]+,)\s*(.*)\}\s*$", bib, re.S)
     if not m: return bib
     head, body = m.group(1), m.group(2).strip().rstrip(",")
