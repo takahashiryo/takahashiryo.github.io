@@ -12,6 +12,7 @@
   {%- endif -%}
 {%- endunless -%}
 {%- assign au = au_src | escape -%}
+{%- assign au = au | replace: "R.Takahashi", "R. Takahashi" -%}
 {%- assign au = au | replace: "R. Takahashi", "<span class='me'>R. Takahashi</span>" -%}
 {%- assign au = au | replace: "Ryo Takahashi", "<span class='me'>Ryo Takahashi</span>" -%}
 {%- assign au = au | replace: "高橋亮", "<span class='me'>高橋亮</span>" -%}
