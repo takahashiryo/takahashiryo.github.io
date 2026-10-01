@@ -23,7 +23,7 @@
   {%- endcomment -%}
   {%- comment %}
     このテーマの論文に YouTube 動画（_data/youtube.yml）があれば、上の枠は動画を最大3本、
-    新しい順に並べる。同じ動画を複数の論文が指していても1回だけ。動画が1本も無いテーマは
+    新しい順に並べる。出すのはサムネイルで、1秒ごとに切り替わり、押すとその場で再生する（JS）。同じ動画を複数の論文が指していても1回だけ。動画が1本も無いテーマは
     従来どおり論文の一枚絵のスライドにする。
   {%- endcomment -%}
   {%- assign nvid = 0 -%}
@@ -42,7 +42,10 @@
             {%- if hit contains "1" -%}
               {%- assign vseen = vseen | append: vmark %}
     <figure class="slide{% if nvid == 0 %} is-on{% endif %}">
-      <div class="slide-video"><iframe src="https://www.youtube-nocookie.com/embed/{{ vid }}?rel=0" title="{{ p.title | escape }}" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+      <button class="slide-video" type="button" data-vid="{{ vid }}" data-title="{{ p.title | escape }}" aria-label="▶ {{ p.title | escape }}">
+        <img src="https://i.ytimg.com/vi/{{ vid }}/maxresdefault.jpg" data-fallback="https://i.ytimg.com/vi/{{ vid }}/hqdefault.jpg" alt="{{ p.title | escape }}">
+        <span class="slide-play" aria-hidden="true"></span>
+      </button>
       <figcaption>
         {%- if p.url and p.url != "" -%}
           <a href="{{ p.url }}">{{ p.title }}</a>
@@ -78,6 +81,8 @@
     {%- endif -%}
   {%- endfor -%}
 
+  <div class="research-top">
+  <div class="research-top-fig">
   {%- if nvid > 0 %}
   <div class="research-fig research-slides research-videos" data-slides="{{ nvid }}">
     {{ vslides }}
@@ -118,10 +123,14 @@
     <img src="{{ '/images/research/' | append: r.image | relative_url }}" alt="{{ body.title }}">
   </div>
   {%- endif %}
+  </div>
+  <div class="research-top-text">
   <p class="research-lead">{{ body.body }}</p>
   {%- for para in body.detail %}
   <p class="research-detail">{{ para }}</p>
   {%- endfor %}
+  </div>
+  </div>
 
   {%- assign n = 0 -%}
   {%- assign pubs = site.data.publications -%}

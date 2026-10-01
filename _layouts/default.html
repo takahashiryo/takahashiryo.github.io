@@ -251,47 +251,78 @@
     });
   });
 
-  /* 研究テーマの詳細ページ、上の図。論文の一枚絵を数秒ごとに切り替える。
-     丸印を押せば手で送れる。1枚しかないときは何もしない。 */
+  /* 研究テーマの詳細ページ、上の図。
+     一枚絵のスライドは 5 秒ごと、動画（YouTube のサムネイル）は 1 秒ごとに切り替える。
+     丸印で手送り。動画はサムネイルを押すとその場で再生し、再生中は切り替えを止める。
+     1枚しかないときは切り替えない（動画の再生だけ効く）。 */
   document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('.research-slides').forEach(function (box) {
       var slides = [].slice.call(box.querySelectorAll('.slide'));
-      if (slides.length < 2) return;
-      var dots = document.createElement('div');
-      dots.className = 'slide-dots';
-      var cur = 0, timer = null;
-      /* 動画スライドは自動で送らない（再生中に切り替わるため）。丸印でだけ切り替える */
       var isVideo = box.classList.contains('research-videos');
+      var cur = 0, timer = null, playing = false, dots = null;
+
+      function stopVideo() {
+        if (!playing) return;
+        box.querySelectorAll('.slide-video.is-playing').forEach(function (v) {
+          var f = v.querySelector('iframe'); if (f) v.removeChild(f);
+          v.classList.remove('is-playing');
+        });
+        playing = false;
+      }
       function show(i) {
-        var prev = cur;
         cur = (i + slides.length) % slides.length;
         slides.forEach(function (s, j) { s.classList.toggle('is-on', j === cur); });
-        [].forEach.call(dots.children, function (d, j) { d.classList.toggle('is-on', j === cur); });
-        /* 隠した動画は読み込み直して再生を止める */
-        if (isVideo && prev !== cur) {
-          var f = slides[prev].querySelector('iframe');
-          if (f) f.src = f.src;
-        }
+        if (dots) [].forEach.call(dots.children, function (d, j) { d.classList.toggle('is-on', j === cur); });
       }
-      function start() { stop(); if (isVideo) return; timer = setInterval(function () { show(cur + 1); }, 5000); }
       function stop() { if (timer) { clearInterval(timer); timer = null; } }
-      slides.forEach(function (s, j) {
-        var b = document.createElement('button');
-        b.type = 'button';
-        b.setAttribute('aria-label', (j + 1) + ' / ' + slides.length);
-        b.addEventListener('click', function () { show(j); start(); });
-        dots.appendChild(b);
-      });
-      box.appendChild(dots);
-      show(0);
-      /* 読んでいる間に切り替わると邪魔なので、乗せている間は止める */
-      box.addEventListener('mouseenter', stop);
-      box.addEventListener('mouseleave', start);
-      /* 見えていないタブでは回さない */
-      document.addEventListener('visibilitychange', function () {
-        if (document.hidden) stop(); else start();
-      });
-      start();
+      function start() {
+        stop();
+        if (slides.length < 2 || playing) return;
+        timer = setInterval(function () { show(cur + 1); }, isVideo ? 1000 : 5000);
+      }
+
+      if (isVideo) {
+        /* maxresdefault が無い動画は小さな代替画像が返るので hqdefault に差し替える */
+        box.querySelectorAll('.slide-video img').forEach(function (im) {
+          function check() { if (im.naturalWidth && im.naturalWidth <= 120 && im.dataset.fallback) { im.src = im.dataset.fallback; im.dataset.fallback = ''; } }
+          if (im.complete) check(); else im.addEventListener('load', check);
+        });
+        box.addEventListener('click', function (e) {
+          var v = e.target.closest('.slide-video');
+          if (!v || v.classList.contains('is-playing')) return;
+          stopVideo();
+          var f = document.createElement('iframe');
+          f.src = 'https://www.youtube-nocookie.com/embed/' + v.getAttribute('data-vid') + '?autoplay=1&rel=0';
+          f.title = v.getAttribute('data-title') || '';
+          f.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+          f.allowFullscreen = true;
+          v.appendChild(f);
+          v.classList.add('is-playing');
+          playing = true; stop();
+        });
+      }
+
+      if (slides.length >= 2) {
+        dots = document.createElement('div');
+        dots.className = 'slide-dots';
+        slides.forEach(function (s, j) {
+          var b = document.createElement('button');
+          b.type = 'button';
+          b.setAttribute('aria-label', (j + 1) + ' / ' + slides.length);
+          b.addEventListener('click', function () { stopVideo(); show(j); start(); });
+          dots.appendChild(b);
+        });
+        box.appendChild(dots);
+        show(0);
+        /* 読んでいる・押そうとしている間に切り替わると邪魔なので、乗せている間は止める */
+        box.addEventListener('mouseenter', stop);
+        box.addEventListener('mouseleave', start);
+        /* 見えていないタブでは回さない */
+        document.addEventListener('visibilitychange', function () {
+          if (document.hidden) stop(); else start();
+        });
+        start();
+      }
     });
   });
 

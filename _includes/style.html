@@ -393,7 +393,11 @@
   }
 
   /* ── 研究テーマの詳細ページ ── */
-  .research-page { max-width: 820px; }
+  /* 幅いっぱいを使う。上段は 図（動画）｜説明文 の2段組、狭い画面では縦に積む */
+  .research-page { max-width: none; }
+  .research-top { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 2.4em; align-items: start; }
+  .research-top .research-fig { margin: 0; }
+  @media (max-width: 1000px) { .research-top { grid-template-columns: 1fr; gap: 1.4em; } }
   .research-fig { margin: 0 0 1.6em; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; background: #f3f5f7; }
   .research-fig img { display: block; width: 100%; aspect-ratio: 16 / 8; object-fit: cover; }
 
@@ -421,8 +425,24 @@
   }
   .slide-dots button.is-on { background: var(--blue); }
   /* 動画スライド（YouTube）。丸印は再生画面に重ならないよう下に出す */
-  .slide-video { aspect-ratio: 16 / 9; background: #000; border-bottom: 1px solid var(--line); }
-  .slide-video iframe { display: block; width: 100%; height: 100%; border: 0; }
+  .slide-video {
+    position: relative; display: block; width: 100%; padding: 0; margin: 0; border: 0;
+    aspect-ratio: 16 / 9; background: #000; border-bottom: 1px solid var(--line); cursor: pointer; overflow: hidden;
+  }
+  .research-slides .slide-video img { width: 100%; height: 100%; aspect-ratio: auto; object-fit: cover; border: 0; background: #000; }
+  .slide-video iframe { position: absolute; inset: 0; display: block; width: 100%; height: 100%; border: 0; }
+  /* 再生ボタン（赤い角丸に白い三角） */
+  .slide-play {
+    position: absolute; left: 50%; top: 50%; width: 68px; height: 48px; margin: -24px 0 0 -34px;
+    border-radius: 12px; background: rgba(255, 0, 0, 0.9); transition: transform 0.15s;
+  }
+  .slide-play::after {
+    content: ""; position: absolute; left: 27px; top: 14px;
+    border-style: solid; border-width: 10px 0 10px 18px; border-color: transparent transparent transparent #fff;
+  }
+  .slide-video:hover .slide-play { transform: scale(1.08); }
+  .slide-video.is-playing { cursor: default; }
+  .slide-video.is-playing .slide-play, .slide-video.is-playing img { display: none; }
   .research-videos .slide-dots { position: static; justify-content: center; background: none; padding: 0 0 0.8em; }
   .research-videos .slide-dots button { width: 9px; height: 9px; }
   .research-detail { margin: 1.1em 0 0; font-size: 0.93em; line-height: 1.95; color: var(--ink); }
