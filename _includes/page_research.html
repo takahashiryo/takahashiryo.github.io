@@ -26,11 +26,13 @@
     新しい順に並べる。出すのはサムネイルで、1秒ごとに切り替わり、押すとその場で再生する（JS）。同じ動画を複数の論文が指していても1回だけ。動画が1本も無いテーマは
     従来どおり論文の一枚絵のスライドにする。
   {%- endcomment -%}
+  {%- comment %} 本数の上限は profile.yml の videos（既定 3） {% endcomment -%}
+  {%- assign vmax = r.videos | default: 3 -%}
   {%- assign nvid = 0 -%}
   {%- assign vseen = "|" -%}
   {%- capture vslides -%}
     {%- for p in site.data.publications -%}
-      {%- if nvid < 3 -%}
+      {%- if nvid < vmax -%}
         {%- assign yt = site.data.youtube[p.title] -%}
         {%- if yt -%}
           {%- assign vid = "" -%}
