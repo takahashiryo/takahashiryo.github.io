@@ -420,6 +420,11 @@
     background: #c3cad2; cursor: pointer;
   }
   .slide-dots button.is-on { background: var(--blue); }
+  /* 動画スライド（YouTube）。丸印は再生画面に重ならないよう下に出す */
+  .slide-video { aspect-ratio: 16 / 9; background: #000; border-bottom: 1px solid var(--line); }
+  .slide-video iframe { display: block; width: 100%; height: 100%; border: 0; }
+  .research-videos .slide-dots { position: static; justify-content: center; background: none; padding: 0 0 0.8em; }
+  .research-videos .slide-dots button { width: 9px; height: 9px; }
   .research-detail { margin: 1.1em 0 0; font-size: 0.93em; line-height: 1.95; color: var(--ink); }
   .research-lead { margin: 0; font-size: 0.98em; line-height: 1.95; }
   .research-page .cv-head { margin: 2.4em 0 0.5em; }

@@ -21,6 +21,45 @@
     論文があるので、seen / shown に印を貯めて二度出さないようにしている。
     図のある論文が1本もなければテーマ写真に戻す。
   {%- endcomment -%}
+  {%- comment %}
+    このテーマの論文に YouTube 動画（_data/youtube.yml）があれば、上の枠は動画を最大3本、
+    新しい順に並べる。同じ動画を複数の論文が指していても1回だけ。動画が1本も無いテーマは
+    従来どおり論文の一枚絵のスライドにする。
+  {%- endcomment -%}
+  {%- assign nvid = 0 -%}
+  {%- assign vseen = "|" -%}
+  {%- capture vslides -%}
+    {%- for p in site.data.publications -%}
+      {%- if nvid < 3 -%}
+        {%- assign yt = site.data.youtube[p.title] -%}
+        {%- if yt -%}
+          {%- assign vid = "" -%}
+          {%- if yt contains "watch?v=" -%}{%- assign vid = yt | split: "watch?v=" | last | split: "&" | first -%}
+          {%- elsif yt contains "youtu.be/" -%}{%- assign vid = yt | split: "youtu.be/" | last | split: "?" | first -%}{%- endif -%}
+          {%- assign vmark = vid | append: "|" -%}
+          {%- if vid != "" -%}{%- unless vseen contains vmark -%}
+            {%- capture hit %}{% include pub_match.html p=p r=r %}{% endcapture -%}
+            {%- if hit contains "1" -%}
+              {%- assign vseen = vseen | append: vmark %}
+    <figure class="slide{% if nvid == 0 %} is-on{% endif %}">
+      <div class="slide-video"><iframe src="https://www.youtube-nocookie.com/embed/{{ vid }}?rel=0" title="{{ p.title | escape }}" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+      <figcaption>
+        {%- if p.url and p.url != "" -%}
+          <a href="{{ p.url }}">{{ p.title }}</a>
+        {%- else -%}
+          {{ p.title }}
+        {%- endif -%}
+        {%- if p.venue and p.venue != "" %}<span class="slide-venue">{{ p.venue }}{% if p.year and p.year != "" %}, {{ p.year }}{% endif %}</span>{% endif -%}
+      </figcaption>
+    </figure>
+              {%- assign nvid = nvid | plus: 1 -%}
+            {%- endif -%}
+          {%- endunless -%}{%- endif -%}
+        {%- endif -%}
+      {%- endif -%}
+    {%- endfor -%}
+  {%- endcapture -%}
+
   {%- assign nfig = 0 -%}
   {%- assign seen = "|" -%}
   {%- for p in site.data.publications -%}
@@ -39,7 +78,11 @@
     {%- endif -%}
   {%- endfor -%}
 
-  {%- if nfig > 0 %}
+  {%- if nvid > 0 %}
+  <div class="research-fig research-slides research-videos" data-slides="{{ nvid }}">
+    {{ vslides }}
+  </div>
+  {%- elsif nfig > 0 %}
   <div class="research-fig research-slides" data-slides="{{ nfig }}">
     {%- assign i = 0 -%}
     {%- assign shown = "|" -%}

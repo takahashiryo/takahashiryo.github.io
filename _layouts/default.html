@@ -260,12 +260,20 @@
       var dots = document.createElement('div');
       dots.className = 'slide-dots';
       var cur = 0, timer = null;
+      /* 動画スライドは自動で送らない（再生中に切り替わるため）。丸印でだけ切り替える */
+      var isVideo = box.classList.contains('research-videos');
       function show(i) {
+        var prev = cur;
         cur = (i + slides.length) % slides.length;
         slides.forEach(function (s, j) { s.classList.toggle('is-on', j === cur); });
         [].forEach.call(dots.children, function (d, j) { d.classList.toggle('is-on', j === cur); });
+        /* 隠した動画は読み込み直して再生を止める */
+        if (isVideo && prev !== cur) {
+          var f = slides[prev].querySelector('iframe');
+          if (f) f.src = f.src;
+        }
       }
-      function start() { stop(); timer = setInterval(function () { show(cur + 1); }, 5000); }
+      function start() { stop(); if (isVideo) return; timer = setInterval(function () { show(cur + 1); }, 5000); }
       function stop() { if (timer) { clearInterval(timer); timer = null; } }
       slides.forEach(function (s, j) {
         var b = document.createElement('button');
