@@ -54,7 +54,7 @@ Information.xlsx`）から作る古い経路で、いまは使っていない。
 
 | ファイル | 内容 | 由来 |
 | --- | --- | --- |
-| `_data/publications.csv` | 論文62件 | 手元データから生成 |
+| `_data/publications.csv` | 論文63件 | 手元データから生成 |
 | `_data/awards.csv` | 受賞19件 | researchmap API |
 | `_data/talks.csv` | 講演10件 | 手元データから生成 |
 | `_data/i18n.yml` | 3言語の文言 | 手書き |

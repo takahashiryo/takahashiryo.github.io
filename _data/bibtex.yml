@@ -588,6 +588,20 @@
     year = {2020},
     month = sep
   }
+"PneuModule: Using Inflatable Pin Arrays for Reconfigurable Physical Controls on Pressure-Sensitive Touch Surfaces": |-
+  @inproceedings{Han_2020,
+    series={CHI ’20},
+    title={PneuModule: Using Inflatable Pin Arrays for Reconfigurable Physical Controls on Pressure-Sensitive Touch Surfaces},
+    url={http://dx.doi.org/10.1145/3313831.3376838},
+    DOI={10.1145/3313831.3376838},
+    booktitle={Proceedings of the 2020 CHI Conference on Human Factors in Computing Systems},
+    publisher={ACM},
+    author={Han, Changyo and Takahashi, Ryo and Yahagi, Yuchi and Naemura, Takeshi},
+    year={2020},
+    month=Apr,
+    pages={1–14},
+    collection={CHI ’20}
+  }
 "マルチモード準静空洞共振器を用いた無線給電における中継器の構成についての検討": |-
   @inproceedings{平井2020x,
     title = {マルチモード準静空洞共振器を用いた無線給電における中継器の構成についての検討},
