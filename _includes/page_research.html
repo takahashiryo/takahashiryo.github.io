@@ -43,7 +43,8 @@
               {%- assign vseen = vseen | append: vmark %}
     <figure class="slide{% if nvid == 0 %} is-on{% endif %}">
       <button class="slide-video" type="button" data-vid="{{ vid }}" data-title="{{ p.title | escape }}" aria-label="▶ {{ p.title | escape }}">
-        <img src="https://i.ytimg.com/vi/{{ vid }}/maxresdefault.jpg" data-fallback="https://i.ytimg.com/vi/{{ vid }}/hqdefault.jpg" alt="{{ p.title | escape }}">
+        {%- assign vz = site.data.video_zoom[vid] %}
+        <img src="https://i.ytimg.com/vi/{{ vid }}/maxresdefault.jpg" data-fallback="https://i.ytimg.com/vi/{{ vid }}/hqdefault.jpg" alt="{{ p.title | escape }}"{% if vz %} style="transform: scale({{ vz }})"{% endif %}>
         <span class="slide-play" aria-hidden="true"></span>
       </button>
       <figcaption>
