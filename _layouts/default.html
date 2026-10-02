@@ -252,7 +252,7 @@
   });
 
   /* 研究テーマの詳細ページ、上の図。
-     一枚絵のスライドは 5 秒ごと、動画（YouTube のサムネイル）は 1 秒ごとに切り替える。
+     一枚絵も動画（YouTube のサムネイル）も 5 秒ごとに切り替える。切り替えは CSS のフェード。
      丸印で手送り。動画はサムネイルを押すとその場で再生し、再生中は切り替えを止める。
      1枚しかないときは切り替えない（動画の再生だけ効く）。 */
   document.addEventListener('DOMContentLoaded', function () {
@@ -278,7 +278,7 @@
       function start() {
         stop();
         if (slides.length < 2 || playing) return;
-        timer = setInterval(function () { show(cur + 1); }, isVideo ? 1000 : 5000);
+        timer = setInterval(function () { show(cur + 1); }, 5000);
       }
 
       if (isVideo) {

@@ -402,9 +402,15 @@
   .research-fig img { display: block; width: 100%; aspect-ratio: 16 / 8; object-fit: cover; }
 
   /* 上の図。論文の一枚絵を順に切り替える。JS が動かなければ1枚目だけ出る */
-  .research-slides { position: relative; background: #fff; }
-  .research-slides .slide { display: none; margin: 0; }
-  .research-slides .slide.is-on { display: block; }
+  /* スライドは同じマスに重ねて置き、不透明度でフェードイン／アウトさせる。
+     高さはいちばん背の高いスライドに揃うので、切り替えで下の文章が動かない */
+  .research-slides { position: relative; background: #fff; display: grid; }
+  .research-slides .slide {
+    grid-area: 1 / 1; min-width: 0; margin: 0; opacity: 0; visibility: hidden;
+    transition: opacity 0.7s ease, visibility 0s linear 0.7s;
+  }
+  .research-slides .slide.is-on { opacity: 1; visibility: visible; transition: opacity 0.7s ease, visibility 0s; }
+  @media (prefers-reduced-motion: reduce) { .research-slides .slide, .research-slides .slide.is-on { transition: none; } }
   .research-slides .slide img {
     aspect-ratio: 16 / 9; object-fit: contain; background: #f3f5f7;
     border-bottom: 1px solid var(--line);
@@ -443,7 +449,7 @@
   .slide-video:hover .slide-play { transform: scale(1.08); }
   .slide-video.is-playing { cursor: default; }
   .slide-video.is-playing .slide-play, .slide-video.is-playing img { display: none; }
-  .research-videos .slide-dots { position: static; justify-content: center; background: none; padding: 0 0 0.8em; }
+  .research-videos .slide-dots { position: static; grid-row: 2; justify-content: center; background: none; padding: 0 0 0.8em; }
   .research-videos .slide-dots button { width: 9px; height: 9px; }
   .research-detail { margin: 1.1em 0 0; font-size: 0.93em; line-height: 1.95; color: var(--ink); }
   .research-lead { margin: 0; font-size: 0.98em; line-height: 1.95; }
