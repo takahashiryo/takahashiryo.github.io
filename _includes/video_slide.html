@@ -1,0 +1,23 @@
+{%- comment %}
+  研究詳細ページ上部の動画スライド1枚。include.p（論文）, include.vid（YouTube の動画ID）,
+  include.first（最初の1枚なら true。最初だけ表示状態にする）。
+  サムネイルを出し、押すと JS がその場でプレーヤーに差し替える。
+  _data/video_zoom.yml に倍率があればサムネイルを拡大する（黒帯つきの動画用）。
+{% endcomment -%}
+{%- assign sp = include.p -%}
+{%- assign svid = include.vid -%}
+{%- assign vz = site.data.video_zoom[svid] %}
+    <figure class="slide{% if include.first %} is-on{% endif %}">
+      <button class="slide-video" type="button" data-vid="{{ svid }}" data-title="{{ sp.title | escape }}" aria-label="▶ {{ sp.title | escape }}">
+        <img src="https://i.ytimg.com/vi/{{ svid }}/maxresdefault.jpg" data-fallback="https://i.ytimg.com/vi/{{ svid }}/hqdefault.jpg" alt="{{ sp.title | escape }}"{% if vz %} style="transform: scale({{ vz }})"{% endif %}>
+        <span class="slide-play" aria-hidden="true"></span>
+      </button>
+      <figcaption>
+        {%- if sp.url and sp.url != "" -%}
+          <a href="{{ sp.url }}">{{ sp.title }}</a>
+        {%- else -%}
+          {{ sp.title }}
+        {%- endif -%}
+        {%- if sp.venue and sp.venue != "" %}<span class="slide-venue">{{ sp.venue }}{% if sp.year and sp.year != "" %}, {{ sp.year }}{% endif %}</span>{% endif -%}
+      </figcaption>
+    </figure>

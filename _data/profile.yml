@@ -103,6 +103,7 @@ research:
         - "这台机器人由一串柔软的被动连杆构成，电机关节沿机体内部的齿条移动，使较少的关节也能实现多关节式弯曲。关节移动会导致布线缠绕，因此改由柔软的机器人皮肤无线供电。整机 1.3 kg、功耗 7.6 W；若结合来自地面或织物的供电，即可长期无电池运行。"
   - id: "digital-fabrication"
     image: "digital-fabrication.jpg"
+    video_first: ["eBqJG65DhPQ"]     # 詳細ページ上部の動画で先頭に出すもの（YouTube の動画ID）。Cuttable WPT Sheet
     match: ["cuttable", "3d-printing", "plug-n-play", "prototyping", "pneumodule",
             "3d印刷", "水溶性", "切断"]
     ja:

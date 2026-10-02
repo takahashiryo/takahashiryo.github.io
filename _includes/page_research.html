@@ -23,43 +23,44 @@
   {%- endcomment -%}
   {%- comment %}
     このテーマの論文に YouTube 動画（_data/youtube.yml）があれば、上の枠は動画を全部、
-    新しい順に並べる（本数の上限なし）。出すのはサムネイルで、5秒ごとにフェードで切り替わり、押すとその場で再生する（JS）。同じ動画を複数の論文が指していても1回だけ。動画が1本も無いテーマは
+    新しい順に並べる（本数の上限なし。profile.yml の video_first に動画IDを書くとそれを先頭にする）。出すのはサムネイルで、5秒ごとにフェードで切り替わり、押すとその場で再生する（JS）。同じ動画を複数の論文が指していても1回だけ。動画が1本も無いテーマは
     従来どおり論文の一枚絵のスライドにする。
   {%- endcomment -%}
   {%- assign nvid = 0 -%}
   {%- assign vseen = "|" -%}
   {%- capture vslides -%}
-    {%- for p in site.data.publications -%}
-      {%- if true -%}
-        {%- assign yt = site.data.youtube[p.title] -%}
-        {%- if yt -%}
-          {%- assign vid = "" -%}
-          {%- if yt contains "watch?v=" -%}{%- assign vid = yt | split: "watch?v=" | last | split: "&" | first -%}
-          {%- elsif yt contains "youtu.be/" -%}{%- assign vid = yt | split: "youtu.be/" | last | split: "?" | first -%}{%- endif -%}
-          {%- assign vmark = vid | append: "|" -%}
-          {%- if vid != "" -%}{%- unless vseen contains vmark -%}
-            {%- capture hit %}{% include pub_match.html p=p r=r all_types=true %}{% endcapture -%}
-            {%- if hit contains "1" -%}
-              {%- assign vseen = vseen | append: vmark %}
-    <figure class="slide{% if nvid == 0 %} is-on{% endif %}">
-      <button class="slide-video" type="button" data-vid="{{ vid }}" data-title="{{ p.title | escape }}" aria-label="▶ {{ p.title | escape }}">
-        {%- assign vz = site.data.video_zoom[vid] %}
-        <img src="https://i.ytimg.com/vi/{{ vid }}/maxresdefault.jpg" data-fallback="https://i.ytimg.com/vi/{{ vid }}/hqdefault.jpg" alt="{{ p.title | escape }}"{% if vz %} style="transform: scale({{ vz }})"{% endif %}>
-        <span class="slide-play" aria-hidden="true"></span>
-      </button>
-      <figcaption>
-        {%- if p.url and p.url != "" -%}
-          <a href="{{ p.url }}">{{ p.title }}</a>
-        {%- else -%}
-          {{ p.title }}
-        {%- endif -%}
-        {%- if p.venue and p.venue != "" %}<span class="slide-venue">{{ p.venue }}{% if p.year and p.year != "" %}, {{ p.year }}{% endif %}</span>{% endif -%}
-      </figcaption>
-    </figure>
+    {%- comment %} 先頭に出す動画（profile.yml の video_first。動画IDを並べた順） {% endcomment -%}
+    {%- for pin in r.video_first -%}
+      {%- assign pmark = pin | append: "|" -%}
+      {%- unless vseen contains pmark -%}
+        {%- for p in site.data.publications -%}
+          {%- assign yt = site.data.youtube[p.title] -%}
+          {%- if yt and yt contains pin -%}
+            {%- unless vseen contains pmark -%}
+              {%- assign vseen = vseen | append: pmark -%}
+              {%- if nvid == 0 -%}{% include video_slide.html p=p vid=pin first=true %}{%- else -%}{% include video_slide.html p=p vid=pin %}{%- endif -%}
               {%- assign nvid = nvid | plus: 1 -%}
-            {%- endif -%}
-          {%- endunless -%}{%- endif -%}
-        {%- endif -%}
+            {%- endunless -%}
+          {%- endif -%}
+        {%- endfor -%}
+      {%- endunless -%}
+    {%- endfor -%}
+    {%- comment %} 残りは新しい順 {% endcomment -%}
+    {%- for p in site.data.publications -%}
+      {%- assign yt = site.data.youtube[p.title] -%}
+      {%- if yt -%}
+        {%- assign vid = "" -%}
+        {%- if yt contains "watch?v=" -%}{%- assign vid = yt | split: "watch?v=" | last | split: "&" | first -%}
+        {%- elsif yt contains "youtu.be/" -%}{%- assign vid = yt | split: "youtu.be/" | last | split: "?" | first -%}{%- endif -%}
+        {%- assign vmark = vid | append: "|" -%}
+        {%- if vid != "" -%}{%- unless vseen contains vmark -%}
+          {%- capture hit %}{% include pub_match.html p=p r=r all_types=true %}{% endcapture -%}
+          {%- if hit contains "1" -%}
+            {%- assign vseen = vseen | append: vmark -%}
+            {%- if nvid == 0 -%}{% include video_slide.html p=p vid=vid first=true %}{%- else -%}{% include video_slide.html p=p vid=vid %}{%- endif -%}
+            {%- assign nvid = nvid | plus: 1 -%}
+          {%- endif -%}
+        {%- endunless -%}{%- endif -%}
       {%- endif -%}
     {%- endfor -%}
   {%- endcapture -%}
