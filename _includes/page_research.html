@@ -38,7 +38,7 @@
           {%- elsif yt contains "youtu.be/" -%}{%- assign vid = yt | split: "youtu.be/" | last | split: "?" | first -%}{%- endif -%}
           {%- assign vmark = vid | append: "|" -%}
           {%- if vid != "" -%}{%- unless vseen contains vmark -%}
-            {%- capture hit %}{% include pub_match.html p=p r=r %}{% endcapture -%}
+            {%- capture hit %}{% include pub_match.html p=p r=r all_types=true %}{% endcapture -%}
             {%- if hit contains "1" -%}
               {%- assign vseen = vseen | append: vmark %}
     <figure class="slide{% if nvid == 0 %} is-on{% endif %}">

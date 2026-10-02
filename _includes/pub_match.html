@@ -14,10 +14,14 @@
   かな・カナ・長音・中点を含むかどうかで判定する。
   手元の62件で検証済み（日本語31件すべてが該当し、英語31件は1件も該当しない）。
 {% endcomment -%}
-{%- comment %} 関連論文にはワークショップ・デモ・ポスターを入れない {% endcomment -%}
+{%- comment %} 関連論文にはワークショップ・デモ・ポスターを入れない。
+     include.all_types を渡すと種別を問わない（詳細ページ上部の動画枠で使う。
+     デモ発表にしか動画が無い研究があるため）。 {% endcomment -%}
 {%- assign skip_types = "workshop,demo,poster" | split: "," -%}
 {%- assign type_ok = true -%}
+{%- unless include.all_types -%}
 {%- for s in skip_types -%}{%- if p.type == s -%}{%- assign type_ok = false -%}{%- endif -%}{%- endfor -%}
+{%- endunless -%}
 {%- assign hay = p.title | downcase -%}
 {%- unless type_ok -%}{%- assign hay = "" -%}{%- endunless -%}
 {%- if include.skip_ja -%}
