@@ -7,7 +7,7 @@
 {%- assign sp = include.p -%}
 {%- assign svid = include.vid -%}
 {%- assign vz = site.data.video_zoom[svid] %}
-    <figure class="slide{% if include.first %} is-on{% endif %}">
+    <figure class="slide{% if include.first == true %} is-on{% endif %}">
       <button class="slide-video" type="button" data-vid="{{ svid }}" data-title="{{ sp.title | escape }}" aria-label="▶ {{ sp.title | escape }}">
         <img src="https://i.ytimg.com/vi/{{ svid }}/maxresdefault.jpg" data-fallback="https://i.ytimg.com/vi/{{ svid }}/hqdefault.jpg" alt="{{ sp.title | escape }}"{% if vz %} style="transform: scale({{ vz }})"{% endif %}>
         <span class="slide-play" aria-hidden="true"></span>

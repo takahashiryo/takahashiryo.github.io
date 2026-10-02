@@ -38,7 +38,8 @@
           {%- if yt and yt contains pin -%}
             {%- unless vseen contains pmark -%}
               {%- assign vseen = vseen | append: pmark -%}
-              {%- if nvid == 0 -%}{% include video_slide.html p=p vid=pin first=true %}{%- else -%}{% include video_slide.html p=p vid=pin %}{%- endif -%}
+              {%- assign isfirst = false -%}{%- if nvid == 0 -%}{%- assign isfirst = true -%}{%- endif -%}
+              {% include video_slide.html p=p vid=pin first=isfirst %}
               {%- assign nvid = nvid | plus: 1 -%}
             {%- endunless -%}
           {%- endif -%}
@@ -57,7 +58,8 @@
           {%- capture hit %}{% include pub_match.html p=p r=r all_types=true %}{% endcapture -%}
           {%- if hit contains "1" -%}
             {%- assign vseen = vseen | append: vmark -%}
-            {%- if nvid == 0 -%}{% include video_slide.html p=p vid=vid first=true %}{%- else -%}{% include video_slide.html p=p vid=vid %}{%- endif -%}
+            {%- assign isfirst = false -%}{%- if nvid == 0 -%}{%- assign isfirst = true -%}{%- endif -%}
+            {% include video_slide.html p=p vid=vid first=isfirst %}
             {%- assign nvid = nvid | plus: 1 -%}
           {%- endif -%}
         {%- endunless -%}{%- endif -%}
