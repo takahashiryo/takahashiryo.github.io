@@ -11,7 +11,7 @@
 "Flexible NFC wristband for ultralow-power ring-to-wristband interaction": "/images/publications/nfc_wristband_800.jpg"
 "Dense-Joint-Based Obstacle-Aided Locomotion with a Joint-Repositionable Snake Robot": "/images/publications/dense_joint_snake_800.jpg"
 "Collisionless Multi-Tag NFC Sensing for Indoor Activity Recognition Using Meander E-Textiles": "/images/publications/multitag_nfc_800.jpg"
-"Friction-Based Interconnection of Stretchable Liquid Metal-Based Coil with Rigid Capacitors for Mechanically Durable Wireless Powering Textiles": "/images/publications/acs_lm_textile_800.jpg"
+"Friction-Based Interconnection of Stretchable Liquid Metal-Based Coil with Rigid Capacitors for Mechanically Durable Wireless Powering Textiles": "/images/publications/acs_lm_textile_arm_800.jpg"
 "無線で給電・通信ができる衣服を実現 多彩なウエアラブルデバイス活用に道": "/images/news/jstnews_202608.jpg"
 "Ultra-Low-Power Wireless Ring Mouse": "/images/publications/picoring_mouse_ieej.jpg"
 "ヒトの周りでの安全・大面積・W級の服型無線給電ネットワーク": "/images/news/emc2026_07_pages_800.jpg"
@@ -24,7 +24,7 @@
 # ★ が付いているものは、その論文そのものの図ではなく、同じ装置・同じ系列の図の流用。
 "picoRing mouse:極低電力な指輪型無線マウス": "/images/publications/picoring_mouse_ieej.jpg"
 "Joint-repositionable Inner-wireless Planar Snake Robot": "/images/research/robot-skin.jpg"
-"Friction Jointing of Distributed Rigid Capacitors to Stretchable Liquid Metal Coil for Full-Body Wireless Charging Clothing": "/images/publications/acs_lm_textile_800.jpg"   # ★ 同じ摩擦接合の図
+"Friction Jointing of Distributed Rigid Capacitors to Stretchable Liquid Metal Coil for Full-Body Wireless Charging Clothing": "/images/publications/acs_lm_textile_arm_800.jpg"   # ★ 同じ摩擦接合の図
 "Plug-n-play e-knit: prototyping large-area e-textiles using machine-knitted magnetically-repositionable sensor networks": "/images/publications/machine_knittable_eknit.jpg"   # ★ 同じ系列
 "Meander Coil++: A Body-scale Wireless Power Transmission using Safe-to-body and Energy-efficient Transmitter Coil": "/images/research/e-textile.jpg"   # ★ 同じメアンダコイル服
 "メアンダコイル++:継続的なウェアラブルコンピューティングのための衣類全面での安全で高効率な無線給電": "/images/research/e-textile.jpg"   # ★
