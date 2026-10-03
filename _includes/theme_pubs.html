@@ -21,6 +21,22 @@
   <div class="theme-pubs-head">{{ t.related_count | replace: "%n", total }}</div>
   <ul>
   {%- assign shown = 0 -%}
+  {%- comment %}
+    profile.yml に card_pubs（論文タイトルの並び）があれば、その順にそれだけを出す。
+    同じ題名の行が複数あるとき（本会議とデモなど）は最初の1件だけ。
+    card_pubs を出したぶん shown が limit 以上になるので、下の自動選択は走らない。
+  {% endcomment -%}
+  {%- for ct in r.card_pubs -%}
+    {%- assign done = false -%}
+    {%- for p in site.data.publications -%}
+      {%- if done == false and p.title == ct -%}
+        {%- assign done = true -%}
+        {%- assign shown = shown | plus: 1 -%}
+        {% include theme_pub_item.html p=p %}
+      {%- endif -%}
+    {%- endfor -%}
+  {%- endfor -%}
+  {%- if r.card_pubs -%}{%- assign shown = limit -%}{%- endif -%}
   {%- comment %} 1周目: 査読あり {% endcomment -%}
   {%- for p in site.data.publications -%}
     {%- if shown < limit and p.reviewed == "yes" -%}

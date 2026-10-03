@@ -57,6 +57,12 @@ research:
         - "为了让贴附于皮肤的皮肤器件保持轻薄柔软并紧贴皮肤，用把强电磁场约束在皮肤近旁的蜿蜒线圈衣服，在人体周围构建表面型的无线通信与供电网络，以与有线连接同等的高可靠性，对皮肤器件进行无线供电与通信。"
   - id: "low-power-wearable"
     image: "low-power-wearable.jpg"
+    # トップのカードに出す代表論文（題名は publications.csv と完全一致）。無ければ新しい順に自動で3件
+    card_pubs:
+      - "picoRing dual: ultralow-power bimanual ring controllers for everyday AR"
+      - "Ultra-low-power ring-based wireless tinymouse"
+      - "picoRing: battery-free rings for subtle thumb-to-index input"
+      - "TelemetRing: A Batteryless and Wireless Ring-Shaped Keyboard using Passive Inductive Telemetry"
     match: ["picoring", "telemetring", "wristband", "ring-based", "ring mouse",
             "ring controller", "tinymouse", "thumb-to-index", "rings",
             "指輪", "リストバンド", "マウス", "キーボード"]
