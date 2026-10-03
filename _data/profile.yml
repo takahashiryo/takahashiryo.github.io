@@ -67,19 +67,19 @@ research:
             "ring controller", "tinymouse", "thumb-to-index", "rings",
             "指輪", "リストバンド", "マウス", "キーボード"]
     ja:
-      title: "超低電力なウェアラブル"
+      title: "超低電力なウェアラブルコンピューティング"
       body: "指輪とリストバンドのコイル間の磁気結合を読み取ることで、指輪側に無線チップを積まない入力デバイスを実現する。1回の充電で1か月以上動く。"
       detail:
         - "指輪に積める電池は 27 mAh に満たない。BLE のような無線は消費が大きく、連続使用は 1〜10 時間で尽きてしまう。頻繁な充電が操作を途切れさせる。"
         - "picoRing は指輪側に無線チップを積まない。リストバンドのコイルが、近くにある指輪コイルの周波数応答を読み取る「半受動誘導テレメトリ」で入力を伝える。指輪側の変調は最大 449 µW で、1回の充電で 600〜1000 時間動く。AR グラスのコントローラのように、日常のなかで長く身につけ続けられる入力装置を目指している。"
     en:
-      title: "Ultra-low-power wearables"
+      title: "Ultra-low-power wearable computing"
       body: "Sensing the magnetic coupling between a ring coil and a wristband coil lets a ring work as an input device with no radio on the ring — over a month of use on a single charge."
       detail:
         - "A ring can hold less than 27 mAh of battery. Conventional radios such as BLE are too power-hungry for that budget, so a wireless ring lasts only 1-10 hours of continuous use, and frequent recharging keeps interrupting the interaction."
         - "picoRing puts no radio on the ring at all. A wristband coil reads the frequency response of the nearby ring coil through semi-passive inductive telemetry, and the ring modulates that response with at most 449 microwatts. One charge lasts roughly 600-1000 hours. The goal is an input device you can keep wearing all day, for instance as a controller for AR glasses."
     zh:
-      title: "超低功耗可穿戴设备"
+      title: "超低功耗可穿戴计算"
       body: "通过读取戒指线圈与腕带线圈之间的磁耦合，实现戒指端不搭载无线芯片的输入设备。一次充电可使用一个月以上。"
       detail:
         - "戒指内可容纳的电池不足 27 mAh。BLE 等常规无线功耗过高，连续使用仅能维持 1〜10 小时，频繁充电会不断打断操作。"
