@@ -41,17 +41,17 @@ research:
     exclude: ["cuttable", "plug-n-play", "3d-printing", "wristband",
               "ロボット", "picoring", "指輪"]
     ja:
-      title: "電子テキスタイル"
+      title: "電子テキスタイル・生体データ通信ネットワーク"
       body: "メアンダコイルを衣服の全面に編み込み、人体に安全なまま身体のどこにでも W 級の電力と通信を届ける。液体金属配線や機械編みによって、洗える・伸びる電子テキスタイルを作る。"
       detail:
         - "皮膚に貼るスキンデバイスを薄く柔らかいまま、皮膚に密着させるために、皮膚の近傍に強い電磁界を閉じ込めるメアンダコイル服により、人の周りにサーフェス型無線通信・給電ネットワークを作り、有線で繋げたときと同レベルの高い信頼性のある無線給電・通信をスキンデバイスへ行う。"
     en:
-      title: "E-textiles"
+      title: "E-textiles and body data networks"
       body: "Meander coils knitted across a whole garment deliver watt-level power and data anywhere on the body while staying safe to wear. Liquid-metal wiring and machine knitting make the fabric washable and stretchable."
       detail:
         - "To keep skin-attached devices thin, soft and in close contact with the skin, a meander-coil garment confines a strong electromagnetic field near the skin surface, forming a surface-type wireless power and communication network around the body. Skin devices are then powered and read out wirelessly with the same level of reliability as a wired connection."
     zh:
-      title: "电子纺织品"
+      title: "电子纺织品・生体数据通信网络"
       body: "将蜿蜒线圈编织于整件衣服，在保证人体安全的前提下，向身体任意位置输送瓦级电力与数据。借助液态金属布线与机器编织，实现可水洗、可拉伸的电子纺织品。"
       detail:
         - "为了让贴附于皮肤的皮肤器件保持轻薄柔软并紧贴皮肤，用把强电磁场约束在皮肤近旁的蜿蜒线圈衣服，在人体周围构建表面型的无线通信与供电网络，以与有线连接同等的高可靠性，对皮肤器件进行无线供电与通信。"
@@ -67,7 +67,7 @@ research:
             "ring controller", "tinymouse", "thumb-to-index", "rings",
             "指輪", "リストバンド", "マウス", "キーボード"]
     ja:
-      title: "極低電力ウェアラブル"
+      title: "超低電力なウェアラブル"
       body: "指輪とリストバンドのコイル間の磁気結合を読み取ることで、指輪側に無線チップを積まない入力デバイスを実現する。1回の充電で1か月以上動く。"
       detail:
         - "指輪に積める電池は 27 mAh に満たない。BLE のような無線は消費が大きく、連続使用は 1〜10 時間で尽きてしまう。頻繁な充電が操作を途切れさせる。"
