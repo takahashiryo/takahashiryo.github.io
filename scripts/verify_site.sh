@@ -20,6 +20,7 @@ for p in index.html cv/index.html \
          en/index.html en/cv/index.html \
          zh/index.html zh/cv/index.html \
          facilities/index.html en/facilities/index.html zh/facilities/index.html \
+         prototypes/index.html en/prototypes/index.html zh/prototypes/index.html \
          sitemap.xml robots.txt 404.html; do
   chk "$p" "test -s '_site/$p'"
 done

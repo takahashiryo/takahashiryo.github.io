@@ -1,0 +1,53 @@
+{%- comment %}
+  Prototypes ページ。_data/prototypes.yml を暗い背景のカードで並べる。
+  上に分類タブ（_data/proto_cats.yml）。JS（_layouts/default.html）が data-cat を見て出し入れする。
+  カード: 写真 / 名前 / 分類と年のチップ / 数値の行（言語共通）/ 1文の説明 / 論文・動画へのリンク。
+  論文へのリンクは paper（題名）で publications.csv を引いて url を使う。
+{%- endcomment -%}
+{%- assign lang = include.lang -%}
+{%- assign t = site.data.i18n[lang] -%}
+<div style="height: 2.4em"></div>
+{% include sechead.html title=t.sec.prototypes en=t.sec_prototypes_en lang=lang %}
+<div class="proto">
+  <div class="proto-bar">
+    <div class="filter" id="proto-filter" role="tablist">
+      <button class="filter-btn is-active" data-cat="all" role="tab" aria-selected="true">{{ t.filter_all }}</button>
+      {%- for c in site.data.proto_cats %}
+      <button class="filter-btn" data-cat="{{ c[0] }}" role="tab" aria-selected="false">{{ c[1][lang] | default: c[1].en | escape }}</button>
+      {%- endfor %}
+    </div>
+    <div class="proto-count" id="proto-count" data-tpl="{{ t.proto_count | escape }}">{{ t.proto_count | replace: "%n", site.data.prototypes.size }}</div>
+  </div>
+  <div class="proto-grid">
+  {%- for d in site.data.prototypes -%}
+    {%- assign b = d[lang] | default: d.en -%}
+    {%- assign pub = nil -%}
+    {%- if d.paper -%}{%- for p in site.data.publications -%}{%- if p.title == d.paper and pub == nil -%}{%- assign pub = p -%}{%- endif -%}{%- endfor -%}{%- endif %}
+    <article class="proto-card" id="{{ d.id }}" data-cat="{{ d.cats | join: ' ' }}">
+      {%- if d.image and d.image != "" %}
+      <div class="proto-fig"><img src="{{ '/images/prototypes/' | append: d.image | relative_url }}" alt="{{ d.name | escape }}" loading="lazy"></div>
+      {%- endif %}
+      <div class="proto-body">
+        <h3 class="proto-name">{{ d.name | escape }}</h3>
+        <div class="proto-chips">
+          {%- if d.year %}<span class="proto-chip">{{ d.year }}</span>{% endif -%}
+          {%- for c in d.cats %}{%- assign cn = site.data.proto_cats[c] %}<span class="proto-chip">{{ cn[lang] | default: cn.en | default: c | escape }}</span>{% endfor -%}
+        </div>
+        {%- if d.specs and d.specs.size > 0 %}
+        <div class="proto-specs">
+          {%- for sline in d.specs %}<div>{{ sline | escape }}</div>{% endfor %}
+        </div>
+        {%- endif %}
+        {%- if b.desc and b.desc != "" %}<p class="proto-desc">{{ b.desc | escape }}</p>{% endif %}
+        {%- if pub or d.video %}
+        <div class="proto-links">
+          {%- if pub and pub.url and pub.url != "" %}<a href="{{ pub.url }}" target="_blank" rel="noopener">{{ t.proto_paper }}</a>{% endif -%}
+          {%- if d.video %}<a href="https://www.youtube.com/watch?v={{ d.video }}" target="_blank" rel="noopener">YouTube</a>{% endif -%}
+        </div>
+        {%- endif %}
+      </div>
+    </article>
+  {%- endfor -%}
+  </div>
+</div>
+<p class="more"><a href="{{ include.home | relative_url }}">{{ t.back_home }}</a></p>

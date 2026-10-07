@@ -320,6 +320,29 @@
   .funders a { display: block; line-height: 0; }
   .funders img { height: 56px; width: auto; max-width: 240px; object-fit: contain; }
   @media (max-width: 640px) { .funders { gap: 1.2em 1.8em; } .funders img { height: 42px; max-width: 160px; } }
+  /* ── Prototypes ページ。暗い背景に、写真・名前・チップ・数値行のカードを並べる ── */
+  .proto { background: #0f1115; color: #e6e8eb; border-radius: 14px; padding: 1.2em 1.2em 1.6em; margin: 1.2em 0 0; }
+  .proto-bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.6em 1em; margin-bottom: 1.1em; }
+  .proto .filter { margin: 0; }
+  .proto .filter-btn { background: #1c2027; color: #c7ccd3; }
+  .proto .filter-btn:hover { background: #2a3038; color: #fff; }
+  .proto .filter-btn.is-active { background: #e6e8eb; color: #0f1115; border-color: #e6e8eb; }
+  .proto-count { font-size: 0.72em; letter-spacing: 0.06em; color: #8b93a0; }
+  .proto-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 1em; }
+  .proto-card { background: #171a20; border: 1px solid #262b33; border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; min-width: 0; }
+  .proto-card[hidden] { display: none !important; }
+  .proto-fig { background: #0b0d10; }
+  .proto-fig img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+  .proto-body { padding: 0.9em 1em 1.1em; display: flex; flex-direction: column; gap: 0.55em; }
+  .proto-name { margin: 0; font-size: 0.98em; font-weight: 600; letter-spacing: 0.02em; color: #f3f4f6; line-height: 1.4; }
+  .proto-chips { display: flex; flex-wrap: wrap; gap: 0.35em; }
+  .proto-chip { font-size: 0.64em; letter-spacing: 0.05em; padding: 0.15em 0.6em; border-radius: 999px; background: #262b33; color: #c7ccd3; }
+  .proto-specs { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 0.7em; line-height: 1.7; color: #a9b1bb; }
+  .proto-desc { margin: 0; font-size: 0.8em; line-height: 1.7; color: #d4d8de; }
+  .proto-links { display: flex; gap: 0.9em; margin-top: auto; padding-top: 0.2em; font-size: 0.72em; letter-spacing: 0.05em; }
+  .proto-links a { color: #8ab4ff; text-decoration: none; border-bottom: 1px solid transparent; }
+  .proto-links a:hover { border-bottom-color: #8ab4ff; }
+  @media (max-width: 640px) { .proto { padding: 0.9em; border-radius: 10px; } .proto-grid { grid-template-columns: repeat(2, 1fr); gap: 0.6em; } .proto-body { padding: 0.7em 0.75em 0.9em; } }
   .entry-fig { flex: 0 0 clamp(150px, 16vw, 190px); }
   .entry-fig img {
     display: block; width: 100%; aspect-ratio: 16 / 10; object-fit: contain;

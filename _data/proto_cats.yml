@@ -1,0 +1,5 @@
+# Prototypes ページの分類タブ。キーは prototypes.yml の cats に書く値。上から順に並ぶ。
+ring:    { ja: "指輪・ウェアラブル", en: "Rings and wearables", zh: "戒指・可穿戴" }
+textile: { ja: "テキスタイル",       en: "Textiles",            zh: "纺织品" }
+robot:   { ja: "ロボット",           en: "Robots",              zh: "机器人" }
+iot:     { ja: "IoT・HCI",           en: "IoT / HCI",           zh: "IoT・HCI" }

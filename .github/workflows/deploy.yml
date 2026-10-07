@@ -37,6 +37,7 @@ jobs:
                    en/index.html en/cv/index.html \
                    zh/index.html zh/cv/index.html \
                    facilities/index.html en/facilities/index.html zh/facilities/index.html \
+                   prototypes/index.html en/prototypes/index.html zh/prototypes/index.html \
                    publications/index.html en/publications/index.html zh/publications/index.html \
                    research/e-textile/index.html research/low-power-wearable/index.html \
                    research/robot-skin/index.html research/digital-fabrication/index.html \

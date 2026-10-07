@@ -118,6 +118,7 @@
       <a href="{{ home | append: 'cv/#publications' | relative_url }}">{{ t.nav.publications }}</a>
       <a href="{{ home | append: 'cv/' | relative_url }}">{{ t.nav.cv }}</a>
       <a href="{{ home | append: 'facilities/' | relative_url }}">{{ t.nav.facilities }}</a>
+      <a href="{{ home | append: 'prototypes/' | relative_url }}">{{ t.nav.prototypes }}</a>
       <span class="lang">
         <a href="{{ '/' | append: suffix | relative_url }}" {% if lang == 'ja' %}class="is-active"{% endif %}>日本語</a>
         <a href="{{ '/en/' | append: suffix | relative_url }}" {% if lang == 'en' %}class="is-active"{% endif %}>EN</a>
@@ -199,6 +200,25 @@
       groups.forEach(function (sec) {
         sec.hidden = g !== 'all' && sec.id !== g;
       });
+    });
+  });
+
+  /* Prototypes の分類タブ。カードの data-cat（空白区切りで複数）を見て出し入れし、件数も更新する */
+  document.addEventListener('DOMContentLoaded', function () {
+    var tabs = document.getElementById('proto-filter');
+    if (!tabs) return;
+    var cards = document.querySelectorAll('.proto-card');
+    var count = document.getElementById('proto-count');
+    tabs.addEventListener('click', function (e) {
+      var btn = e.target.closest('.filter-btn');
+      if (!btn) return;
+      var cat = btn.getAttribute('data-cat') || 'all', n = 0;
+      cards.forEach(function (c) {
+        var cats = (c.getAttribute('data-cat') || '').split(' ');
+        c.hidden = cat !== 'all' && cats.indexOf(cat) === -1;
+        if (!c.hidden) n++;
+      });
+      if (count) count.textContent = (count.getAttribute('data-tpl') || '%n').replace('%n', n);
     });
   });
 
