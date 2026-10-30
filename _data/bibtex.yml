@@ -99,6 +99,21 @@
     year = {2026},
     month = aug
   }
+"Near-field power and data networking via meandered e-textiles for continuous, large-scale BodyNet": |-
+  @article{Takahashi_2026,
+    title={Near-Field Power and Data Networking via Meandered E-Textiles for Continuous, Large-Scale BodyNet},
+    volume={25},
+    ISSN={1558-2590},
+    url={http://dx.doi.org/10.1109/MPRV.2026.3712563},
+    DOI={10.1109/mprv.2026.3712563},
+    number={3},
+    journal={IEEE Pervasive Computing},
+    publisher={Institute of Electrical and Electronics Engineers (IEEE)},
+    author={Takahashi, Ryo and Kawahara, Yoshihiro},
+    year={2026},
+    month=July,
+    pages={8–16}
+  }
 "Knittable electronic textiles for intelligent soft wearables": |-
   @article{Takahashi_2026,
     title={Knittable electronic textiles for intelligent soft wearables},
@@ -125,18 +140,6 @@
     year={2026},
     month=July,
     pages={186–192}
-  }
-"Near-field power and data networking via meandered e-textiles for continuous, large-scale BodyNet": |-
-  @article{Takahashi_2026,
-    title={Near-Field Power and Data Networking via Meandered E-Textiles for Continuous, Large-Scale BodyNet},
-    ISSN={1558-2590},
-    url={http://dx.doi.org/10.1109/MPRV.2026.3712563},
-    DOI={10.1109/mprv.2026.3712563},
-    journal={IEEE Pervasive Computing},
-    publisher={Institute of Electrical and Electronics Engineers (IEEE)},
-    author={Takahashi, Ryo and Kawahara, Yoshihiro},
-    year={2026},
-    pages={1–9}
   }
 "ヒトの周りでの安全・大面積・W級の服型無線給電ネットワーク": |-
   @article{高橋2026w,
