@@ -49,10 +49,30 @@
 
 <h2>{{ t.sec.publications }}</h2>
 <p class="note">{{ t.author_note }}</p>
-{%- assign kinds = "journal,conference,workshop,organized,demo,poster,domestic,article" | split: "," -%}
+{%- assign kinds = "journal,conference,workshop,demo,poster,domestic,article" | split: "," -%}
 {%- for k in kinds -%}
   {%- assign items = site.data.publications | where: "type", k -%}
-  {%- if items.size > 0 -%}
+  {%- if k == "workshop" -%}
+    {%- comment %} ワークショップは「発表」と「主催（organized）」を同じ見出しの中で小見出しで分ける {% endcomment -%}
+    {%- assign org = site.data.publications | where: "type", "organized" -%}
+    {%- assign total = items.size | plus: org.size -%}
+    {%- if total > 0 -%}
+    <h2 style="font-size:9.6pt;border-bottom:0;margin:1.1em 0 0.35em">{{ t.types[k] }}（{{ total }}）</h2>
+      {%- assign n = 0 -%}
+      {%- if items.size > 0 -%}
+    <p class="subhead">{{ t.subhead.workshop }}</p>
+        {%- for p in items -%}{%- assign n = n | plus: 1 -%}
+      {% include pub_row_print.html p=p i=n %}
+        {%- endfor -%}
+      {%- endif -%}
+      {%- if org.size > 0 -%}
+    <p class="subhead">{{ t.subhead.organized }}</p>
+        {%- for p in org -%}{%- assign n = n | plus: 1 -%}
+      {% include pub_row_print.html p=p i=n %}
+        {%- endfor -%}
+      {%- endif -%}
+    {%- endif -%}
+  {%- elsif items.size > 0 -%}
     <h2 style="font-size:9.6pt;border-bottom:0;margin:1.1em 0 0.35em">{{ t.types[k] }}（{{ items.size }}）</h2>
     {%- for p in items -%}
       {% include pub_row_print.html p=p i=forloop.index %}

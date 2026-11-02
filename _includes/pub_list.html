@@ -4,6 +4,8 @@
   include.with_media が true のときはメディア掲載も同じ並びに混ぜる。
 
   種別の並びは groups。"demo,poster" のようにカンマで束ねると1つの見出しになる。
+  束ねた組のうち sub_groups に先頭の type があるもの（workshop,organized）は、
+  見出しは先頭の type の名前だけにして、中を t.subhead の小見出し（発表／主催）で分ける。
   絞り込みボタンの data-filter は空白区切りで複数の type を持ち、
   _layouts/default.html の JS がそれを見て絞り込む。
 {% endcomment -%}
@@ -15,7 +17,8 @@
   {%- assign pubs = site.data.publications -%}
 {%- endif -%}
 
-{%- assign groups = "journal|conference|workshop|organized|demo,poster|domestic|article|media" | split: "|" -%}
+{%- assign groups = "journal|conference|workshop,organized|demo,poster|domestic|article|media" | split: "|" -%}
+{%- assign sub_groups = "workshop" | split: "," -%}
 
 {%- if limit > 0 -%}
   {%- comment %}
@@ -36,10 +39,12 @@
         {%- if more.size > 0 -%}
           {%- if items.size > 0 -%}
             {%- assign items = items | concat: more -%}
-            {%- assign label = label | append: t.type_sep | append: t.types[k1] -%}
+            {%- unless sub_groups contains k0 -%}
+              {%- assign label = label | append: t.type_sep | append: t.types[k1] -%}
+            {%- endunless -%}
           {%- else -%}
             {%- assign items = more -%}
-            {%- assign label = t.types[k1] -%}
+            {%- unless sub_groups contains k0 -%}{%- assign label = t.types[k1] -%}{%- endunless -%}
           {%- endif -%}
         {%- endif -%}
       {%- endif -%}
@@ -75,6 +80,21 @@
       {%- if n > 0 %}
     <div class="pub-list" data-set="{{ k0 }}" hidden>
       {%- assign shown = 0 -%}
+      {%- if sub_groups contains k0 -%}
+        {%- comment %} 小見出しつき。種別ごとに新しい順、合計で limit 件まで {% endcomment -%}
+        {%- for k in gt -%}
+          {%- assign sub = pubs | where: "type", k -%}
+          {%- if sub.size > 0 and shown < limit %}
+      <div class="sub-head" data-type="{{ k }}">{{ t.subhead[k] }}</div>
+            {%- for p in sub -%}
+              {%- if shown < limit %}
+      {% include pub_entry.html p=p t=t badge=true thumb=true %}
+                {%- assign shown = shown | plus: 1 -%}
+              {%- endif -%}
+            {%- endfor -%}
+          {%- endif -%}
+        {%- endfor -%}
+      {%- else -%}
       {%- for p in pubs -%}
         {%- if p.type == k0 or p.type == k1 -%}
           {%- if shown < limit %}
@@ -83,6 +103,7 @@
           {%- endif -%}
         {%- endif -%}
       {%- endfor %}
+      {%- endif %}
     </div>
       {%- endif -%}
     {%- endfor %}
@@ -101,10 +122,12 @@
         {%- if more.size > 0 -%}
           {%- if items.size > 0 -%}
             {%- assign items = items | concat: more -%}
-            {%- assign label = label | append: t.type_sep | append: t.types[k1] -%}
+            {%- unless sub_groups contains k0 -%}
+              {%- assign label = label | append: t.type_sep | append: t.types[k1] -%}
+            {%- endunless -%}
           {%- else -%}
             {%- assign items = more -%}
-            {%- assign label = t.types[k1] -%}
+            {%- unless sub_groups contains k0 -%}{%- assign label = t.types[k1] -%}{%- endunless -%}
           {%- endif -%}
         {%- endif -%}
       {%- endif -%}
@@ -124,19 +147,33 @@
       {%- if more.size > 0 -%}
         {%- if items.size > 0 -%}
           {%- assign items = items | concat: more -%}
-          {%- assign label = label | append: t.type_sep | append: t.types[k1] -%}
+          {%- unless sub_groups contains k0 -%}
+            {%- assign label = label | append: t.type_sep | append: t.types[k1] -%}
+          {%- endunless -%}
         {%- else -%}
           {%- assign items = more -%}
-          {%- assign label = t.types[k1] -%}
+          {%- unless sub_groups contains k0 -%}{%- assign label = t.types[k1] -%}{%- endunless -%}
         {%- endif -%}
       {%- endif -%}
     {%- endif -%}
     {%- if items.size > 0 -%}
-      {%- assign items = items | sort: "sortkey" | reverse -%}
       <div class="group-head" id="pub-{{ gt | first }}">{{ label }}<span class="group-count">{{ items.size }}</span></div>
+      {%- if sub_groups contains k0 -%}
+        {%- for k in gt -%}
+          {%- assign sub = pubs | where: "type", k | sort: "sortkey" | reverse -%}
+          {%- if sub.size > 0 -%}
+      <div class="sub-head" data-type="{{ k }}">{{ t.subhead[k] }}</div>
+            {%- for p in sub -%}
+        {% include pub_entry.html p=p t=t %}
+            {%- endfor -%}
+          {%- endif -%}
+        {%- endfor -%}
+      {%- else -%}
+      {%- assign items = items | sort: "sortkey" | reverse -%}
       {%- for p in items -%}
         {% include pub_entry.html p=p t=t %}
       {%- endfor -%}
+      {%- endif -%}
     {%- endif -%}
   {%- endfor -%}
   </div>

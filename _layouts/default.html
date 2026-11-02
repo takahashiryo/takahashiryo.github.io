@@ -182,6 +182,12 @@
     /* 中身が全部消えた年見出しは隠す */
     root.querySelectorAll('.group-head').forEach(function (h) {
       var any = false, el = h.nextElementSibling;
+      while (el && (el.classList.contains('entry') || el.classList.contains('sub-head'))) { if (!el.hidden && el.classList.contains('entry')) any = true; el = el.nextElementSibling; }
+      h.hidden = !any;
+    });
+    /* ワークショップの「発表／主催」の小見出しも、続く行が全部消えたら隠す */
+    root.querySelectorAll('.sub-head').forEach(function (h) {
+      var any = false, el = h.nextElementSibling;
       while (el && el.classList.contains('entry')) { if (!el.hidden) any = true; el = el.nextElementSibling; }
       h.hidden = !any;
     });

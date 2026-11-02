@@ -219,6 +219,9 @@
     display: flex; align-items: baseline; justify-content: space-between; gap: 0.6em;
   }
   .group-count { font-size: 0.62em; color: var(--faint); font-weight: 400; letter-spacing: 0.04em; }
+  /* 種別の中の小見出し（ワークショップの 発表／主催） */
+  .sub-head { font-size: 0.86em; font-weight: 600; color: var(--faint); letter-spacing: 0.12em; margin: 1.3em 0 0.1em; }
+  .sub-head + .entry { border-top: 0; }
   .entry { display: flex; gap: 1em; padding: 0.85em 0; border-bottom: 1px solid #f0f3f6; }
   .entry-mark { flex: 0 0 auto; width: 5.4em; padding-top: 0.15em; }
   .badge {
@@ -245,7 +248,7 @@
   .me { color: var(--ink); text-decoration: underline; text-underline-offset: 0.22em;
         text-decoration-thickness: 1px; text-decoration-color: var(--rule); }
   {%- comment %} display を持つ要素は hidden 属性だけでは消えないので、明示して打ち消す {% endcomment %}
-  .entry[hidden], .year-head[hidden], .group-head[hidden],
+  .entry[hidden], .year-head[hidden], .group-head[hidden], .sub-head[hidden],
   .news-card[hidden] { display: none !important; }
 
   .more { margin: 1.4em 0 0; font-size: 0.86em; }

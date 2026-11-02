@@ -12,7 +12,7 @@ import sys
 
 LIMIT = 10        # _config.yml の home_pub_limit
 AWARDS = 6        # 同 home_award_limit
-SETS = 9          # All + Selected + 種別7つ（organized を含む）
+SETS = 8          # All + Selected + 種別6つ（workshop は organized と同じ組）
 
 ENTRY = r'class="entry[ "]'
 
