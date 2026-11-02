@@ -59,15 +59,15 @@
     {%- if total > 0 -%}
     <h2 style="font-size:9.6pt;border-bottom:0;margin:1.1em 0 0.35em">{{ t.types[k] }}（{{ total }}）</h2>
       {%- assign n = 0 -%}
-      {%- if items.size > 0 -%}
-    <p class="subhead">{{ t.subhead.workshop }}</p>
-        {%- for p in items -%}{%- assign n = n | plus: 1 -%}
-      {% include pub_row_print.html p=p i=n %}
-        {%- endfor -%}
-      {%- endif -%}
       {%- if org.size > 0 -%}
     <p class="subhead">{{ t.subhead.organized }}</p>
         {%- for p in org -%}{%- assign n = n | plus: 1 -%}
+      {% include pub_row_print.html p=p i=n %}
+        {%- endfor -%}
+      {%- endif -%}
+      {%- if items.size > 0 -%}
+    <p class="subhead">{{ t.subhead.workshop }}</p>
+        {%- for p in items -%}{%- assign n = n | plus: 1 -%}
       {% include pub_row_print.html p=p i=n %}
         {%- endfor -%}
       {%- endif -%}

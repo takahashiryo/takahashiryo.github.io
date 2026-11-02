@@ -5,7 +5,8 @@
 
   種別の並びは groups。"demo,poster" のようにカンマで束ねると1つの見出しになる。
   束ねた組のうち sub_groups に先頭の type があるもの（workshop,organized）は、
-  見出しは先頭の type の名前だけにして、中を t.subhead の小見出し（発表／主催）で分ける。
+  見出しは先頭の type の名前だけにして、中を t.subhead の小見出し（主催／発表）で分ける。
+  小見出しの順は組の並びの逆（organized が先）。
   絞り込みボタンの data-filter は空白区切りで複数の type を持ち、
   _layouts/default.html の JS がそれを見て絞り込む。
 {% endcomment -%}
@@ -82,7 +83,8 @@
       {%- assign shown = 0 -%}
       {%- if sub_groups contains k0 -%}
         {%- comment %} 小見出しつき。種別ごとに新しい順、合計で limit 件まで {% endcomment -%}
-        {%- for k in gt -%}
+        {%- assign sub_order = gt | reverse -%}{%- comment %} 主催（organized）を先に出す {% endcomment -%}
+        {%- for k in sub_order -%}
           {%- assign sub = pubs | where: "type", k -%}
           {%- if sub.size > 0 and shown < limit %}
       <div class="sub-head" data-type="{{ k }}">{{ t.subhead[k] }}</div>
@@ -159,7 +161,8 @@
     {%- if items.size > 0 -%}
       <div class="group-head" id="pub-{{ gt | first }}">{{ label }}<span class="group-count">{{ items.size }}</span></div>
       {%- if sub_groups contains k0 -%}
-        {%- for k in gt -%}
+        {%- assign sub_order = gt | reverse -%}{%- comment %} 主催（organized）を先に出す {% endcomment -%}
+        {%- for k in sub_order -%}
           {%- assign sub = pubs | where: "type", k | sort: "sortkey" | reverse -%}
           {%- if sub.size > 0 -%}
       <div class="sub-head" data-type="{{ k }}">{{ t.subhead[k] }}</div>
