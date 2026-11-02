@@ -62,7 +62,9 @@ jobs:
             git config user.name  "github-actions[bot]"
             git config user.email "github-actions[bot]@users.noreply.github.com"
             git add cv.pdf cv-ja.pdf
-            git commit -m "chore: CV の PDF を更新 [skip ci]"
+            # [skip ci] だと Cloudflare Pages（Connect to Git）もビルドを飛ばし、本番の PDF が
+            # 次の通常 push まで古いままになる。[skip actions] は GitHub Actions だけが見る。
+            git commit -m "chore: CV の PDF を更新 [skip actions]"
             # 直後に別の push が入ると main が進んで push が弾かれる。
             # 取り込み直して再試行し、それでも駄目なら新しい push 側の実行に任せて成功扱いにする
             # （PDF は毎回作り直されるので、取りこぼしても次の実行で最新になる）。
