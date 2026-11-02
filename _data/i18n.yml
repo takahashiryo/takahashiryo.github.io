@@ -71,7 +71,8 @@ ja:
   types:
     journal: "論文誌"
     conference: "国際会議"
-    workshop: "ワークショップ"
+    workshop: "ワークショップ発表"
+    organized: "ワークショップ主催"
     demo: "デモ"
     poster: "ポスター"
     domestic: "国内発表"
@@ -151,7 +152,8 @@ en:
   types:
     journal: "Journal"
     conference: "Conference"
-    workshop: "Workshop"
+    workshop: "Workshop papers"
+    organized: "Workshops organized"
     demo: "Demo"
     poster: "Poster"
     domestic: "Domestic"
@@ -231,7 +233,8 @@ zh:
   types:
     journal: "期刊"
     conference: "国际会议"
-    workshop: "研讨会"
+    workshop: "研讨会发表"
+    organized: "研讨会主办"
     demo: "演示"
     poster: "海报"
     domestic: "国内发表"

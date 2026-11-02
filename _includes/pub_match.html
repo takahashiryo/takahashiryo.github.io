@@ -17,7 +17,7 @@
 {%- comment %} 関連論文にはワークショップ・デモ・ポスターを入れない。
      include.all_types を渡すと種別を問わない（詳細ページ上部の動画枠で使う。
      デモ発表にしか動画が無い研究があるため）。 {% endcomment -%}
-{%- assign skip_types = "workshop,demo,poster" | split: "," -%}
+{%- assign skip_types = "workshop,organized,demo,poster" | split: "," -%}
 {%- assign type_ok = true -%}
 {%- unless include.all_types -%}
 {%- for s in skip_types -%}{%- if p.type == s -%}{%- assign type_ok = false -%}{%- endif -%}{%- endfor -%}

@@ -16,7 +16,7 @@ OUT = ROOT / "_data/bibtex.yml"
 DOI_YML = ROOT / "_data/doi.yml"
 REFRESH = "--refresh" in sys.argv
 
-TYPE_MAP = {"journal": "article", "conference": "inproceedings", "workshop": "inproceedings",
+TYPE_MAP = {"journal": "article", "conference": "inproceedings", "workshop": "inproceedings", "organized": "inproceedings",
             "demo": "inproceedings", "poster": "inproceedings", "domestic": "inproceedings", "article": "article"}
 MONTHS = ["jan","feb","mar","apr","may","jun","jul","aug","sep","oct","nov","dec"]
 

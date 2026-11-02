@@ -190,8 +190,8 @@ def build_patents():
 
 # 同じ年月の中の並び順。データに「日」が無いので、種別 → 掲載先 → タイトルで並べる。
 # これをしないと同じ会議の論文が離れて表示される（タイトル順になるため）。
-TYPE_ORDER = {"journal": 0, "conference": 1, "workshop": 2, "demo": 3,
-              "poster": 4, "domestic": 5, "article": 6, "media": 7}
+TYPE_ORDER = {"journal": 0, "conference": 1, "workshop": 2, "organized": 3, "demo": 4,
+              "poster": 5, "domestic": 6, "article": 7, "media": 8}
 
 
 def pub_sort_key(r):
