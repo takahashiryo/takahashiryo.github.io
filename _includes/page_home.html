@@ -13,7 +13,7 @@
       {%- for l in pr.links -%}
       <a href="{{ l.url }}" target="_blank" rel="noopener" title="{{ l.label }}" aria-label="{{ l.label }}">{% include icon.html name=l.key %}</a>
       {%- endfor -%}
-      <a href="mailto:{{ pr.email }}" title="Email" aria-label="Email">{% include icon.html name="email" %}</a>
+      <!--email_off--><a href="mailto:{{ pr.email }}" title="Email" aria-label="Email">{% include icon.html name="email" %}</a><!--/email_off-->
     </div>
   </div>
   <div class="hero-body">
@@ -33,7 +33,7 @@
       <p><strong class="lead-open">{{ t.lead_open | strip }}</strong>{{ t.lead_rest | strip }}{{ t.bio | strip }}</p>
       {%- comment %} 連絡先は独立した節にせず、概要の文章の下に置く {% endcomment -%}
       <p class="contact-line">{{ t.contact_lead }}<br>
-        <a href="mailto:{{ pr.email }}">{{ pr.email }}</a></p>
+        <!--email_off--><a href="mailto:{{ pr.email }}">{{ pr.email }}</a><!--/email_off--></p>
     </section>
   </div>
 </div>

@@ -8,3 +8,6 @@
 /home/cuttable-wpt       /research/digital-fabrication/   301
 /publication             /cv/#publications                301
 /media                   /cv/#pub-media                   301
+# 旧サイトの残り（/home/pneumodule, /home/firm-inflatable など）はまとめてトップへ。
+# Cloudflare では個別指定（静的）の方がワイルドカードより優先されるので、上の行はそのまま効く。
+/home/*                  /                                301
