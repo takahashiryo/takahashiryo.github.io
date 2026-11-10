@@ -1,4 +1,13 @@
 # 論文タイトル → BibTeX。scripts/build_bibtex.py が publications.csv から作る（手で直してよい。再実行時は既存の題名を上書きしない）。
+"NFCにおける短パルス間隔符号化に基づくアクセス制御": |-
+  @inproceedings{井戸2026nfc,
+    title = {NFCにおける短パルス間隔符号化に基づくアクセス制御},
+    author = {井戸智斗志 and 石田繁巳 and 高橋亮},
+    booktitle = {超知性ネットワーキングに関する分野横断型研究会(RISING)},
+    address = {沖縄},
+    year = {2026},
+    month = dec
+  }
 "Dense-Joint-Based Obstacle-Aided Locomotion with a Joint-Repositionable Snake Robot": |-
   @inproceedings{minomo2026densejointbased,
     title = {Dense-Joint-Based Obstacle-Aided Locomotion with a Joint-Repositionable Snake Robot},
@@ -74,6 +83,15 @@
     year={2026},
     month=Sept,
     pages={51721–51730}
+  }
+"ツインメアンダコイル服での高速NFCに向けた服の変形を考慮したデジタルインピーダンス整合設計": |-
+  @inproceedings{梶原2026nfc,
+    title = {ツインメアンダコイル服での高速NFCに向けた服の変形を考慮したデジタルインピーダンス整合設計},
+    author = {梶原悠雅 and 雪田和歌子 and 横田知之 and 染谷隆夫 and 川原圭博 and 高橋亮},
+    booktitle = {電子情報通信学会ソサイエティ大会 2026},
+    note = {B-18-05},
+    year = {2026},
+    month = sep
   }
 "Ultra-Low-Power Wireless Ring Mouse": |-
   @article{Takahashi_2026,
@@ -286,16 +304,6 @@
     year = {2025},
     month = oct
   }
-"指輪-リストバンドコイル間の磁気結合を用いた超低電力な指輪型無線XRコントローラの設計": |-
-  @inproceedings{山本2025xr,
-    title = {指輪-リストバンドコイル間の磁気結合を用いた超低電力な指輪型無線XRコントローラの設計},
-    author = {山本英昂 and 李蘊韜 and 韓燦教 and 横田知之 and 染谷隆夫 and 川原圭博 and 高橋亮},
-    booktitle = {信学ソ大2025},
-    note = {B-15-32},
-    address = {岡山},
-    year = {2025},
-    month = sep
-  }
 "超低電力な指輪型無線マウス": |-
   @inproceedings{高橋2025x,
     title = {超低電力な指輪型無線マウス},
@@ -303,6 +311,16 @@
     booktitle = {情報処理学会 UBI研究会},
     note = {第87回},
     address = {富山},
+    year = {2025},
+    month = sep
+  }
+"指輪-リストバンドコイル間の磁気結合を用いた超低電力な指輪型無線XRコントローラの設計": |-
+  @inproceedings{山本2025xr,
+    title = {指輪-リストバンドコイル間の磁気結合を用いた超低電力な指輪型無線XRコントローラの設計},
+    author = {山本英昂 and 李蘊韜 and 韓燦教 and 横田知之 and 染谷隆夫 and 川原圭博 and 高橋亮},
+    booktitle = {電子情報通信学会ソサイエティ大会 2025},
+    note = {B-15-32},
+    address = {岡山},
     year = {2025},
     month = sep
   }
@@ -503,7 +521,7 @@
   @inproceedings{高橋2022x,
     title = {ユビキタスな面状センサアレイに向けた単一センサアレイによる多機能センシングの設計},
     author = {高橋亮 and 雪田和歌子 and 横田知之 and 染谷隆夫 and 川原圭博},
-    booktitle = {信学総大 2022},
+    booktitle = {電子情報通信学会総合大会 2022},
     note = {B-15},
     address = {オンライン},
     year = {2022},
@@ -551,7 +569,7 @@
   @inproceedings{高橋2021x,
     title = {衣類全面での無線給電に向けた人体に安全な送電コイルの設計},
     author = {高橋亮 and 雪田和歌子 and 横田知之 and 染谷隆夫 and 川原圭博},
-    booktitle = {信学ソ大 2021},
+    booktitle = {電子情報通信学会ソサイエティ大会 2021},
     note = {B-15},
     address = {オンライン},
     year = {2021},
@@ -561,7 +579,7 @@
   @inproceedings{高橋2021x,
     title = {バッテリレスなウェアラブルの無線センシングに向けた衣類型リーダコイルの設計},
     author = {高橋亮 and 雪田和歌子 and 笹谷拓也 and 横田知之 and 染谷隆夫 and 川原圭博},
-    booktitle = {信学総大 2021},
+    booktitle = {電子情報通信学会総合大会 2021},
     note = {B-15-23},
     address = {Online},
     year = {2021},
@@ -585,7 +603,7 @@
   @inproceedings{高橋2020x,
     title = {体内への電磁界暴露を抑制可能な無線給電・通信用テキスタイルコイルの設計},
     author = {高橋亮 and 笹谷拓也 and 川原圭博},
-    booktitle = {信学ソ大 2020},
+    booktitle = {電子情報通信学会ソサイエティ大会 2020},
     note = {B-15},
     address = {オンライン},
     year = {2020},
@@ -609,7 +627,7 @@
   @inproceedings{平井2020x,
     title = {マルチモード準静空洞共振器を用いた無線給電における中継器の構成についての検討},
     author = {平井雄太 and 笹谷拓也 and 高橋亮 and 川原圭博},
-    booktitle = {信学総大 2020},
+    booktitle = {電子情報通信学会総合大会 2020},
     note = {B-20-11},
     address = {広島,日本},
     year = {2020},
@@ -619,7 +637,7 @@
   @inproceedings{高橋2020x,
     title = {ワイヤレスな指輪型キーボードのバッテリレス化手法},
     author = {高橋亮 and 韓燦教 and 笹谷拓也 and 成末義哲 and 福本雅朗 and 川原圭博 and 苗村健},
-    booktitle = {信学総大 2020},
+    booktitle = {電子情報通信学会総合大会 2020},
     note = {B-15-13},
     address = {広島,日本},
     year = {2020},
@@ -680,7 +698,7 @@
   @inproceedings{高橋2018x,
     title = {切断により形状の変更が可能な無線電力伝送シートの設計の一検討},
     author = {高橋亮 and 笹谷拓也 and 奥谷文徳 and 成末義哲 and 川原圭博},
-    booktitle = {信学総大 2018},
+    booktitle = {電子情報通信学会総合大会 2018},
     note = {B-21-19},
     address = {東京, 日本},
     year = {2018},
