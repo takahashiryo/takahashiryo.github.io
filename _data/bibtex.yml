@@ -688,7 +688,7 @@
   @inproceedings{角谷2018mhz,
     title = {1MHz磁界共振結合方式を用いた無線給電プラレールの設計と製作},
     author = {角谷和宣 and 西澤勇輝 and 笹谷拓也 and 高橋亮 and 成末義哲 and 川原圭博},
-    booktitle = {信学技報},
+    booktitle = {電子情報通信学会技術研究報告},
     note = {Vol. 118, No. 227, WPT2018-50, pp. 111-114},
     address = {京都},
     year = {2018},
