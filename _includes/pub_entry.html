@@ -71,7 +71,7 @@
 {%- assign thumb = false -%}
 {%- comment %} 写真を出すのは論文誌・国際会議・解説・メディアだけ。
      国内発表・ワークショップ・デモ・ポスターには要らない {% endcomment -%}
-{%- assign thumb_types = "journal,conference,article,media" | split: "," -%}
+{%- assign thumb_types = "journal,conference,preprint,article,media" | split: "," -%}
 {%- if include.thumb -%}
   {%- for ty in thumb_types -%}
     {%- if p.type == ty -%}{%- assign thumb = site.data.pub_images[p.title] -%}{%- endif -%}

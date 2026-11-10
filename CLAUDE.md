@@ -64,7 +64,7 @@ Information.xlsx`）から作る古い経路で、いまは使っていない。
 | `_data/bibtex.yml` | タイトル→BibTeX。`scripts/build_bibtex.py` が CSV から生成（DOI があれば Crossref、無ければ CSV から組む。既存の題名は上書きしない）。論文の「BibTeX」ピルで折りたたみ表示 | 生成＋手直し可 |
 | `_data/arxiv.yml` / `youtube.yml` / `pdf.yml` | タイトル→ arXiv URL / YouTube URL / `paper/` 内の PDF パス。あるものだけピルが出る | 手書き（cronos_web の CSV から転記） |
 
-`type` の値: `journal` / `conference` / `workshop`（ワークショップでの発表） / `organized`（主催したワークショップの提案論文。一覧ではワークショップの組の中に「発表／主催」の小見出しで並ぶ） / `demo` / `poster` / `domestic` / `article`。
+`type` の値: `journal` / `conference` / `preprint`（arXiv などの未査読原稿。venue は `arXiv`、detail は `arXiv:ID`） / `workshop`（ワークショップでの発表） / `organized`（主催したワークショップの提案論文。一覧ではワークショップの組の中に「発表／主催」の小見出しで並ぶ） / `demo` / `poster` / `domestic` / `article`。
 
 **並び順**は `sortkey`（`YYYYMMDD`）の降順。`day` が空のものは `00` になるので、
 同じ月の中では日の分かっているものより後ろに来る。同じ日（または両方とも日が不明）の

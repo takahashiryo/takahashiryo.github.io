@@ -49,7 +49,7 @@
 
 <h2>{{ t.sec.publications }}</h2>
 <p class="note">{{ t.author_note }}</p>
-{%- assign kinds = "journal,conference,workshop,demo,poster,domestic,article" | split: "," -%}
+{%- assign kinds = "journal,conference,preprint,workshop,demo,poster,domestic,article" | split: "," -%}
 {%- for k in kinds -%}
   {%- assign items = site.data.publications | where: "type", k -%}
   {%- if k == "workshop" -%}

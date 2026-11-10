@@ -17,7 +17,8 @@ DOI_YML = ROOT / "_data/doi.yml"
 REFRESH = "--refresh" in sys.argv
 
 TYPE_MAP = {"journal": "article", "conference": "inproceedings", "workshop": "inproceedings", "organized": "inproceedings",
-            "demo": "inproceedings", "poster": "inproceedings", "domestic": "inproceedings", "article": "article"}
+            "demo": "inproceedings", "poster": "inproceedings", "domestic": "inproceedings", "article": "article",
+            "preprint": "misc"}
 MONTHS = ["jan","feb","mar","apr","may","jun","jul","aug","sep","oct","nov","dec"]
 
 def find_doi(r, doi_map):
@@ -66,9 +67,16 @@ def compose(r):
     key = f"{surname(r['authors'])}{r['year']}{re.sub(r'[^a-z]', '', r['title'].lower().split()[0]) or 'x'}"
     fields = [("title", r["title"]), ("author", clean_authors(r["authors"]))]
     venue = r["venue"]
-    if kind == "article": fields.append(("journal", venue))
+    if kind == "misc":
+        # プレプリント。detail の arXiv:ID から eprint 系のフィールドを組む
+        m_id = re.search(r"arXiv:\s*([\w.\-/]+)", r.get("detail") or "")
+        if m_id:
+            fields += [("eprint", m_id.group(1)), ("archivePrefix", "arXiv"), ("howpublished", f"arXiv:{m_id.group(1)}")]
+        else:
+            fields.append(("howpublished", venue))
+    elif kind == "article": fields.append(("journal", venue))
     else: fields.append(("booktitle", venue))
-    if r.get("detail"): fields.append(("note" if kind == "article" and not re.search(r"vol|pp|no\.", r["detail"], re.I) else ("pages" if re.match(r"^\s*pp?\.", r["detail"]) else "note"), r["detail"]))
+    if r.get("detail") and kind != "misc": fields.append(("note" if kind == "article" and not re.search(r"vol|pp|no\.", r["detail"], re.I) else ("pages" if re.match(r"^\s*pp?\.", r["detail"]) else "note"), r["detail"]))
     if r.get("place"): fields.append(("address", r["place"]))
     fields.append(("year", r["year"]))
     m = r.get("month") or ""

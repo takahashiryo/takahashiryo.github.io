@@ -74,6 +74,7 @@ ja:
   types:
     journal: "論文誌"
     conference: "国際会議"
+    preprint: "プレプリント"
     workshop: "ワークショップ"
     organized: "ワークショップ主催"
     demo: "デモ"
@@ -158,6 +159,7 @@ en:
   types:
     journal: "Journal"
     conference: "Conference"
+    preprint: "Preprint"
     workshop: "Workshop"
     organized: "Workshop organized"
     demo: "Demo"
@@ -242,6 +244,7 @@ zh:
   types:
     journal: "期刊"
     conference: "国际会议"
+    preprint: "预印本"
     workshop: "研讨会"
     organized: "研讨会主办"
     demo: "演示"

@@ -8,6 +8,16 @@
     year = {2026},
     month = dec
   }
+"Split-Ring Couplers for On-Skin Wi-Fi Communication via an SSPP Waveguide Textile": |-
+  @misc{noda2026splitring,
+    title = {Split-Ring Couplers for On-Skin Wi-Fi Communication via an SSPP Waveguide Textile},
+    author = {Akihito Noda and Ryo Takahashi},
+    eprint = {2611.12036},
+    archivePrefix = {arXiv},
+    howpublished = {arXiv:2611.12036},
+    year = {2026},
+    month = nov
+  }
 "Dense-Joint-Based Obstacle-Aided Locomotion with a Joint-Repositionable Snake Robot": |-
   @inproceedings{minomo2026densejointbased,
     title = {Dense-Joint-Based Obstacle-Aided Locomotion with a Joint-Repositionable Snake Robot},
