@@ -12,7 +12,12 @@
 {%- assign en = r.en -%}
 
 <div style="height: 2.4em"></div>
+{%- comment %} 見出しは「呼び名｜その言語の題」。name の無いテーマは従来どおり「英語｜和名」 {% endcomment -%}
+{%- if r.name %}
+<div class="sechead"><h2>{{ r.name }}<span class="sechead-alt">｜{{ body.title }}</span></h2></div>
+{%- else %}
 {% include sechead.html title=body.title en=en.title lang=lang %}
+{%- endif %}
 
 <div class="research-page">
   {%- comment %}

@@ -29,8 +29,12 @@ links:
 # publications.csv はスプレッドシート同期で作り直されるので、ひも付けは CSV の列に持たせない。
 # 日本語題名の論文は関連論文に出さない（_includes/pub_match.html で除外している）。
 # 注意: "ring" のような短い語は powering / networking / jointing に部分一致するので使わない。
+# 4テーマをまとめる総称。トップの研究セクションの小見出しに出る。
+research_brand: "pico-Intelligence"
+# name はテーマの呼び名（カードと詳細ページの見出しに出る）。id は URL なので変えない。
 research:
   - id: "e-textile"
+    name: "picoWear"
     image: "e-textile.jpg"
     match: ["meander", "e-textile", "e-knit", "textile", "knittable", "bodynet", "nfc",
             "clothing", "electric skin", "soft wearables",
@@ -41,21 +45,22 @@ research:
     exclude: ["cuttable", "plug-n-play", "3d-printing", "wristband",
               "ロボット", "picoring", "指輪"]
     ja:
-      title: "電子テキスタイル・生体データ通信インフラ"
-      body: "メアンダコイルを衣服の全面に編み込み、人体に安全なまま身体のどこにでも W 級の電力と通信を届ける。液体金属配線や機械編みによって、洗える・伸びる電子テキスタイルを作る。"
+      title: "デジタル心臓 ― 電子テキスタイル・生体データ通信インフラ"
+      body: "衣服を、全身へ電力とデータを送り届ける「デジタル心臓」にする。メアンダコイルを衣服の全面に編み込み、人体に安全なまま身体のどこにでも W 級の電力と通信を届ける。液体金属配線や機械編みによって、洗える・伸びる電子テキスタイルを作る。"
       detail:
         - "皮膚に貼るスキンデバイスを薄く柔らかいまま、皮膚に密着させるために、皮膚の近傍に強い電磁界を閉じ込めるメアンダコイル服により、人の周りにサーフェス型無線通信・給電ネットワークを作り、有線で繋げたときと同レベルの高い信頼性のある無線給電・通信をスキンデバイスへ行う。"
     en:
-      title: "E-textiles and body data infrastructure"
-      body: "Meander coils knitted across a whole garment deliver watt-level power and data anywhere on the body while staying safe to wear. Liquid-metal wiring and machine knitting make the fabric washable and stretchable."
+      title: "Digital heart ― e-textiles and body data infrastructure"
+      body: "Clothing as a digital heart that pumps power and data to the whole body. Meander coils knitted across a whole garment deliver watt-level power and data anywhere on the body while staying safe to wear. Liquid-metal wiring and machine knitting make the fabric washable and stretchable."
       detail:
         - "To keep skin-attached devices thin, soft and in close contact with the skin, a meander-coil garment confines a strong electromagnetic field near the skin surface, forming a surface-type wireless power and communication network around the body. Skin devices are then powered and read out wirelessly with the same level of reliability as a wired connection."
     zh:
-      title: "电子纺织品・生体数据通信基础设施"
-      body: "将蜿蜒线圈编织于整件衣服，在保证人体安全的前提下，向身体任意位置输送瓦级电力与数据。借助液态金属布线与机器编织，实现可水洗、可拉伸的电子纺织品。"
+      title: "数字心脏 ― 电子纺织品・生体数据通信基础设施"
+      body: "让衣服成为向全身输送电力与数据的「数字心脏」。将蜿蜒线圈编织于整件衣服，在保证人体安全的前提下，向身体任意位置输送瓦级电力与数据。借助液态金属布线与机器编织，实现可水洗、可拉伸的电子纺织品。"
       detail:
         - "为了让贴附于皮肤的皮肤器件保持轻薄柔软并紧贴皮肤，用把强电磁场约束在皮肤近旁的蜿蜒线圈衣服，在人体周围构建表面型的无线通信与供电网络，以与有线连接同等的高可靠性，对皮肤器件进行无线供电与通信。"
   - id: "low-power-wearable"
+    name: "picoAccessory"
     image: "low-power-wearable.jpg"
     # トップのカードに出す代表論文（題名は publications.csv と完全一致）。無ければ新しい順に自動で3件
     card_pubs:
@@ -85,6 +90,7 @@ research:
         - "戒指内可容纳的电池不足 27 mAh。BLE 等常规无线功耗过高，连续使用仅能维持 1〜10 小时，频繁充电会不断打断操作。"
         - "picoRing 在戒指端完全不搭载无线芯片。腕带线圈通过「半被动电感遥测」读取邻近戒指线圈的频率响应，戒指端的调制功耗最高仅 449 微瓦，一次充电可运行约 600〜1000 小时。目标是做出可以整天佩戴的输入设备，例如作为 AR 眼镜的控制器。"
   - id: "robot-skin"
+    name: "picoRobot"
     image: "robot-skin.jpg"
     # 2-D Relay Resonator Array は床面からの給電なのでロボット側に入れる
     match: ["robot", "snake", "locomotion", "relay resonator",
@@ -111,6 +117,7 @@ research:
         - "在蛇形机器人中，电机关节沿体内齿条移动，线缆无法随之布设。改由柔软的机器人皮肤向体内关节无线供电，实现了仅用少量关节即可像多关节一样弯曲的 1.3 kg、7.6 W 机体（IEEE RA-L Best Paper Award）。"
         - "在墙面行驶的摄像机器人，一边在铺设于墙面的蛇形线圈上行驶，一边接收电力。无需为充电而停下或返回，小型机体即可长期持续巡视室内的大范围区域。"
   - id: "digital-fabrication"
+    name: "picoTronics"
     image: "digital-fabrication.jpg"
     video_first: ["eBqJG65DhPQ"]     # 詳細ページ上部の動画で先頭に出すもの（YouTube の動画ID）。Cuttable WPT Sheet
     match: ["cuttable", "3d-printing", "plug-n-play", "prototyping", "pneumodule",

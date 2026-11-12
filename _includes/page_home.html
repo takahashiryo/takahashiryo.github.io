@@ -50,6 +50,9 @@
 
 <section id="research">
   {% include sechead.html title=t.sec.research en="Research" lang=lang %}
+  {%- if pr.research_brand %}
+  <p class="themes-brand">{{ pr.research_brand }}</p>
+  {%- endif %}
   <div class="themes">
     {%- for r in pr.research -%}
     {%- assign body = r[lang] -%}
@@ -57,10 +60,13 @@
     <article class="theme">
       {%- if r.image %}
       <a class="theme-fig" href="{{ detail }}">
-        <img src="{{ '/images/research/' | append: r.image | relative_url }}" alt="{{ body.title }}" loading="lazy">
+        <img src="{{ '/images/research/' | append: r.image | relative_url }}" alt="{{ r.name | default: body.title }}" loading="lazy">
       </a>
       {%- endif %}
-      <h3><a href="{{ detail }}">{{ body.title }}</a></h3>
+      <h3><a href="{{ detail }}">
+        {%- if r.name %}<span class="theme-name">{{ r.name }}</span><span class="theme-sub">{{ body.title }}</span>
+        {%- else %}{{ body.title }}{% endif -%}
+      </a></h3>
       <p>{{ body.body }}</p>
       {% include theme_pubs.html r=r lang=lang limit=3 %}
     </article>

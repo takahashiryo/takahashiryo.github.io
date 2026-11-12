@@ -58,7 +58,7 @@ Information.xlsx`）から作る古い経路で、いまは使っていない。
 | `_data/awards.csv` | 受賞19件 | researchmap API |
 | `_data/talks.csv` | 講演10件 | 手元データから生成 |
 | `_data/i18n.yml` | 3言語の文言 | 手書き |
-| `_data/profile.yml` | リンク・研究テーマ | 手書き＋researchmap |
+| `_data/profile.yml` | リンク・研究テーマ。4テーマは `name`（picoWear / picoAccessory / picoRobot / picoTronics）で呼び、総称は `research_brand`（pico-Intelligence）。`id` は URL なので変えない | 手書き＋researchmap |
 | `_data/facilities.yml` | Facilities ページ（/facilities/）。カテゴリ→機器の2段。機器は name/maker/image（images/facilities/）/qty と ja/en/zh の desc と uses または specs。写真はメーカー公式ページ由来。ページ下部の支援機関ロゴは `_includes/funders.html`（images/logos/）。描画は `_includes/page_facilities.html` | 手書き |
 | `_data/prototypes.yml` / `proto_cats.yml` | Prototypes ページ（/prototypes/）。試作デバイスのカード（name/year/cats/image(images/prototypes/)/paper/video/specs と ja/en/zh の desc）と分類タブ。描画は `_includes/page_prototypes.html`、暗い背景の見た目は style.html の .proto | 手書き |
 | `_data/bibtex.yml` | タイトル→BibTeX。`scripts/build_bibtex.py` が CSV から生成（DOI があれば Crossref、無ければ CSV から組む。既存の題名は上書きしない）。論文の「BibTeX」ピルで折りたたみ表示 | 生成＋手直し可 |
