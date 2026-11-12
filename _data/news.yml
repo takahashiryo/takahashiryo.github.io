@@ -68,6 +68,13 @@
   ja: "高橋、横田らが IEEE RA-L 2025 Best Paper Award を受賞"
   en: "IEEE RA-L 2025 Best Paper Award"
   url: "https://www.uec.ac.jp/news/newsrelease/2026/20260605_7740.html"
+- date: "2026-04-13"
+  category: paper
+  image: "logo-chi-2026.jpg"
+  logo: true
+  ja: "山本、李らが Body-scale NFC for wearables のデモを ACM CHI 2026（バルセロナ）にて発表"
+  en: "Demo of body-scale NFC for wearables at ACM CHI 2026 (Barcelona, Spain)"
+  url: "https://doi.org/10.1145/3772363.3799126"
 - date: "2026-03-12"
   category: talk
   image: "logo-ieice.png"
@@ -82,7 +89,8 @@
   url: "https://funaifoundation.jp/news-580.htm"
 - date: "2026-02-01"
   category: award
-  image: "/images/publications/acs_lm_textile_800.jpg"
+  image: "logo-ieej.png"
+  logo: true
   ja: "電気学会センサ・マイクロシステム部門にて優秀論文発表賞A を受賞"
   en: "Received the Outstanding Presentation Award A from the IEEJ Sensors and Micromachines Society"
 - date: "2026-01-25"
@@ -114,6 +122,13 @@
   ja: "第42回センサ・マイクロマシンと応用システムシンポジウムにて奨励賞を受賞"
   en: "Encouragement Award at the 42nd Sensor Symposium"
   url: "https://sensorsymposium.org/2025/wp-content/uploads/sites/5/SS42_Award_Winners.pdf"
+- date: "2025-10-19"
+  category: paper
+  image: "logo-iros-2025.png"
+  logo: true
+  ja: "関節位置を変えられる無線給電ヘビ型ロボット（IEEE RA-L）を IEEE IROS 2025（杭州）にて発表"
+  en: "Presented the joint-repositionable inner-wireless snake robot (IEEE RA-L) at IEEE IROS 2025 (Hangzhou, China)"
+  url: "https://doi.org/10.1109/LRA.2025.3555394"
 - date: "2025-10-17"
   category: talk
   image: "tsinghua_talk_800.jpg"
@@ -126,9 +141,22 @@
   ja: "ACM UbiComp/ISWC 2025 にてワークショップ「Intelligent Soft Wearables」を主催"
   en: "Organized the Intelligent Soft Wearables workshop at ACM UbiComp/ISWC 2025"
   url: "https://www.akg.t.u-tokyo.ac.jp/archives/6000"
+- date: "2025-10-12"
+  category: paper
+  image: "logo-ubicomp-2025.jpg"
+  logo: true
+  ja: "Full-body WPT を ACM UbiComp/ISWC 2025（エスポー）にて発表"
+  en: "Presented Full-body WPT at ACM UbiComp/ISWC 2025 (Espoo, Finland)"
+  url: "https://doi.org/10.1145/3714394.3750714"
+- date: "2025-10-01"
+  category: media
+  image: "press_picoring_mouse_800.jpg"
+  ja: "東京大学からプレスリリース「ごくわずかな電力で動く指輪型無線マウスの開発に成功」"
+  en: "Press release from the University of Tokyo: \"The lord of the ring mouse\""
+  url: "https://www.t.u-tokyo.ac.jp/press/pr2025-10-01-003"
 - date: "2025-10-01"
   category: paper
-  image: "logo-uist-2025.svg"
+  image: "logo-uist-2025.png"
   logo: true
   ja: "picoRing mouse を ACM UIST 2025 にて発表"
   en: "Presented picoRing mouse at ACM UIST 2025"
@@ -141,6 +169,40 @@
   image: "ubi87_talk.jpg"
   ja: "情報処理学会 第87回ユビキタスコンピューティングシステム研究会にて優秀論文賞を受賞"
   en: "Received the Outstanding Paper Award at IPSJ UBI 87"
+- date: "2025-06-04"
+  category: award
+  image: "logo-robomech-2025.jpg"
+  logo: true
+  ja: "韓、高橋らが ROBOMECH 2025 でベストデモンストレーション表彰"
+  en: "Best Demonstration Award at ROBOMECH 2025"
+  url: "https://robomech.org/2025/"
+- date: "2025-06-04"
+  category: paper
+  image: "logo-robomech-2025.jpg"
+  logo: true
+  ja: "韓、保坂らが ROBOMECH 2025（山形）にて無線給電ロボットネットワークと移動関節ヘビ型ロボットを発表"
+  en: "Presented a wirelessly powered mobile-robot network and a joint-repositionable snake robot at ROBOMECH 2025 (Yamagata)"
+  url: "https://robomech.org/2025/"
+- date: "2025-05-01"
+  category: award
+  image: "logo-ipsj.png"
+  logo: true
+  ja: "情報処理学会 第86回ユビキタスコンピューティングシステム研究会にて優秀論文賞を受賞（Full-body NFC）"
+  en: "Outstanding Paper Award at IPSJ UBI 86 (Full-body NFC)"
+- date: "2025-04-26"
+  category: paper
+  image: "logo-chi-2025.jpg"
+  logo: true
+  ja: "picoRing mouse のデモを ACM CHI 2025（横浜）にて発表"
+  en: "Demo of picoRing mouse at ACM CHI 2025 (Yokohama, Japan)"
+  url: "https://doi.org/10.1145/3706599.3721183"
+- date: "2025-03-04"
+  category: paper
+  image: "logo-tei-2025.svg"
+  logo: true
+  ja: "李、高橋らが Plug-n-play e-knit を ACM TEI 2025（ボルドー）にて発表"
+  en: "Presented Plug-n-play e-knit at ACM TEI 2025 (Bordeaux, France)"
+  url: "https://dl.acm.org/doi/10.1145/3689050.3705973"
 - date: "2025-01-19"
   category: paper
   image: "logo-mems-2025.png"
@@ -150,7 +212,7 @@
   url: "https://ieeexplore.ieee.org/document/10917417"
 - date: "2024-11-28"
   category: award
-  image: "/images/publications/acs_lm_textile_800.jpg"
+  image: "micronano2024_award.jpg"
   ja: "第15回マイクロ・ナノ工学シンポジウムにて優秀講演論文を受賞"
   en: "Received the Outstanding Presentation Award at the 15th Micro-Nano Science and Technology Symposium"
   url: "https://www.akg.t.u-tokyo.ac.jp/archives/5248"
@@ -166,6 +228,25 @@
   ja: "第7回フレキシブル・ストレッチャブルエレクトロニクス若手研究者の会にて最優秀ポスター発表賞を受賞"
   en: "Received the Best Poster Presentation Award at the 7th FSE Young Researchers Meeting"
   url: "https://www.akg.t.u-tokyo.ac.jp/archives/5105"
+- date: "2023-10-08"
+  category: paper
+  image: "logo-ubicomp-2023.jpg"
+  logo: true
+  ja: "Twin Meander Coil（ACM IMWUT）を ACM UbiComp/ISWC 2023（カンクン）にて発表"
+  en: "Presented Twin Meander Coil (ACM IMWUT) at ACM UbiComp/ISWC 2023 (Cancún, Mexico)"
+  url: "https://doi.org/10.1145/3494996"
+- date: "2023-03-01"
+  category: award
+  image: "logo-taf.png"
+  logo: true
+  ja: "電気通信普及財団 テレコムシステム技術学生賞 最優秀賞を受賞"
+  en: "Grand Prize of the TAF Telecom System Technology Student Award"
+- date: "2023-03-01"
+  category: award
+  image: "logo-ipsj.png"
+  logo: true
+  ja: "情報処理学会 第85回全国大会にて学生奨励賞を受賞"
+  en: "Student Encouragement Award at the IPSJ 85th National Convention"
 - date: "2022-12-16"
   category: award
   image: "logo-wiss-2022.png"
@@ -193,9 +274,68 @@
   ja: "ACM CHI 2022 にて「Meander Coil++」が Best Paper Award を受賞"
   en: "Meander Coil++ received the Best Paper Award at ACM CHI 2022"
   url: "https://www.akg.t.u-tokyo.ac.jp/archives/4215"
+- date: "2022-04-29"
+  category: paper
+  image: "logo-chi-2022.png"
+  logo: true
+  ja: "Meander Coil++ を ACM CHI 2022（ニューオーリンズ）にて発表"
+  en: "Presented Meander Coil++ at ACM CHI 2022 (New Orleans, USA)"
+  url: "https://doi.org/10.1145/3491102.3502119"
+- date: "2021-09-01"
+  category: award
+  image: "logo-ipsj.png"
+  logo: true
+  ja: "情報処理学会 第71回ユビキタスコンピューティングシステム研究会にて優秀論文賞を受賞"
+  en: "Outstanding Paper Award at IPSJ UBI 71"
+- date: "2021-04-01"
+  category: award
+  image: "logo-chi-2021.png"
+  logo: true
+  ja: "PneuModule が CHI'20 @ CHI'21 にて People's Choice Best Demo Honorable Mention Award を受賞"
+  en: "PneuModule received the People's Choice Best Demo Honorable Mention Award at CHI'20 @ CHI'21"
 - date: "2020-10-20"
   category: paper
   image: "logo-uist-2020.svg"
   ja: "TelemetRing を ACM UIST 2020 にて発表"
   en: "Presented TelemetRing at ACM UIST 2020"
   url: "https://doi.org/10.1145/3379337.3415873"
+- date: "2020-09-12"
+  category: paper
+  image: "logo-ubicomp-2020.jpg"
+  logo: true
+  ja: "A Cuttable Wireless Power Transfer Sheet（ACM IMWUT）を ACM UbiComp 2020 にて発表"
+  en: "Presented A Cuttable Wireless Power Transfer Sheet (ACM IMWUT) at ACM UbiComp 2020"
+  url: "https://doi.org/10.1145/3287068"
+- date: "2020-04-21"
+  category: award
+  image: "logo-chi-2020.png"
+  logo: true
+  ja: "PneuModule が ACM CHI 2020 にて Honorable Mention Award を受賞"
+  en: "PneuModule received an Honorable Mention Award at ACM CHI 2020"
+  url: "https://doi.org/10.1145/3313831.3376838"
+- date: "2020-04-21"
+  category: paper
+  image: "logo-chi-2020.png"
+  logo: true
+  ja: "韓、高橋らが PneuModule を ACM CHI 2020 にて発表"
+  en: "Presented PneuModule at ACM CHI 2020"
+  url: "https://doi.org/10.1145/3313831.3376838"
+- date: "2020-03-01"
+  category: award
+  image: "logo-ipsj.png"
+  logo: true
+  ja: "情報処理学会 インタラクション 2020 にてインタラクティブ発表賞（PC推薦・一般投票）を受賞"
+  en: "Interactive Presentation Award (PC recommendation and audience vote) at IPSJ Interaction 2020"
+- date: "2020-01-04"
+  category: paper
+  image: "logo-icce.png"
+  logo: true
+  ja: "森田、高橋らが無線給電システムのトポロジ構築プロトコルを IEEE ICCE 2020（ラスベガス）にて発表"
+  en: "Presented a topology construction protocol for wireless power transfer systems at IEEE ICCE 2020 (Las Vegas, USA)"
+  url: "https://doi.org/10.1109/ICCE46568.2020.9043052"
+- date: "2019-01-07"
+  category: media
+  image: "press_cuttable_2019_800.jpg"
+  ja: "東京大学・JST から共同発表「切り取り可能なワイヤレス充電シートを実現」"
+  en: "Joint press release from the University of Tokyo and JST: a cuttable wireless charging sheet"
+  url: "https://www.jst.go.jp/pr/announce/20190107-2/index.html"

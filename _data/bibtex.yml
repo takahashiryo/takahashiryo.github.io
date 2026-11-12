@@ -47,6 +47,16 @@
     year = {2026},
     month = oct
   }
+"Packet Interval Modulation for Uncoordinated NFC Data Networking Around Meander E-Textiles": |-
+  @misc{ishida2026packet,
+    title = {Packet Interval Modulation for Uncoordinated NFC Data Networking Around Meander E-Textiles},
+    author = {Shigemi Ishida and Satoshi Ido and Ryo Takahashi},
+    eprint = {2610.35870},
+    archivePrefix = {arXiv},
+    howpublished = {arXiv:2610.35870},
+    year = {2026},
+    month = oct
+  }
 "Collisionless Multi-Tag NFC Sensing for Indoor Activity Recognition Using Meander E-Textiles": |-
   @inproceedings{ido2026collisionless,
     title = {Collisionless Multi-Tag NFC Sensing for Indoor Activity Recognition Using Meander E-Textiles},
