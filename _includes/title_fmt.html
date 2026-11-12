@@ -1,0 +1,8 @@
+{%- comment %}
+  論文題名などの整形。picoRing mouse / picoRing dual の「mouse」「dual」を斜体にする。
+  include.raw が真なら escape しない（news.yml の文のように、そのまま出しているもの用）。
+  属性値（alt, aria-label など）には使わないこと。
+{% endcomment -%}
+{%- if include.raw -%}{%- assign tf = include.text -%}{%- else -%}{%- assign tf = include.text | escape -%}{%- endif -%}
+{%- assign tf = tf | replace: "picoRing mouse", "picoRing <i>mouse</i>" | replace: "picoRing dual", "picoRing <i>dual</i>" -%}
+{{- tf -}}

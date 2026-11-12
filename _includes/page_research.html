@@ -113,9 +113,9 @@
       <img src="{{ fig | relative_url }}" alt="{{ p.title }}"{% if i > 0 %} loading="lazy"{% endif %}>
       <figcaption>
         {%- if p.url and p.url != "" -%}
-          <a href="{{ p.url }}">{{ p.title }}</a>
+          <a href="{{ p.url }}">{% include title_fmt.html text=p.title %}</a>
         {%- else -%}
-          {{ p.title }}
+          {% include title_fmt.html text=p.title %}
         {%- endif -%}
         {%- if p.venue and p.venue != "" %}<span class="slide-venue">{{ p.venue }}{% if p.year and p.year != "" %}, {{ p.year }}{% endif %}</span>{% endif -%}
       </figcaption>

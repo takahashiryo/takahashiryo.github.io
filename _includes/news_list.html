@@ -31,8 +31,8 @@
     <div class="news-body">
       <span class="news-meta">{{ n.date }}<span class="news-cat">{{ t.news_cat[n.category] }}</span></span>
       {%- if n.url contains "http" -%}
-        <a href="{{ n.url }}" target="_blank" rel="noopener">{{ nt }}</a>
-      {%- else -%}<span>{{ nt }}</span>{%- endif -%}
+        <a href="{{ n.url }}" target="_blank" rel="noopener">{% include title_fmt.html text=nt raw=true %}</a>
+      {%- else -%}<span>{% include title_fmt.html text=nt raw=true %}</span>{%- endif -%}
     </div>
   </article>
   {%- endfor -%}

@@ -82,10 +82,10 @@
 
 <h2>{{ t.sec.patents }}</h2>
 {%- for p in site.data.patents -%}
-  <p class="row"><span class="no">{{ forloop.index }}.</span><span class="when">{{ p.year }}.{{ p.month }}</span>　<span class="ttl">{{ p.title | escape }}</span><br><span class="sub">{{ p.inventors | escape }}{% if p.application_number != "" %} ・ {{ p.application_number | escape }}{% endif %}{% if p.announcement_number != "" %} ・ {{ p.announcement_number | escape }}{% endif %}</span></p>
+  <p class="row"><span class="no">{{ forloop.index }}.</span><span class="when">{{ p.year }}.{{ p.month }}</span>　<span class="ttl">{% include title_fmt.html text=p.title %}</span><br><span class="sub">{{ p.inventors | escape }}{% if p.application_number != "" %} ・ {{ p.application_number | escape }}{% endif %}{% if p.announcement_number != "" %} ・ {{ p.announcement_number | escape }}{% endif %}</span></p>
 {%- endfor -%}
 
 <h2>{{ t.sec.talks }}</h2>
 {%- for k in site.data.talks -%}
-  <p class="row"><span class="no">{{ forloop.index }}.</span><span class="when">{{ k.year }}</span>　<span class="ttl">{{ k.title | escape }}</span>　<span class="meta">{{ k.venue | escape }}{% if k.place != "" %}, {{ k.place | escape }}{% endif %}</span></p>
+  <p class="row"><span class="no">{{ forloop.index }}.</span><span class="when">{{ k.year }}</span>　<span class="ttl">{% include title_fmt.html text=k.title %}</span>　<span class="meta">{{ k.venue | escape }}{% if k.place != "" %}, {{ k.place | escape }}{% endif %}</span></p>
 {%- endfor -%}

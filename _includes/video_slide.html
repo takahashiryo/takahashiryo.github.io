@@ -14,9 +14,9 @@
       </button>
       <figcaption>
         {%- if sp.url and sp.url != "" -%}
-          <a href="{{ sp.url }}">{{ sp.title }}</a>
+          <a href="{{ sp.url }}">{% include title_fmt.html text=sp.title %}</a>
         {%- else -%}
-          {{ sp.title }}
+          {% include title_fmt.html text=sp.title %}
         {%- endif -%}
         {%- if sp.venue and sp.venue != "" %}<span class="slide-venue">{{ sp.venue }}{% if sp.year and sp.year != "" %}, {{ sp.year }}{% endif %}</span>{% endif -%}
       </figcaption>

@@ -2,9 +2,9 @@
 {%- assign p = include.p -%}
 <li><span class="theme-pub-body">
   {%- if p.url contains "http" -%}
-    <a href="{{ p.url }}" target="_blank" rel="noopener">{{ p.title | escape }}</a>
+    <a href="{{ p.url }}" target="_blank" rel="noopener">{% include title_fmt.html text=p.title %}</a>
   {%- else -%}
-    {{ p.title | escape }}
+    {% include title_fmt.html text=p.title %}
   {%- endif -%}
   {%- comment %} カードは幅が狭いので、ここだけ venue_short.yml で短くする {% endcomment -%}
   {%- assign venue = site.data.venue_short[p.venue] | default: p.venue -%}

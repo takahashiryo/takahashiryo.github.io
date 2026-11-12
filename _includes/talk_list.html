@@ -13,8 +13,8 @@
     <div class="entry-body">
       <div class="entry-title">
         {%- if turl contains "http" -%}
-          <a href="{{ turl }}" target="_blank" rel="noopener">{{ k.title | escape }}</a>
-        {%- else -%}{{ k.title | escape }}{%- endif -%}
+          <a href="{{ turl }}" target="_blank" rel="noopener">{% include title_fmt.html text=k.title %}</a>
+        {%- else -%}{% include title_fmt.html text=k.title %}{%- endif -%}
         {%- if k.note != "" %} <span class="badge">{{ k.note | escape }}</span>{% endif -%}
       </div>
       {%- comment %} 会議名に年が入っていることが多いので、重複するときは足さない {% endcomment -%}

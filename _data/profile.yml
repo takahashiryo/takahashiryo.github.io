@@ -65,7 +65,7 @@ research:
     # トップのカードに出す代表論文（題名は publications.csv と完全一致）。無ければ新しい順に自動で3件
     card_pubs:
       - "picoRing dual: ultralow-power bimanual ring controllers for everyday AR"
-      - "Ultra-low-power ring-based wireless tinymouse"
+      - "picoRing mouse: ultra-low-power ring-based wireless tinymouse"
       - "picoRing: battery-free rings for subtle thumb-to-index input"
       - "TelemetRing: A Batteryless and Wireless Ring-Shaped Keyboard using Passive Inductive Telemetry"
     match: ["picoring", "telemetring", "wristband", "ring-based", "ring mouse",

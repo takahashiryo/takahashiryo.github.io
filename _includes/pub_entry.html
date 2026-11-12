@@ -95,8 +95,8 @@
     <div class="entry-title">
       {%- if aw %}<span class="pub-award" title="{{ aw.label | escape }}" aria-label="{{ aw.label | escape }}">{{ aw.icon }}</span>{% endif -%}
       {%- if murl contains "http" -%}
-        <a href="{{ murl }}" target="_blank" rel="noopener">{{ p.title | escape }}</a>
-      {%- else -%}{{ p.title | escape }}{%- endif -%}
+        <a href="{{ murl }}" target="_blank" rel="noopener">{% include title_fmt.html text=p.title %}</a>
+      {%- else -%}{% include title_fmt.html text=p.title %}{%- endif -%}
       {%- comment %} 種別ごとの見出しが無い一覧（トップの直近20件）でだけ種別を添える {% endcomment -%}
       {%- if include.badge %} <span class="badge badge--{{ p.type }}">{{ t.types[p.type] | default: p.type }}</span>{% endif -%}
       {%- if p.note != "" %} <span class="badge">{{ p.note | escape }}</span>{% endif -%}
