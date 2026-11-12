@@ -57,7 +57,8 @@
   url: "https://doi.org/10.1109/MPRV.2026.3712563"
 - date: "2026-06-30"
   category: award
-  image: "robomech2026_award_800.jpg"
+  image: "logo-robomech-2026.png"
+  logo: true
   ja: "韓、高橋が ROBOMECH2026 でベストデモンストレーション賞を受賞"
   en: "Best Demonstration Award at ROBOMECH 2026"
   url: "https://www.jsme.or.jp/rmd/awards/"
@@ -69,7 +70,7 @@
   url: "https://www.uec.ac.jp/news/newsrelease/2026/20260605_7740.html"
 - date: "2026-03-12"
   category: talk
-  image: "/images/research/e-textile.jpg"
+  image: "logo-ieice.png"
   ja: "電子情報通信学会 総合大会の JST CRONOS スポンサードセッションにて講演"
   en: "Talk at the JST CRONOS sponsored session, IEICE General Conference 2026"
   url: "https://www.ieice.org/jpn_r/activities/taikai/general/2026/sponsored_session.html"
@@ -86,7 +87,8 @@
   en: "Received the Outstanding Presentation Award A from the IEEJ Sensors and Micromachines Society"
 - date: "2026-01-25"
   category: paper
-  image: "/images/publications/acs_lm_textile_800.jpg"
+  image: "logo-mems-2026.png"
+  logo: true
   ja: "水溶性流路と液体金属によるリサイクル可能な無線デバイスを IEEE MEMS 2026 にて発表"
   en: "Presented recyclable wireless devices using 3D-printed water-soluble channels at IEEE MEMS 2026"
   url: "https://doi.org/10.1109/mems64181.2026.11419301"
@@ -139,12 +141,25 @@
   image: "ubi87_talk.jpg"
   ja: "情報処理学会 第87回ユビキタスコンピューティングシステム研究会にて優秀論文賞を受賞"
   en: "Received the Outstanding Paper Award at IPSJ UBI 87"
+- date: "2025-01-19"
+  category: paper
+  image: "logo-mems-2025.png"
+  logo: true
+  ja: "摩擦接合による全身無線給電服を IEEE MEMS 2025 にて発表"
+  en: "Presented friction-jointed full-body wireless charging clothing at IEEE MEMS 2025"
+  url: "https://ieeexplore.ieee.org/document/10917417"
 - date: "2024-11-28"
   category: award
   image: "/images/publications/acs_lm_textile_800.jpg"
   ja: "第15回マイクロ・ナノ工学シンポジウムにて優秀講演論文を受賞"
   en: "Received the Outstanding Presentation Award at the 15th Micro-Nano Science and Technology Symposium"
   url: "https://www.akg.t.u-tokyo.ac.jp/archives/5248"
+- date: "2024-10-13"
+  category: paper
+  image: "logo-uist-2024.png"
+  ja: "picoRing を ACM UIST 2024 にて発表"
+  en: "Presented picoRing at ACM UIST 2024"
+  url: "https://doi.org/10.1145/3654777.3676365"
 - date: "2024-05-24"
   category: award
   image: "/images/research/e-textile.jpg"
@@ -178,3 +193,9 @@
   ja: "ACM CHI 2022 にて「Meander Coil++」が Best Paper Award を受賞"
   en: "Meander Coil++ received the Best Paper Award at ACM CHI 2022"
   url: "https://www.akg.t.u-tokyo.ac.jp/archives/4215"
+- date: "2020-10-20"
+  category: paper
+  image: "logo-uist-2020.svg"
+  ja: "TelemetRing を ACM UIST 2020 にて発表"
+  en: "Presented TelemetRing at ACM UIST 2020"
+  url: "https://doi.org/10.1145/3379337.3415873"
