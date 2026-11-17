@@ -8,6 +8,14 @@
     year = {2026},
     month = dec
   }
+"picoWear: High-datarate NFC Body Networks with Digitally-Balanced Meander E-textiles": |-
+  @misc{takahashi2026picowear,
+    title = {picoWear: High-datarate NFC Body Networks with Digitally-Balanced Meander E-textiles},
+    author = {Ryo Takahashi and Yuga Kajihara and Wakako Yukita and Tomoyuki Yokota and Takao Someya and Yoshihiro Kawahara},
+    howpublished = {Preprint},
+    year = {2026},
+    month = nov
+  }
 "Split-Ring Couplers for On-Skin Wi-Fi Communication via an SSPP Waveguide Textile": |-
   @misc{noda2026splitring,
     title = {Split-Ring Couplers for On-Skin Wi-Fi Communication via an SSPP Waveguide Textile},
